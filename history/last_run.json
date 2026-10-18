@@ -1,5 +1,5 @@
 {
- "started": "2026-10-18 19:09 UTC",
+ "started": "2026-10-18 19:20 UTC",
  "regions": {
   "us-nyc": {
    "name": "New York",
@@ -7,95 +7,85 @@
    "parts": {
     "permits": {
      "events": 46251,
-     "seconds": 26
+     "seconds": 24
     },
     "restaurants": {
      "events": 11325,
-     "seconds": 7
+     "seconds": 6
     },
     "property_records": {
      "events": 33136,
-     "seconds": 201
+     "seconds": 178
     }
    }
   },
   "us-sf": {
    "name": "San Francisco",
-   "events": 7302,
+   "events": 7337,
    "parts": {
     "SF Building Permits (permit)": {
-     "events": 4404,
+     "events": 4405,
      "seconds": 5
     },
     "SF Registered Business Locations (business)": {
-     "events": 2188,
+     "events": 2208,
      "seconds": 3
     },
     "SF Registered Business Locations (closure)": {
-     "events": 710,
+     "events": 724,
      "seconds": 3
     }
    }
   },
   "us-chicago": {
    "name": "Chicago",
-   "events": 14005,
+   "events": 14122,
    "parts": {
     "Chicago Building Permits (permit)": {
-     "events": 8955,
-     "seconds": 6
+     "events": 9056,
+     "seconds": 7
     },
     "Chicago Business Licenses (business)": {
-     "events": 1691,
-     "seconds": 3
+     "events": 1704,
+     "seconds": 6
     },
     "Chicago Food Inspections (inspection)": {
-     "events": 3359,
-     "seconds": 6
+     "events": 3362,
+     "seconds": 3
     }
    }
   },
   "us-seattle": {
    "name": "Seattle",
-   "events": 1634,
+   "events": 1635,
    "parts": {
     "Seattle Building Permits (permit)": {
-     "events": 1634,
+     "events": 1635,
      "seconds": 2
     }
    }
   },
   "us-austin": {
    "name": "Austin",
-   "events": 8946,
+   "events": 12120,
    "parts": {
     "Austin Issued Construction Permits (permit)": {
-     "events": 8946,
-     "seconds": 27
+     "events": 12120,
+     "seconds": 44
     }
    }
   },
   "us-la": {
    "name": "Los Angeles",
-   "events": 16553,
+   "events": 16762,
    "parts": {
     "LADBS Building Permits (permit)": {
      "events": 15752,
-     "seconds": 4
+     "seconds": 12
     },
     "LA Active Businesses (business)": {
-     "events": 801,
-     "seconds": 6
-    }
-   }
-  },
-  "us-dallas": {
-   "name": "Dallas",
-   "events": 0,
-   "parts": {
-    "Dallas Building Permits (permit)": {
-     "events": 0,
-     "seconds": 4
+     "events": 1010,
+     "seconds": 8
     }
    }
   },
@@ -105,26 +95,17 @@
    "parts": {
     "New Orleans Building Permits (permit)": {
      "events": 4247,
-     "seconds": 6
-    }
-   }
-  },
-  "us-kc": {
-   "name": "Kansas City",
-   "events": 0,
-   "parts": {
-    "Kansas City Building Permits (permit)": {
-     "error": "no usable dataset; tried cwrz-29jm '2020 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, full_address, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | jnga-5v37 '2010 to 2019 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, f"
+     "seconds": 12
     }
    }
   },
   "us-cincinnati": {
    "name": "Cincinnati",
-   "events": 2203,
+   "events": 2786,
    "parts": {
     "Cincinnati Building Permits (permit)": {
-     "events": 2203,
-     "seconds": 20
+     "events": 2786,
+     "seconds": 23
     }
    }
   },
@@ -134,128 +115,27 @@
    "parts": {
     "Montgomery County, MD Building Permits (permit)": {
      "events": 134,
-     "seconds": 2
-    }
-   }
-  },
-  "us-cambridge": {
-   "name": "Cambridge, MA",
-   "events": 11,
-   "parts": {
-    "Cambridge, MA Building Permits (permit)": {
-     "events": 11,
-     "seconds": 2
-    }
-   }
-  },
-  "us-honolulu": {
-   "name": "Honolulu",
-   "events": 0,
-   "parts": {
-    "Honolulu Building Permits (permit)": {
-     "error": "no usable dataset; tried 4vab-c87q 'Building Permits - January 1, 2005 through June 30, 2025': no records in the last 90 days"
-    }
-   }
-  },
-  "us-mesa": {
-   "name": "Mesa, AZ",
-   "events": 0,
-   "parts": {
-    "Mesa, AZ Building Permits (permit)": {
-     "error": "no usable dataset; tried "
+     "seconds": 7
     }
    }
   },
   "us-baton-rouge": {
    "name": "Baton Rouge",
-   "events": 2151,
+   "events": 2155,
    "parts": {
     "Baton Rouge Building Permits (permit)": {
-     "events": 2151,
-     "seconds": 12
-    }
-   }
-  },
-  "us-oakland": {
-   "name": "Oakland",
-   "events": 0,
-   "parts": {
-    "Oakland Building Permits (permit)": {
-     "error": "no usable dataset; tried "
-    }
-   }
-  },
-  "us-orlando": {
-   "name": "Orlando",
-   "events": 0,
-   "parts": {
-    "Orlando Building Permits (permit)": {
-     "error": "no usable dataset; tried "
-    }
-   }
-  },
-  "us-chattanooga": {
-   "name": "Chattanooga",
-   "events": 0,
-   "parts": {
-    "Chattanooga Building Permits (permit)": {
-     "error": "https://api.us.socrata.com/api/catalog/v1?domains=www.chattadata.org&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: www.chattadata.org\"}"
-    }
-   }
-  },
-  "us-buffalo": {
-   "name": "Buffalo",
-   "events": 0,
-   "parts": {
-    "Buffalo Building Permits (permit)": {
-     "error": "no usable dataset; tried "
-    }
-   }
-  },
-  "us-providence": {
-   "name": "Providence",
-   "events": 0,
-   "parts": {
-    "Providence Building Permits (permit)": {
-     "error": "no usable dataset; tried "
+     "events": 2155,
+     "seconds": 4
     }
    }
   },
   "us-norfolk": {
    "name": "Norfolk, VA",
-   "events": 2723,
+   "events": 2876,
    "parts": {
     "Norfolk, VA Building Permits (permit)": {
-     "events": 2723,
-     "seconds": 10
-    }
-   }
-  },
-  "us-somerville": {
-   "name": "Somerville, MA",
-   "events": 0,
-   "parts": {
-    "Somerville, MA Building Permits (permit)": {
-     "events": 0,
-     "seconds": 7
-    }
-   }
-  },
-  "us-little-rock": {
-   "name": "Little Rock",
-   "events": 0,
-   "parts": {
-    "Little Rock Building Permits (permit)": {
-     "error": "https://api.us.socrata.com/api/catalog/v1?domains=data.littlerock.gov&q=permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.littlerock.gov\"}"
-    }
-   }
-  },
-  "us-gainesville": {
-   "name": "Gainesville, FL",
-   "events": 0,
-   "parts": {
-    "Gainesville, FL Building Permits (permit)": {
-     "error": "no usable dataset; tried p798-x3nx 'Building Permits': no date column (has permit, classification, parcel, contractor, business, primary_party, submit, issue, address, longitude, latitude, location_1, city, state, type, subtype, :@computed_region_ndi2_bfht, :@computed_region_9cfm_spy5, :@computed_region_43jd_v64e, :@computed_region_ecgy_hwrz, :@computed_region_e6r8_dw75, :@computed_region_axii_i744, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv) | vu9p-a5f7 'Code Complaints, Violation"
+     "events": 2876,
+     "seconds": 19
     }
    }
   },
@@ -265,7 +145,7 @@
    "parts": {
     "Calgary Building Permits (permit)": {
      "events": 5759,
-     "seconds": 3
+     "seconds": 9
     }
    }
   },
@@ -295,25 +175,49 @@
    "parts": {
     "philly_permits": {
      "events": 11295,
-     "seconds": 2
+     "seconds": 1
     },
     "philly_licenses": {
      "events": 3522,
-     "seconds": 2
+     "seconds": 1
+    }
+   }
+  },
+  "us-tx": {
+   "name": "Texas",
+   "events": 18212,
+   "parts": {
+    "tx_sales_tax": {
+     "events": 15598,
+     "seconds": 116
+    },
+    "tx_tabc": {
+     "events": 2614,
+     "seconds": 24
+    }
+   }
+  },
+  "us-co": {
+   "name": "Colorado",
+   "events": 11576,
+   "parts": {
+    "co_entities": {
+     "events": 11576,
+     "seconds": 142
     }
    }
   },
   "fr": {
    "name": "France",
-   "events": 60039,
+   "events": 60042,
    "parts": {
     "bodacc": {
-     "events": 50887,
-     "seconds": 132
+     "events": 50890,
+     "seconds": 122
     },
     "alimconfiance": {
      "events": 9152,
-     "seconds": 2
+     "seconds": 15
     },
     "sirene_paris": {
      "events": 0,
@@ -322,97 +226,76 @@
    }
   }
  },
- "minutes": 8.8,
+ "minutes": 13.4,
  "log_tail": [
+  "   census geocoded 19 of 252",
+  "   -> 1704 located events of 1943 rows",
+  "   Chicago Chicago Food Inspections (inspection): 3379",
+  "   20 rows without coordinates: geocoding addresses",
+  "   census geocoded 3 of 20",
+  "   -> 3362 located events of 3379 rows",
+  "   history: 117 records seen for the first time today (14122 remembered)",
+  "\n######## us-seattle · Seattle",
+  "   Seattle Seattle Building Permits (permit): 1635",
+  "   1 rows without coordinates: geocoding addresses",
+  "   census geocoded 1 of 1",
+  "   -> 1635 located events of 1635 rows",
+  "   history: 1 records seen for the first time today (1635 remembered)",
+  "\n######## us-austin · Austin",
+  "   Austin Austin Issued Construction Permits (permit): 14858",
+  "   5912 rows without coordinates: geocoding addresses",
+  "   census geocoded 3175 of 5912",
+  "   -> 12120 located events of 14858 rows",
+  "   history: 3174 records seen for the first time today (12120 remembered)",
+  "\n######## us-la · Los Angeles",
+  "   Los Angeles LADBS Building Permits (permit): 15783",
+  "   -> 15752 located events of 15783 rows",
+  "   Los Angeles LA Active Businesses (business): 4889",
+  "   656 rows without coordinates: geocoding addresses",
+  "   census geocoded 232 of 656",
+  "   -> 1010 located events of 4889 rows",
+  "   history: 209 records seen for the first time today (16762 remembered)",
+  "\n######## us-nola · New Orleans",
+  "   New Orleans: using dataset rcm3-fn58 'Permits'",
   "   New Orleans New Orleans Building Permits (permit): 4247",
   "   -> 4247 located events of 4247 rows",
   "   history: 0 records seen for the first time today (4247 remembered)",
-  "\n######## us-kc · Kansas City",
-  "   FAILED Kansas City Building Permits (permit): no usable dataset; tried cwrz-29jm '2020 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, full_address, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | jnga-5v37 '2010 to 2019 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, full_address, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | i2p9-vksn '2010 to September 2019 Building Permit Listing': no date column (has address, fraction, prefix, street, suffix, suite, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | yazt-9xgq '2010-2016 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin, parcel) | qt6m-65bz '2014 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, suite, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin) | vcj3-ncb3 '2010-2013 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin, parcel)",
-  "   RuntimeError: no usable dataset; tried cwrz-29jm '2020 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, full_address, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | jnga-5v37 '2010 to 2019 Building Permit Listing': no date column (has number, fraction, prefix, street, suffix, full_address, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | i2p9-vksn '2010 to September 2019 Building Permit Listing': no date column (has address, fraction, prefix, street, suffix, suite, zip, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district) | yazt-9xgq '2010-2016 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin, parcel) | qt6m-65bz '2014 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, suite, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin) | vcj3-ncb3 '2010-2013 Building Permit Listing': no date column (has number, fraction, prefix, name, suffix, month, day, year, res_non, type, sf_mf, dwelling_units_gained_or_lost, permit_value, how_far_east, how_far_north, permit_number, structure_class, class_description, subdivision, project_description, county, council_district, school_district, pin, parcel)",
-  "   no events for us-kc; keeping it off the map",
   "\n######## us-cincinnati · Cincinnati",
   "   Cincinnati: using dataset uhjb-xac9 'Cincinnati Building Permits'",
   "   Cincinnati Cincinnati Building Permits (permit): 2834",
   "   631 rows without coordinates: geocoding addresses",
-  "   census geocoded 0 of 631",
-  "   -> 2203 located events of 2834 rows",
-  "   history: 2089 records seen for the first time today (2089 remembered)",
+  "   census geocoded 583 of 631",
+  "   -> 2786 located events of 2834 rows",
+  "   history: 575 records seen for the first time today (2664 remembered)",
   "\n######## us-montgomery · Montgomery County, MD",
   "   Montgomery County, MD: using dataset 7ate-xrxm 'Construction Activities of Commercial Permits'",
   "   Montgomery County, MD Montgomery County, MD Building Permits (permit): 153",
   "   -> 134 located events of 153 rows",
-  "   history: 85 records seen for the first time today (85 remembered)",
-  "\n######## us-cambridge · Cambridge, MA",
-  "   Cambridge, MA: using dataset ddej-349p 'Siding - Building Permit'",
-  "   Cambridge, MA Cambridge, MA Building Permits (permit): 11",
-  "   -> 11 located events of 11 rows",
-  "   history: 11 records seen for the first time today (38 remembered)",
-  "\n######## us-honolulu · Honolulu",
-  "   FAILED Honolulu Building Permits (permit): no usable dataset; tried 4vab-c87q 'Building Permits - January 1, 2005 through June 30, 2025': no records in the last 90 days",
-  "   RuntimeError: no usable dataset; tried 4vab-c87q 'Building Permits - January 1, 2005 through June 30, 2025': no records in the last 90 days",
-  "   no events for us-honolulu; keeping it off the map",
-  "\n######## us-mesa · Mesa, AZ",
-  "   FAILED Mesa, AZ Building Permits (permit): no usable dataset; tried ",
-  "   RuntimeError: no usable dataset; tried ",
-  "   no events for us-mesa; keeping it off the map",
+  "   history: 0 records seen for the first time today (85 remembered)",
   "\n######## us-baton-rouge · Baton Rouge",
   "   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'",
   "   Baton Rouge Baton Rouge Building Permits (permit): 2242",
   "   5 rows without coordinates: geocoding addresses",
-  "   census geocoded 0 of 5",
-  "   -> 2151 located events of 2242 rows",
-  "   history: 0 records seen for the first time today (2141 remembered)",
-  "\n######## us-oakland · Oakland",
-  "   FAILED Oakland Building Permits (permit): no usable dataset; tried ",
-  "   RuntimeError: no usable dataset; tried ",
-  "   no events for us-oakland; keeping it off the map",
-  "\n######## us-orlando · Orlando",
-  "   FAILED Orlando Building Permits (permit): no usable dataset; tried ",
-  "   RuntimeError: no usable dataset; tried ",
-  "   no events for us-orlando; keeping it off the map",
-  "\n######## us-chattanooga · Chattanooga",
-  "   FAILED Chattanooga Building Permits (permit): https://api.us.socrata.com/api/catalog/v1?domains=www.chattadata.org&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: www.chattadata.org\"}",
-  "   RuntimeError: https://api.us.socrata.com/api/catalog/v1?domains=www.chattadata.org&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: www.chattadata.org\"}",
-  "   no events for us-chattanooga; keeping it off the map",
-  "\n######## us-buffalo · Buffalo",
-  "   FAILED Buffalo Building Permits (permit): no usable dataset; tried ",
-  "   RuntimeError: no usable dataset; tried ",
-  "   no events for us-buffalo; keeping it off the map",
-  "\n######## us-providence · Providence",
-  "   FAILED Providence Building Permits (permit): no usable dataset; tried ",
-  "   RuntimeError: no usable dataset; tried ",
-  "   no events for us-providence; keeping it off the map",
+  "   census geocoded 4 of 5",
+  "   -> 2155 located events of 2242 rows",
+  "   history: 4 records seen for the first time today (2145 remembered)",
   "\n######## us-norfolk · Norfolk, VA",
   "   Norfolk, VA: using dataset fahm-yuh4 'Permits'",
   "   Norfolk, VA Norfolk, VA Building Permits (permit): 2901",
   "   178 rows without coordinates: geocoding addresses",
-  "   census geocoded 0 of 178",
-  "   -> 2723 located events of 2901 rows",
-  "   history: 2723 records seen for the first time today (2723 remembered)",
-  "\n######## us-somerville · Somerville, MA",
-  "   Somerville, MA: using dataset nneb-s3f7 'Applications for Permits and Licenses'",
-  "   Somerville, MA Somerville, MA Building Permits (permit): 40000",
-  "   -> 0 located events of 40000 rows",
-  "   no events for us-somerville; keeping it off the map",
-  "\n######## us-little-rock · Little Rock",
-  "   FAILED Little Rock Building Permits (permit): https://api.us.socrata.com/api/catalog/v1?domains=data.littlerock.gov&q=permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.littlerock.gov\"}",
-  "   RuntimeError: https://api.us.socrata.com/api/catalog/v1?domains=data.littlerock.gov&q=permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.littlerock.gov\"}",
-  "   no events for us-little-rock; keeping it off the map",
-  "\n######## us-gainesville · Gainesville, FL",
-  "   FAILED Gainesville, FL Building Permits (permit): no usable dataset; tried p798-x3nx 'Building Permits': no date column (has permit, classification, parcel, contractor, business, primary_party, submit, issue, address, longitude, latitude, location_1, city, state, type, subtype, :@computed_region_ndi2_bfht, :@computed_region_9cfm_spy5, :@computed_region_43jd_v64e, :@computed_region_ecgy_hwrz, :@computed_region_e6r8_dw75, :@computed_region_axii_i744, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv) | vu9p-a5f7 'Code Complaints, Violations & Permits': no date column (has number, parcel, case_type, address, inspector, status, primary_party, infraction, outstanding_inspection, location, geocode, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv, :@computed_region_ndi2_bfht, :@computed_region_axii_i744, :@computed_region_43jd_v64e, :@computed_region_qsqf_gz5q, :@computed_region_e6r8_dw75, :@computed_region_4x5c_ywwx) | x3sz-gqmp 'Landlord Permits': no date column (has parcelunit, parcelnumber, landlordlicenseyear, parceladdress, latitude, longitude, location, parcel_city, location_state, location_zip, :@computed_region_ecgy_hwrz, :@computed_region_e6r8_dw75, :@computed_region_axii_i744, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv) | mfe4-6q3g 'Permit Table': no date column (has permit_name, friendly_name, permit_description, online_submission, permit_location) | i9px-haju 'Permits by Business Type': no date column (has business_category, business_type, business_description, fire_alarm_system_permit, alcohol_event, alcoholic_beverage_use_and_consumption, automotive_dealer_license_florida, banner_horizontal_and_vertical, bottle_club_license, building_permit_application, business_tax_affidavit, burglar_alarm_operators, burglar_alarm_monitoring_companies, burglar_alarm_systems_permits_and_renewals, certificate_of_appropriatness, zoning_or_land_use_change, christmas_tree_sales_lot, dance_hall_permit, neighborhood_parking_program_application, development_plan_review, eating_establishments_serving_dogs, family_day_care_homes, foster_family_homes_for_children_and_adults, fire_alarm_license, fire_alarm_system)",
-  "   RuntimeError: no usable dataset; tried p798-x3nx 'Building Permits': no date column (has permit, classification, parcel, contractor, business, primary_party, submit, issue, address, longitude, latitude, location_1, city, state, type, subtype, :@computed_region_ndi2_bfht, :@computed_region_9cfm_spy5, :@computed_region_43jd_v64e, :@computed_region_ecgy_hwrz, :@computed_region_e6r8_dw75, :@computed_region_axii_i744, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv) | vu9p-a5f7 'Code Complaints, Violations & Permits': no date column (has number, parcel, case_type, address, inspector, status, primary_party, infraction, outstanding_inspection, location, geocode, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv, :@computed_region_ndi2_bfht, :@computed_region_axii_i744, :@computed_region_43jd_v64e, :@computed_region_qsqf_gz5q, :@computed_region_e6r8_dw75, :@computed_region_4x5c_ywwx) | x3sz-gqmp 'Landlord Permits': no date column (has parcelunit, parcelnumber, landlordlicenseyear, parceladdress, latitude, longitude, location, parcel_city, location_state, location_zip, :@computed_region_ecgy_hwrz, :@computed_region_e6r8_dw75, :@computed_region_axii_i744, :@computed_region_u9vc_vmbc, :@computed_region_4rat_gsiv) | mfe4-6q3g 'Permit Table': no date column (has permit_name, friendly_name, permit_description, online_submission, permit_location) | i9px-haju 'Permits by Business Type': no date column (has business_category, business_type, business_description, fire_alarm_system_permit, alcohol_event, alcoholic_beverage_use_and_consumption, automotive_dealer_license_florida, banner_horizontal_and_vertical, bottle_club_license, building_permit_application, business_tax_affidavit, burglar_alarm_operators, burglar_alarm_monitoring_companies, burglar_alarm_systems_permits_and_renewals, certificate_of_appropriatness, zoning_or_land_use_change, christmas_tree_sales_lot, dance_hall_permit, neighborhood_parking_program_application, development_plan_review, eating_establishments_serving_dogs, family_day_care_homes, foster_family_homes_for_children_and_adults, fire_alarm_license, fire_alarm_system)",
-  "   no events for us-gainesville; keeping it off the map",
+  "   census geocoded 153 of 178",
+  "   -> 2876 located events of 2901 rows",
+  "   history: 153 records seen for the first time today (2876 remembered)",
   "\n######## ca-calgary · Calgary",
   "   Calgary: using dataset c2es-76ed 'Building Permits'",
   "   Calgary Calgary Building Permits (permit): 5759",
   "   -> 5759 located events of 5759 rows",
-  "   history: 5759 records seen for the first time today (5759 remembered)",
+  "   history: 0 records seen for the first time today (5759 remembered)",
   "\n######## ca-edmonton · Edmonton",
   "   Edmonton: using dataset 24uj-dj8v 'General Building Permits'",
   "   Edmonton Edmonton Building Permits (permit): 4200",
   "   -> 2853 located events of 4200 rows",
-  "   history: 2841 records seen for the first time today (2841 remembered)",
+  "   history: 0 records seen for the first time today (2841 remembered)",
   "\n######## us-boston · Boston",
   "\n== Boston approved building permits (CKAN)",
   "   rows: 722",
@@ -423,23 +306,44 @@
   "\n== Philadelphia new business licenses (Carto)",
   "   rows: 3749",
   "   history: 0 records seen for the first time today (14817 remembered)",
+  "\n######## us-tx · Texas",
+  "\n== Texas new sales-tax permits (new outlets, statewide)",
+  "   permits: 17433",
+  "   census geocoded 8051 of 9000",
+  "   census geocoded 15598 of 17433",
+  "   sales-tax permits: 15598 located of 17433",
+  "\n== Texas liquor licences (TABC): pending applications and new licences",
+  "   pending: 896",
+  "   issued: 2461",
+  "   census geocoded 733 of 896",
+  "   pending: 733 located of 896",
+  "   census geocoded 1989 of 2461",
+  "   issued: 1989 located of 2461",
+  "   history: 18212 records seen for the first time today (18212 remembered)",
+  "\n######## us-co · Colorado",
+  "\n== Colorado new business registrations (statewide)",
+  "   entities: 14059",
+  "   census geocoded 8203 of 9000",
+  "   census geocoded 11585 of 12667",
+  "   registrations: 11585 located of 12667",
+  "   history: 11576 records seen for the first time today (11576 remembered)",
   "\n######## fr · France",
   "\n== France BODACC (sales of businesses, insolvencies, creations, removals)",
   "   Ventes et cessions: 3739 notices",
   "   Procédures collectives: 15000 notices",
   "   Créations: 25000 notices",
   "   Radiations: 10000 notices",
-  "   geocoded 4841 of 5000",
-  "   geocoded 9637 of 10000",
-  "   geocoded 14452 of 15000",
+  "   geocoded 4840 of 5000",
+  "   geocoded 9636 of 10000",
+  "   geocoded 14451 of 15000",
   "   geocoded 19289 of 20000",
   "   geocoded 24241 of 25000",
   "   geocoded 29180 of 30000",
   "   geocoded 34128 of 35000",
-  "   geocoded 39080 of 40000",
-  "   geocoded 44007 of 45000",
-  "   geocoded 48863 of 50000",
-  "   geocoded 52117 of 53359",
+  "   geocoded 39084 of 40000",
+  "   geocoded 44011 of 45000",
+  "   geocoded 48866 of 50000",
+  "   geocoded 52119 of 53359",
   "\n== France Alim'confiance (food safety inspections)",
   "   inspections: 9505",
   "\n== SIRENE skipped (no INSEE_KEY secret)",

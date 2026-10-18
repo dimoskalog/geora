@@ -217,7 +217,7 @@
 == San Antonio (CKAN data.sanantonio.gov)
    using 'Building Permits / APPLICATIONS SUBMITTED' (19123 records)
    17785 rows without coordinates: geocoding
-   census geocoded 5797 of 9000
+   census geocoded 5808 of 9000
    census geocoded 11485 of 17785
    history: 0 records seen for the first time today (10631 remembered)
 
@@ -286,16 +286,16 @@
    Créations: 25000 notices
    Radiations: 10000 notices
    geocoded 4841 of 5000
-   geocoded 9636 of 10000
+   geocoded 9637 of 10000
    geocoded 14451 of 15000
    geocoded 19288 of 20000
-   geocoded 24231 of 25000
-   geocoded 29170 of 30000
-   geocoded 34118 of 35000
-   geocoded 39074 of 40000
-   geocoded 44001 of 45000
-   geocoded 48857 of 50000
-   geocoded 52111 of 53359
+   geocoded 24240 of 25000
+   geocoded 29179 of 30000
+   geocoded 34127 of 35000
+   geocoded 39083 of 40000
+   geocoded 44010 of 45000
+   geocoded 48864 of 50000
+   geocoded 52118 of 53359
 
 == France Alim'confiance (food safety inspections)
    inspections: 9505
@@ -308,9 +308,14 @@
 == UK FSA food hygiene: London
    London authorities: 33
    events: 9666 (new businesses awaiting inspection: 4083)
-   history: 9666 records seen for the first time today (9666 remembered)
+   history: 0 records seen for the first time today (9666 remembered)
 
 ######## no · Norway
 
 == Norway: new business locations (Enhetsregisteret sub-units)
    new sub-units: 7627
+   exact addresses: 1648; postcode fallback for 2022 postcodes
+   located 3072 of 7177
+   history: 3072 records seen for the first time today (3072 remembered)
+
+Done in 54.1 min: us-nyc 90712, us-sf 7337, us-chicago 14122, us-seattle 1635, us-austin 12120, us-la 16762, us-nola 4247, us-cincinnati 2786, us-montgomery 134, us-baton-rouge 2155, us-norfolk 2876, ca-calgary 5759, ca-edmonton 2853, us-boston 702, us-philly 14817, us-dc 3418, us-detroit 1743, us-baltimore 7793, us-minneapolis 10926, us-raleigh 449, us-columbus 12147, us-tampa 31, us-denver 529, us-sanantonio 11485, us-pittsburgh 2450, us-tx 18212, us-ny 18167, us-co 11576, fr 60042, gb-london 9666, no 3072

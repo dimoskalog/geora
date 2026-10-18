@@ -1,5 +1,5 @@
 {
- "started": "2026-10-18 20:16 UTC",
+ "started": "2026-10-18 20:33 UTC",
  "regions": {
   "us-nyc": {
    "name": "New York",
@@ -7,15 +7,15 @@
    "parts": {
     "permits": {
      "events": 46251,
-     "seconds": 16
+     "seconds": 8
     },
     "restaurants": {
      "events": 11325,
-     "seconds": 9
+     "seconds": 5
     },
     "property_records": {
      "events": 33136,
-     "seconds": 159
+     "seconds": 188
     }
    }
   },
@@ -25,7 +25,7 @@
    "parts": {
     "SF Building Permits (permit)": {
      "events": 4405,
-     "seconds": 12
+     "seconds": 5
     },
     "SF Registered Business Locations (business)": {
      "events": 2208,
@@ -33,7 +33,7 @@
     },
     "SF Registered Business Locations (closure)": {
      "events": 724,
-     "seconds": 2
+     "seconds": 3
     }
    }
   },
@@ -43,15 +43,15 @@
    "parts": {
     "Chicago Building Permits (permit)": {
      "events": 9056,
-     "seconds": 16
+     "seconds": 6
     },
     "Chicago Business Licenses (business)": {
      "events": 1704,
-     "seconds": 8
+     "seconds": 4
     },
     "Chicago Food Inspections (inspection)": {
      "events": 3362,
-     "seconds": 5
+     "seconds": 3
     }
    }
   },
@@ -61,7 +61,7 @@
    "parts": {
     "Seattle Building Permits (permit)": {
      "events": 1635,
-     "seconds": 5
+     "seconds": 2
     }
    }
   },
@@ -71,7 +71,7 @@
    "parts": {
     "Austin Issued Construction Permits (permit)": {
      "events": 12120,
-     "seconds": 41
+     "seconds": 31
     }
    }
   },
@@ -81,11 +81,11 @@
    "parts": {
     "LADBS Building Permits (permit)": {
      "events": 15752,
-     "seconds": 7
+     "seconds": 3
     },
     "LA Active Businesses (business)": {
      "events": 1010,
-     "seconds": 9
+     "seconds": 6
     }
    }
   },
@@ -95,7 +95,7 @@
    "parts": {
     "New Orleans Building Permits (permit)": {
      "events": 4247,
-     "seconds": 4
+     "seconds": 8
     }
    }
   },
@@ -105,7 +105,7 @@
    "parts": {
     "Cincinnati Building Permits (permit)": {
      "events": 2786,
-     "seconds": 11
+     "seconds": 7
     }
    }
   },
@@ -115,7 +115,7 @@
    "parts": {
     "Montgomery County, MD Building Permits (permit)": {
      "events": 134,
-     "seconds": 5
+     "seconds": 3
     }
    }
   },
@@ -125,7 +125,7 @@
    "parts": {
     "Baton Rouge Building Permits (permit)": {
      "events": 2155,
-     "seconds": 3
+     "seconds": 4
     }
    }
   },
@@ -135,7 +135,7 @@
    "parts": {
     "Norfolk, VA Building Permits (permit)": {
      "events": 2876,
-     "seconds": 3
+     "seconds": 5
     }
    }
   },
@@ -145,7 +145,7 @@
    "parts": {
     "Calgary Building Permits (permit)": {
      "events": 5759,
-     "seconds": 5
+     "seconds": 3
     }
    }
   },
@@ -155,7 +155,7 @@
    "parts": {
     "Edmonton Building Permits (permit)": {
      "events": 2853,
-     "seconds": 7
+     "seconds": 3
     }
    }
   },
@@ -175,11 +175,11 @@
    "parts": {
     "philly_permits": {
      "events": 11295,
-     "seconds": 1
+     "seconds": 2
     },
     "philly_licenses": {
      "events": 3522,
-     "seconds": 1
+     "seconds": 4
     }
    }
   },
@@ -199,7 +199,7 @@
    "parts": {
     "permits": {
      "events": 1743,
-     "seconds": 3
+     "seconds": 2
     }
    }
   },
@@ -209,7 +209,7 @@
    "parts": {
     "permits": {
      "events": 7793,
-     "seconds": 8
+     "seconds": 9
     }
    }
   },
@@ -219,7 +219,7 @@
    "parts": {
     "permits": {
      "events": 10926,
-     "seconds": 5
+     "seconds": 7
     }
    }
   },
@@ -229,7 +229,7 @@
    "parts": {
     "permits": {
      "events": 449,
-     "seconds": 2
+     "seconds": 3
     }
    }
   },
@@ -285,7 +285,7 @@
    "parts": {
     "permits": {
      "events": 0,
-     "seconds": 1
+     "seconds": 2
     }
    }
   },
@@ -295,7 +295,7 @@
    "parts": {
     "permits": {
      "events": 31,
-     "seconds": 3
+     "seconds": 4
     }
    }
   },
@@ -305,7 +305,7 @@
    "parts": {
     "permits": {
      "events": 529,
-     "seconds": 52
+     "seconds": 3
     }
    }
   },
@@ -315,7 +315,7 @@
    "parts": {
     "permits": {
      "events": 11485,
-     "seconds": 130
+     "seconds": 127
     }
    }
   },
@@ -325,7 +325,7 @@
    "parts": {
     "permits": {
      "events": 2450,
-     "seconds": 25
+     "seconds": 18
     }
    }
   },
@@ -354,21 +354,21 @@
    "parts": {
     "tx_sales_tax": {
      "events": 15598,
-     "seconds": 80
+     "seconds": 84
     },
     "tx_tabc": {
      "events": 2614,
-     "seconds": 18
+     "seconds": 20
     }
    }
   },
   "us-ny": {
    "name": "New York State",
-   "events": 0,
+   "events": 18167,
    "parts": {
     "ny_corporations": {
-     "events": 0,
-     "seconds": 3
+     "events": 18167,
+     "seconds": 152
     }
    }
   },
@@ -378,21 +378,21 @@
    "parts": {
     "co_entities": {
      "events": 11576,
-     "seconds": 56
+     "seconds": 63
     }
    }
   },
   "fr": {
    "name": "France",
-   "events": 60045,
+   "events": 60043,
    "parts": {
     "bodacc": {
-     "events": 50893,
-     "seconds": 153
+     "events": 50891,
+     "seconds": 118
     },
     "alimconfiance": {
      "events": 9152,
-     "seconds": 2
+     "seconds": 3
     },
     "sirene_paris": {
      "events": 0,
@@ -401,25 +401,19 @@
    }
   }
  },
- "minutes": 15.7,
+ "minutes": 16.5,
  "log_tail": [
-  "   history: 27 records seen for the first time today (27 remembered)",
-  "\n######## us-detroit · Detroit",
-  "\n== Detroit (ArcGIS Hub data.detroitmi.gov)",
-  "   using 'Building Permits' (1743 records since 2026-07-20) https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0",
-  "   history: 1731 records seen for the first time today (1731 remembered)",
-  "\n######## us-baltimore · Baltimore",
   "\n== Baltimore (ArcGIS Hub data.baltimorecity.gov)",
   "   using 'Housing and Building Permits 2019-Present' (7793 records since 2026-07-20) https://baltegis.baltimorecity.gov/mapping/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3",
-  "   history: 7434 records seen for the first time today (7434 remembered)",
+  "   history: 0 records seen for the first time today (7434 remembered)",
   "\n######## us-minneapolis · Minneapolis",
   "\n== Minneapolis (ArcGIS Hub opendata.minneapolismn.gov)",
   "   using 'CCS Permits' (10931 records since 2026-07-20) https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer/0",
-  "   history: 9305 records seen for the first time today (9305 remembered)",
+  "   history: 0 records seen for the first time today (9305 remembered)",
   "\n######## us-raleigh · Raleigh",
   "\n== Raleigh (ArcGIS Hub data-ral.opendata.arcgis.com)",
   "   using 'Building Permits Past 31 Days' (449 records since 2026-07-20) https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits_Past_31_Days/FeatureServer/0",
-  "   history: 449 records seen for the first time today (449 remembered)",
+  "   history: 0 records seen for the first time today (449 remembered)",
   "\n######## us-charlotte · Charlotte",
   "\n== Charlotte (ArcGIS Hub data.charlottenc.gov)",
   "   FAILED permits: no usable permit layer; tried Special Use Permits: no recent records",
@@ -428,7 +422,7 @@
   "\n######## us-columbus · Columbus",
   "\n== Columbus (ArcGIS Hub opendata.columbus.gov)",
   "   using 'Building Permits' (12147 records since 2026-07-20) https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0",
-  "   history: 89 records seen for the first time today (89 remembered)",
+  "   history: 0 records seen for the first time today (89 remembered)",
   "\n######## us-miami · Miami-Dade",
   "\n== Miami-Dade (ArcGIS Hub gis-mdc.opendata.arcgis.com)",
   "   FAILED permits: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError(\"Expecting ',' delimiter: line 60672 column 1 (char 3082353)\")",
@@ -447,26 +441,27 @@
   "\n######## us-vegas · Las Vegas",
   "\n== Las Vegas (ArcGIS Hub opendataportal-lasvegas.opendata.arcgis.com)",
   "   using 'Building Permits ' (18 records since 2026-07-20) https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0",
+  "   0 events from 18 rows. roles={'type': 'WORKTYPE', 'desc': None, 'cost': None, 'addr': None, 'rid': None} date=2026-10-02 coords=None,None sample={'APNO': 'R26-12813', 'APBLDGKEY': 1584234, 'APTYPE': 'Res', 'WORKTYPE': 'OTC', 'APPLICANT': 'Monkey Wrench Plumbing', 'APL_ADDRESS': '5916 KELITABB CT LAS VEGAS', 'BLDGAPPLSTATUS': 'Issued', 'ISSDTTM': 1790899200000, 'DECLVLTN': 500, 'CALCVLTN': 0, 'STNO': 6553, 'PREDIR': None, 'STNAME': 'BEACON', 'SUFFIX': 'RD', 'POSTDIR': None, 'STSUB': None, 'SUBDIVCODEADR': 30070, 'PRCLID': 13811110170, 'SUBD",
   "   no events for us-vegas; keeping it off the map",
   "\n######## us-tampa · Tampa",
   "\n== Tampa (ArcGIS Hub city-tampa.opendata.arcgis.com)",
   "   using 'Single Family Permits' (31 records since 2026-07-20) https://arcgis.tampagov.net/arcgis/rest/services/OpenData/Planning/MapServer/32",
-  "   history: 31 records seen for the first time today (31 remembered)",
+  "   history: 0 records seen for the first time today (31 remembered)",
   "\n######## us-denver · Denver",
   "\n== Denver (ArcGIS Hub opendata-geospatialdenver.hub.arcgis.com)",
   "   using 'Commercial Construction Permits' (529 records since 2026-07-20) https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer/317",
-  "   history: 515 records seen for the first time today (515 remembered)",
+  "   history: 0 records seen for the first time today (515 remembered)",
   "\n######## us-sanantonio · San Antonio",
   "\n== San Antonio (CKAN data.sanantonio.gov)",
   "   using 'Building Permits / APPLICATIONS SUBMITTED' (19123 records)",
   "   17785 rows without coordinates: geocoding",
-  "   census geocoded 5797 of 9000",
+  "   census geocoded 5802 of 9000",
   "   census geocoded 11485 of 17785",
-  "   history: 10631 records seen for the first time today (10631 remembered)",
+  "   history: 0 records seen for the first time today (10631 remembered)",
   "\n######## us-pittsburgh · Pittsburgh",
   "\n== Pittsburgh (CKAN data.wprdc.org)",
   "   using 'PLI Permits / PLI Permits' (2450 records)",
-  "   history: 2412 records seen for the first time today (2412 remembered)",
+  "   history: 0 records seen for the first time today (2412 remembered)",
   "\n######## us-phoenix · Phoenix",
   "\n== Phoenix (CKAN www.phoenixopendata.com)",
   "   FAILED permits: no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field",
@@ -475,6 +470,7 @@
   "\n######## us-sanjose · San Jose",
   "\n== San Jose (CKAN data.sanjoseca.gov)",
   "   using 'Last 30 days building permits / Last 30 days Building Permits' (1245 records)",
+  "   0 events from 1245 rows. roles={'type': None, 'desc': 'WORKDESCRIPTION', 'cost': None, 'addr': None, 'rid': None} date=2026-09-30 coords=None,None sample={'_id': 1097, '_full_text': \"'-140470':35 '-2116':9 '0':69,70 '00':65,66 '1':37,68 '100':43 '12':64 '2':38 '2026':34 '2208991':71 '2779':2 '30':1 '58927080':10 '9/30/2026':63 '95132':8 'additions/alterations':50 'am':67 'and':22 'b':52 'b-complete':51 'bepm':42 'building':12,28 'ca':7 'ching':25 'chou':17,33 'cl':4 'complete':53,56,59,62 'construction':13,29 'detached':40 'dwellings':41 'e':55 'e-",
   "   no events for us-sanjose; keeping it off the map",
   "\n######## us-tx · Texas",
   "\n== Texas new sales-tax permits (new outlets, statewide)",
@@ -493,8 +489,12 @@
   "\n######## us-ny · New York State",
   "\n== New York State new corporations and LLCs (statewide)",
   "   new entities: 20000",
-  "   new entities: 0 located of 0",
-  "   no events for us-ny; keeping it off the map",
+  "   sample: {'dos_process_address_1': '53 STANTON STREET APT 1A', 'dos_process_city': 'NEW YORK', 'dos_process_state': 'NY'}",
+  "   census geocoded 8469 of 9000",
+  "   census geocoded 16864 of 18000",
+  "   census geocoded 18169 of 19392",
+  "   new entities: 18169 located of 19392",
+  "   history: 18167 records seen for the first time today (18167 remembered)",
   "\n######## us-co · Colorado",
   "\n== Colorado new business registrations (statewide)",
   "   entities: 14059",
@@ -510,15 +510,15 @@
   "   Radiations: 10000 notices",
   "   geocoded 4841 of 5000",
   "   geocoded 9637 of 10000",
-  "   geocoded 14451 of 15000",
-  "   geocoded 19289 of 20000",
-  "   geocoded 24241 of 25000",
-  "   geocoded 29181 of 30000",
-  "   geocoded 34129 of 35000",
-  "   geocoded 39085 of 40000",
-  "   geocoded 44012 of 45000",
-  "   geocoded 48868 of 50000",
-  "   geocoded 52122 of 53359",
+  "   geocoded 14452 of 15000",
+  "   geocoded 19290 of 20000",
+  "   geocoded 24242 of 25000",
+  "   geocoded 29180 of 30000",
+  "   geocoded 34128 of 35000",
+  "   geocoded 39084 of 40000",
+  "   geocoded 44011 of 45000",
+  "   geocoded 48866 of 50000",
+  "   geocoded 52120 of 53359",
   "\n== France Alim'confiance (food safety inspections)",
   "   inspections: 9505",
   "\n== SIRENE skipped (no INSEE_KEY secret)",

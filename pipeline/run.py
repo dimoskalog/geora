@@ -43,10 +43,14 @@ def main():
             if not feats:
                 core.log(f"   no events for {rid}; keeping it off the map")
                 continue
-            core.apply_history(rid, feats)
-            m = core.write_region(rid, meta, feats)
-            regions_out.append({k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
-                                                  "generated", "sources") if k in m} | ({"focus": m["focus"]} if "focus" in m else {}))
+            try:
+                core.apply_history(rid, feats)
+                m = core.write_region(rid, meta, feats)
+                regions_out.append({k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
+                                                      "generated", "sources", "focus") if k in m})
+            except Exception:
+                core.log(f"   WRITE FAILED for {rid}:\n" + traceback.format_exc())
+                status["regions"][rid]["write_error"] = traceback.format_exc()[-800:]
     os.makedirs(core.DATA, exist_ok=True)
     if only:                                  # keep regions that were not re-run this time
         try:

@@ -7,6 +7,7 @@ UK:     Food Standards Agency hygiene ratings API (Open Government Licence). Eve
 Norway: Brønnøysund Register Centre, Enhetsregisteret (NLOD 2.0). Every new sub-unit (physical
         business location) registered in the last 30 days, geocoded with Kartverket's open address API.
 """
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pipeline.core import http, event, num, title_case, since, log, clean
 
@@ -64,13 +65,26 @@ BRREG = "https://data.brreg.no/enhetsregisteret/api/underenheter"
 NO_BBOX = [4.0, 57.8, 31.5, 71.5]
 
 
-def kartverket(addr, postnr):
+def kartverket(addr, postnr, deadline):
+    if time.time() > deadline:
+        return None, None
     try:
-        r = http("https://ws.geonorge.no/adresser/v1/sok", {"sok": addr, "postnummer": postnr, "treffPerSide": 1}, tries=2, timeout=30)
+        r = http("https://ws.geonorge.no/adresser/v1/sok", {"sok": addr, "postnummer": postnr, "treffPerSide": 1}, tries=1, timeout=8)
         a = (r.get("adresser") or [None])[0]
         if a and a.get("representasjonspunkt"):
             p = a["representasjonspunkt"]
             return num(p.get("lat")), num(p.get("lon"))
+    except RuntimeError:
+        pass
+    return None, None
+
+
+def postcode_centroid(postnr):
+    try:
+        r = http("https://ws.geonorge.no/adresser/v1/sok", {"postnummer": postnr, "treffPerSide": 1}, tries=1, timeout=8)
+        a = (r.get("adresser") or [None])[0]
+        if a and a.get("representasjonspunkt"):
+            return num(a["representasjonspunkt"].get("lat")), num(a["representasjonspunkt"].get("lon"))
     except RuntimeError:
         pass
     return None, None
@@ -93,8 +107,14 @@ def brreg_new_units():
         street = " ".join(b.get("adresse") or []).strip()
         if street and b.get("postnummer"):
             todo.append((u, street, b.get("postnummer"), b.get("poststed") or ""))
-    with ThreadPoolExecutor(8) as ex:
-        coords = list(ex.map(lambda t: kartverket(t[1], t[2]), todo))
+    deadline = time.time() + 8 * 60              # exact addresses for up to 8 minutes, then postcode centres
+    with ThreadPoolExecutor(16) as ex:
+        coords = list(ex.map(lambda t: kartverket(t[1], t[2], deadline), todo))
+    missing = sorted({t[2] for t, c in zip(todo, coords) if c[0] is None})
+    log(f"   exact addresses: {sum(1 for c in coords if c[0] is not None)}; postcode fallback for {len(missing)} postcodes")
+    with ThreadPoolExecutor(16) as ex:
+        cent = dict(zip(missing, ex.map(postcode_centroid, missing)))
+    coords = [c if c[0] is not None else cent.get(t[2], (None, None)) for t, c in zip(todo, coords)]
     out = []
     for (u, street, pnr, sted), (lat, lon) in zip(todo, coords):
         nk = (u.get("naeringskode1") or {}).get("beskrivelse") or ""

@@ -5,6 +5,7 @@ Run every adapter, write data/<region>/*.json, data/regions.json and history/las
   python -m pipeline.run --only fr,us-sf  some regions
 """
 import json, os, sys, time, traceback
+from concurrent.futures import ThreadPoolExecutor
 from pipeline import core
 from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe
 
@@ -17,40 +18,47 @@ def main():
         only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
     started = time.time()
     regions_out, status = [], {"started": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "regions": {}}
+    jobs = []
     for adapter in ADAPTERS:
         try:
-            regs = adapter.regions()
+            jobs += [j for j in adapter.regions() if not only or j[0] in only]
         except Exception as e:
             core.log(f"ADAPTER {adapter.__name__} FAILED: {e}")
-            continue
-        for rid, meta, fns in regs:
-            if only and rid not in only:
-                continue
-            core.log(f"\n######## {rid} · {meta['name']}")
-            feats, parts = [], {}
-            for fn in fns:
-                name = getattr(fn, "__name__", "source")
-                t = time.time()
-                try:
-                    got = [f for f in fn() if f]
-                    feats += got
-                    parts[name] = {"events": len(got), "seconds": round(time.time() - t)}
-                except Exception as e:
-                    parts[name] = {"error": str(e)[:500]}
-                    core.log(f"   FAILED {name}: {e}")
-                    core.log("   " + traceback.format_exc().splitlines()[-1])
-            status["regions"][rid] = {"name": meta["name"], "events": len(feats), "parts": parts}
-            if not feats:
-                core.log(f"   no events for {rid}; keeping it off the map")
-                continue
+
+    def run_region(job):
+        rid, meta, fns = job
+        core.log(f"######## start {rid} · {meta['name']}")
+        feats, parts = [], {}
+        for fn in fns:
+            name = getattr(fn, "__name__", "source")
+            t = time.time()
             try:
-                core.apply_history(rid, feats)
-                m = core.write_region(rid, meta, feats)
-                regions_out.append({k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
-                                                      "generated", "sources", "focus", "focus_name") if k in m})
-            except Exception:
-                core.log(f"   WRITE FAILED for {rid}:\n" + traceback.format_exc())
-                status["regions"][rid]["write_error"] = traceback.format_exc()[-800:]
+                got = [f for f in fn() if f]
+                feats += got
+                parts[name] = {"events": len(got), "seconds": round(time.time() - t)}
+            except Exception as e:
+                parts[name] = {"error": str(e)[:500]}
+                core.log(f"   [{rid}] FAILED {name}: {e}")
+        status["regions"][rid] = {"name": meta["name"], "events": len(feats), "parts": parts}
+        if not feats:
+            core.log(f"   [{rid}] no events; keeping it off the map")
+            return None
+        try:
+            core.apply_history(rid, feats)
+            m = core.write_region(rid, meta, feats)
+            core.log(f"######## done {rid}: {len(feats)} events")
+            return {k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
+                                      "generated", "sources", "focus", "focus_name") if k in m}
+        except Exception:
+            core.log(f"   [{rid}] WRITE FAILED:\n" + traceback.format_exc())
+            status["regions"][rid]["write_error"] = traceback.format_exc()[-800:]
+            return None
+
+    # regions are independent and mostly waiting on the network: run several at once
+    with ThreadPoolExecutor(8) as ex:
+        results = list(ex.map(run_region, jobs))
+    order = {j[0]: i for i, j in enumerate(jobs)}
+    regions_out = sorted([r for r in results if r], key=lambda r: order[r["id"]])
     os.makedirs(core.DATA, exist_ok=True)
     if only:                                  # keep regions that were not re-run this time
         try:

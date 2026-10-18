@@ -1,5 +1,5 @@
 {
- "started": "2026-10-18 17:39 UTC",
+ "started": "2026-10-18 18:50 UTC",
  "regions": {
   "us-nyc": {
    "name": "New York",
@@ -7,15 +7,15 @@
    "parts": {
     "permits": {
      "events": 46251,
-     "seconds": 35
+     "seconds": 7
     },
     "restaurants": {
      "events": 11325,
-     "seconds": 15
+     "seconds": 5
     },
     "property_records": {
      "events": 33136,
-     "seconds": 397
+     "seconds": 159
     }
    }
   },
@@ -25,7 +25,7 @@
    "parts": {
     "SF Building Permits (permit)": {
      "events": 4404,
-     "seconds": 3
+     "seconds": 4
     },
     "SF Registered Business Locations (business)": {
      "events": 2188,
@@ -33,7 +33,7 @@
     },
     "SF Registered Business Locations (closure)": {
      "events": 710,
-     "seconds": 8
+     "seconds": 2
     }
    }
   },
@@ -43,11 +43,11 @@
    "parts": {
     "Chicago Building Permits (permit)": {
      "events": 8955,
-     "seconds": 9
+     "seconds": 3
     },
     "Chicago Business Licenses (business)": {
      "events": 1691,
-     "seconds": 3
+     "seconds": 4
     },
     "Chicago Food Inspections (inspection)": {
      "events": 3359,
@@ -61,7 +61,7 @@
    "parts": {
     "Seattle Building Permits (permit)": {
      "events": 1634,
-     "seconds": 4
+     "seconds": 2
     }
    }
   },
@@ -71,7 +71,7 @@
    "parts": {
     "Austin Issued Construction Permits (permit)": {
      "events": 8946,
-     "seconds": 4
+     "seconds": 11
     }
    }
   },
@@ -81,25 +81,148 @@
    "parts": {
     "LADBS Building Permits (permit)": {
      "events": 15752,
-     "seconds": 9
+     "seconds": 7
     },
     "LA Active Businesses (business)": {
      "events": 801,
-     "seconds": 4
+     "seconds": 3
+    }
+   }
+  },
+  "us-dallas": {
+   "name": "Dallas",
+   "events": 0,
+   "parts": {
+    "Dallas Building Permits (permit)": {
+     "events": 0,
+     "seconds": 1
+    }
+   }
+  },
+  "us-nola": {
+   "name": "New Orleans",
+   "events": 4247,
+   "parts": {
+    "New Orleans Building Permits (permit)": {
+     "events": 4247,
+     "seconds": 3
+    }
+   }
+  },
+  "us-kc": {
+   "name": "Kansas City",
+   "events": 0,
+   "parts": {
+    "Kansas City Building Permits (permit)": {
+     "events": 0,
+     "seconds": 1
+    }
+   }
+  },
+  "us-cincinnati": {
+   "name": "Cincinnati",
+   "events": 0,
+   "parts": {
+    "Cincinnati Building Permits (permit)": {
+     "events": 0,
+     "seconds": 3
+    }
+   }
+  },
+  "us-montgomery": {
+   "name": "Montgomery County, MD",
+   "events": 448,
+   "parts": {
+    "Montgomery County, MD Building Permits (permit)": {
+     "events": 448,
+     "seconds": 1
+    }
+   },
+   "write_error": "Traceback (most recent call last):\n  File \"/home/runner/work/geora/geora/pipeline/run.py\", line 47, in main\n    core.apply_history(rid, feats)\n  File \"/home/runner/work/geora/geora/pipeline/core.py\", line 176, in apply_history\n    key = f\"{p['kind']}|{p['source']}|{p['rid']}|{'' if undated else p['date']}\"\n                                       ~^^^^^^^\nKeyError: 'rid'\n"
+  },
+  "us-cambridge": {
+   "name": "Cambridge, MA",
+   "events": 27,
+   "parts": {
+    "Cambridge, MA Building Permits (permit)": {
+     "events": 27,
+     "seconds": 1
+    }
+   }
+  },
+  "us-nashville": {
+   "name": "Nashville",
+   "events": 0,
+   "parts": {
+    "Nashville Building Permits (permit)": {
+     "error": "https://api.us.socrata.com/api/catalog/v1?domains=data.nashville.gov&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.nashville.gov\"}"
+    }
+   }
+  },
+  "us-honolulu": {
+   "name": "Honolulu",
+   "events": 0,
+   "parts": {
+    "Honolulu Building Permits (permit)": {
+     "events": 0,
+     "seconds": 1
+    }
+   }
+  },
+  "us-mesa": {
+   "name": "Mesa, AZ",
+   "events": 0,
+   "parts": {
+    "Mesa, AZ Building Permits (permit)": {
+     "error": "no usable dataset; tried "
+    }
+   }
+  },
+  "us-baton-rouge": {
+   "name": "Baton Rouge",
+   "events": 2151,
+   "parts": {
+    "Baton Rouge Building Permits (permit)": {
+     "events": 2151,
+     "seconds": 2
+    }
+   }
+  },
+  "us-boston": {
+   "name": "Boston",
+   "events": 702,
+   "parts": {
+    "boston": {
+     "events": 702,
+     "seconds": 1
+    }
+   }
+  },
+  "us-philly": {
+   "name": "Philadelphia",
+   "events": 14817,
+   "parts": {
+    "philly_permits": {
+     "events": 11295,
+     "seconds": 1
+    },
+    "philly_licenses": {
+     "events": 3522,
+     "seconds": 2
     }
    }
   },
   "fr": {
    "name": "France",
-   "events": 60043,
+   "events": 60041,
    "parts": {
     "bodacc": {
-     "events": 50891,
-     "seconds": 131
+     "events": 50889,
+     "seconds": 121
     },
     "alimconfiance": {
      "events": 9152,
-     "seconds": 7
+     "seconds": 3
     },
     "sirene_paris": {
      "events": 0,
@@ -108,7 +231,7 @@
    }
   }
  },
- "minutes": 10.6,
+ "minutes": 6.0,
  "log_tail": [
   "\n######## us-nyc · New York",
   "\n== NYC DOB NOW permits",
@@ -119,7 +242,7 @@
   "\n== NYC ACRIS deeds and mortgages (published with a 2-3 month delay)",
   "   documents: 30000",
   "   documents 30000, lots 24057, located 16617 + condo blocks 1966",
-  "   history: 81811 records seen for the first time today (81811 remembered)",
+  "   history: 7 records seen for the first time today (81818 remembered)",
   "\n######## us-sf · San Francisco",
   "   San Francisco SF Building Permits (permit): 4405",
   "   -> 4404 located events of 4405 rows",
@@ -127,7 +250,7 @@
   "   -> 2188 located events of 3020 rows",
   "   San Francisco SF Registered Business Locations (closure): 839",
   "   -> 710 located events of 839 rows",
-  "   history: 6882 records seen for the first time today (6882 remembered)",
+  "   history: 0 records seen for the first time today (6882 remembered)",
   "\n######## us-chicago · Chicago",
   "   Chicago Chicago Building Permits (permit): 9071",
   "   -> 8955 located events of 9071 rows",
@@ -135,21 +258,79 @@
   "   -> 1691 located events of 1943 rows",
   "   Chicago Chicago Food Inspections (inspection): 3379",
   "   -> 3359 located events of 3379 rows",
-  "   history: 14005 records seen for the first time today (14005 remembered)",
+  "   history: 0 records seen for the first time today (14005 remembered)",
   "\n######## us-seattle · Seattle",
   "   Seattle Seattle Building Permits (permit): 1635",
   "   -> 1634 located events of 1635 rows",
-  "   history: 1634 records seen for the first time today (1634 remembered)",
+  "   history: 0 records seen for the first time today (1634 remembered)",
   "\n######## us-austin · Austin",
   "   Austin Austin Issued Construction Permits (permit): 14858",
   "   -> 8946 located events of 14858 rows",
-  "   history: 8946 records seen for the first time today (8946 remembered)",
+  "   history: 0 records seen for the first time today (8946 remembered)",
   "\n######## us-la · Los Angeles",
   "   Los Angeles LADBS Building Permits (permit): 15783",
   "   -> 15752 located events of 15783 rows",
   "   Los Angeles LA Active Businesses (business): 4889",
   "   -> 801 located events of 4889 rows",
-  "   history: 16553 records seen for the first time today (16553 remembered)",
+  "   history: 0 records seen for the first time today (16553 remembered)",
+  "\n######## us-dallas · Dallas",
+  "   Dallas: using dataset rzm4-tcqx 'Building Permits for Fiscal Year 2015 - 2016'",
+  "   Dallas Dallas Building Permits (permit): 0",
+  "   -> 0 located events of 0 rows",
+  "   no events for us-dallas; keeping it off the map",
+  "\n######## us-nola · New Orleans",
+  "   New Orleans: using dataset rcm3-fn58 'Permits'",
+  "   New Orleans New Orleans Building Permits (permit): 4247",
+  "   -> 4247 located events of 4247 rows",
+  "   history: 4247 records seen for the first time today (4247 remembered)",
+  "\n######## us-kc · Kansas City",
+  "   Kansas City: using dataset ntw8-aacc 'Permits - CPD Dataset'",
+  "   Kansas City Kansas City Building Permits (permit): 0",
+  "   -> 0 located events of 0 rows",
+  "   no events for us-kc; keeping it off the map",
+  "\n######## us-cincinnati · Cincinnati",
+  "   Cincinnati: using dataset 94uh-66xv 'Cincinnati Building Permits Timeline'",
+  "   Cincinnati Cincinnati Building Permits (permit): 3126",
+  "   -> 0 located events of 3126 rows",
+  "   no events for us-cincinnati; keeping it off the map",
+  "\n######## us-montgomery · Montgomery County, MD",
+  "   Montgomery County, MD: using dataset a7xm-vjfv 'DPS - Fire Code Compliance Permit'",
+  "   Montgomery County, MD Montgomery County, MD Building Permits (permit): 454",
+  "   -> 448 located events of 454 rows",
+  "   WRITE FAILED for us-montgomery:\nTraceback (most recent call last):\n  File \"/home/runner/work/geora/geora/pipeline/run.py\", line 47, in main\n    core.apply_history(rid, feats)\n  File \"/home/runner/work/geora/geora/pipeline/core.py\", line 176, in apply_history\n    key = f\"{p['kind']}|{p['source']}|{p['rid']}|{'' if undated else p['date']}\"\n                                       ~^^^^^^^\nKeyError: 'rid'\n",
+  "\n######## us-cambridge · Cambridge, MA",
+  "   Cambridge, MA: using dataset 4bmb-xuad 'Tent - Building Permits'",
+  "   Cambridge, MA Cambridge, MA Building Permits (permit): 27",
+  "   -> 27 located events of 27 rows",
+  "   history: 27 records seen for the first time today (27 remembered)",
+  "\n######## us-nashville · Nashville",
+  "   FAILED Nashville Building Permits (permit): https://api.us.socrata.com/api/catalog/v1?domains=data.nashville.gov&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.nashville.gov\"}",
+  "   RuntimeError: https://api.us.socrata.com/api/catalog/v1?domains=data.nashville.gov&q=building+permits&only=dataset&limit=25 -> HTTP 404: {\"error\":\"Domain not found: data.nashville.gov\"}",
+  "   no events for us-nashville; keeping it off the map",
+  "\n######## us-honolulu · Honolulu",
+  "   Honolulu: using dataset 4vab-c87q 'Building Permits - January 1, 2005 through June 30, 2025'",
+  "   Honolulu Honolulu Building Permits (permit): 0",
+  "   -> 0 located events of 0 rows",
+  "   no events for us-honolulu; keeping it off the map",
+  "\n######## us-mesa · Mesa, AZ",
+  "   FAILED Mesa, AZ Building Permits (permit): no usable dataset; tried ",
+  "   RuntimeError: no usable dataset; tried ",
+  "   no events for us-mesa; keeping it off the map",
+  "\n######## us-baton-rouge · Baton Rouge",
+  "   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'",
+  "   Baton Rouge Baton Rouge Building Permits (permit): 2242",
+  "   -> 2151 located events of 2242 rows",
+  "   history: 2141 records seen for the first time today (2141 remembered)",
+  "\n######## us-boston · Boston",
+  "\n== Boston approved building permits (CKAN)",
+  "   rows: 722",
+  "   history: 702 records seen for the first time today (702 remembered)",
+  "\n######## us-philly · Philadelphia",
+  "\n== Philadelphia building permits (Carto)",
+  "   rows: 11339",
+  "\n== Philadelphia new business licenses (Carto)",
+  "   rows: 3749",
+  "   history: 14817 records seen for the first time today (14817 remembered)",
   "\n######## fr · France",
   "\n== France BODACC (sales of businesses, insolvencies, creations, removals)",
   "   Ventes et cessions: 3739 notices",
@@ -157,19 +338,19 @@
   "   Créations: 25000 notices",
   "   Radiations: 10000 notices",
   "   geocoded 4841 of 5000",
-  "   geocoded 9637 of 10000",
-  "   geocoded 14452 of 15000",
-  "   geocoded 19290 of 20000",
-  "   geocoded 24242 of 25000",
-  "   geocoded 29182 of 30000",
-  "   geocoded 34130 of 35000",
-  "   geocoded 39085 of 40000",
-  "   geocoded 44012 of 45000",
-  "   geocoded 48868 of 50000",
-  "   geocoded 52121 of 53359",
+  "   geocoded 9635 of 10000",
+  "   geocoded 14450 of 15000",
+  "   geocoded 19287 of 20000",
+  "   geocoded 24239 of 25000",
+  "   geocoded 29178 of 30000",
+  "   geocoded 34126 of 35000",
+  "   geocoded 39082 of 40000",
+  "   geocoded 44009 of 45000",
+  "   geocoded 48864 of 50000",
+  "   geocoded 52118 of 53359",
   "\n== France Alim'confiance (food safety inspections)",
   "   inspections: 9505",
   "\n== SIRENE skipped (no INSEE_KEY secret)",
-  "   history: 59527 records seen for the first time today (59527 remembered)"
+  "   history: 2 records seen for the first time today (59529 remembered)"
  ]
 }

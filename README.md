@@ -4,7 +4,7 @@
 
 Every dot is a real event (a building permit, a property sale, a new restaurant permit, a health-department closure) with its date, location and the government record it came from. Click a building to see its full timeline.
 
-**Live:** https://dimkalo.github.io/geora/
+**Live:** https://dimoskalog.github.io/geora/
 
 ## What it does
 

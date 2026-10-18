@@ -22,7 +22,7 @@ SINCE = (date.today() - timedelta(days=DAYS)).isoformat()
 ACRIS_SINCE = (date.today() - timedelta(days=180)).isoformat()
 CAP = {"permits": 80000, "restaurants": 60000, "acris": 30000}
 DOMAIN = "data.cityofnewyork.us"
-UA = "geora-nyc/0.3 (+https://github.com/dimkalo/geora)"
+UA = "geora-nyc/0.3 (+https://github.com/dimoskalog/geora)"
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "data")
 

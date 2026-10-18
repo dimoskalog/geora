@@ -1,0 +1,59 @@
+name: Update data and publish
+
+on:
+  schedule:
+    - cron: "17 11 * * *"     # every day, 11:17 UTC (7:17 am New York)
+  workflow_dispatch:          # "Run workflow" button on GitHub
+  push:
+    branches: [main]
+
+permissions:
+  contents: write             # to save the daily history file
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pull New York City data
+        run: python pull_nyc.py --site
+
+      - name: Save daily history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add history
+          git diff --cached --quiet || (git commit -m "Daily history $(date -u +%F)" && git push)
+
+      - name: Assemble website
+        run: |
+          mkdir _site
+          cp index.html _site/
+          cp -r data _site/
+          rm -f _site/data/events.js _site/data/events.geojson
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

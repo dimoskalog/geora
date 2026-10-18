@@ -1,0 +1,175 @@
+{
+ "started": "2026-10-18 17:39 UTC",
+ "regions": {
+  "us-nyc": {
+   "name": "New York",
+   "events": 90712,
+   "parts": {
+    "permits": {
+     "events": 46251,
+     "seconds": 35
+    },
+    "restaurants": {
+     "events": 11325,
+     "seconds": 15
+    },
+    "property_records": {
+     "events": 33136,
+     "seconds": 397
+    }
+   }
+  },
+  "us-sf": {
+   "name": "San Francisco",
+   "events": 7302,
+   "parts": {
+    "SF Building Permits (permit)": {
+     "events": 4404,
+     "seconds": 3
+    },
+    "SF Registered Business Locations (business)": {
+     "events": 2188,
+     "seconds": 2
+    },
+    "SF Registered Business Locations (closure)": {
+     "events": 710,
+     "seconds": 8
+    }
+   }
+  },
+  "us-chicago": {
+   "name": "Chicago",
+   "events": 14005,
+   "parts": {
+    "Chicago Building Permits (permit)": {
+     "events": 8955,
+     "seconds": 9
+    },
+    "Chicago Business Licenses (business)": {
+     "events": 1691,
+     "seconds": 3
+    },
+    "Chicago Food Inspections (inspection)": {
+     "events": 3359,
+     "seconds": 2
+    }
+   }
+  },
+  "us-seattle": {
+   "name": "Seattle",
+   "events": 1634,
+   "parts": {
+    "Seattle Building Permits (permit)": {
+     "events": 1634,
+     "seconds": 4
+    }
+   }
+  },
+  "us-austin": {
+   "name": "Austin",
+   "events": 8946,
+   "parts": {
+    "Austin Issued Construction Permits (permit)": {
+     "events": 8946,
+     "seconds": 4
+    }
+   }
+  },
+  "us-la": {
+   "name": "Los Angeles",
+   "events": 16553,
+   "parts": {
+    "LADBS Building Permits (permit)": {
+     "events": 15752,
+     "seconds": 9
+    },
+    "LA Active Businesses (business)": {
+     "events": 801,
+     "seconds": 4
+    }
+   }
+  },
+  "fr": {
+   "name": "France",
+   "events": 60043,
+   "parts": {
+    "bodacc": {
+     "events": 50891,
+     "seconds": 131
+    },
+    "alimconfiance": {
+     "events": 9152,
+     "seconds": 7
+    },
+    "sirene_paris": {
+     "events": 0,
+     "seconds": 0
+    }
+   }
+  }
+ },
+ "minutes": 10.6,
+ "log_tail": [
+  "\n######## us-nyc · New York",
+  "\n== NYC DOB NOW permits",
+  "   permits: 46517",
+  "\n== NYC restaurant inspections",
+  "   inspection rows: 28097",
+  "   new restaurant rows: 3908",
+  "\n== NYC ACRIS deeds and mortgages (published with a 2-3 month delay)",
+  "   documents: 30000",
+  "   documents 30000, lots 24057, located 16617 + condo blocks 1966",
+  "   history: 81811 records seen for the first time today (81811 remembered)",
+  "\n######## us-sf · San Francisco",
+  "   San Francisco SF Building Permits (permit): 4405",
+  "   -> 4404 located events of 4405 rows",
+  "   San Francisco SF Registered Business Locations (business): 3020",
+  "   -> 2188 located events of 3020 rows",
+  "   San Francisco SF Registered Business Locations (closure): 839",
+  "   -> 710 located events of 839 rows",
+  "   history: 6882 records seen for the first time today (6882 remembered)",
+  "\n######## us-chicago · Chicago",
+  "   Chicago Chicago Building Permits (permit): 9071",
+  "   -> 8955 located events of 9071 rows",
+  "   Chicago Chicago Business Licenses (business): 1943",
+  "   -> 1691 located events of 1943 rows",
+  "   Chicago Chicago Food Inspections (inspection): 3379",
+  "   -> 3359 located events of 3379 rows",
+  "   history: 14005 records seen for the first time today (14005 remembered)",
+  "\n######## us-seattle · Seattle",
+  "   Seattle Seattle Building Permits (permit): 1635",
+  "   -> 1634 located events of 1635 rows",
+  "   history: 1634 records seen for the first time today (1634 remembered)",
+  "\n######## us-austin · Austin",
+  "   Austin Austin Issued Construction Permits (permit): 14858",
+  "   -> 8946 located events of 14858 rows",
+  "   history: 8946 records seen for the first time today (8946 remembered)",
+  "\n######## us-la · Los Angeles",
+  "   Los Angeles LADBS Building Permits (permit): 15783",
+  "   -> 15752 located events of 15783 rows",
+  "   Los Angeles LA Active Businesses (business): 4889",
+  "   -> 801 located events of 4889 rows",
+  "   history: 16553 records seen for the first time today (16553 remembered)",
+  "\n######## fr · France",
+  "\n== France BODACC (sales of businesses, insolvencies, creations, removals)",
+  "   Ventes et cessions: 3739 notices",
+  "   Procédures collectives: 15000 notices",
+  "   Créations: 25000 notices",
+  "   Radiations: 10000 notices",
+  "   geocoded 4841 of 5000",
+  "   geocoded 9637 of 10000",
+  "   geocoded 14452 of 15000",
+  "   geocoded 19290 of 20000",
+  "   geocoded 24242 of 25000",
+  "   geocoded 29182 of 30000",
+  "   geocoded 34130 of 35000",
+  "   geocoded 39085 of 40000",
+  "   geocoded 44012 of 45000",
+  "   geocoded 48868 of 50000",
+  "   geocoded 52121 of 53359",
+  "\n== France Alim'confiance (food safety inspections)",
+  "   inspections: 9505",
+  "\n== SIRENE skipped (no INSEE_KEY secret)",
+  "   history: 59527 records seen for the first time today (59527 remembered)"
+ ]
+}

@@ -242,4 +242,6 @@ def geocode_us(rows):
                 lon, lat = r[5].split(",")[:2]
                 out[r[0]] = (num(lat), num(lon))
         log(f"   census geocoded {len(out)} of {min(i + 9000, len(rows))}")
+        if not out:
+            log("   census response sample: " + res[:300].decode("utf-8", "replace").replace("\n", " | "))
     return out

@@ -101,24 +101,11 @@ def city(name, domain, center, bbox=None, search="building permits", must=("perm
 
 
 CITIES.update({
-    "us-dallas": city("Dallas", "www.dallasopendata.com", [-96.797, 32.7767], [-97.0, 32.62, -96.55, 33.03]),
     "us-nola": city("New Orleans", "data.nola.gov", [-90.0715, 29.9511], [-90.14, 29.86, -89.62, 30.20]),
-    "us-kc": city("Kansas City", "data.kcmo.org", [-94.5786, 39.0997], [-94.77, 38.85, -94.38, 39.36]),
     "us-cincinnati": city("Cincinnati", "data.cincinnati-oh.gov", [-84.512, 39.1031], [-84.72, 39.05, -84.36, 39.23]),
     "us-montgomery": city("Montgomery County, MD", "data.montgomerycountymd.gov", [-77.152, 39.084], [-77.53, 38.93, -76.88, 39.36]),
-    "us-cambridge": city("Cambridge, MA", "data.cambridgema.gov", [-71.1097, 42.3736], [-71.17, 42.35, -71.06, 42.41]),
-    "us-honolulu": city("Honolulu", "data.honolulu.gov", [-157.8583, 21.3069], [-158.3, 21.25, -157.6, 21.72]),
-    "us-mesa": city("Mesa, AZ", "data.mesaaz.gov", [-111.8315, 33.4152], [-111.95, 33.27, -111.57, 33.51], search="permits"),
     "us-baton-rouge": city("Baton Rouge", "data.brla.gov", [-91.1403, 30.4515], [-91.3, 30.3, -90.95, 30.6]),
-    "us-oakland": city("Oakland", "data.oaklandca.gov", [-122.2712, 37.8044]),
-    "us-orlando": city("Orlando", "data.cityoforlando.net", [-81.3792, 28.5383]),
-    "us-chattanooga": city("Chattanooga", "www.chattadata.org", [-85.3097, 35.0456]),
-    "us-buffalo": city("Buffalo", "data.buffalony.gov", [-78.8784, 42.8864], search="permits"),
-    "us-providence": city("Providence", "data.providenceri.gov", [-71.4128, 41.824], search="permits"),
     "us-norfolk": city("Norfolk, VA", "data.norfolk.gov", [-76.2859, 36.8508], search="permits"),
-    "us-somerville": city("Somerville, MA", "data.somervillema.gov", [-71.0995, 42.3876], search="permits"),
-    "us-little-rock": city("Little Rock", "data.littlerock.gov", [-92.2896, 34.7465], search="permits"),
-    "us-gainesville": city("Gainesville, FL", "data.cityofgainesville.org", [-82.3248, 29.6516], search="permits"),
     "ca-calgary": city("Calgary", "data.calgary.ca", [-114.0719, 51.0447], country="CA"),
     "ca-edmonton": city("Edmonton", "data.edmonton.ca", [-113.4938, 53.5461], country="CA"),
 })
@@ -257,7 +244,7 @@ def dataset_events(city, ds):
             out.append(event(*args))
     if pending and meta.get("state"):
         log(f"   {len(pending)} rows without coordinates: geocoding addresses")
-        geo = geocode_us([(str(i), a[11], meta["name"].split(",")[0], meta["state"], "") for i, a in enumerate(pending)])
+        geo = geocode_us([(str(i), a[10], meta["name"].split(",")[0], meta["state"], "") for i, a in enumerate(pending)])
         for i, a in enumerate(pending):
             if str(i) in geo:
                 a = list(a); a[3], a[4] = geo[str(i)]

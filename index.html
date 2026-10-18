@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEORA · Physical Economy Intelligence</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&display=swap">
+<style>
+/* Layout: full-bleed globe; HUD panels float over it like an operations console. */
+:root{
+  --bg:#05070a; --panel:rgba(9,13,18,.82); --line:#1c2733; --ink:#dbe5ee; --dim:#748392; --hot:#5ad1ff;
+  --deep:#3ddc97; --registry:#4ea8ff; --frag:#f5b83d; --closed:#ff5a5f;
+  --construction:#4ea8ff; --property:#b583ff; --business:#3ddc97; --fitout:#5ad1ff; --restaurant:#f5b83d; --distress:#ff5a5f; --maintenance:#4b5866; --sale:#b583ff; --mortgage:#e879c6; --story:#ffffff;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --sans:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden}
+#map{position:absolute;inset:0}
+.panel{position:absolute;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.mono{font-family:var(--mono)}
+
+#top{top:0;left:0;right:0;height:46px;display:flex;align-items:center;gap:22px;padding:0 18px;border-width:0 0 1px}
+#top h1{margin:0;font-size:17px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+#top h1 b{color:var(--hot);font-weight:700}
+#top .stat{font-family:var(--mono);font-size:11px;color:var(--dim)}
+#top .stat i{font-style:normal;color:var(--ink)}
+#clock{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--ink)}
+.live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--closed);margin-right:6px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+#left{top:60px;left:14px;width:250px;padding:14px;display:grid;gap:16px}
+.row{display:flex;align-items:center;gap:10px;padding:5px 6px;cursor:pointer;user-select:none;border:1px solid transparent}
+.row:hover{border-color:var(--line)}
+.row.off{opacity:.35}
+.sw{width:10px;height:10px;flex:none;background:currentColor;box-shadow:0 0 10px currentColor}
+.row .n{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.cities .row .sw{border-radius:50%}
+#back{display:none;width:100%;background:#0d141c;border:1px solid var(--line);color:var(--ink);font-family:var(--mono);font-size:12px;padding:8px;cursor:pointer}
+#back:hover{border-color:var(--hot)}
+
+#right{top:60px;right:14px;width:340px;padding:16px;display:none;max-height:calc(100% - 140px);overflow:auto}
+#right.open{display:block}
+#right h2{margin:2px 0 2px;font-size:24px;font-weight:700;letter-spacing:.04em}
+#right .label:first-child,#right h2{padding-right:36px}
+.close{position:absolute;top:8px;right:8px;width:30px;height:30px;background:#0d141c;border:1px solid var(--line);color:var(--ink);font-size:18px;line-height:1;cursor:pointer}
+.close:hover{border-color:var(--hot)}
+.score{display:flex;align-items:baseline;gap:10px;margin:12px 0}
+.score b{font-family:var(--mono);font-size:40px;font-weight:500}
+.meter{height:4px;background:#121b24;margin-bottom:14px}
+.meter i{display:block;height:100%}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:6px 10px;font-size:13px}
+.kv span:nth-child(odd){font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-top:2px}
+.tl{list-style:none;margin:12px 0 0;padding:0 0 0 14px;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:0 0 12px 10px}
+.tl li::before{content:"";position:absolute;left:-19px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}
+.tl .d{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.tl .t{font-size:14px;margin:2px 0}
+.tl .x,.tl .s{font-size:12px;color:var(--dim)}
+.tl .s{font-family:var(--mono);font-size:10px}
+
+.seg{display:flex;border:1px solid var(--line);margin-top:4px}
+.seg button{flex:1;background:none;border:0;color:var(--dim);font-family:var(--mono);font-size:11px;padding:6px 0;cursor:pointer}
+.seg button.on{background:#16202b;color:var(--ink)}
+.seg button:focus-visible{outline:1px solid var(--hot)}
+#timebar{left:280px;right:70px;bottom:46px;padding:8px 12px;display:none;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+#timebar.show{display:grid}
+#play{width:34px;height:34px;border:1px solid var(--line);background:#0d141c;color:var(--ink);font-size:13px;cursor:pointer}
+#play:hover{border-color:var(--hot)}
+#hist{width:100%;height:46px;display:block;cursor:pointer}
+#range{font-family:var(--mono);font-size:12px;min-width:200px;text-align:right}
+#ticker{left:0;right:0;bottom:0;height:34px;border-width:1px 0 0;display:flex;align-items:center;overflow:hidden}
+#ticker .tag{flex:none;height:100%;display:flex;align-items:center;padding:0 14px;background:#0d141c;border-right:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+#feed{white-space:nowrap;font-family:var(--mono);font-size:12px;color:var(--dim);padding-left:100%;animation:scroll 90s linear infinite}
+#feed span{margin-right:42px}
+#feed b{font-weight:500}
+@keyframes scroll{to{transform:translateX(-100%)}}
+
+.maplibregl-ctrl-attrib{background:rgba(5,7,10,.6)!important;color:var(--dim)!important;margin-bottom:38px!important}
+.maplibregl-ctrl-attrib a{color:var(--dim)!important}
+.maplibregl-ctrl-group{background:var(--panel)!important;border:1px solid var(--line)}
+.maplibregl-ctrl-group button span{filter:invert(.85)}
+.maplibregl-ctrl-bottom-right{bottom:40px}
+@media (max-width:760px){#timebar{left:14px;right:14px;bottom:46px}#left{width:auto;right:14px;max-height:38%;overflow:auto}#right{left:14px;width:auto}#top .stat{display:none}}
+@media (prefers-reduced-motion:reduce){#feed{animation:none;padding-left:14px}.live{animation:none}}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<header id="top" class="panel">
+  <h1>GEO<b>RA</b></h1>
+  <span class="stat" style="letter-spacing:.08em">physical economy intelligence</span>
+  <span class="stat">coverage <i id="s-countries">20</i> countries</span>
+  <span class="stat">live feeds <i id="s-feeds">0</i></span>
+  <span class="stat">events <i id="s-events">0</i></span>
+  <span id="clock"><span class="live"></span><span id="utc"></span></span>
+</header>
+
+<aside id="left" class="panel">
+  <div>
+    <div class="label" style="margin-bottom:6px">Data coverage</div>
+    <div id="tiers"></div>
+  </div>
+  <div class="cities">
+    <div class="label" style="margin-bottom:6px">Cities</div>
+    <div id="cities"></div>
+  </div>
+  <div id="evbox" hidden>
+    <div class="label" style="margin-bottom:6px">Event layers</div>
+    <div id="evlayers"></div>
+    <div class="label" style="margin:12px 0 2px">Property value</div>
+    <div class="seg" id="price"><button data-v="0" class="on">Any</button><button data-v="1000000">$1M+</button><button data-v="5000000">$5M+</button><button data-v="20000000">$20M+</button></div>
+    <div class="label" style="margin:12px 0 2px">Time window</div>
+    <div class="seg" id="win"><button data-d="7">7D</button><button data-d="30">30D</button><button data-d="90">90D</button><button data-d="0" class="on">All</button></div>
+  </div>
+  <button id="back">◀ Back to globe</button>
+</aside>
+
+<section id="right" class="panel" aria-live="polite">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <div id="r-body"></div>
+</section>
+
+<section id="timebar" class="panel">
+  <button id="play" aria-label="Play">▶</button>
+  <canvas id="hist" aria-label="Events per day. Click or drag to move through time."></canvas>
+  <div id="range"></div>
+</section>
+
+<footer id="ticker" class="panel">
+  <div class="tag"><span class="live"></span>FEED</div>
+  <div id="feed"></div>
+</footer>
+
+<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+// Optional real data written by the data scripts (data/events.js sets window.EVENTS).
+window.EVENTS = null;
+</script>
+<script src="data/events.js" onerror="void 0"></script>
+<script>
+/* ---------------- research atlas (Phase 0) ---------------- */
+const TIERS = {
+  deep:     { name: "Establishment-level", color: "var(--deep)" },
+  registry: { name: "Company registry",    color: "var(--registry)" },
+  frag:     { name: "City by city",        color: "var(--frag)" },
+  closed:   { name: "Closed / unusable",   color: "var(--closed)" }
+};
+// key = ISO 3166 numeric code used by the world map
+const COUNTRIES = {
+  "250": { n: "France", s: 93, t: "deep", src: "SIRENE · BODACC · Alim'confiance · DVF", ev: "created, sold (with price), inspected, insolvent, closed", st: "Tested with real Paris data" },
+  "410": { n: "South Korea", s: 84, t: "deep", src: "Local permit data (195 business types) · MOLIT", ev: "permit granted, suspended, closed, with coordinates", st: "Tested with real Seoul data" },
+  "578": { n: "Norway", s: 80, t: "deep", src: "Enhetsregisteret sub-units", ev: "established, relocated, bankrupt, closed" },
+  "208": { n: "Denmark", s: 78, t: "deep", src: "CVR production units (P-numbers)", ev: "established, relocated, closed" },
+  "826": { n: "United Kingdom", s: 76, t: "frag", src: "Companies House · FSA food hygiene · Gazette · Land Registry", ev: "incorporated, inspected, insolvent, property sold" },
+  "840": { n: "United States", s: 74, t: "frag", src: "City and state portals (NYC, SF, Chicago, Texas) · SEC · USAspending", ev: "permits, licences, inspections, property sales", st: "NYC is the first live city" },
+  "076": { n: "Brazil", s: 72, t: "deep", src: "Receita Federal CNPJ establishments", ev: "established, branch opened, closed" },
+  "056": { n: "Belgium", s: 70, t: "deep", src: "KBO/BCE establishment units", ev: "established, closed", st: "Provisional" },
+  "392": { n: "Japan", s: 61, t: "registry", src: "Corporate Number daily changes · gBizINFO", ev: "created, relocated, merged, closed" },
+  "702": { n: "Singapore", s: 60, t: "registry", src: "ACRA · SFA licences · URA", ev: "registered, closed" },
+  "616": { n: "Poland", s: 60, t: "registry", src: "REGON local units · CEIDG · KRS", ev: "registered, suspended, closed", st: "Provisional" },
+  "158": { n: "Taiwan", s: 58, t: "registry", src: "MOEA company registrations", ev: "registered, closed", st: "Provisional" },
+  "484": { n: "Mexico", s: 58, t: "registry", src: "INEGI DENUE (twice a year)", ev: "establishment present / gone" },
+  "233": { n: "Estonia", s: 58, t: "registry", src: "e-Business Register (daily)", ev: "registered, revenue, closed" },
+  "036": { n: "Australia", s: 55, t: "frag", src: "ABN bulk · NSW Planning Portal · ASIC", ev: "registered, development applications, closed" },
+  "124": { n: "Canada", s: 52, t: "frag", src: "Vancouver/Toronto licences · city permits", ev: "licences, permits, inspections" },
+  "554": { n: "New Zealand", s: 45, t: "registry", src: "Companies Office events", ev: "registered, removed", st: "Provisional" },
+  "784": { n: "United Arab Emirates", s: 35, t: "closed", src: "Dubai Pulse (unclear licence)", ev: "licences, property transactions" },
+  "356": { n: "India", s: 25, t: "closed", src: "MCA snapshots (stale)", ev: "registered" },
+  "276": { n: "Germany", s: 22, t: "closed", src: "No bulk access to the commercial register", ev: "—" }
+};
+const CITIES = [
+  { id: "nyc", n: "New York", c: [-73.985, 40.742], status: "live", note: "Building permits · property sales & mortgages · restaurants" },
+  { id: "par", n: "Paris", c: [2.3488, 48.8534], status: "tested", note: "SIRENE · BODACC · inspections — tested Oct 2026" },
+  { id: "seo", n: "Seoul", c: [126.978, 37.5665], status: "tested", note: "540,173 restaurant permits — tested Oct 2026" },
+  { id: "aus", n: "Austin", c: [-97.7431, 30.2672], status: "tested", note: "Sales-tax permits · liquor licences — tested Oct 2026" },
+  { id: "sfo", n: "San Francisco", c: [-122.4194, 37.7749], status: "planned", note: "Registered businesses · permits (public domain)" },
+  { id: "chi", n: "Chicago", c: [-87.6298, 41.8781], status: "planned", note: "Licences · permits · inspections" }
+];
+const CITY_COLOR = { live: "#5ad1ff", tested: "#3ddc97", planned: "#748392" };
+const KINDS = { business: "New businesses", fitout: "Storefronts & interiors", construction: "New buildings & major work",
+                sale: "Property sales", mortgage: "Mortgages & loans", restaurant: "Restaurant inspections",
+                distress: "Closures & distress", maintenance: "Minor building work" };
+const OFF_BY_DEFAULT = ["maintenance", "mortgage", "restaurant"];
+// event types that count toward a "building with a story"
+const STORY_KINDS = ["business", "fitout", "construction", "sale", "mortgage", "distress"];
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const COL = k => css("--" + k);
+
+/* ---------------- map ---------------- */
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://tiles.openfreemap.org/styles/dark",
+  center: [-40, 30], zoom: 1.6, pitch: 0,
+  attributionControl: { compact: true }, maxPitch: 75
+});
+map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
+
+let spinning = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+function spin() {
+  if (!spinning || map.getZoom() > 3.5) return;
+  const c = map.getCenter(); c.lng -= 2.2;
+  map.easeTo({ center: c, duration: 1000, easing: t => t });
+}
+map.on("moveend", spin);
+["mousedown", "touchstart", "wheel"].forEach(ev => map.on(ev, () => { spinning = false; }));
+
+map.on("style.load", async () => {
+  map.setProjection({ type: "globe" });
+  try {
+    map.setSky({ "sky-color": "#05070a", "horizon-color": "#0d2a3a", "fog-color": "#05070a",
+      "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 1, 5, 1, 7, 0] });
+  } catch (e) {}
+  dimBasemap();
+  addBuildings();
+  await addCountries();
+  addCities();
+  addEvents();
+  spin();
+});
+
+function dimBasemap() {             // quieter basemap so our data glows
+  for (const l of map.getStyle().layers) {
+    if (l.type === "raster") map.setPaintProperty(l.id, "raster-opacity", 0.35);
+    if (l.type === "symbol" && /poi|housenumber/.test(l.id)) map.setLayoutProperty(l.id, "visibility", "none");
+  }
+}
+
+function addBuildings() {
+  if (!map.getSource("openmaptiles") || map.getLayer("bld3d")) return;
+  map.addLayer({ id: "bld3d", type: "fill-extrusion", source: "openmaptiles", "source-layer": "building", minzoom: 13,
+    paint: { "fill-extrusion-color": "#16212c",
+      "fill-extrusion-height": ["coalesce", ["get", "render_height"], 10],
+      "fill-extrusion-base": ["coalesce", ["get", "render_min_height"], 0],
+      "fill-extrusion-opacity": ["interpolate", ["linear"], ["zoom"], 13, 0, 14, 0.85] } });
+}
+
+async function addCountries() {
+  let geo;
+  try {
+    const topo = await (await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")).json();
+    geo = topojson.feature(topo, topo.objects.countries);
+  } catch (e) { console.warn("country shapes unavailable", e); return; }
+  for (const f of geo.features) {
+    const c = COUNTRIES[String(f.id).padStart(3, "0")];
+    f.properties.code = String(f.id).padStart(3, "0");
+    f.properties.tier = c ? c.t : "none";
+  }
+  map.addSource("countries", { type: "geojson", data: geo });
+  const tierColor = ["match", ["get", "tier"], "deep", COL("deep"), "registry", COL("registry"),
+                     "frag", COL("frag"), "closed", COL("closed"), "#000000"];
+  map.addLayer({ id: "c-fill", type: "fill", source: "countries", maxzoom: 7,
+    paint: { "fill-color": tierColor,
+      "fill-opacity": ["case", ["==", ["get", "tier"], "none"], 0,
+        ["interpolate", ["linear"], ["zoom"], 1, 0.22, 5, 0.08, 7, 0]] } });
+  map.addLayer({ id: "c-glow", type: "line", source: "countries", maxzoom: 7,
+    filter: ["!=", ["get", "tier"], "none"],
+    paint: { "line-color": tierColor, "line-width": 6, "line-blur": 6, "line-opacity": 0.35 } });
+  map.addLayer({ id: "c-line", type: "line", source: "countries", maxzoom: 7,
+    paint: { "line-color": ["case", ["==", ["get", "tier"], "none"], "#22303d", tierColor],
+      "line-width": ["case", ["==", ["get", "tier"], "none"], 0.4, 1] } });
+  map.on("click", "c-fill", e => {
+    if (map.queryRenderedFeatures(e.point, { layers: ["city-dot"] }).length) return;
+    const code = e.features[0].properties.code;
+    if (COUNTRIES[code]) showCountry(code);
+  });
+  map.on("mouseenter", "c-fill", e => { if (e.features[0].properties.tier !== "none") map.getCanvas().style.cursor = "pointer"; });
+  map.on("mouseleave", "c-fill", () => map.getCanvas().style.cursor = "");
+}
+
+function addCities() {
+  const fc = { type: "FeatureCollection", features: CITIES.map(c => ({ type: "Feature",
+    geometry: { type: "Point", coordinates: c.c }, properties: { id: c.id, n: c.n, status: c.status } })) };
+  map.addSource("cities", { type: "geojson", data: fc });
+  const color = ["match", ["get", "status"], "live", CITY_COLOR.live, "tested", CITY_COLOR.tested, CITY_COLOR.planned];
+  map.addLayer({ id: "city-pulse", type: "circle", source: "cities", maxzoom: 9,
+    paint: { "circle-color": color, "circle-opacity": 0.25, "circle-blur": 0.6, "circle-radius": 14 } });
+  map.addLayer({ id: "city-dot", type: "circle", source: "cities", maxzoom: 9,
+    paint: { "circle-color": color, "circle-radius": 4.5, "circle-stroke-color": "#05070a", "circle-stroke-width": 1.5 } });
+  map.addLayer({ id: "city-label", type: "symbol", source: "cities", maxzoom: 9,
+    layout: { "text-field": ["upcase", ["get", "n"]], "text-font": ["Noto Sans Regular"], "text-size": 11,
+              "text-offset": [0, 1.3], "text-anchor": "top", "text-letter-spacing": 0.15 },
+    paint: { "text-color": "#dbe5ee", "text-halo-color": "#05070a", "text-halo-width": 1.5 } });
+  map.on("click", "city-dot", e => flyToCity(e.features[0].properties.id));
+  map.on("mouseenter", "city-dot", () => map.getCanvas().style.cursor = "pointer");
+  map.on("mouseleave", "city-dot", () => map.getCanvas().style.cursor = "");
+  let r = 0;                                   // gentle pulse
+  const pulse = () => {
+    r = (r + 0.35) % 22;
+    if (map.getLayer("city-pulse")) {
+      map.setPaintProperty("city-pulse", "circle-radius", 6 + r);
+      map.setPaintProperty("city-pulse", "circle-opacity", 0.35 * (1 - r / 22));
+    }
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) requestAnimationFrame(pulse);
+  };
+  pulse();
+}
+
+/* ---------------- events (real data, when present) ---------------- */
+const DAY = 86400000;
+const evOn = new Set(Object.keys(KINDS).filter(k => !OFF_BY_DEFAULT.includes(k)));
+const T = { win: 0, end: 0, min: 0, max: 0, price: 0, story: true, playing: false };
+let BY_BBL = new Map(), DAILY = [], ALL = [];
+const fmt = t => new Date(t * DAY).toISOString().slice(0, 10);
+
+function prepare(geo) {
+  const GEOM = new Map();
+  T.min = Infinity; T.max = -Infinity;
+  for (const f of geo.features) {
+    const p = f.properties;
+    if (p.bbl && !GEOM.has(p.bbl)) GEOM.set(p.bbl, f.geometry);
+    if (p.kind === "property") p.kind = p.sub === "Deed" ? "sale" : "mortgage";
+    p.t = Math.floor(Date.parse(p.date + "T00:00:00Z") / DAY);
+    p.amt = Number(p.amount) || 0;
+    if (p.bbl) { if (!BY_BBL.has(p.bbl)) BY_BBL.set(p.bbl, []); BY_BBL.get(p.bbl).push(p); }
+    ALL.push(p);
+    if (p.t < T.min) T.min = p.t;
+    if (p.t > T.max) T.max = p.t;
+  }
+  // buildings with a story: two or more different kinds of significant events at the same tax lot
+  const stories = [];
+  for (const [bbl, list] of BY_BBL) {
+    const kinds = new Set(list.map(x => x.kind).filter(k => STORY_KINDS.includes(k)));
+    if (kinds.size < 2) continue;
+    let first = Infinity, last = -Infinity;
+    for (const x of list) { if (x.t < first) first = x.t; if (x.t > last) last = x.t; }
+    stories.push({ type: "Feature", geometry: GEOM.get(bbl),
+      properties: { bbl, n: list.length, kinds: kinds.size, addr: list[0].addr, first, last } });
+  }
+  T.end = T.max;
+  return { type: "FeatureCollection", features: stories };
+}
+
+function evFilter() {
+  const f = ["all", ["in", ["get", "kind"], ["literal", [...evOn]]]];
+  if (T.win) f.push([">=", ["get", "t"], T.end - T.win + 1], ["<=", ["get", "t"], T.end]);
+  else f.push(["<=", ["get", "t"], T.end]);
+  if (T.price) f.push(["any", ["!", ["in", ["get", "kind"], ["literal", ["sale", "mortgage"]]]], [">=", ["get", "amt"], T.price]]);
+  return f;
+}
+function storyFilter() {
+  const f = ["all", ["<=", ["get", "first"], T.end]];
+  if (T.win) f.push([">=", ["get", "last"], T.end - T.win + 1]);
+  return f;
+}
+
+function addEvents() {
+  const geo = window.EVENTS;
+  if (!geo || !geo.features || !geo.features.length || map.getSource("ev")) return;
+  const stories = ALL.length ? window._STORIES : (window._STORIES = prepare(geo));
+  map.addSource("ev", { type: "geojson", data: geo });
+  map.addSource("story", { type: "geojson", data: stories });
+  const color = ["match", ["get", "kind"], ...Object.keys(KINDS).flatMap(k => [k, COL(k)]), "#fff"];
+  // "city lights": tiny colored dots when zoomed out, bigger clickable dots up close
+  map.addLayer({ id: "ev-glow", type: "circle", source: "ev", minzoom: 13.5,
+    paint: { "circle-color": color, "circle-blur": 1,
+             "circle-opacity": ["interpolate", ["linear"], ["zoom"], 13.5, 0, 15, 0.3],
+             "circle-radius": ["interpolate", ["linear"], ["zoom"], 13.5, 5, 17, 18] } });
+  map.addLayer({ id: "ev", type: "circle", source: "ev", minzoom: 8,
+    paint: { "circle-color": color,
+             "circle-opacity": ["interpolate", ["linear"], ["zoom"], 8, 0, 9, 0.55, 12, 0.8, 14, 1],
+             "circle-radius": ["interpolate", ["linear"], ["zoom"],
+                9, ["match", ["get", "kind"], "business", 1.6, "fitout", 1.4, "maintenance", 0.6, 0.9],
+                12, ["match", ["get", "kind"], "business", 2.6, "fitout", 2.3, "maintenance", 1, 1.6],
+                14, ["match", ["get", "kind"], "business", 5, "fitout", 4.5, "maintenance", 2.2, 3.6],
+                17, ["match", ["get", "kind"], "business", 10, "fitout", 9, "maintenance", 4.5, 7]],
+             "circle-stroke-color": "#05070a",
+             "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 12, 0, 14, 0.8] } });
+  map.addLayer({ id: "story-ring", type: "circle", source: "story", minzoom: 13.5,
+    paint: { "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#ffffff",
+             "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 13.5, 0.8, 17, 2],
+             "circle-stroke-opacity": ["interpolate", ["linear"], ["zoom"], 13.5, 0, 14.3, 0.85],
+             "circle-radius": ["interpolate", ["linear"], ["zoom"], 13.5, 6, 17, ["+", 12, ["*", 3, ["get", "kinds"]]]] } });
+  for (const id of ["ev", "story-ring"]) {
+    map.on("click", id, e => showLocation(e.features[0].properties));
+    map.on("mouseenter", id, () => map.getCanvas().style.cursor = "pointer");
+    map.on("mouseleave", id, () => map.getCanvas().style.cursor = "");
+  }
+  // HUD
+  document.getElementById("s-events").textContent = ALL.length.toLocaleString();
+  document.getElementById("s-feeds").textContent = "1";
+  const counts = {};
+  ALL.forEach(p => counts[p.kind] = (counts[p.kind] || 0) + 1);
+  const box = document.getElementById("evlayers");
+  if (!box.children.length) {
+    for (const [k, name] of Object.entries(KINDS)) {
+      const el = row(name, COL(k), (counts[k] || 0).toLocaleString());
+      if (!evOn.has(k)) el.classList.add("off");
+      el.onclick = () => { evOn.has(k) ? evOn.delete(k) : evOn.add(k); el.classList.toggle("off"); applyTime(); };
+      box.appendChild(el);
+    }
+    const st = row("Buildings with a story", "#ffffff", stories.features.length.toLocaleString());
+    st.querySelector(".sw").style.cssText += ";background:none;border:1.5px solid #fff;border-radius:50%";
+    st.title = "Two or more different kinds of events at the same property (for example a sale, then a mortgage, then a permit)";
+    st.onclick = () => { T.story = !T.story; st.classList.toggle("off"); applyTime(); };
+    box.appendChild(st);
+  }
+  document.getElementById("evbox").hidden = false;
+  buildDaily();
+  applyTime();
+  const recent = [...geo.features].sort((a, b) => b.properties.date.localeCompare(a.properties.date)).slice(0, 40);
+  setFeed(recent.map(f => `<span><b style="color:${COL(f.properties.kind)}">●</b> ${esc(f.properties.date)} · ${esc(f.properties.city || "New York")} · ${esc(f.properties.title)}${f.properties.addr ? " · " + esc(f.properties.addr) : ""}</span>`).join(""));
+}
+
+function applyTime() {
+  if (map.getLayer("ev")) {
+    const f = evFilter();
+    for (const id of ["ev", "ev-glow"]) map.setFilter(id, f);
+    map.setFilter("story-ring", storyFilter());
+    map.setLayoutProperty("story-ring", "visibility", T.story ? "visible" : "none");
+  }
+  const start = T.win ? T.end - T.win + 1 : T.min;
+  document.getElementById("range").textContent = `${fmt(start)} → ${fmt(T.end)}`;
+  drawHist();
+}
+
+function buildDaily() {
+  const m = new Map();
+  for (const p of ALL) { const d = m.get(p.t) || { t: p.t }; d[p.kind] = (d[p.kind] || 0) + 1; m.set(p.t, d); }
+  DAILY = [];
+  for (let t = T.min; t <= T.max; t++) DAILY.push(m.get(t) || { t });
+  document.getElementById("timebar").classList.add("show");
+}
+function drawHist() {
+  const c = document.getElementById("hist"), r = c.getBoundingClientRect(), dpr = devicePixelRatio || 1;
+  if (!r.width) return;
+  c.width = r.width * dpr; c.height = r.height * dpr;
+  const g = c.getContext("2d"); g.scale(dpr, dpr); g.clearRect(0, 0, r.width, r.height);
+  const tot = d => [...evOn].reduce((a, k) => a + (d[k] || 0), 0);
+  const sorted = DAILY.map(tot).sort((a, b) => a - b);
+  const peak = Math.max(1, sorted[Math.floor(sorted.length * 0.95)] * 1.15), n = DAILY.length, w = r.width / n;
+  const H = r.height - 14;
+  const start = T.win ? T.end - T.win + 1 : T.min;
+  DAILY.forEach((d, i) => {
+    let y = r.height - 12; const inWin = d.t >= start && d.t <= T.end;
+    for (const k of Object.keys(KINDS)) {
+      if (!evOn.has(k) || !d[k] || y <= 2) continue;
+      const h = Math.min(y - 2, (d[k] / peak) * H);
+      g.fillStyle = COL(k); g.globalAlpha = inWin ? 0.95 : 0.2;
+      g.fillRect(i * w, y - h, Math.max(1, w - 0.5), h); y -= h;
+    }
+    if (tot(d) > peak) { g.globalAlpha = 1; g.fillStyle = "#ffffff"; g.fillRect(i * w, 0, Math.max(1, w - 0.5), 2); }
+  });
+  g.globalAlpha = 1; g.fillStyle = "#748392"; g.font = "10px 'IBM Plex Mono', monospace";
+  g.fillText(fmt(T.min), 0, r.height - 1);
+  const last = fmt(T.max); g.fillText(last, r.width - g.measureText(last).width, r.height - 1);
+  const x = ((T.end - T.min + 1) / n) * r.width;
+  g.fillStyle = "#5ad1ff"; g.fillRect(Math.min(r.width - 2, x - 1), 0, 2, r.height - 12);
+}
+function scrub(e) {
+  const r = e.currentTarget.getBoundingClientRect();
+  const i = Math.min(DAILY.length - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * DAILY.length)));
+  T.end = DAILY[i].t; applyTime();
+}
+const histEl = document.getElementById("hist");
+histEl.onpointerdown = e => { scrub(e); histEl.onpointermove = scrub; };
+window.addEventListener("pointerup", () => histEl.onpointermove = null);
+window.addEventListener("resize", drawHist);
+
+function segment(id, fn) {
+  document.getElementById(id).onclick = e => {
+    const b = e.target.closest("button"); if (!b) return;
+    document.querySelectorAll(`#${id} button`).forEach(x => x.classList.toggle("on", x === b));
+    fn(b); applyTime();
+  };
+}
+segment("price", b => T.price = +b.dataset.v);
+segment("win", b => T.win = +b.dataset.d);
+
+let timer;
+document.getElementById("play").onclick = () => {
+  T.playing = !T.playing;
+  const btn = document.getElementById("play");
+  btn.textContent = T.playing ? "❚❚" : "▶";
+  if (!T.playing) return clearInterval(timer);
+  if (!T.win) {               // playing needs a moving window; use 7 days
+    T.win = 7;
+    document.querySelectorAll("#win button").forEach(x => x.classList.toggle("on", x.dataset.d === "7"));
+  }
+  if (T.end >= T.max) T.end = T.min + T.win - 1;
+  timer = setInterval(() => {
+    if (T.end >= T.max) { btn.click(); return; }
+    T.end++; applyTime();
+  }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 900 : 220);
+};
+
+/* ---------------- panels ---------------- */
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function row(name, color, n) {
+  const el = document.createElement("div");
+  el.className = "row"; el.tabIndex = 0;
+  el.innerHTML = `<span class="sw" style="color:${color}"></span><span>${esc(name)}</span><span class="n">${esc(n)}</span>`;
+  el.onkeydown = e => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), el.click());
+  return el;
+}
+function openPanel(html) { document.getElementById("r-body").innerHTML = html; document.getElementById("right").classList.add("open"); }
+document.getElementById("close").onclick = () => document.getElementById("right").classList.remove("open");
+document.addEventListener("keydown", e => { if (e.key === "Escape") document.getElementById("right").classList.remove("open"); });
+
+function showCountry(code) {
+  const c = COUNTRIES[code], tier = TIERS[c.t];
+  openPanel(`<div class="label">Country coverage</div><h2>${esc(c.n)}</h2>
+    <div class="score"><b>${c.s}</b><span class="label">observability / 100</span></div>
+    <div class="meter"><i style="width:${c.s}%;background:${tier.color}"></i></div>
+    <div class="kv"><span>Tier</span><span style="color:${tier.color}">${esc(tier.name)}</span>
+    <span>Sources</span><span>${esc(c.src)}</span><span>Events</span><span>${esc(c.ev)}</span>
+    <span>Status</span><span>${esc(c.st || "Researched, not ingested yet")}</span></div>`);
+}
+
+function showLocation(p) {
+  let list = p.bbl ? (BY_BBL.get(String(p.bbl)) || [p]) : [p];
+  if (!p.addr && list[0]) p = Object.assign({}, p, { addr: list[0].addr });
+  list = [...list].sort((a, b) => b.date.localeCompare(a.date));
+  const sources = new Set(list.map(x => x.source));
+  openPanel(`<div class="label">Location timeline</div><h2>${esc(p.addr || "Location")}</h2>
+    <div class="mono" style="font-size:11px;color:var(--dim)">${list.length} government event${list.length > 1 ? "s" : ""} · ${sources.size} source${sources.size > 1 ? "s" : ""}${p.bbl ? " · tax lot " + esc(p.bbl) : ""}</div>
+    <ul class="tl">${list.map(x => `<li style="--c:${COL(x.kind)}"><div class="d">${esc(x.date)}</div>
+      <div class="t">${esc(x.title)}</div><div class="x">${esc(x.detail)}</div>
+      <div class="s">${esc(x.source)} · record ${esc(x.rid || "—")}</div></li>`).join("")}</ul>`);
+}
+
+function flyToCity(id) {
+  const c = CITIES.find(x => x.id === id);
+  spinning = false;
+  map.flyTo({ center: c.c, zoom: 14.2, pitch: 62, bearing: -25, duration: 4500, essential: true });
+  document.getElementById("back").style.display = "block";
+  openPanel(`<div class="label">City</div><h2>${esc(c.n)}</h2>
+    <div class="kv" style="margin-top:12px"><span>Status</span><span style="color:${CITY_COLOR[c.status]}">${esc(c.status === "live" ? (window.EVENTS ? "Live data" : "First live city — data not loaded yet") : c.status === "tested" ? "Data tested, not on the map yet" : "Planned")}</span>
+    <span>Data</span><span>${esc(c.note)}</span></div>`);
+}
+document.getElementById("back").onclick = () => {
+  map.flyTo({ center: [map.getCenter().lng, 25], zoom: 1.6, pitch: 0, bearing: 0, duration: 3500 });
+  document.getElementById("back").style.display = "none";
+  document.getElementById("right").classList.remove("open");
+  setTimeout(() => { spinning = true; spin(); }, 3600);
+};
+
+/* ---------------- HUD ---------------- */
+(function buildLeft() {
+  const t = document.getElementById("tiers");
+  for (const [k, v] of Object.entries(TIERS)) {
+    const n = Object.values(COUNTRIES).filter(c => c.t === k).length;
+    t.appendChild(row(v.name, v.color, n));
+  }
+  const cbox = document.getElementById("cities");
+  for (const c of CITIES) {
+    const el = row(c.n, CITY_COLOR[c.status], c.status);
+    el.onclick = () => flyToCity(c.id);
+    cbox.appendChild(el);
+  }
+  document.getElementById("s-countries").textContent = Object.keys(COUNTRIES).length;
+})();
+function setFeed(html) { document.getElementById("feed").innerHTML = html; }
+setFeed(CITIES.map(c => `<span><b style="color:${CITY_COLOR[c.status]}">●</b> ${esc(c.n.toUpperCase())} · ${esc(c.status)} · ${esc(c.note)}</span>`).join("") +
+  `<span>● Click a country for its data coverage · click a city to fly in</span>`);
+/* ---------------- load data: local events.js, or per-type files on the website ---------------- */
+(async function loadData() {
+  if (window.EVENTS) return;
+  try {
+    const m = await (await fetch("data/nyc/manifest.json", { cache: "no-cache" })).json();
+    const parts = await Promise.all(m.files.map(f => fetch("data/nyc/" + f.file).then(r => r.json())));
+    window.EVENTS = { type: "FeatureCollection", features: parts.flatMap(p => p.features) };
+    window.EVENTS_META = m;
+    if (map.isStyleLoaded() && map.getSource("cities")) addEvents();
+  } catch (e) { /* no data yet: the globe still works */ }
+})();
+setInterval(() => { document.getElementById("utc").textContent = new Date().toISOString().slice(0, 19).replace("T", " ") + " UTC"; }, 1000);
+</script>
+</body>
+</html>

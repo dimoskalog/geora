@@ -19,6 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -26,15 +27,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Pull New York City data
-        run: python pull_nyc.py --site
+      - name: Pull data for every region
+        run: python -m pipeline.run
+        env:
+          INSEE_KEY: ${{ secrets.INSEE_KEY }}
 
       - name: Save daily history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add history
-          git diff --cached --quiet || (git commit -m "Daily history $(date -u +%F)" && git push)
+          git diff --cached --quiet || (git commit -m "Daily history $(date -u +%F)" && git pull --rebase -X ours origin main && git push)
 
       - name: Assemble website
         run: |
@@ -42,6 +45,7 @@ jobs:
           cp index.html _site/
           cp -r data _site/
           rm -f _site/data/events.js _site/data/events.geojson
+          du -sh _site/data/*
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

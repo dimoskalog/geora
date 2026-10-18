@@ -31,7 +31,7 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family
 .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--closed);margin-right:6px;animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.25}}
 
-#left{top:60px;left:14px;width:250px;padding:14px;display:grid;gap:16px}
+#left{top:60px;left:14px;width:250px;padding:14px;display:grid;gap:16px;max-height:calc(100% - 150px);overflow:auto}
 .row{display:flex;align-items:center;gap:10px;padding:5px 6px;cursor:pointer;user-select:none;border:1px solid transparent}
 .row:hover{border-color:var(--line)}
 .row.off{opacity:.35}
@@ -94,8 +94,9 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family
   <h1>GEO<b>RA</b></h1>
   <span class="stat" style="letter-spacing:.08em">physical economy intelligence</span>
   <span class="stat">coverage <i id="s-countries">20</i> countries</span>
-  <span class="stat">live feeds <i id="s-feeds">0</i></span>
+  <span class="stat">live regions <i id="s-feeds">0</i></span>
   <span class="stat">events <i id="s-events">0</i></span>
+  <span class="stat" id="s-load" style="color:var(--hot)"></span>
   <span id="clock"><span class="live"></span><span id="utc"></span></span>
 </header>
 
@@ -105,7 +106,7 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family
     <div id="tiers"></div>
   </div>
   <div class="cities">
-    <div class="label" style="margin-bottom:6px">Cities</div>
+    <div class="label" style="margin-bottom:6px">Places</div>
     <div id="cities"></div>
   </div>
   <div id="evbox" hidden>
@@ -115,6 +116,10 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family
     <div class="seg" id="price"><button data-v="0" class="on">Any</button><button data-v="1000000">$1M+</button><button data-v="5000000">$5M+</button><button data-v="20000000">$20M+</button></div>
     <div class="label" style="margin:12px 0 2px">Time window</div>
     <div class="seg" id="win"><button data-d="7">7D</button><button data-d="30">30D</button><button data-d="90">90D</button><button data-d="0" class="on">All</button></div>
+  </div>
+  <div id="disbox" hidden>
+    <div class="label" style="margin-bottom:6px">Disruptions · live</div>
+    <div id="dislayers"></div>
   </div>
   <button id="back">◀ Back to globe</button>
 </aside>
@@ -173,23 +178,29 @@ const COUNTRIES = {
   "356": { n: "India", s: 25, t: "closed", src: "MCA snapshots (stale)", ev: "registered" },
   "276": { n: "Germany", s: 22, t: "closed", src: "No bulk access to the commercial register", ev: "—" }
 };
-const CITIES = [
-  { id: "nyc", n: "New York", c: [-73.985, 40.742], status: "live", note: "Building permits · property sales & mortgages · restaurants" },
-  { id: "par", n: "Paris", c: [2.3488, 48.8534], status: "tested", note: "SIRENE · BODACC · inspections — tested Oct 2026" },
+// places that are researched but not ingested yet (live places come from data/regions.json)
+const PLANNED = [
   { id: "seo", n: "Seoul", c: [126.978, 37.5665], status: "tested", note: "540,173 restaurant permits — tested Oct 2026" },
-  { id: "aus", n: "Austin", c: [-97.7431, 30.2672], status: "tested", note: "Sales-tax permits · liquor licences — tested Oct 2026" },
-  { id: "sfo", n: "San Francisco", c: [-122.4194, 37.7749], status: "planned", note: "Registered businesses · permits (public domain)" },
-  { id: "chi", n: "Chicago", c: [-87.6298, 41.8781], status: "planned", note: "Licences · permits · inspections" }
+  { id: "lon", n: "London", c: [-0.1276, 51.5072], status: "planned", note: "Food hygiene ratings · Companies House" },
+  { id: "osl", n: "Oslo", c: [10.7522, 59.9139], status: "planned", note: "Every business location, open API" }
 ];
+let PLACES = [...PLANNED];
+let REGIONS = [];
 const CITY_COLOR = { live: "#5ad1ff", tested: "#3ddc97", planned: "#748392" };
 const KINDS = { business: "New businesses", fitout: "Storefronts & interiors", construction: "New buildings & major work",
-                sale: "Property sales", mortgage: "Mortgages & loans", restaurant: "Restaurant inspections",
+                sale: "Sales (property & businesses)", mortgage: "Mortgages & loans", restaurant: "Restaurant inspections",
                 distress: "Closures & distress", maintenance: "Minor building work" };
 const OFF_BY_DEFAULT = ["maintenance", "mortgage", "restaurant"];
-// event types that count toward a "building with a story"
+// event types that count toward a "place with a story"
 const STORY_KINDS = ["business", "fitout", "construction", "sale", "mortgage", "distress"];
+const DIS = { quake: { n: "Earthquakes", c: "#ff8a3d" }, wildfires: { n: "Wildfires", c: "#ff4d4d" },
+              severeStorms: { n: "Storms", c: "#9ad1ff" }, volcanoes: { n: "Volcanoes", c: "#ff3d9a" },
+              floods: { n: "Floods", c: "#3d8bff" } };
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const COL = k => css("--" + k);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const placesFC = () => ({ type: "FeatureCollection", features: PLACES.map(c => ({ type: "Feature",
+  geometry: { type: "Point", coordinates: c.c }, properties: { id: c.id, n: c.n, status: c.status } })) });
 
 /* ---------------- map ---------------- */
 const map = new maplibregl.Map({
@@ -206,7 +217,7 @@ function spin() {
   const c = map.getCenter(); c.lng -= 2.2;
   map.easeTo({ center: c, duration: 1000, easing: t => t });
 }
-map.on("moveend", spin);
+map.on("moveend", () => { spin(); maybeLoad(); });
 ["mousedown", "touchstart", "wheel"].forEach(ev => map.on(ev, () => { spinning = false; }));
 
 map.on("style.load", async () => {
@@ -218,8 +229,9 @@ map.on("style.load", async () => {
   dimBasemap();
   addBuildings();
   await addCountries();
-  addCities();
-  addEvents();
+  addPlaces();
+  addEventLayers();
+  addDisruptionLayers();
   spin();
 });
 
@@ -264,7 +276,7 @@ async function addCountries() {
     paint: { "line-color": ["case", ["==", ["get", "tier"], "none"], "#22303d", tierColor],
       "line-width": ["case", ["==", ["get", "tier"], "none"], 0.4, 1] } });
   map.on("click", "c-fill", e => {
-    if (map.queryRenderedFeatures(e.point, { layers: ["city-dot"] }).length) return;
+    if (map.queryRenderedFeatures(e.point, { layers: ["city-dot", "dis"].filter(l => map.getLayer(l)) }).length) return;
     const code = e.features[0].properties.code;
     if (COUNTRIES[code]) showCountry(code);
   });
@@ -272,10 +284,8 @@ async function addCountries() {
   map.on("mouseleave", "c-fill", () => map.getCanvas().style.cursor = "");
 }
 
-function addCities() {
-  const fc = { type: "FeatureCollection", features: CITIES.map(c => ({ type: "Feature",
-    geometry: { type: "Point", coordinates: c.c }, properties: { id: c.id, n: c.n, status: c.status } })) };
-  map.addSource("cities", { type: "geojson", data: fc });
+function addPlaces() {
+  map.addSource("cities", { type: "geojson", data: placesFC() });
   const color = ["match", ["get", "status"], "live", CITY_COLOR.live, "tested", CITY_COLOR.tested, CITY_COLOR.planned];
   map.addLayer({ id: "city-pulse", type: "circle", source: "cities", maxzoom: 9,
     paint: { "circle-color": color, "circle-opacity": 0.25, "circle-blur": 0.6, "circle-radius": 14 } });
@@ -285,7 +295,7 @@ function addCities() {
     layout: { "text-field": ["upcase", ["get", "n"]], "text-font": ["Noto Sans Regular"], "text-size": 11,
               "text-offset": [0, 1.3], "text-anchor": "top", "text-letter-spacing": 0.15 },
     paint: { "text-color": "#dbe5ee", "text-halo-color": "#05070a", "text-halo-width": 1.5 } });
-  map.on("click", "city-dot", e => flyToCity(e.features[0].properties.id));
+  map.on("click", "city-dot", e => flyToPlace(e.features[0].properties.id));
   map.on("mouseenter", "city-dot", () => map.getCanvas().style.cursor = "pointer");
   map.on("mouseleave", "city-dot", () => map.getCanvas().style.cursor = "");
   let r = 0;                                   // gentle pulse
@@ -300,39 +310,49 @@ function addCities() {
   pulse();
 }
 
-/* ---------------- events (real data, when present) ---------------- */
+/* ---------------- events: loaded region by region ---------------- */
 const DAY = 86400000;
 const evOn = new Set(Object.keys(KINDS).filter(k => !OFF_BY_DEFAULT.includes(k)));
-const T = { win: 0, end: 0, min: 0, max: 0, price: 0, story: true, playing: false };
-let BY_BBL = new Map(), DAILY = [], ALL = [];
+const T = { win: 0, end: 0, min: Infinity, max: -Infinity, price: 0, story: true, playing: false };
+const EV = { type: "FeatureCollection", features: [] };
+let BY_LOC = new Map(), GEOM = new Map(), DAILY = [], ALL = [], STORIES = { type: "FeatureCollection", features: [] };
 const fmt = t => new Date(t * DAY).toISOString().slice(0, 10);
 
-function prepare(geo) {
-  const GEOM = new Map();
-  T.min = Infinity; T.max = -Infinity;
-  for (const f of geo.features) {
+function ingest(region, feats) {
+  const wasAtEnd = T.end >= T.max;
+  for (const f of feats) {
     const p = f.properties;
-    if (p.bbl && !GEOM.has(p.bbl)) GEOM.set(p.bbl, f.geometry);
     if (p.kind === "property") p.kind = p.sub === "Deed" ? "sale" : "mortgage";
     p.t = Math.floor(Date.parse(p.date + "T00:00:00Z") / DAY);
+    if (!isFinite(p.t)) continue;
     p.amt = Number(p.amount) || 0;
-    if (p.bbl) { if (!BY_BBL.has(p.bbl)) BY_BBL.set(p.bbl, []); BY_BBL.get(p.bbl).push(p); }
-    ALL.push(p);
+    p.region = region;
+    const key = p.loc || p.bbl;
+    if (key) {
+      p.key = region + "|" + key;
+      if (!BY_LOC.has(p.key)) { BY_LOC.set(p.key, []); GEOM.set(p.key, f.geometry); }
+      BY_LOC.get(p.key).push(p);
+    }
+    ALL.push(p); EV.features.push(f);
     if (p.t < T.min) T.min = p.t;
     if (p.t > T.max) T.max = p.t;
   }
-  // buildings with a story: two or more different kinds of significant events at the same tax lot
-  const stories = [];
-  for (const [bbl, list] of BY_BBL) {
+  if (wasAtEnd || !T.end) T.end = T.max;
+  // places with a story: two or more different kinds of significant events at the same location
+  STORIES.features = [];
+  for (const [key, list] of BY_LOC) {
     const kinds = new Set(list.map(x => x.kind).filter(k => STORY_KINDS.includes(k)));
     if (kinds.size < 2) continue;
     let first = Infinity, last = -Infinity;
     for (const x of list) { if (x.t < first) first = x.t; if (x.t > last) last = x.t; }
-    stories.push({ type: "Feature", geometry: GEOM.get(bbl),
-      properties: { bbl, n: list.length, kinds: kinds.size, addr: list[0].addr, first, last } });
+    STORIES.features.push({ type: "Feature", geometry: GEOM.get(key),
+      properties: { key, n: list.length, kinds: kinds.size, addr: list[0].addr, first, last } });
   }
-  T.end = T.max;
-  return { type: "FeatureCollection", features: stories };
+  if (map.getSource("ev")) { map.getSource("ev").setData(EV); map.getSource("story").setData(STORIES); }
+  refreshLayerCounts();
+  buildDaily();
+  applyTime();
+  updateFeed();
 }
 
 function evFilter() {
@@ -348,22 +368,21 @@ function storyFilter() {
   return f;
 }
 
-function addEvents() {
-  const geo = window.EVENTS;
-  if (!geo || !geo.features || !geo.features.length || map.getSource("ev")) return;
-  const stories = ALL.length ? window._STORIES : (window._STORIES = prepare(geo));
-  map.addSource("ev", { type: "geojson", data: geo });
-  map.addSource("story", { type: "geojson", data: stories });
+function addEventLayers() {
+  if (map.getSource("ev")) return;
+  map.addSource("ev", { type: "geojson", data: EV });
+  map.addSource("story", { type: "geojson", data: STORIES });
   const color = ["match", ["get", "kind"], ...Object.keys(KINDS).flatMap(k => [k, COL(k)]), "#fff"];
   // "city lights": tiny colored dots when zoomed out, bigger clickable dots up close
   map.addLayer({ id: "ev-glow", type: "circle", source: "ev", minzoom: 13.5,
     paint: { "circle-color": color, "circle-blur": 1,
              "circle-opacity": ["interpolate", ["linear"], ["zoom"], 13.5, 0, 15, 0.3],
              "circle-radius": ["interpolate", ["linear"], ["zoom"], 13.5, 5, 17, 18] } });
-  map.addLayer({ id: "ev", type: "circle", source: "ev", minzoom: 8,
+  map.addLayer({ id: "ev", type: "circle", source: "ev", minzoom: 5,
     paint: { "circle-color": color,
-             "circle-opacity": ["interpolate", ["linear"], ["zoom"], 8, 0, 9, 0.55, 12, 0.8, 14, 1],
+             "circle-opacity": ["interpolate", ["linear"], ["zoom"], 5, 0, 6, 0.5, 12, 0.8, 14, 1],
              "circle-radius": ["interpolate", ["linear"], ["zoom"],
+                6, ["match", ["get", "kind"], "business", 1.1, "fitout", 1, "maintenance", 0.4, 0.7],
                 9, ["match", ["get", "kind"], "business", 1.6, "fitout", 1.4, "maintenance", 0.6, 0.9],
                 12, ["match", ["get", "kind"], "business", 2.6, "fitout", 2.3, "maintenance", 1, 1.6],
                 14, ["match", ["get", "kind"], "business", 5, "fitout", 4.5, "maintenance", 2.2, 3.6],
@@ -380,30 +399,33 @@ function addEvents() {
     map.on("mouseenter", id, () => map.getCanvas().style.cursor = "pointer");
     map.on("mouseleave", id, () => map.getCanvas().style.cursor = "");
   }
-  // HUD
-  document.getElementById("s-events").textContent = ALL.length.toLocaleString();
-  document.getElementById("s-feeds").textContent = "1";
+  applyTime();
+}
+
+function refreshLayerCounts() {
   const counts = {};
   ALL.forEach(p => counts[p.kind] = (counts[p.kind] || 0) + 1);
   const box = document.getElementById("evlayers");
   if (!box.children.length) {
     for (const [k, name] of Object.entries(KINDS)) {
-      const el = row(name, COL(k), (counts[k] || 0).toLocaleString());
+      const el = row(name, COL(k), "0");
+      el.dataset.k = k;
       if (!evOn.has(k)) el.classList.add("off");
       el.onclick = () => { evOn.has(k) ? evOn.delete(k) : evOn.add(k); el.classList.toggle("off"); applyTime(); };
       box.appendChild(el);
     }
-    const st = row("Buildings with a story", "#ffffff", stories.features.length.toLocaleString());
+    const st = row("Places with a story", "#ffffff", "0");
+    st.dataset.k = "story";
     st.querySelector(".sw").style.cssText += ";background:none;border:1.5px solid #fff;border-radius:50%";
-    st.title = "Two or more different kinds of events at the same property (for example a sale, then a mortgage, then a permit)";
+    st.title = "Two or more different kinds of events at the same place (for example a sale, then a mortgage, then a permit)";
     st.onclick = () => { T.story = !T.story; st.classList.toggle("off"); applyTime(); };
     box.appendChild(st);
   }
+  for (const el of box.children) {
+    const k = el.dataset.k;
+    el.querySelector(".n").textContent = (k === "story" ? STORIES.features.length : (counts[k] || 0)).toLocaleString();
+  }
   document.getElementById("evbox").hidden = false;
-  buildDaily();
-  applyTime();
-  const recent = [...geo.features].sort((a, b) => b.properties.date.localeCompare(a.properties.date)).slice(0, 40);
-  setFeed(recent.map(f => `<span><b style="color:${COL(f.properties.kind)}">●</b> ${esc(f.properties.date)} · ${esc(f.properties.city || "New York")} · ${esc(f.properties.title)}${f.properties.addr ? " · " + esc(f.properties.addr) : ""}</span>`).join(""));
 }
 
 function applyTime() {
@@ -413,6 +435,7 @@ function applyTime() {
     map.setFilter("story-ring", storyFilter());
     map.setLayoutProperty("story-ring", "visibility", T.story ? "visible" : "none");
   }
+  if (!isFinite(T.min)) return;
   const start = T.win ? T.end - T.win + 1 : T.min;
   document.getElementById("range").textContent = `${fmt(start)} → ${fmt(T.end)}`;
   drawHist();
@@ -427,7 +450,7 @@ function buildDaily() {
 }
 function drawHist() {
   const c = document.getElementById("hist"), r = c.getBoundingClientRect(), dpr = devicePixelRatio || 1;
-  if (!r.width) return;
+  if (!r.width || !DAILY.length) return;
   c.width = r.width * dpr; c.height = r.height * dpr;
   const g = c.getContext("2d"); g.scale(dpr, dpr); g.clearRect(0, 0, r.width, r.height);
   const tot = d => [...evOn].reduce((a, k) => a + (d[k] || 0), 0);
@@ -452,6 +475,7 @@ function drawHist() {
   g.fillStyle = "#5ad1ff"; g.fillRect(Math.min(r.width - 2, x - 1), 0, 2, r.height - 12);
 }
 function scrub(e) {
+  if (!DAILY.length) return;
   const r = e.currentTarget.getBoundingClientRect();
   const i = Math.min(DAILY.length - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * DAILY.length)));
   T.end = DAILY[i].t; applyTime();
@@ -488,8 +512,141 @@ document.getElementById("play").onclick = () => {
   }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 900 : 220);
 };
 
+/* ---------------- regions: list + lazy loading ---------------- */
+const inBox = (b, c, pad = 0) => b && c[0] >= b[0] - pad && c[0] <= b[2] + pad && c[1] >= b[1] - pad && c[1] <= b[3] + pad;
+
+async function loadRegion(r) {
+  if (r.loaded || r.loading) return r.loading;
+  r.loading = (async () => {
+    setStatus(`Loading ${r.name}…`);
+    try {
+      const m = await (await fetch(`data/${r.id}/manifest.json`, { cache: "no-cache" })).json();
+      const parts = await Promise.all(m.files.map(f => fetch(`data/${r.id}/${f.file}`).then(x => x.json())));
+      ingest(r.id, parts.flatMap(p => p.features));
+      r.loaded = true;
+      setStatus("");
+    } catch (e) { setStatus(`Could not load ${r.name}`); console.warn(e); }
+  })();
+  return r.loading;
+}
+function maybeLoad() {
+  if (map.getZoom() < 6.5) return;
+  const c = map.getCenter().toArray();
+  for (const r of REGIONS) if (inBox(r.bbox, c, 0.3)) loadRegion(r);
+}
+function setStatus(s) { document.getElementById("s-load").textContent = s; }
+
+async function loadRegions() {
+  try {
+    const j = await (await fetch("data/regions.json", { cache: "no-cache" })).json();
+    REGIONS = j.regions || [];
+  } catch (e) { REGIONS = []; }
+  const live = REGIONS.map(r => ({ id: r.id, n: r.name, c: r.focus || r.center, status: "live", region: r.id,
+    note: (r.sources || []).join(" · "), events: r.events, last: r.last }));
+  const names = new Set(live.map(p => p.n.toLowerCase()));
+  // a national region with a focus city (France -> Paris) also shows the city name
+  for (const r of REGIONS) if (r.focus && r.id === "fr") live.find(p => p.id === "fr").n = "Paris · France";
+  PLACES = [...live, ...PLANNED.filter(p => !names.has(p.n.toLowerCase()))];
+  if (map.getSource("cities")) map.getSource("cities").setData(placesFC());
+  buildPlaces();
+  document.getElementById("s-feeds").textContent = REGIONS.length;
+  document.getElementById("s-events").textContent = REGIONS.reduce((a, r) => a + (r.events || 0), 0).toLocaleString();
+  updateFeed();
+}
+
+/* ---------------- disruptions (live, worldwide) ---------------- */
+const DISFC = { type: "FeatureCollection", features: [] };
+const disOn = new Set(Object.keys(DIS));
+async function loadDisruptions() {
+  const feats = [];
+  try {
+    const q = await (await fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson")).json();
+    for (const f of q.features) {
+      const p = f.properties;
+      feats.push({ type: "Feature", geometry: { type: "Point", coordinates: f.geometry.coordinates.slice(0, 2) },
+        properties: { cat: "quake", title: p.title, mag: p.mag, time: p.time, url: p.url, src: "USGS" } });
+    }
+  } catch (e) { console.warn("USGS unavailable", e); }
+  try {
+    const e = await (await fetch("https://eonet.gsfc.nasa.gov/api/v3/events/geojson?status=open&days=60")).json();
+    for (const f of e.features) {
+      const cat = (f.properties.categories || [])[0]?.id;
+      if (!DIS[cat] || cat === "quake") continue;
+      let c = f.geometry.coordinates;
+      while (Array.isArray(c[0])) c = c[0];
+      feats.push({ type: "Feature", geometry: { type: "Point", coordinates: c.slice(0, 2) },
+        properties: { cat, title: f.properties.title, time: Date.parse(f.properties.date), mag: f.properties.magnitudeValue,
+          unit: f.properties.magnitudeUnit, url: (f.properties.sources || [])[0]?.url || f.properties.link, src: "NASA EONET" } });
+    }
+  } catch (e) { console.warn("EONET unavailable", e); }
+  DISFC.features = feats;
+  if (map.getSource("dis")) map.getSource("dis").setData(DISFC);
+  buildDisruptionRows();
+  updateFeed();
+}
+function addDisruptionLayers() {
+  if (map.getSource("dis")) return;
+  map.addSource("dis", { type: "geojson", data: DISFC });
+  const color = ["match", ["get", "cat"], ...Object.entries(DIS).flatMap(([k, v]) => [k, v.c]), "#fff"];
+  const size = ["case", ["==", ["get", "cat"], "quake"],
+    ["interpolate", ["linear"], ["coalesce", ["get", "mag"], 4.5], 4.5, 3, 6, 7, 8, 14], 4];
+  map.addLayer({ id: "dis-halo", type: "circle", source: "dis",
+    paint: { "circle-color": color, "circle-opacity": 0.12, "circle-blur": 0.8, "circle-radius": ["*", size, 2.6] } });
+  map.addLayer({ id: "dis", type: "circle", source: "dis",
+    paint: { "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": color, "circle-stroke-width": 1.4, "circle-radius": size } });
+  map.on("click", "dis", e => showDisruption(e.features[0]));
+  map.on("mouseenter", "dis", () => map.getCanvas().style.cursor = "pointer");
+  map.on("mouseleave", "dis", () => map.getCanvas().style.cursor = "");
+  applyDis();
+}
+function applyDis() {
+  if (!map.getLayer("dis")) return;
+  const f = ["in", ["get", "cat"], ["literal", [...disOn]]];
+  map.setFilter("dis", f); map.setFilter("dis-halo", f);
+}
+function buildDisruptionRows() {
+  const box = document.getElementById("dislayers"); box.innerHTML = "";
+  const counts = {};
+  DISFC.features.forEach(f => counts[f.properties.cat] = (counts[f.properties.cat] || 0) + 1);
+  for (const [k, v] of Object.entries(DIS)) {
+    if (!counts[k]) continue;
+    const el = row(v.n, v.c, counts[k].toLocaleString());
+    el.querySelector(".sw").style.cssText += ";background:none;border:1.5px solid currentColor;border-radius:50%";
+    if (!disOn.has(k)) el.classList.add("off");
+    el.onclick = () => { disOn.has(k) ? disOn.delete(k) : disOn.add(k); el.classList.toggle("off"); applyDis(); };
+    box.appendChild(el);
+  }
+  document.getElementById("disbox").hidden = !DISFC.features.length;
+}
+const km = (a, b) => {
+  const R = 6371, r = Math.PI / 180, dLat = (b[1] - a[1]) * r, dLon = (b[0] - a[0]) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * r) * Math.cos(b[1] * r) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+};
+function showDisruption(f) {
+  const p = f.properties, c = f.geometry.coordinates, d = DIS[p.cat];
+  const radius = p.cat === "quake" ? (p.mag >= 7 ? 120 : p.mag >= 6 ? 60 : p.mag >= 5 ? 25 : 10) : p.cat === "wildfires" ? 15 : 0;
+  const near = REGIONS.filter(r => inBox(r.bbox, c, 1.5));
+  let exposure = "";
+  if (radius && near.length) {
+    const hits = ALL.filter(x => x.key && km(c, GEOM.get(x.key).coordinates) <= radius);
+    const locs = new Set(hits.map(x => x.key)), by = {};
+    hits.forEach(x => by[x.kind] = (by[x.kind] || 0) + 1);
+    exposure = `<div class="label" style="margin-top:16px">Economic exposure · within ${radius} km</div>
+      ${near.some(r => !r.loaded) ? `<p class="mono" style="font-size:11px;color:var(--dim)">Loading ${esc(near.map(r => r.name).join(", "))} data… reopen in a moment.</p>` : ""}
+      <div class="kv" style="margin-top:8px"><span>Places</span><span>${locs.size.toLocaleString()} with recent activity</span>
+      ${Object.entries(by).map(([k, n]) => `<span>${esc(KINDS[k] || k)}</span><span>${n.toLocaleString()} events</span>`).join("")}</div>`;
+    near.forEach(loadRegion);
+  } else if (radius) {
+    exposure = `<p class="mono" style="font-size:11px;color:var(--dim);margin-top:14px">No GEORA business data covers this area yet, so exposure can't be measured here.</p>`;
+  }
+  openPanel(`<div class="label">Disruption · ${esc(d.n)}</div><h2>${esc(p.title)}</h2>
+    <div class="kv" style="margin-top:12px"><span>When</span><span>${esc(new Date(p.time).toUTCString().slice(5, 22))} UTC</span>
+    ${p.mag ? `<span>${p.cat === "quake" ? "Magnitude" : "Size"}</span><span>${esc(p.mag)} ${esc(p.unit || "")}</span>` : ""}
+    <span>Source</span><span>${esc(p.src)}${p.url ? ` · <a href="${esc(p.url)}" target="_blank" rel="noopener" style="color:var(--hot)">record</a>` : ""}</span></div>${exposure}`);
+}
+
 /* ---------------- panels ---------------- */
-const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 function row(name, color, n) {
   const el = document.createElement("div");
   el.className = "row"; el.tabIndex = 0;
@@ -503,33 +660,38 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") document.get
 
 function showCountry(code) {
   const c = COUNTRIES[code], tier = TIERS[c.t];
+  const live = REGIONS.filter(r => r.country === { "250": "FR", "840": "US", "410": "KR", "826": "GB" }[code]);
   openPanel(`<div class="label">Country coverage</div><h2>${esc(c.n)}</h2>
     <div class="score"><b>${c.s}</b><span class="label">observability / 100</span></div>
     <div class="meter"><i style="width:${c.s}%;background:${tier.color}"></i></div>
     <div class="kv"><span>Tier</span><span style="color:${tier.color}">${esc(tier.name)}</span>
     <span>Sources</span><span>${esc(c.src)}</span><span>Events</span><span>${esc(c.ev)}</span>
-    <span>Status</span><span>${esc(c.st || "Researched, not ingested yet")}</span></div>`);
+    <span>Status</span><span>${live.length ? "Live: " + esc(live.map(r => `${r.name} (${(r.events || 0).toLocaleString()} events)`).join(", ")) : esc(c.st || "Researched, not ingested yet")}</span></div>`);
 }
 
 function showLocation(p) {
-  let list = p.bbl ? (BY_BBL.get(String(p.bbl)) || [p]) : [p];
+  let list = p.key ? (BY_LOC.get(p.key) || [p]) : [p];
   if (!p.addr && list[0]) p = Object.assign({}, p, { addr: list[0].addr });
   list = [...list].sort((a, b) => b.date.localeCompare(a.date));
   const sources = new Set(list.map(x => x.source));
   openPanel(`<div class="label">Location timeline</div><h2>${esc(p.addr || "Location")}</h2>
-    <div class="mono" style="font-size:11px;color:var(--dim)">${list.length} government event${list.length > 1 ? "s" : ""} · ${sources.size} source${sources.size > 1 ? "s" : ""}${p.bbl ? " · tax lot " + esc(p.bbl) : ""}</div>
-    <ul class="tl">${list.map(x => `<li style="--c:${COL(x.kind)}"><div class="d">${esc(x.date)}</div>
+    <div class="mono" style="font-size:11px;color:var(--dim)">${list.length} public record${list.length > 1 ? "s" : ""} · ${sources.size} source${sources.size > 1 ? "s" : ""}</div>
+    <ul class="tl">${list.map(x => `<li style="--c:${COL(x.kind)}"><div class="d">${esc(x.date)}${x.seen && x.seen !== x.date ? ` · first seen ${esc(x.seen)}` : ""}</div>
       <div class="t">${esc(x.title)}</div><div class="x">${esc(x.detail)}</div>
       <div class="s">${esc(x.source)} · record ${esc(x.rid || "—")}</div></li>`).join("")}</ul>`);
 }
 
-function flyToCity(id) {
-  const c = CITIES.find(x => x.id === id);
+function flyToPlace(id) {
+  const c = PLACES.find(x => x.id === id);
+  if (!c) return;
   spinning = false;
-  map.flyTo({ center: c.c, zoom: 14.2, pitch: 62, bearing: -25, duration: 4500, essential: true });
+  const r = REGIONS.find(x => x.id === c.region);
+  if (r) loadRegion(r);
+  map.flyTo({ center: c.c, zoom: r ? 13.2 : 11, pitch: 60, bearing: -25, duration: 4500, essential: true });
   document.getElementById("back").style.display = "block";
-  openPanel(`<div class="label">City</div><h2>${esc(c.n)}</h2>
-    <div class="kv" style="margin-top:12px"><span>Status</span><span style="color:${CITY_COLOR[c.status]}">${esc(c.status === "live" ? (window.EVENTS ? "Live data" : "First live city — data not loaded yet") : c.status === "tested" ? "Data tested, not on the map yet" : "Planned")}</span>
+  openPanel(`<div class="label">Place</div><h2>${esc(c.n)}</h2>
+    <div class="kv" style="margin-top:12px"><span>Status</span><span style="color:${CITY_COLOR[c.status]}">${esc(c.status === "live" ? "Live data, refreshed daily" : c.status === "tested" ? "Data tested, not on the map yet" : "Planned")}</span>
+    ${c.events ? `<span>Events</span><span>${c.events.toLocaleString()} (latest ${esc(c.last)})</span>` : ""}
     <span>Data</span><span>${esc(c.note)}</span></div>`);
 }
 document.getElementById("back").onclick = () => {
@@ -540,34 +702,46 @@ document.getElementById("back").onclick = () => {
 };
 
 /* ---------------- HUD ---------------- */
-(function buildLeft() {
+(function buildTiers() {
   const t = document.getElementById("tiers");
   for (const [k, v] of Object.entries(TIERS)) {
     const n = Object.values(COUNTRIES).filter(c => c.t === k).length;
     t.appendChild(row(v.name, v.color, n));
   }
-  const cbox = document.getElementById("cities");
-  for (const c of CITIES) {
-    const el = row(c.n, CITY_COLOR[c.status], c.status);
-    el.onclick = () => flyToCity(c.id);
-    cbox.appendChild(el);
-  }
   document.getElementById("s-countries").textContent = Object.keys(COUNTRIES).length;
 })();
+function buildPlaces() {
+  const cbox = document.getElementById("cities"); cbox.innerHTML = "";
+  for (const c of PLACES) {
+    const el = row(c.n, CITY_COLOR[c.status], c.status === "live" && c.events ? c.events.toLocaleString() : c.status);
+    el.onclick = () => flyToPlace(c.id);
+    cbox.appendChild(el);
+  }
+}
+buildPlaces();
 function setFeed(html) { document.getElementById("feed").innerHTML = html; }
-setFeed(CITIES.map(c => `<span><b style="color:${CITY_COLOR[c.status]}">●</b> ${esc(c.n.toUpperCase())} · ${esc(c.status)} · ${esc(c.note)}</span>`).join("") +
-  `<span>● Click a country for its data coverage · click a city to fly in</span>`);
-/* ---------------- load data: local events.js, or per-type files on the website ---------------- */
-(async function loadData() {
-  if (window.EVENTS) return;
-  try {
-    const m = await (await fetch("data/nyc/manifest.json", { cache: "no-cache" })).json();
-    const parts = await Promise.all(m.files.map(f => fetch("data/nyc/" + f.file).then(r => r.json())));
-    window.EVENTS = { type: "FeatureCollection", features: parts.flatMap(p => p.features) };
-    window.EVENTS_META = m;
-    if (map.isStyleLoaded() && map.getSource("cities")) addEvents();
-  } catch (e) { /* no data yet: the globe still works */ }
+function updateFeed() {
+  const items = [];
+  const recent = [...ALL].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+  for (const p of recent) items.push(`<span><b style="color:${COL(p.kind)}">●</b> ${esc(p.date)} · ${esc(REGIONS.find(r => r.id === p.region)?.name || "")} · ${esc(p.title)}${p.addr ? " · " + esc(p.addr) : ""}</span>`);
+  const dis = [...DISFC.features].sort((a, b) => b.properties.time - a.properties.time).slice(0, 8);
+  for (const f of dis) items.push(`<span><b style="color:${DIS[f.properties.cat].c}">◯</b> ${esc(DIS[f.properties.cat].n.toUpperCase())} · ${esc(f.properties.title)}</span>`);
+  if (!ALL.length) for (const r of REGIONS) items.push(`<span><b style="color:${CITY_COLOR.live}">●</b> ${esc(r.name.toUpperCase())} · ${(r.events || 0).toLocaleString()} events · latest ${esc(r.last)}</span>`);
+  items.push(`<span>● Click a country for its data coverage · click a place to fly in · click a ring for a disruption's economic exposure</span>`);
+  setFeed(items.join(""));
+}
+updateFeed();
+
+/* ---------------- start: local events.js (old desktop copy) or the website's regions ---------------- */
+(async function start() {
+  await loadRegions();
+  if (window.EVENTS && !REGIONS.length) {          // old local copy without regions.json
+    REGIONS = [{ id: "us-nyc", name: "New York", country: "US", center: [-73.985, 40.742], bbox: [-74.3, 40.45, -73.65, 40.95], loaded: true, events: window.EVENTS.features.length }];
+    ingest("us-nyc", window.EVENTS.features);
+  }
+  loadDisruptions();
 })();
+
 setInterval(() => { document.getElementById("utc").textContent = new Date().toISOString().slice(0, 19).replace("T", " ") + " UTC"; }, 1000);
 </script>
 </body>

@@ -53,7 +53,8 @@ def http(url, params=None, data=None, headers=None, tries=4, timeout=180, raw=Fa
                 break
         except Exception as e:
             last = repr(e)
-        time.sleep(3 * (i + 1))
+        if i < tries - 1:
+            time.sleep(3 * (i + 1))
     raise RuntimeError(f"{url[:200]} -> {last}")
 
 

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 11 * * *"     # every day, 11:17 UTC (7:17 am New York)
   workflow_dispatch:          # "Run workflow" button on GitHub
+    inputs:
+      only:
+        description: "Test run: only these regions (comma-separated). Does not publish the site."
+        required: false
+        default: ""
   push:
     branches: [main]
 
@@ -30,7 +35,8 @@ jobs:
       - name: Pull data for every region
         run: |
           set -o pipefail
-          python -u -m pipeline.run 2>&1 | tee history/run_log.txt
+          if [ -n "${{ inputs.only }}" ]; then ARGS="--only ${{ inputs.only }}"; fi
+          python -u -m pipeline.run $ARGS 2>&1 | tee history/run_log.txt
         env:
           INSEE_KEY: ${{ secrets.INSEE_KEY }}
 
@@ -43,6 +49,7 @@ jobs:
           git diff --cached --quiet || (git commit -m "Daily history $(date -u +%F)" && git pull --rebase -X ours origin main && git push)
 
       - name: Assemble website
+        if: ${{ !inputs.only }}
         run: |
           mkdir _site
           cp index.html _site/
@@ -51,11 +58,14 @@ jobs:
           du -sh _site/data/*
 
       - uses: actions/configure-pages@v5
+        if: ${{ !inputs.only }}
       - uses: actions/upload-pages-artifact@v3
+        if: ${{ !inputs.only }}
         with:
           path: _site
 
   deploy:
+    if: ${{ !inputs.only }}
     needs: build
     runs-on: ubuntu-latest
     environment:

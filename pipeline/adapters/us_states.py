@@ -98,15 +98,18 @@ NY_BBOX = [-79.8, 40.4, -71.8, 45.1]
 def ny_corporations():
     log("\n== New York State new corporations and LLCs (statewide)")
     cols = socrata_columns("data.ny.gov", "n9v6-gdp6")
-    pre = next((p for p in ("location", "ceo", "dos_process") if f"{p}_address_1" in cols), None)
-    if not pre:
-        raise RuntimeError("no address columns in n9v6-gdp6: " + ", ".join(list(cols)[:30]))
+    pres = [p for p in ("location", "ceo", "dos_process") if f"{p}_address_1" in cols]
     rows = socrata("data.ny.gov", "n9v6-gdp6", f"initial_dos_filing_date >= '{since(DAYS)}'", "initial_dos_filing_date DESC",
                    20000, label="new entities")
+    if rows:
+        log("   sample: " + str({k: v for k, v in rows[0].items() if "address" in k or "state" in k or "city" in k})[:300])
     def build(r):
         when = iso_date(r.get("initial_dos_filing_date"))
-        a, ci, st = r.get(f"{pre}_address_1"), r.get(f"{pre}_city"), r.get(f"{pre}_state")
-        if not when or not a or (st or "NY") != "NY":
+        pre = next((p for p in pres if r.get(f"{p}_address_1")), None)
+        if not when or not pre:
+            return None
+        a, ci, st = r.get(f"{pre}_address_1"), r.get(f"{pre}_city"), str(r.get(f"{pre}_state") or "NY").upper()
+        if st not in ("NY", "NEW YORK"):
             return None
         args = ("business", "Business registered", when, f"{title_case(r.get('current_entity_name'))}: new {(r.get('entity_type') or 'business').lower()}",
                 "Registered address (may be an agent, office or home address, not a storefront)", "NY Department of State",

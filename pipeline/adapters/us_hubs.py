@@ -78,7 +78,11 @@ def to_events(rows, r, name, state, center, source, pending_ok=True):
             if str(i) in geo:
                 a[3], a[4] = geo[str(i)]
                 out.append(event(*a))
-    return [e for e in out if e]
+    got = [e for e in out if e]
+    if rows and not got:
+        p, lat, lon, when = rows[0]
+        log(f"   0 events from {len(rows)} rows. roles={r} date={when} coords={lat},{lon} sample={str(p)[:400]}")
+    return got
 
 
 # -------------------------------------------------------------- ArcGIS Hub ----

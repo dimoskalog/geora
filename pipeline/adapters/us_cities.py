@@ -267,7 +267,7 @@ def dataset_events(city, ds):
     return got
 
 
-STATES = {'us-sf': 'CA', 'us-chicago': 'IL', 'us-seattle': 'WA', 'us-austin': 'TX', 'us-la': 'CA', 'us-dallas': 'TX', 'us-nola': 'LA', 'us-kc': 'MO', 'us-cincinnati': 'OH', 'us-montgomery': 'MD', 'us-cambridge': 'MA', 'us-honolulu': 'HI', 'us-mesa': 'AZ', 'us-baton-rouge': 'LA'}
+STATES = {'us-sf': 'CA', 'us-chicago': 'IL', 'us-seattle': 'WA', 'us-austin': 'TX', 'us-la': 'CA', 'us-dallas': 'TX', 'us-nola': 'LA', 'us-kc': 'MO', 'us-cincinnati': 'OH', 'us-montgomery': 'MD', 'us-cambridge': 'MA', 'us-honolulu': 'HI', 'us-mesa': 'AZ', 'us-baton-rouge': 'LA', 'us-oakland': 'CA', 'us-orlando': 'FL', 'us-chattanooga': 'TN', 'us-buffalo': 'NY', 'us-providence': 'RI', 'us-norfolk': 'VA', 'us-somerville': 'MA', 'us-little-rock': 'AR', 'us-gainesville': 'FL'}
 
 
 def regions():

@@ -10,7 +10,7 @@ An event always carries:
   loc       stable location key inside its region (tax lot, permit location, address...)
   source / rid   which public dataset and which record, so every dot has evidence
 """
-import json, os, re, ssl, time, urllib.parse, urllib.request
+import csv, hashlib, io, json, os, re, ssl, time, urllib.parse, urllib.request, uuid
 from datetime import date, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -173,6 +173,8 @@ def apply_history(region, feats):
     for ft in feats:
         p = ft["properties"]
         undated = p.pop("undated", False)
+        if not p.get("rid"):
+            p["rid"] = "h" + hashlib.md5(f"{p.get('title')}|{p.get('addr')}|{p['date']}".encode()).hexdigest()[:12]
         key = f"{p['kind']}|{p['source']}|{p['rid']}|{'' if undated else p['date']}"
         if key not in seen:
             seen[key] = today
@@ -208,3 +210,36 @@ def write_region(region, meta, feats):
     with open(os.path.join(out, "manifest.json"), "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, indent=1)
     return manifest
+
+
+# ------------------------------------------------------------ US geocoder ----
+def multipart(fields, files):
+    b = uuid.uuid4().hex
+    body = b""
+    for k, v in fields:
+        body += f"--{b}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode()
+    for k, (fname, content) in files.items():
+        body += (f"--{b}\r\nContent-Disposition: form-data; name=\"{k}\"; filename=\"{fname}\"\r\n"
+                 f"Content-Type: text/csv\r\n\r\n").encode() + content + f"\r\n--{b}--\r\n".encode()
+    return body, f"multipart/form-data; boundary={b}"
+
+
+def geocode_us(rows):
+    """rows: [(id, street, city, state, zip)] -> {id: (lat, lon)} using the free US Census batch geocoder."""
+    out = {}
+    for i in range(0, len(rows), 9000):
+        buf = io.StringIO()
+        csv.writer(buf).writerows(rows[i:i + 9000])
+        body, ctype = multipart([("benchmark", "Public_AR_Current")], {"addressFile": ("a.csv", buf.getvalue().encode())})
+        try:
+            res = http("https://geocoding.geo.census.gov/geocoder/locations/addressbatch", data=body,
+                       headers={"Content-Type": ctype, "Accept": "text/csv"}, raw=True, tries=2, timeout=900)
+        except RuntimeError as e:
+            log(f"   census geocoder failed: {str(e)[:160]}")
+            continue
+        for r in csv.reader(io.StringIO(res.decode("utf-8", "replace"))):
+            if len(r) >= 6 and r[2] == "Match" and "," in r[5]:
+                lon, lat = r[5].split(",")[:2]
+                out[r[0]] = (num(lat), num(lon))
+        log(f"   census geocoded {len(out)} of {min(i + 9000, len(rows))}")
+    return out

@@ -5,7 +5,7 @@ Each dataset lists candidate column names for each role; the adapter reads the d
 column list and uses the first candidate that exists, so small schema differences don't break it.
 """
 import re
-from pipeline.core import socrata, socrata_columns, http, event, classify_permit, num, title_case, since, point_of, log
+from pipeline.core import socrata, socrata_columns, http, event, classify_permit, num, title_case, since, point_of, log, geocode_us
 
 DAYS = 90
 
@@ -94,8 +94,9 @@ BLDS = {"date": ["issueddate", "issued_date", "issue_date", "dateissued", "permi
         "rid": ["permitnum", "permit_number", "permitnumber", "permit_no", "permit_", "id", "numstring"]}
 
 
-def city(name, domain, center, bbox, search="building permits", must=("permit",)):
-    return {"meta": {"name": name, "country": "US", "center": center, "bbox": bbox}, "domain": domain,
+def city(name, domain, center, bbox=None, search="building permits", must=("permit",), country="US"):
+    bbox = bbox or [center[0] - 0.3, center[1] - 0.22, center[0] + 0.3, center[1] + 0.22]
+    return {"meta": {"name": name, "country": country, "center": center, "bbox": bbox}, "domain": domain,
             "datasets": [dict(BLDS, search=search, must=must, source=f"{name} Building Permits", mode="permit")]}
 
 
@@ -106,10 +107,20 @@ CITIES.update({
     "us-cincinnati": city("Cincinnati", "data.cincinnati-oh.gov", [-84.512, 39.1031], [-84.72, 39.05, -84.36, 39.23]),
     "us-montgomery": city("Montgomery County, MD", "data.montgomerycountymd.gov", [-77.152, 39.084], [-77.53, 38.93, -76.88, 39.36]),
     "us-cambridge": city("Cambridge, MA", "data.cambridgema.gov", [-71.1097, 42.3736], [-71.17, 42.35, -71.06, 42.41]),
-    "us-nashville": city("Nashville", "data.nashville.gov", [-86.7816, 36.1627], [-87.06, 35.96, -86.51, 36.41]),
     "us-honolulu": city("Honolulu", "data.honolulu.gov", [-157.8583, 21.3069], [-158.3, 21.25, -157.6, 21.72]),
-    "us-mesa": city("Mesa, AZ", "data.mesaaz.gov", [-111.8315, 33.4152], [-111.95, 33.27, -111.57, 33.51]),
+    "us-mesa": city("Mesa, AZ", "data.mesaaz.gov", [-111.8315, 33.4152], [-111.95, 33.27, -111.57, 33.51], search="permits"),
     "us-baton-rouge": city("Baton Rouge", "data.brla.gov", [-91.1403, 30.4515], [-91.3, 30.3, -90.95, 30.6]),
+    "us-oakland": city("Oakland", "data.oaklandca.gov", [-122.2712, 37.8044]),
+    "us-orlando": city("Orlando", "data.cityoforlando.net", [-81.3792, 28.5383]),
+    "us-chattanooga": city("Chattanooga", "www.chattadata.org", [-85.3097, 35.0456]),
+    "us-buffalo": city("Buffalo", "data.buffalony.gov", [-78.8784, 42.8864], search="permits"),
+    "us-providence": city("Providence", "data.providenceri.gov", [-71.4128, 41.824], search="permits"),
+    "us-norfolk": city("Norfolk, VA", "data.norfolk.gov", [-76.2859, 36.8508], search="permits"),
+    "us-somerville": city("Somerville, MA", "data.somervillema.gov", [-71.0995, 42.3876], search="permits"),
+    "us-little-rock": city("Little Rock", "data.littlerock.gov", [-92.2896, 34.7465], search="permits"),
+    "us-gainesville": city("Gainesville, FL", "data.cityofgainesville.org", [-82.3248, 29.6516], search="permits"),
+    "ca-calgary": city("Calgary", "data.calgary.ca", [-114.0719, 51.0447], country="CA"),
+    "ca-edmonton": city("Edmonton", "data.edmonton.ca", [-113.4938, 53.5461], country="CA"),
 })
 
 ABBR = {"STREET": "ST", "AVENUE": "AVE", "BOULEVARD": "BLVD", "ROAD": "RD", "DRIVE": "DR", "PLACE": "PL",
@@ -163,11 +174,13 @@ def candidates(domain, ds):
     if ds.get("search"):
         res = http("https://api.us.socrata.com/api/catalog/v1",
                    {"domains": domain, "q": ds["search"], "only": "dataset", "limit": 25}).get("results", [])
-        res.sort(key=lambda x: x["resource"].get("data_updated_at") or "", reverse=True)
-        for x in res:
-            nm = x["resource"]["name"].lower()
-            if all(m in nm for m in ds.get("must", ())) and not any(b in nm for b in ("inspection", "map", "summary", "count", "fee")):
-                yield x["resource"]["id"], x["resource"]["name"]
+        bad = ("inspection", "map", "summary", "count", "fee", "fire", "tent", "sign", "timeline", "electrical",
+               "plumbing", "right of way", "right-of-way", "street", "sidewalk", "special event", "film", "historic")
+        res = [x for x in res if all(m in x["resource"]["name"].lower() for m in ds.get("must", ()))
+               and not any(b in x["resource"]["name"].lower() for b in bad)]
+        res.sort(key=lambda x: (("building" in x["resource"]["name"].lower()), x["resource"].get("data_updated_at") or ""), reverse=True)
+        for x in res[:8]:
+            yield x["resource"]["id"], x["resource"]["name"]
 
 
 def dataset_events(city, ds):
@@ -180,12 +193,22 @@ def dataset_events(city, ds):
             tried.append(f"{dsid}: {str(e)[:80]}")
             continue
         r = {k: pick(cols, ds[k]) for k in ("date", "type", "desc", "cost", "addr", "rid", "name", "result") if k in ds}
-        if r.get("date"):
-            ds = dict(ds, id=dsid)
-            if dsname:
-                log(f"   {meta['name']}: using dataset {dsid} '{dsname}'")
-            break
-        tried.append(f"{dsid} '{dsname}': no date column (has {', '.join(list(cols)[:25])})")
+        if not r.get("date"):
+            tried.append(f"{dsid} '{dsname}': no date column (has {', '.join(list(cols)[:25])})")
+            continue
+        if dsname and cols.get(r["date"]) in ("calendar_date", "floating_timestamp", "date", "fixed_timestamp"):
+            try:                               # skip catalog hits with no recent records
+                cnt = http(f"https://{domain}/resource/{dsid}.json", {"$select": "count(*) as n",
+                           "$where": f"{r['date']} >= '{since(DAYS)}'"}, tries=2)[0].get("n")
+            except (RuntimeError, IndexError):
+                cnt = 0
+            if not int(num(cnt) or 0):
+                tried.append(f"{dsid} '{dsname}': no records in the last {DAYS} days")
+                continue
+        ds = dict(ds, id=dsid)
+        if dsname:
+            log(f"   {meta['name']}: using dataset {dsid} '{dsname}'")
+        break
     else:
         raise RuntimeError("no usable dataset; tried " + " | ".join(tried[:6]))
     point_cols = tuple(c for c, t in cols.items() if t in ("point", "location"))
@@ -197,7 +220,7 @@ def dataset_events(city, ds):
     if ds.get("filter"):
         where += f" AND {ds['filter']}"
     rows = socrata(domain, ds["id"], where, order, 40000, label=f"{meta['name']} {ds['source']} ({ds['mode']})")
-    out = []
+    out, pending = [], []
     for row in rows:
         lat, lon = point_of(row, point_keys=point_cols + ("location", "location_1", "the_geom", "point"))
         addr = val(row, r.get("addr"))
@@ -227,15 +250,30 @@ def dataset_events(city, ds):
             else:
                 kind, sub, title = "restaurant", "Inspection", f"{name}: inspected - {res.lower() or 'result n/a'}"
             amount = None
-        out.append(event(kind, sub, when, lat, lon, title, desc, ds["source"], rid, norm_addr(addr), addr, amount, meta["bbox"]))
+        args = (kind, sub, when, lat, lon, title, desc, ds["source"], rid, norm_addr(addr), addr, amount, meta["bbox"])
+        if lat is None and addr:
+            pending.append(args)
+        else:
+            out.append(event(*args))
+    if pending and meta.get("state"):
+        log(f"   {len(pending)} rows without coordinates: geocoding addresses")
+        geo = geocode_us([(str(i), a[11], meta["name"].split(",")[0], meta["state"], "") for i, a in enumerate(pending)])
+        for i, a in enumerate(pending):
+            if str(i) in geo:
+                a = list(a); a[3], a[4] = geo[str(i)]
+                out.append(event(*a))
     got = [e for e in out if e]
     log(f"   -> {len(got)} located events of {len(rows)} rows")
     return got
 
 
+STATES = {'us-sf': 'CA', 'us-chicago': 'IL', 'us-seattle': 'WA', 'us-austin': 'TX', 'us-la': 'CA', 'us-dallas': 'TX', 'us-nola': 'LA', 'us-kc': 'MO', 'us-cincinnati': 'OH', 'us-montgomery': 'MD', 'us-cambridge': 'MA', 'us-honolulu': 'HI', 'us-mesa': 'AZ', 'us-baton-rouge': 'LA'}
+
+
 def regions():
     res = []
     for rid, city in CITIES.items():
+        city["meta"]["state"] = STATES.get(rid)
         meta = dict(city["meta"], sources=sorted({d["source"] for d in city["datasets"]}))
         fns = [(lambda c=city, d=d: dataset_events(c, d)) for d in city["datasets"]]
         for f, d in zip(fns, city["datasets"]):

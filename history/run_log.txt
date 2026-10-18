@@ -217,7 +217,7 @@
 == San Antonio (CKAN data.sanantonio.gov)
    using 'Building Permits / APPLICATIONS SUBMITTED' (19123 records)
    17785 rows without coordinates: geocoding
-   census geocoded 5802 of 9000
+   census geocoded 5797 of 9000
    census geocoded 11485 of 17785
    history: 0 records seen for the first time today (10631 remembered)
 
@@ -267,7 +267,7 @@
    census geocoded 16864 of 18000
    census geocoded 18169 of 19392
    new entities: 18169 located of 19392
-   history: 18167 records seen for the first time today (18167 remembered)
+   history: 0 records seen for the first time today (18167 remembered)
 
 ######## us-co · Colorado
 
@@ -286,16 +286,16 @@
    Créations: 25000 notices
    Radiations: 10000 notices
    geocoded 4841 of 5000
-   geocoded 9637 of 10000
-   geocoded 14452 of 15000
-   geocoded 19290 of 20000
-   geocoded 24242 of 25000
-   geocoded 29180 of 30000
-   geocoded 34128 of 35000
-   geocoded 39084 of 40000
-   geocoded 44011 of 45000
-   geocoded 48866 of 50000
-   geocoded 52120 of 53359
+   geocoded 9636 of 10000
+   geocoded 14451 of 15000
+   geocoded 19288 of 20000
+   geocoded 24231 of 25000
+   geocoded 29170 of 30000
+   geocoded 34118 of 35000
+   geocoded 39074 of 40000
+   geocoded 44001 of 45000
+   geocoded 48857 of 50000
+   geocoded 52111 of 53359
 
 == France Alim'confiance (food safety inspections)
    inspections: 9505
@@ -303,4 +303,14 @@
 == SIRENE skipped (no INSEE_KEY secret)
    history: 0 records seen for the first time today (59529 remembered)
 
-Done in 16.5 min: us-nyc 90712, us-sf 7337, us-chicago 14122, us-seattle 1635, us-austin 12120, us-la 16762, us-nola 4247, us-cincinnati 2786, us-montgomery 134, us-baton-rouge 2155, us-norfolk 2876, ca-calgary 5759, ca-edmonton 2853, us-boston 702, us-philly 14817, us-dc 3418, us-detroit 1743, us-baltimore 7793, us-minneapolis 10926, us-raleigh 449, us-columbus 12147, us-tampa 31, us-denver 529, us-sanantonio 11485, us-pittsburgh 2450, us-tx 18212, us-ny 18167, us-co 11576, fr 60043
+######## gb-london · London
+
+== UK FSA food hygiene: London
+   London authorities: 33
+   events: 9666 (new businesses awaiting inspection: 4083)
+   history: 9666 records seen for the first time today (9666 remembered)
+
+######## no · Norway
+
+== Norway: new business locations (Enhetsregisteret sub-units)
+   new sub-units: 7627

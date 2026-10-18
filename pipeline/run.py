@@ -6,9 +6,9 @@ Run every adapter, write data/<region>/*.json, data/regions.json and history/las
 """
 import json, os, sys, time, traceback
 from pipeline import core
-from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr
+from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe
 
-ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr]
+ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe]
 
 
 def main():
@@ -47,7 +47,7 @@ def main():
                 core.apply_history(rid, feats)
                 m = core.write_region(rid, meta, feats)
                 regions_out.append({k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
-                                                      "generated", "sources", "focus") if k in m})
+                                                      "generated", "sources", "focus", "focus_name") if k in m})
             except Exception:
                 core.log(f"   WRITE FAILED for {rid}:\n" + traceback.format_exc())
                 status["regions"][rid]["write_error"] = traceback.format_exc()[-800:]

@@ -9,7 +9,7 @@ from pipeline.core import http, event, num, title_case, since, log, clean
 
 REGION = "fr"
 META = {"name": "France", "country": "FR", "center": [2.35, 46.6], "bbox": [-5.3, 41.2, 9.7, 51.2],
-        "focus": [2.3488, 48.8534], "sources": ["BODACC", "Alim'confiance", "SIRENE"]}
+        "focus": [2.3488, 48.8534], "focus_name": "Paris", "sources": ["BODACC", "Alim'confiance", "SIRENE"]}
 BODACC = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets/annonces-commerciales/exports/json"
 ALIM = "https://dgal.opendatasoft.com/api/explore/v2.1/catalog/datasets/export_alimconfiance/exports/json"
 DAYS = 30

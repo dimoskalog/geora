@@ -545,7 +545,8 @@ async function loadRegions() {
     note: (r.sources || []).join(" · "), events: r.events, last: r.last }));
   const names = new Set(live.map(p => p.n.toLowerCase()));
   // a national region with a focus city (France -> Paris) also shows the city name
-  for (const r of REGIONS) if (r.focus && r.id === "fr") live.find(p => p.id === "fr").n = "Paris · France";
+  for (const r of REGIONS) if (r.focus_name) live.find(p => p.id === r.id).n = `${r.focus_name} · ${r.name}`;
+  for (const p of live) p.n.split(" · ").forEach(x => names.add(x.toLowerCase()));
   PLACES = [...live, ...PLANNED.filter(p => !names.has(p.n.toLowerCase()))];
   if (map.getSource("cities")) map.getSource("cities").setData(placesFC());
   buildPlaces();
@@ -660,7 +661,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") document.get
 
 function showCountry(code) {
   const c = COUNTRIES[code], tier = TIERS[c.t];
-  const live = REGIONS.filter(r => r.country === { "250": "FR", "840": "US", "410": "KR", "826": "GB" }[code]);
+  const live = REGIONS.filter(r => r.country === { "250": "FR", "840": "US", "410": "KR", "826": "GB", "578": "NO", "124": "CA" }[code]);
   openPanel(`<div class="label">Country coverage</div><h2>${esc(c.n)}</h2>
     <div class="score"><b>${c.s}</b><span class="label">observability / 100</span></div>
     <div class="meter"><i style="width:${c.s}%;background:${tier.color}"></i></div>

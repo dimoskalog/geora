@@ -5,7 +5,7 @@ free US Census batch geocoder.
   Texas:    Comptroller sales-tax permits (new outlets), TABC liquor licence applications and issues
   Colorado: Secretary of State business entity registrations
 """
-from pipeline.core import socrata, event, num, title_case, since, log, geocode_us
+from pipeline.core import socrata, socrata_columns, event, num, title_case, since, log, geocode_us
 from pipeline.adapters.us_cities import norm_addr, iso_date
 
 DAYS = 30
@@ -92,10 +92,35 @@ def co_entities():
     return located(rows, build, "CO", CO_BBOX, "registrations")
 
 
+NY_BBOX = [-79.8, 40.4, -71.8, 45.1]
+
+
+def ny_corporations():
+    log("\n== New York State new corporations and LLCs (statewide)")
+    cols = socrata_columns("data.ny.gov", "n9v6-gdp6")
+    pre = next((p for p in ("location", "ceo", "dos_process") if f"{p}_address_1" in cols), None)
+    if not pre:
+        raise RuntimeError("no address columns in n9v6-gdp6: " + ", ".join(list(cols)[:30]))
+    rows = socrata("data.ny.gov", "n9v6-gdp6", f"initial_dos_filing_date >= '{since(DAYS)}'", "initial_dos_filing_date DESC",
+                   20000, label="new entities")
+    def build(r):
+        when = iso_date(r.get("initial_dos_filing_date"))
+        a, ci, st = r.get(f"{pre}_address_1"), r.get(f"{pre}_city"), r.get(f"{pre}_state")
+        if not when or not a or (st or "NY") != "NY":
+            return None
+        args = ("business", "Business registered", when, f"{title_case(r.get('current_entity_name'))}: new {(r.get('entity_type') or 'business').lower()}",
+                "Registered address (may be an agent, office or home address, not a storefront)", "NY Department of State",
+                r.get("dos_id"), f"{a}, {title_case(ci)}", None)
+        return args, a, ci, (r.get(f"{pre}_zip") or "")[:5]
+    return located(rows, build, "NY", NY_BBOX, "new entities")
+
+
 def regions():
     return [
         ("us-tx", {"name": "Texas", "country": "US", "center": [-99.0, 31.0], "focus": [-95.3698, 29.7604], "bbox": TX_BBOX,
                    "sources": ["Texas Comptroller sales-tax permits", "TABC"]}, [tx_sales_tax, tx_tabc]),
+        ("us-ny", {"name": "New York State", "country": "US", "center": [-75.5, 42.9], "focus": [-73.7562, 42.6526], "bbox": NY_BBOX,
+                   "sources": ["NY Department of State"]}, [ny_corporations]),
         ("us-co", {"name": "Colorado", "country": "US", "center": [-105.5, 39.0], "focus": [-104.9903, 39.7392], "bbox": CO_BBOX,
                    "sources": ["Colorado Secretary of State"]}, [co_entities]),
     ]

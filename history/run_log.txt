@@ -11,33 +11,49 @@
 == NYC ACRIS deeds and mortgages (published with a 2-3 month delay)
    documents: 30000
    documents 30000, lots 24057, located 16617 + condo blocks 1966
-   history: 7 records seen for the first time today (81818 remembered)
+   history: 0 records seen for the first time today (81818 remembered)
 
 ######## us-sf · San Francisco
    San Francisco SF Building Permits (permit): 4405
+   1 rows without coordinates: geocoding addresses
+   census geocoded 0 of 1
    -> 4404 located events of 4405 rows
    San Francisco SF Registered Business Locations (business): 3020
+   73 rows without coordinates: geocoding addresses
+   census geocoded 0 of 73
    -> 2188 located events of 3020 rows
    San Francisco SF Registered Business Locations (closure): 839
+   26 rows without coordinates: geocoding addresses
+   census geocoded 0 of 26
    -> 710 located events of 839 rows
    history: 0 records seen for the first time today (6882 remembered)
 
 ######## us-chicago · Chicago
    Chicago Chicago Building Permits (permit): 9071
+   111 rows without coordinates: geocoding addresses
+   census geocoded 0 of 111
    -> 8955 located events of 9071 rows
    Chicago Chicago Business Licenses (business): 1943
+   252 rows without coordinates: geocoding addresses
+   census geocoded 0 of 252
    -> 1691 located events of 1943 rows
    Chicago Chicago Food Inspections (inspection): 3379
+   20 rows without coordinates: geocoding addresses
+   census geocoded 0 of 20
    -> 3359 located events of 3379 rows
    history: 0 records seen for the first time today (14005 remembered)
 
 ######## us-seattle · Seattle
    Seattle Seattle Building Permits (permit): 1635
+   1 rows without coordinates: geocoding addresses
+   census geocoded 0 of 1
    -> 1634 located events of 1635 rows
    history: 0 records seen for the first time today (1634 remembered)
 
 ######## us-austin · Austin
    Austin Austin Issued Construction Permits (permit): 14858
+   5912 rows without coordinates: geocoding addresses
+   census geocoded 0 of 5912
    -> 8946 located events of 14858 rows
    history: 0 records seen for the first time today (8946 remembered)
 
@@ -45,113 +61,4 @@
    Los Angeles LADBS Building Permits (permit): 15783
    -> 15752 located events of 15783 rows
    Los Angeles LA Active Businesses (business): 4889
-   -> 801 located events of 4889 rows
-   history: 0 records seen for the first time today (16553 remembered)
-
-######## us-dallas · Dallas
-   Dallas: using dataset rzm4-tcqx 'Building Permits for Fiscal Year 2015 - 2016'
-   Dallas Dallas Building Permits (permit): 0
-   -> 0 located events of 0 rows
-   no events for us-dallas; keeping it off the map
-
-######## us-nola · New Orleans
-   New Orleans: using dataset rcm3-fn58 'Permits'
-   New Orleans New Orleans Building Permits (permit): 4247
-   -> 4247 located events of 4247 rows
-   history: 4247 records seen for the first time today (4247 remembered)
-
-######## us-kc · Kansas City
-   Kansas City: using dataset ntw8-aacc 'Permits - CPD Dataset'
-   Kansas City Kansas City Building Permits (permit): 0
-   -> 0 located events of 0 rows
-   no events for us-kc; keeping it off the map
-
-######## us-cincinnati · Cincinnati
-   Cincinnati: using dataset 94uh-66xv 'Cincinnati Building Permits Timeline'
-   Cincinnati Cincinnati Building Permits (permit): 3126
-   -> 0 located events of 3126 rows
-   no events for us-cincinnati; keeping it off the map
-
-######## us-montgomery · Montgomery County, MD
-   Montgomery County, MD: using dataset a7xm-vjfv 'DPS - Fire Code Compliance Permit'
-   Montgomery County, MD Montgomery County, MD Building Permits (permit): 454
-   -> 448 located events of 454 rows
-   WRITE FAILED for us-montgomery:
-Traceback (most recent call last):
-  File "/home/runner/work/geora/geora/pipeline/run.py", line 47, in main
-    core.apply_history(rid, feats)
-  File "/home/runner/work/geora/geora/pipeline/core.py", line 176, in apply_history
-    key = f"{p['kind']}|{p['source']}|{p['rid']}|{'' if undated else p['date']}"
-                                       ~^^^^^^^
-KeyError: 'rid'
-
-
-######## us-cambridge · Cambridge, MA
-   Cambridge, MA: using dataset 4bmb-xuad 'Tent - Building Permits'
-   Cambridge, MA Cambridge, MA Building Permits (permit): 27
-   -> 27 located events of 27 rows
-   history: 27 records seen for the first time today (27 remembered)
-
-######## us-nashville · Nashville
-   FAILED Nashville Building Permits (permit): https://api.us.socrata.com/api/catalog/v1?domains=data.nashville.gov&q=building+permits&only=dataset&limit=25 -> HTTP 404: {"error":"Domain not found: data.nashville.gov"}
-   RuntimeError: https://api.us.socrata.com/api/catalog/v1?domains=data.nashville.gov&q=building+permits&only=dataset&limit=25 -> HTTP 404: {"error":"Domain not found: data.nashville.gov"}
-   no events for us-nashville; keeping it off the map
-
-######## us-honolulu · Honolulu
-   Honolulu: using dataset 4vab-c87q 'Building Permits - January 1, 2005 through June 30, 2025'
-   Honolulu Honolulu Building Permits (permit): 0
-   -> 0 located events of 0 rows
-   no events for us-honolulu; keeping it off the map
-
-######## us-mesa · Mesa, AZ
-   FAILED Mesa, AZ Building Permits (permit): no usable dataset; tried 
-   RuntimeError: no usable dataset; tried 
-   no events for us-mesa; keeping it off the map
-
-######## us-baton-rouge · Baton Rouge
-   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'
-   Baton Rouge Baton Rouge Building Permits (permit): 2242
-   -> 2151 located events of 2242 rows
-   history: 2141 records seen for the first time today (2141 remembered)
-
-######## us-boston · Boston
-
-== Boston approved building permits (CKAN)
-   rows: 722
-   history: 702 records seen for the first time today (702 remembered)
-
-######## us-philly · Philadelphia
-
-== Philadelphia building permits (Carto)
-   rows: 11339
-
-== Philadelphia new business licenses (Carto)
-   rows: 3749
-   history: 14817 records seen for the first time today (14817 remembered)
-
-######## fr · France
-
-== France BODACC (sales of businesses, insolvencies, creations, removals)
-   Ventes et cessions: 3739 notices
-   Procédures collectives: 15000 notices
-   Créations: 25000 notices
-   Radiations: 10000 notices
-   geocoded 4841 of 5000
-   geocoded 9635 of 10000
-   geocoded 14450 of 15000
-   geocoded 19287 of 20000
-   geocoded 24239 of 25000
-   geocoded 29178 of 30000
-   geocoded 34126 of 35000
-   geocoded 39082 of 40000
-   geocoded 44009 of 45000
-   geocoded 48864 of 50000
-   geocoded 52118 of 53359
-
-== France Alim'confiance (food safety inspections)
-   inspections: 9505
-
-== SIRENE skipped (no INSEE_KEY secret)
-   history: 2 records seen for the first time today (59529 remembered)
-
-Done in 6.0 min: us-nyc 90712, us-sf 7302, us-chicago 14005, us-seattle 1634, us-austin 8946, us-la 16553, us-nola 4247, us-cambridge 27, us-baton-rouge 2151, us-boston 702, us-philly 14817, fr 60041
+   656 rows without coordinates: geocoding addresses

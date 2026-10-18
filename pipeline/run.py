@@ -6,9 +6,9 @@ Run every adapter, write data/<region>/*.json, data/regions.json and history/las
 """
 import json, os, sys, time, traceback
 from pipeline import core
-from pipeline.adapters import nyc, us_cities, fr
+from pipeline.adapters import nyc, us_cities, us_other, fr
 
-ADAPTERS = [nyc, us_cities, fr]
+ADAPTERS = [nyc, us_cities, us_other, fr]
 
 
 def main():

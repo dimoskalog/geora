@@ -5,7 +5,7 @@ Each dataset lists candidate column names for each role; the adapter reads the d
 column list and uses the first candidate that exists, so small schema differences don't break it.
 """
 import re
-from pipeline.core import socrata, socrata_columns, event, classify_permit, num, title_case, since, point_of, log
+from pipeline.core import socrata, socrata_columns, http, event, classify_permit, num, title_case, since, point_of, log
 
 DAYS = 90
 
@@ -85,9 +85,51 @@ CITIES = {
     },
 }
 
+# Many US cities publish permits in the BLDS standard; these are the usual column names.
+BLDS = {"date": ["issueddate", "issued_date", "issue_date", "dateissued", "permit_issued_date", "issuedate"],
+        "type": ["permittypemapped", "permittype", "permit_type", "permitclassmapped", "permitclass", "type", "worktype"],
+        "desc": ["description", "workdescription", "work_description", "projectdescription", "permit_description"],
+        "cost": ["estprojectcost", "estimated_cost", "valuation", "projectvalue", "value", "constrval", "job_value", "declared_valuation"],
+        "addr": ["originaladdress1", "address", "original_address1", "streetaddress", "street_address", "location_address", "fulladdress"],
+        "rid": ["permitnum", "permit_number", "permitnumber", "permit_no", "permit_", "id", "numstring"]}
+
+
+def city(name, domain, center, bbox, search="building permits", must=("permit",)):
+    return {"meta": {"name": name, "country": "US", "center": center, "bbox": bbox}, "domain": domain,
+            "datasets": [dict(BLDS, search=search, must=must, source=f"{name} Building Permits", mode="permit")]}
+
+
+CITIES.update({
+    "us-dallas": city("Dallas", "www.dallasopendata.com", [-96.797, 32.7767], [-97.0, 32.62, -96.55, 33.03]),
+    "us-nola": city("New Orleans", "data.nola.gov", [-90.0715, 29.9511], [-90.14, 29.86, -89.62, 30.20]),
+    "us-kc": city("Kansas City", "data.kcmo.org", [-94.5786, 39.0997], [-94.77, 38.85, -94.38, 39.36]),
+    "us-cincinnati": city("Cincinnati", "data.cincinnati-oh.gov", [-84.512, 39.1031], [-84.72, 39.05, -84.36, 39.23]),
+    "us-montgomery": city("Montgomery County, MD", "data.montgomerycountymd.gov", [-77.152, 39.084], [-77.53, 38.93, -76.88, 39.36]),
+    "us-cambridge": city("Cambridge, MA", "data.cambridgema.gov", [-71.1097, 42.3736], [-71.17, 42.35, -71.06, 42.41]),
+    "us-nashville": city("Nashville", "data.nashville.gov", [-86.7816, 36.1627], [-87.06, 35.96, -86.51, 36.41]),
+    "us-honolulu": city("Honolulu", "data.honolulu.gov", [-157.8583, 21.3069], [-158.3, 21.25, -157.6, 21.72]),
+    "us-mesa": city("Mesa, AZ", "data.mesaaz.gov", [-111.8315, 33.4152], [-111.95, 33.27, -111.57, 33.51]),
+    "us-baton-rouge": city("Baton Rouge", "data.brla.gov", [-91.1403, 30.4515], [-91.3, 30.3, -90.95, 30.6]),
+})
+
 ABBR = {"STREET": "ST", "AVENUE": "AVE", "BOULEVARD": "BLVD", "ROAD": "RD", "DRIVE": "DR", "PLACE": "PL",
         "LANE": "LN", "COURT": "CT", "PARKWAY": "PKWY", "NORTH": "N", "SOUTH": "S", "EAST": "E", "WEST": "W",
         "TERRACE": "TER", "HIGHWAY": "HWY", "SQUARE": "SQ"}
+
+
+def iso_date(v):
+    """'2026-10-01T00:00:00.000', '10/01/2026', '2026/10/01', epoch ms -> '2026-10-01'."""
+    s = str(v or "").strip()
+    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
+    if m:
+        return f"{m[1]}-{int(m[2]):02d}-{int(m[3]):02d}"
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", s)
+    if m:
+        return f"{m[3]}-{int(m[1]):02d}-{int(m[2]):02d}"
+    if s.isdigit() and len(s) >= 12:
+        import datetime
+        return datetime.datetime.utcfromtimestamp(int(s) / 1000).strftime("%Y-%m-%d")
+    return None
 
 
 def norm_addr(a):
@@ -115,17 +157,46 @@ def val(row, col):
     return row.get(col)
 
 
+def candidates(domain, ds):
+    if ds.get("id"):
+        yield ds["id"], None
+    if ds.get("search"):
+        res = http("https://api.us.socrata.com/api/catalog/v1",
+                   {"domains": domain, "q": ds["search"], "only": "dataset", "limit": 25}).get("results", [])
+        res.sort(key=lambda x: x["resource"].get("data_updated_at") or "", reverse=True)
+        for x in res:
+            nm = x["resource"]["name"].lower()
+            if all(m in nm for m in ds.get("must", ())) and not any(b in nm for b in ("inspection", "map", "summary", "count", "fee")):
+                yield x["resource"]["id"], x["resource"]["name"]
+
+
 def dataset_events(city, ds):
     domain, meta = city["domain"], city["meta"]
-    cols = socrata_columns(domain, ds["id"])
-    r = {k: pick(cols, ds[k]) for k in ("date", "type", "desc", "cost", "addr", "rid", "name", "result") if k in ds}
-    if not r.get("date"):
-        raise RuntimeError(f"{ds['id']}: no date column among {ds['date']} (has: {', '.join(list(cols)[:40])})")
+    tried = []
+    for dsid, dsname in candidates(domain, ds):
+        try:
+            cols = socrata_columns(domain, dsid)
+        except RuntimeError as e:
+            tried.append(f"{dsid}: {str(e)[:80]}")
+            continue
+        r = {k: pick(cols, ds[k]) for k in ("date", "type", "desc", "cost", "addr", "rid", "name", "result") if k in ds}
+        if r.get("date"):
+            ds = dict(ds, id=dsid)
+            if dsname:
+                log(f"   {meta['name']}: using dataset {dsid} '{dsname}'")
+            break
+        tried.append(f"{dsid} '{dsname}': no date column (has {', '.join(list(cols)[:25])})")
+    else:
+        raise RuntimeError("no usable dataset; tried " + " | ".join(tried[:6]))
     point_cols = tuple(c for c, t in cols.items() if t in ("point", "location"))
-    where = f"{r['date']} >= '{since(DAYS)}' AND {r['date']} <= '{since(-1)}'"
+    real_date = cols.get(r["date"]) in ("calendar_date", "floating_timestamp", "date", "fixed_timestamp")
+    if real_date:
+        where, order = f"{r['date']} >= '{since(DAYS)}' AND {r['date']} <= '{since(-1)}'", f"{r['date']} DESC"
+    else:                                      # date stored as text: newest rows first, filter in Python
+        where, order = "1=1", ":id DESC"
     if ds.get("filter"):
         where += f" AND {ds['filter']}"
-    rows = socrata(domain, ds["id"], where, f"{r['date']} DESC", 40000, label=f"{meta['name']} {ds['source']} ({ds['mode']})")
+    rows = socrata(domain, ds["id"], where, order, 40000, label=f"{meta['name']} {ds['source']} ({ds['mode']})")
     out = []
     for row in rows:
         lat, lon = point_of(row, point_keys=point_cols + ("location", "location_1", "the_geom", "point"))
@@ -133,7 +204,9 @@ def dataset_events(city, ds):
         name = title_case(val(row, r.get("name")) or "")
         desc = val(row, r.get("desc")) or ""
         rid = val(row, r.get("rid")) or ""
-        when = val(row, r["date"])
+        when = iso_date(val(row, r["date"]))
+        if not when or not (since(DAYS) <= when <= since(-1)):
+            continue
         mode = ds["mode"]
         if mode == "permit":
             cost = num(val(row, r.get("cost")))

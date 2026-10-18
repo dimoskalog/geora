@@ -26,7 +26,7 @@
    26 rows without coordinates: geocoding addresses
    census geocoded 14 of 26
    -> 724 located events of 839 rows
-   history: 34 records seen for the first time today (6916 remembered)
+   history: 0 records seen for the first time today (6916 remembered)
 
 ######## us-chicago · Chicago
    Chicago Chicago Building Permits (permit): 9071
@@ -41,21 +41,21 @@
    20 rows without coordinates: geocoding addresses
    census geocoded 3 of 20
    -> 3362 located events of 3379 rows
-   history: 117 records seen for the first time today (14122 remembered)
+   history: 0 records seen for the first time today (14122 remembered)
 
 ######## us-seattle · Seattle
    Seattle Seattle Building Permits (permit): 1635
    1 rows without coordinates: geocoding addresses
    census geocoded 1 of 1
    -> 1635 located events of 1635 rows
-   history: 1 records seen for the first time today (1635 remembered)
+   history: 0 records seen for the first time today (1635 remembered)
 
 ######## us-austin · Austin
    Austin Austin Issued Construction Permits (permit): 14858
    5912 rows without coordinates: geocoding addresses
    census geocoded 3175 of 5912
    -> 12120 located events of 14858 rows
-   history: 3174 records seen for the first time today (12120 remembered)
+   history: 0 records seen for the first time today (12120 remembered)
 
 ######## us-la · Los Angeles
    Los Angeles LADBS Building Permits (permit): 15783
@@ -64,7 +64,7 @@
    656 rows without coordinates: geocoding addresses
    census geocoded 232 of 656
    -> 1010 located events of 4889 rows
-   history: 209 records seen for the first time today (16762 remembered)
+   history: 0 records seen for the first time today (16762 remembered)
 
 ######## us-nola · New Orleans
    New Orleans: using dataset rcm3-fn58 'Permits'
@@ -78,7 +78,7 @@
    631 rows without coordinates: geocoding addresses
    census geocoded 583 of 631
    -> 2786 located events of 2834 rows
-   history: 575 records seen for the first time today (2664 remembered)
+   history: 0 records seen for the first time today (2664 remembered)
 
 ######## us-montgomery · Montgomery County, MD
    Montgomery County, MD: using dataset 7ate-xrxm 'Construction Activities of Commercial Permits'
@@ -92,7 +92,7 @@
    5 rows without coordinates: geocoding addresses
    census geocoded 4 of 5
    -> 2155 located events of 2242 rows
-   history: 4 records seen for the first time today (2145 remembered)
+   history: 0 records seen for the first time today (2145 remembered)
 
 ######## us-norfolk · Norfolk, VA
    Norfolk, VA: using dataset fahm-yuh4 'Permits'
@@ -100,7 +100,7 @@
    178 rows without coordinates: geocoding addresses
    census geocoded 153 of 178
    -> 2876 located events of 2901 rows
-   history: 153 records seen for the first time today (2876 remembered)
+   history: 0 records seen for the first time today (2876 remembered)
 
 ######## ca-calgary · Calgary
    Calgary: using dataset c2es-76ed 'Building Permits'
@@ -129,6 +129,116 @@
    rows: 3749
    history: 0 records seen for the first time today (14817 remembered)
 
+######## us-dc · Washington, DC
+
+== Washington, DC (ArcGIS Hub opendata.dc.gov)
+   using 'Building Permits in Last 30 Days' (3418 records since 2026-07-20) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4
+   history: 27 records seen for the first time today (27 remembered)
+
+######## us-detroit · Detroit
+
+== Detroit (ArcGIS Hub data.detroitmi.gov)
+   using 'Building Permits' (1743 records since 2026-07-20) https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0
+   history: 1731 records seen for the first time today (1731 remembered)
+
+######## us-baltimore · Baltimore
+
+== Baltimore (ArcGIS Hub data.baltimorecity.gov)
+   using 'Housing and Building Permits 2019-Present' (7793 records since 2026-07-20) https://baltegis.baltimorecity.gov/mapping/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3
+   history: 7434 records seen for the first time today (7434 remembered)
+
+######## us-minneapolis · Minneapolis
+
+== Minneapolis (ArcGIS Hub opendata.minneapolismn.gov)
+   using 'CCS Permits' (10931 records since 2026-07-20) https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer/0
+   history: 9305 records seen for the first time today (9305 remembered)
+
+######## us-raleigh · Raleigh
+
+== Raleigh (ArcGIS Hub data-ral.opendata.arcgis.com)
+   using 'Building Permits Past 31 Days' (449 records since 2026-07-20) https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits_Past_31_Days/FeatureServer/0
+   history: 449 records seen for the first time today (449 remembered)
+
+######## us-charlotte · Charlotte
+
+== Charlotte (ArcGIS Hub data.charlottenc.gov)
+   FAILED permits: no usable permit layer; tried Special Use Permits: no recent records
+   RuntimeError: no usable permit layer; tried Special Use Permits: no recent records
+   no events for us-charlotte; keeping it off the map
+
+######## us-columbus · Columbus
+
+== Columbus (ArcGIS Hub opendata.columbus.gov)
+   using 'Building Permits' (12147 records since 2026-07-20) https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0
+   history: 89 records seen for the first time today (89 remembered)
+
+######## us-miami · Miami-Dade
+
+== Miami-Dade (ArcGIS Hub gis-mdc.opendata.arcgis.com)
+   FAILED permits: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError("Expecting ',' delimiter: line 60672 column 1 (char 3082353)")
+   RuntimeError: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError("Expecting ',' delimiter: line 60672 column 1 (char 3082353)")
+   no events for us-miami; keeping it off the map
+
+######## us-houston · Houston
+
+== Houston (ArcGIS Hub cohgis-mycity.opendata.arcgis.com)
+   FAILED permits: https://cohgis-mycity.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> HTTP 404: {"error":"GWM_0003: You do not have permissions to access this resource or perform this operation."}
+   RuntimeError: https://cohgis-mycity.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> HTTP 404: {"error":"GWM_0003: You do not have permissions to access this resource or perform this operation."}
+   no events for us-houston; keeping it off the map
+
+######## us-atlanta · Atlanta
+
+== Atlanta (ArcGIS Hub dpcd-coaplangis.opendata.arcgis.com)
+   FAILED permits: no usable permit layer; tried 
+   RuntimeError: no usable permit layer; tried 
+   no events for us-atlanta; keeping it off the map
+
+######## us-vegas · Las Vegas
+
+== Las Vegas (ArcGIS Hub opendataportal-lasvegas.opendata.arcgis.com)
+   using 'Building Permits ' (18 records since 2026-07-20) https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0
+   no events for us-vegas; keeping it off the map
+
+######## us-tampa · Tampa
+
+== Tampa (ArcGIS Hub city-tampa.opendata.arcgis.com)
+   using 'Single Family Permits' (31 records since 2026-07-20) https://arcgis.tampagov.net/arcgis/rest/services/OpenData/Planning/MapServer/32
+   history: 31 records seen for the first time today (31 remembered)
+
+######## us-denver · Denver
+
+== Denver (ArcGIS Hub opendata-geospatialdenver.hub.arcgis.com)
+   using 'Commercial Construction Permits' (529 records since 2026-07-20) https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer/317
+   history: 515 records seen for the first time today (515 remembered)
+
+######## us-sanantonio · San Antonio
+
+== San Antonio (CKAN data.sanantonio.gov)
+   using 'Building Permits / APPLICATIONS SUBMITTED' (19123 records)
+   17785 rows without coordinates: geocoding
+   census geocoded 5797 of 9000
+   census geocoded 11485 of 17785
+   history: 10631 records seen for the first time today (10631 remembered)
+
+######## us-pittsburgh · Pittsburgh
+
+== Pittsburgh (CKAN data.wprdc.org)
+   using 'PLI Permits / PLI Permits' (2450 records)
+   history: 2412 records seen for the first time today (2412 remembered)
+
+######## us-phoenix · Phoenix
+
+== Phoenix (CKAN www.phoenixopendata.com)
+   FAILED permits: no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field
+   RuntimeError: no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field
+   no events for us-phoenix; keeping it off the map
+
+######## us-sanjose · San Jose
+
+== San Jose (CKAN data.sanjoseca.gov)
+   using 'Last 30 days building permits / Last 30 days Building Permits' (1245 records)
+   no events for us-sanjose; keeping it off the map
+
 ######## us-tx · Texas
 
 == Texas new sales-tax permits (new outlets, statewide)
@@ -144,7 +254,14 @@
    pending: 733 located of 896
    census geocoded 1989 of 2461
    issued: 1989 located of 2461
-   history: 18212 records seen for the first time today (18212 remembered)
+   history: 0 records seen for the first time today (18212 remembered)
+
+######## us-ny · New York State
+
+== New York State new corporations and LLCs (statewide)
+   new entities: 20000
+   new entities: 0 located of 0
+   no events for us-ny; keeping it off the map
 
 ######## us-co · Colorado
 
@@ -153,7 +270,7 @@
    census geocoded 8203 of 9000
    census geocoded 11585 of 12667
    registrations: 11585 located of 12667
-   history: 11576 records seen for the first time today (11576 remembered)
+   history: 0 records seen for the first time today (11576 remembered)
 
 ######## fr · France
 
@@ -162,17 +279,17 @@
    Procédures collectives: 15000 notices
    Créations: 25000 notices
    Radiations: 10000 notices
-   geocoded 4840 of 5000
-   geocoded 9636 of 10000
+   geocoded 4841 of 5000
+   geocoded 9637 of 10000
    geocoded 14451 of 15000
    geocoded 19289 of 20000
    geocoded 24241 of 25000
-   geocoded 29180 of 30000
-   geocoded 34128 of 35000
-   geocoded 39084 of 40000
-   geocoded 44011 of 45000
-   geocoded 48866 of 50000
-   geocoded 52119 of 53359
+   geocoded 29181 of 30000
+   geocoded 34129 of 35000
+   geocoded 39085 of 40000
+   geocoded 44012 of 45000
+   geocoded 48868 of 50000
+   geocoded 52122 of 53359
 
 == France Alim'confiance (food safety inspections)
    inspections: 9505
@@ -180,4 +297,4 @@
 == SIRENE skipped (no INSEE_KEY secret)
    history: 0 records seen for the first time today (59529 remembered)
 
-Done in 13.4 min: us-nyc 90712, us-sf 7337, us-chicago 14122, us-seattle 1635, us-austin 12120, us-la 16762, us-nola 4247, us-cincinnati 2786, us-montgomery 134, us-baton-rouge 2155, us-norfolk 2876, ca-calgary 5759, ca-edmonton 2853, us-boston 702, us-philly 14817, us-tx 18212, us-co 11576, fr 60042
+Done in 15.7 min: us-nyc 90712, us-sf 7337, us-chicago 14122, us-seattle 1635, us-austin 12120, us-la 16762, us-nola 4247, us-cincinnati 2786, us-montgomery 134, us-baton-rouge 2155, us-norfolk 2876, ca-calgary 5759, ca-edmonton 2853, us-boston 702, us-philly 14817, us-dc 3418, us-detroit 1743, us-baltimore 7793, us-minneapolis 10926, us-raleigh 449, us-columbus 12147, us-tampa 31, us-denver 529, us-sanantonio 11485, us-pittsburgh 2450, us-tx 18212, us-co 11576, fr 60045

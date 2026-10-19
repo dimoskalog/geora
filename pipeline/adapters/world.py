@@ -530,6 +530,39 @@ def madrid_licences():
     return out
 
 
+# --------------------------------------------------------- Los Angeles, Seattle ----
+def la_new_locations():
+    log("\n== Los Angeles new business locations")
+    rows = socrata("data.lacity.org", "6rrh-rzua", f"location_start_date >= '{since(DAYS)}' AND location_start_date <= '{since(0)}'",
+                   "location_start_date DESC", 30000, label="locations")
+    out = []
+    for r in rows:
+        lat, lon = point_of(r, point_keys=("location_1", "location"))
+        out.append(event("business", "Business location opened", r.get("location_start_date"), lat, lon,
+                         f"{title_case(r.get('dba_name') or r.get('business_name'))}: new business location",
+                         r.get("primary_naics_description"), "LA Office of Finance active businesses", r.get("location_account"),
+                         r.get("street_address"), title_case(r.get("street_address")), None, [-118.95, 33.65, -117.9, 34.4]))
+    return out
+
+
+def seattle_new_licences():
+    from pipeline.core import geocode_us
+    log("\n== Seattle new business licence certificates")
+    rows = socrata("cos-data.seattle.gov", "wnbq-64tb", f"license_start_date >= '{since(DAYS)}' AND license_start_date <= '{since(0)}'",
+                   "license_start_date DESC", 20000, label="licences")
+    rows = [r for r in rows if str(r.get("city") or "").upper().startswith("SEATTLE") and r.get("street_address")]
+    geo = geocode_us([(str(i), r.get("street_address"), "Seattle", "WA", str(r.get("zip") or "")[:5]) for i, r in enumerate(rows)])
+    out = []
+    for i, r in enumerate(rows):
+        lat, lon = geo.get(str(i), (None, None))
+        out.append(event("business", "Business licence", r.get("license_start_date"), lat, lon,
+                         f"{title_case(r.get('trade_name') or r.get('business_legal_name'))}: new business licence",
+                         r.get("naics_description"), "Seattle business licence certificates", r.get("city_account_number"),
+                         str(r.get("street_address")).upper(), title_case(r.get("street_address")), None, [-122.5, 47.45, -122.2, 47.75]))
+    log(f"   located {len([x for x in out if x])} of {len(rows)}")
+    return out
+
+
 def regions():
     return [
         ("ca-vancouver", {"name": "Vancouver", "country": "CA", "center": [-123.12, 49.25], "bbox": VAN_BBOX,
@@ -539,6 +572,8 @@ def regions():
         ("ca-calgary", {"sources": ["Calgary Business Licences"]}, [calgary_new_businesses]),
         ("us-nyc", {"sources": ["NYC DCWP Licenses"]}, [nyc_new_licences]),
         ("us-dc", {"sources": ["DC Basic Business Licenses"]}, [dc_new_licences]),
+        ("us-la", {"sources": ["LA Office of Finance active businesses"]}, [la_new_locations]),
+        ("us-seattle", {"sources": ["Seattle business licence certificates"]}, [seattle_new_licences]),
         ("sg", {"name": "Singapore", "country": "SG", "center": [103.82, 1.35], "bbox": SG_BBOX,
                 "sources": ["ACRA (data.gov.sg)", "OneMap"]}, [singapore_new_companies]),
         ("ch", {"name": "Switzerland", "country": "CH", "center": [8.23, 46.8], "focus": [8.5417, 47.3769], "focus_name": "Zurich",

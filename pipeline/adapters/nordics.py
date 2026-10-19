@@ -45,28 +45,16 @@ def _iso(d):
     return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else ""
 
 
-DAWA = "https://api.dataforsyningen.dk"
-
-
-def dk_address(q, deadline):
-    if time.time() > deadline:
-        return None, None
-    try:
-        r = http(f"{DAWA}/adresser", {"q": q, "struktur": "mini", "per_side": 1}, tries=1, timeout=10)
-        if r:
-            return num(r[0].get("y")), num(r[0].get("x"))
-    except RuntimeError:
-        pass
-    return None, None
-
-
-def dk_postcode(nr):
-    try:
-        r = http(f"{DAWA}/postnumre/{nr}", tries=2, timeout=15)
-        c = r.get("visueltcenter") or []
-        return (num(c[1]), num(c[0])) if len(c) == 2 else (None, None)
-    except RuntimeError:
-        return None, None
+def geonames_postcodes(cc):
+    """{postcode: (lat, lon)} from the GeoNames postal code dump (CC BY 4.0)."""
+    z = zipfile.ZipFile(io.BytesIO(http(f"https://download.geonames.org/export/zip/{cc}.zip", raw=True, timeout=300,
+                                        headers={"Accept": "*/*"})))
+    out = {}
+    for line in z.read(f"{cc}.txt").decode("utf-8").splitlines():
+        f = line.split("\t")
+        if len(f) > 10 and num(f[9]) is not None:
+            out.setdefault(f[1].strip(), (num(f[9]), num(f[10])))
+    return out
 
 
 def dk_smiley():
@@ -87,29 +75,21 @@ def dk_smiley():
         sample = sample or r.get("seneste_kontrol_dato")
         for k in ("seneste", "næstseneste", "tredjeseneste", "fjerdeseneste"):
             d = _iso(r.get(f"{k}_kontrol_dato"))
-            if d and d >= since(DAYS):
+            if d and since(DAYS) <= d <= since(0):
                 recs.append((r, d, str(r.get(f"{k}_kontrol_resultat") or r.get(f"{k}_kontrol") or "").strip()))
     log(f"   {n} businesses, {len(recs)} controls in the last {DAYS} days (date sample: {sample!r})")
     if not recs:
         return []
-    key = lambda r: (r.get("adresse") or "", r.get("postnummer") or "")
-    addrs = sorted({key(r) for r, _, _ in recs if r.get("adresse")})
-    deadline = time.time() + 8 * 60              # exact addresses for up to 8 minutes, then postcode centres
-    with ThreadPoolExecutor(16) as ex:
-        exact = dict(zip(addrs, ex.map(lambda a: dk_address(f"{a[0]}, {a[1]}", deadline), addrs)))
-    pcs = sorted({r.get("postnummer") for r, _, _ in recs if r.get("postnummer")})
-    with ThreadPoolExecutor(8) as ex:
-        cent = dict(zip(pcs, ex.map(dk_postcode, pcs)))
-    log(f"   exact addresses {sum(1 for v in exact.values() if v[0])} of {len(addrs)}; postcodes {sum(1 for v in cent.values() if v[0])} of {len(pcs)}")
+    cent = geonames_postcodes("DK")
+    log(f"   GeoNames postcode centres: {len(cent)}")
     out = []
     for r, d, s in recs:
-        lat, lon = exact.get(key(r), (None, None))
-        if lat is None:
-            lat, lon = cent.get(r.get("postnummer"), (None, None))
+        lat, lon = cent.get(str(r.get("postnummer") or "").strip(), (None, None))
         name = title_case(r.get("virksomhed") or r.get("navn1") or "")
         addr = f"{r.get('adresse') or ''}, {r.get('postnummer') or ''} {r.get('by') or ''}"
         out.append(event("distress" if s in ("3", "4") else "restaurant", "Food control", d, lat, lon,
-                         f"{name}: food control - {SMILEY.get(s, 'smiley ' + s)}", r.get("fvst_branche") or r.get("branche"),
+                         f"{name}: food control - {SMILEY.get(s, 'smiley ' + s)}",
+                         f"{r.get('fvst_branche') or r.get('branche') or ''}. Located at its postcode area centre.",
                          "Fødevarestyrelsen smiley", f"{r.get('id_nummer') or r.get('navnelbnr')}-{d}",
                          f"DK {r.get('p_nummer') or r.get('id_nummer')}", addr, None, DK_BBOX))
     log(f"   located {len([x for x in out if x])}")
@@ -252,7 +232,7 @@ def ee_new_companies():
 def regions():
     return [
         ("dk", {"name": "Denmark", "country": "DK", "center": [10.4, 56.0], "focus": [12.5683, 55.6761],
-                "focus_name": "Copenhagen", "bbox": DK_BBOX, "sources": ["Fødevarestyrelsen smiley"]}, [dk_smiley]),
+                "focus_name": "Copenhagen", "bbox": DK_BBOX, "sources": ["Fødevarestyrelsen smiley", "GeoNames postal codes"]}, [dk_smiley]),
         ("fi", {"name": "Finland", "country": "FI", "center": [25.7, 62.5], "focus": [24.9384, 60.1699],
                 "focus_name": "Helsinki", "bbox": FI_BBOX, "sources": ["PRH Trade Register", "Statistics Finland postcode areas"]},
          [fi_new_companies]),

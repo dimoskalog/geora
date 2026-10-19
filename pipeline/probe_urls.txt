@@ -1,5 +1,1 @@
-https://data.oregon.gov/resource/esjy-u4fc.json?$limit=1
-https://data.lacity.org/resource/6rrh-rzua.json?$limit=1&$order=location_start_date%20DESC
-https://data.ct.gov/api/catalog/v1?q=business%20registry&limit=5
-https://api.us.socrata.com/api/catalog/v1?ids=6qbs-9m8d,tckn-sxa6,6g49-bcrm,wnbq-64tb,s9wt-dsfz,qvfa-2v26
-https://data.iowa.gov/api/catalog/v1?q=business%20entities&limit=5
+https://dimoskalog.github.io/geora/data/regions.json

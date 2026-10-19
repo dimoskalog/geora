@@ -1,394 +1,86 @@
-### https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=GetFeature&typeName=bag:pand&count=1&outputFormat=application/json&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Estatus%3C/PropertyName%3E%3CLiteral%3EBouw%20gestart%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E
-856 bytes
-{
-"type": "FeatureCollection",
-"name": "pand",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::28992" } },
-"features": [
-{ "type": "Feature", "id": "pand.20752b4b-bef3-4eb7-b80e-c02448312c7c", "properties": { "identificatie": "0014100040026918", "rdf_seealso": "http://bag.basisregistraties.overheid.nl/bag/id/pand/0014100040026918", "bouwjaar": 2022, "status": "Bouw gestart", "gebruiksdoel": "overige gebruiksfunctie,woonfunctie", "oppervlakte_min": 25, "oppervlakte_max": 71, "aantal_verblijfsobjecten": 73 }, "bbox": [ 231779.77, 582529.837, 231814.878, 582567.812 ], "geometry": { "type": "Polygon", "coordinates": [ [ [ 231779.77, 582556.065 ], [ 231797.584, 582529.837 ], [ 231814.878, 582541.583 ], [ 231797.064, 582567.812 ], [ 231779.77, 582556.065 ] ] ] } }
-],
-"bbox": [ 231779.77, 582529.837, 231814.878, 582567.812 ]
-}
+### https://data.gov.ie/api/3/action/package_show?id=national-planning-applications
+8193 bytes
+{"help": "https://data.gov.ie/api/3/action/help_show?name=package_show", "success": true, "result": {"applicable_legislation": [], "author": null, "author_email": null, "conforms_to": "", "contact_email": "opendata@housing.gov.ie", "contact_name": "", "contact_phone": "", "creator_user_id": "ef08264c-676d-48c5-aaad-6ce8aa18d521", "frequency": "Weekly", "high_value_dataset": false, "id": "18020dbe-8565-47d0-8632-a8fc4dc540a0", "isopen": true, "issued": "2017-10-06", "language": "en", "license_id": "CC-BY-4.0", "license_title": "Creative Commons Attribution 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/", "maintainer": null, "maintainer_email": null, "metadata_created": "2017-10-06T12:07:10.069145", "metadata_modified": "2026-09-22T08:18:17.914474", "name": "national-planning-applications", "notes": "", "notes_translated": {}, "num_resources": 5, "num_tags": 5, "organization": {"id": "department-of-housing-planning-community-and-local-government", "name": "department-of-housing-local-government-and-heritage", "title": "Department of Housing, Local Government and Heritage", "type": "organization", "description": "The Department's mission is to support the sustainable and efficient delivery of well-planned homes and effective local government.\r\n", "image_url": "2025-04-23-110538.306273DoHLGH.png", "created": "2018-03-05T11:24:53.294724", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "department-of-housing-planning-community-and-local-government", "private": false, "provenance": "", "rights": "", "spatial": "", "spatial_other": "National", "spatial_resolution": "", "spatial_uri": "", "srs": ["epsg:2157"], "state": "active", "temporal": "", "temporal_start": "2010-01-01", "theme": "Housing", "title": "", "title_translated": {}, "type": "dataset", "url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer", "version": "", "vertical_extent": "", "resources": [{"access_url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer", "api_access_url": "", "api_response_formats": [], "api_type": "", "applicable_legislation": [], "cache_last_updated": null, "cache_url": null, "created": "2017-10-06T12:07:10.220389", "datastore_active": false, "description": "", "download_url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer", "format": "Esri R
+
+### https://donnees.montreal.ca/api/3/action/package_show?id=permis-construction
+17800 bytes
+{"help": "https://donnees.montreal.ca/api/3/action/help_show?name=package_show", "success": true, "result": {"author": "Arrondissements", "author_email": "donneesouvertes@montreal.ca", "created": "2018-07-03T00:00:00", "creator_user_id": "fb71114a-ff23-4e0f-8b0f-7de51dd09d48", "ext_spatial": "ville-montreal", "extras_flag_donnees_normalise": "", "id": "d90eaf1b-2de8-43f0-923a-27a620ecdf41", "isopen": true, "language": "FR", "license_id": "cc-by", "license_title": "Creative Commons Attribution 4.0 International", "license_url": "http://creativecommons.org/licenses/by/4.0/", "maintainer": null, "maintainer_email": null, "metadata_created": "2018-07-03T14:24:23.267350", "metadata_modified": "2026-10-15T06:25:35.735107", "methodologie": "Les travaux de construction, de d\u00e9molition ou encore de r\u00e9novation int\u00e9rieure ou ext\u00e9rieure exigent un permis. Avant de le d\u00e9livrer, des experts en construction et urbanisme de la ville v\u00e9rifient si les travaux sont s\u00e9curitaires et conformes aux r\u00e8glements, ce qui fait qu'un permis pourrait \u00eatre accord\u00e9 ou non.  Les professionnels accompagnent g\u00e9n\u00e9ralement les citoyens dans leurs d\u00e9marches. Plus de d\u00e9tails sur la r\u00e9glementation r\u00e9gissant ces permis sont disponibles sur [le site de la ville](https://montreal.ca/demarches/obtenir-un-permis-pour-la-construction-dun-immeuble?arrondissement=RPP).\r\n\r\n### Collecte et gestion des donn\u00e9es\r\n\r\nLa distribution des permis rel\u00e8ve des arrondissements. \u00c0 cet effet, chacun dispose d\u2019un comptoir de service, o\u00f9 il est possible de se procurer le permis d\u00e9sir\u00e9.  Les permis li\u00e9s au domaine de la construction au niveau de l\u2019habitation sont de nature diversifi\u00e9e (construction, r\u00e9novation, d\u00e9molition, piscine, arbres, etc.). Bien que la plupart des arrondissements utilisent un syst\u00e8me technologique commun pour la saisie des demandes, l\u2019ensemble des processus de m\u00eame que certains attributs de donn\u00e9es peuvent varier d\u2019un arrondissement \u00e0 un autre.\r\n\r\n\u00c0 noter aussi que les donn\u00e9es des arrondissements Lachine et Saint-L\u00e9onard ne sont pas disponibles actuellement. La migration de l'ancien syst\u00e8me est en cours et ces donn\u00e9es seront disponibles d'ici la fin de l'ann\u00e9e.\r\n\r\n### G\u00e9olocalisation\r\n\r\nLa g\u00e9olocalisation de 73% des permis est faite  \u00e0 base du centro\u00efde des polygon
+
+### https://www.datos.gov.co/resource/c82u-588k.json?$limit=1&$order=fecha_matricula%20DESC
+761 bytes
+[{"codigo_camara":"28","camara_comercio":"CAUCA","matricula":"1126","inscripcion_proponente":"000000000000","razon_social":"ULLOA & GOMEZ LTDA EN LIQUIDACION","codigo_clase_identificacion":"06","clase_identificacion":"SIN IDENTIFICACION","numero_identificacion":"0000000000000","cod_ciiu_act_econ_pri":"9999","fecha_renovacion":"19760921","ultimo_ano_renovado":"1976","fecha_vigencia":"99991231","codigo_tipo_sociedad":"02","tipo_sociedad":"SOCIEDAD COMERCIAL","codigo_organizacion_juridica":"03","organizacion_juridica":"SOCIEDAD LIMITADA","codigo_categoria_matricula":"01","categoria_matricula":"SOCIEDAD ó PERSONA JURIDICA PRINCIPAL ó ESAL","codigo_estado_matricula":"01","estado_matricula":"ACTIVA","fecha_actualizacion":"2025/12/03 12:18:18.087000000"}]
 
 
-### https://api.pdok.nl/lv/bag/ogc/v1/collections?f=json
-ERROR https://api.pdok.nl/lv/bag/ogc/v1/collections?f=json -> HTTP 404: <html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx/1.27.0</center>
-</body>
-</html>
-
-
-### https://donnees.montreal.ca/api/3/action/package_search?q=construction%20transformation&rows=5&fl=name,title
-826 bytes
-{"help": "https://donnees.montreal.ca/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 5, "facets": {}, "results": [{"name": "permis-construction", "title": "Permis de construction, transformation et d\u00e9molition"}, {"name": "plan-urbanisme-densite", "title": "Plan d'urbanisme - Densit\u00e9 de construction"}, {"name": "mesure-harmonisee-delais-delivrance-permis", "title": "Mesure harmonis\u00e9e des d\u00e9lais de d\u00e9livrance de permis"}, {"name": "les-edifices-patrimoniaux-de-montreal", "title": "Les \u00e9difices patrimoniaux de Montr\u00e9al (archives)"}, {"name": "patrimoine-et-paysages-plan-d-urbanisme-et-de-mobilite-2050", "title": "Patrimoine et paysages (Plan d'urbanisme et de mobilit\u00e9 2050)"}], "sort": "score desc, metadata_modified desc", "search_facets": {}}}
-
-### https://opendata.comune.bologna.it/api/explore/v2.1/catalog/datasets/scia-segnalazioni-certificate-di-inizio-attivita-depositate/records?limit=1
-355 bytes
-{"total_count": 51441, "results": [{"richiesta_ndeg_prot": 69641, "richiesta_anno_prot": "2022", "richiesta_data": "2022-02-10", "procedimento": "SCIA A SANATORIA LR 15/2013", "esito_pratica": "Efficace", "chiusura_pratica_data": "2022-02-17", "codvia": 38050, "civico": 11, "esponenteciv": null, "localizzazioni_lista": "VIA DI MEZZO N.  11 INTERNO 0"}]}
-
-### https://www.datos.gov.co/api/catalog/v1?q=registro%20mercantil%20matriculas&limit=5&only=datasets
-37992 bytes
-{
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Personas Naturales, Personas Jurídicas y Entidades Sin Animo de Lucro",
-            "id" : "c82u-588k",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Extracción que contiene los datos básicos del Registro Mercantil que administran las Cámaras de Comercio a nivel Nacional para Personas Naturales, Personas Jurídicas y Entidades Sin Animo de Lucro (ESADLs), que se encuentran sincronizados en el Registro Único Empresarial y Social (RUES).",
-            "attribution" : "Confecámaras, Bogotá D.C.",
-            "attribution_link" : "https://www.rues.org.co/",
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-02T21:41:49.000Z",
-            "createdAt" : "2021-10-26T14:47:57.000Z",
-            "metadata_updated_at" : "2026-09-08T00:21:11.000Z",
-            "data_updated_at" : "2026-10-02T21:41:49.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 1348,
-                "page_views_last_month" : 6103,
-                "page_views_total" : 87277,
-                "page_views_last_week_log" : 10.397674632948268,
-                "page_views_last_month_log" : 12.57553924683453,
-                "page_views_total_log" : 16.41333042182576
-              },
-            "columns_name" :
-              [
-                "clase_identificacion",
-                "ultimo_ano_renovado",
-                "Representante Legal",
-                "codigo_clase_identificacion",
-                "codigo_organizacion_juridica",
-                "fecha_cancelacion",
-                "inscripcion_proponente",
-                "sigla",
-                "primer_nombre",
-                "nit",
-                "fecha_actualizacion",
-                "codigo_estado_matricula",
-                "fecha_matricula",
-                "digito_verificacion",
-                "fecha_vigencia",
-                "matricula",
-                "ciiu4",
-                "razon_social",
-                "camara_comercio",
-                "clase_identificacion_RL",
-                "codigo_camara",
-                "estado_matricula",
-                "primer_apellido",
-                "numero_identificacion",
-                "fecha_renovacion",
-                "cod_ciiu_act_econ_sec",
-                "Num Identificacion Representante Legal",
-                "codigo_categoria_matricula",
-            
-
-### https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?filters=%7B%22filters%22%3A%7B%22CouncilDisplayName%22%3A%22City%20of%20Sydney%22%7D%7D&PageSize=1&PageNumber=1
-ERROR https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?filters=%7B%22filters%22%3A%7B%22CouncilDisplayName%22%3A%22City%20of%20Sydney%22%7D%7D&PageSize=1&PageNumber=1 -> HTTP 400: { "ErrorMessage": "Required parameters for OnlineDA endpoint is not met." }
-
-### https://www.planningportal.nsw.gov.au/opendata/dataset/online-da-data-api
-66744 bytes
-<!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"  > <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-      <meta name="csrf_field_name" content="_csrf_token" />
-      <meta name="_csrf_token" content="ImFhYjExYjE5MGM4MTVlMmE2ODk3NzgyNjlhZjhjZWRmNTJmYzllYWEi.atYG8A.MTIfTDFHwAQobkeJP3rJb3ic83s" />
-
-      <meta name="generator" content="ckan 2.11.5" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online DA Data API | Dataset | NSW Planning Portal</title>
-
-    
-    
-    
-    <link rel="shortcut icon" href="https://www.planningportal.nsw.gov.au/themes/ssp_theme/favicon.ico" />
-    
-    
-        
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHRPGDLYF6"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-
-     
-         gtag('set', 'linker');
-
-         gtag('js', new Date());
-
-         gtag('config', 'G-PHRPGDLYF6', {
-             anonymize_ip: true,
-             linker: {
-                 domains: []
-             }
-         });
-     
-
-     
-     
-
-    </script>
-
-
-    
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    
-  
-  
-    
-      
-      
-      
-    
-    
-    
-
-  
-
-  
-
-    
-
-
-    
-    <link href="/opendata/webassets/base/51d427fe_main.css" rel="stylesheet"/>
-<link href="/opendata/webassets/ckanext-geoview/f197a782_geo-resource-styles.css" rel="stylesheet"/>
-<link href="/opendata/webassets/ckanext-scheming/728ec589_scheming_css.css" rel="stylesheet"/>
-<link href="/opendata/webassets/ckanext-activity/8dd77216_activity.css" rel="stylesheet"/>
-<link href="/opendata/webassets/ckanext-pdp/1e3fe9ec-pdp.css" rel="stylesheet"/>
-    
-    
-  
-  <meta property="og:title" content="Online DA Data API - NSW Planning Portal">
-  <meta property="og:description" content="The Online DA service API provides a data feed of all DA applications lodged on the NSW Planning Portal since January of 2019. Note: NSW Government has mandated all councils to use Planning Portal...">
-
-
-  </head>
-
-  
-  <body data-site-root="https://www.planningportal.nsw.gov.au/opendata/" data-locale-root="https://www.planningportal.nsw.gov.au/opendata/" >
-
-    
-  	<div class="visually-hidden-focusable"><a href="#content">Skip to main content</a></div>
-  
-
-  
-	  
-
-
-	
-	
-    
-
-	
-<div class="nsw-infobar pdp-top-head-wrapper">
-  <div
-
-### https://arquivos.receitafederal.gov.br/index.php/s/YggdBLfdninEJX9
-23353 bytes
-<!DOCTYPE html>
-<html class="ng-csp" data-placeholder-focus="false" lang="pt-BR" data-locale="pt_BR" translate="no" >
-<head data-requesttoken="3IalIXl2nx122EYdn75+xldpQ83FPRaYUQMHwNJFvyg=:kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=">
-	<meta charset="utf-8">
-	<title>
-	CNPJ - SERPRO+	</title>
-	<meta name="csp-nonce" nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<meta name="apple-itunes-app" content="app-id=1125420102">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="SERPRO+">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="theme-color" content="#00205B">
-	<link rel="icon" href="/index.php/apps/theming/favicon/files?v=a30b40ce">
-	<link rel="apple-touch-icon" href="/index.php/apps/theming/icon/files?v=a30b40ce">
-	<link rel="apple-touch-icon-precomposed" href="/index.php/apps/theming/icon/files?v=a30b40ce">
-	<link rel="mask-icon" sizes="any" href="/core/img/favicon-mask.svg" color="#00205B">
-	<link rel="manifest" href="/index.php/apps/theming/manifest/files?v=a30b40ce" crossorigin="use-credentials">
-	<link rel="stylesheet" href="/core/css/server.css?v=3cc9e3f2-27">
-<link rel="stylesheet" href="/apps/viewer/css/viewer-init.css?v=3e724b3f-27">
-<link rel="stylesheet" href="/apps/viewer/css/viewer-main.css?v=3e724b3f-27">
-<link rel="stylesheet" href="/apps/theming/css/default.css?v=18d79733-27">
-	<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/dist/core-common.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/dist/core-main.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/apps/files/l10n/pt_BR.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/dist/files-init.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/apps/files_sharing/l10n/pt_BR.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/dist/files_sharing-init.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/dist/files_sharing-init-public.js?v=3cc9e3f2-27"></script>
-<script nonce="kOv9VQMC7k1CsRFJ2d9LgRYRLqyUXljwNHtVmrsgjH8=" defer src="/apps/vi
-
-### https://opendata.cro.ie/dataset/companies
-14980 bytes
-<!DOCTYPE html>
-<!--[if IE 9]> <html lang="en_GB" class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en_GB"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-      <meta name="generator" content="ckan 2.9.16" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Records - Dataset - CRO</title>
-
-    
-    <link rel="shortcut icon" href="/img/favicon.png" />
-    
-
-  
-    
-    
-      
-      
-      
-    
-    
-    
-
-
-    
-    
-
-
-  
+### https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=GetFeature&typeName=bag:pand&resultType=hits&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Estatus%3C/PropertyName%3E%3CLiteral%3EBouwvergunning%20verleend%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E
+741 bytes
+<?xml version='1.0' encoding="UTF-8" ?>
+<wfs:FeatureCollection
+   xmlns:bag="http://bag.geonovum.nl"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://bag.geonovum.nl https://service.pdok.nl/kadaster/bag/wfs/v2_0?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;TYPENAME=bag:pand&amp;OUTPUTFORMAT=application%2Fgml%2Bxml%3B%20version%3D3.2 http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"
+   timeStamp="2026-10-19T12:04:42" numberMatched="103217" numberReturned="0">
+</wfs:FeatureCollection>
 
 
 
-
-    
-  
-  <script>
-   (()=>{
-       var ct = 0
-       window.addEventListener(
-           "message",
-           (event) => {
-               if (event.origin !== "https://superset.opendata.cro.ie") return;
-               // For unclear cross-origin reasons, event.source.frameElement isn't
-               // allowed, despite us running in precisely the context that *should* be
-               // allowed to acccess it.
-               // window.frames just gives us a list of the windows, so that's also
-               // not helpful.
-               // Technically, this breaks if someone tries to embed with a frame
-               // rather than an iframe. Don't.
-               for (var frame of document.getElementsByTagName('iframe')) {
-                   if (frame.contentWindow === event.source) {
-                       break;
-                   }
-               }
-               // The second condition can occur if we have a non-iframe embed
-               if (!frame || frame.contentWindow !== event.source) return;
-               
-               var height = event.data.height;
-               // Check that only height is set on event.data
-               if (!height || Object.keys(event.data).length !== 1) return;
-               // Use style.height because it overrides height=, and we've used both in
-               // various locations
-               // UNDONE -- there's a thing pushing out the height when logged in with filters
-               if (ct < 3) {
-                   ct = ct + 1;
-                   frame.style.height = height + "px";
-               }
-           }
-       )
-   })();
-  </script>
-
-  
-  <meta property="og:title" content="Company Records - CRO">
-  <meta property="og:description" content="">
+### https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=GetFeature&typeName=bag:pand&resultType=hits&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Estatus%3C/PropertyName%3E%3CLiteral%3EBouw%20gestart%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E
+740 bytes
+<?xml version='1.0' encoding="UTF-8" ?>
+<wfs:FeatureCollection
+   xmlns:bag="http://bag.geonovum.nl"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://bag.geonovum.nl https://service.pdok.nl/kadaster/bag/wfs/v2_0?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;TYPENAME=bag:pand&amp;OUTPUTFORMAT=application%2Fgml%2Bxml%3B%20version%3D3.2 http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"
+   timeStamp="2026-10-19T12:04:43" numberMatched="48088" numberReturned="0">
+</wfs:FeatureCollection>
 
 
-    
-    <link href="/webassets/base/2471d0b8_main.css" rel="stylesheet"/>
-<link href="/webassets/ckanext-geoview/77c3ca23_geo-resource-styles.css" rel="stylesheet"/>
-<link href="/webassets/ckanext-harvest/c95a0af2_harvest_css.css" rel="stylesheet"/>
-<link href="/webasset
 
-### https://data.gov.ie/api/3/action/package_search?q=planning%20applications&rows=3
-30497 bytes
-{"help": "https://data.gov.ie/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 197, "facets": {}, "results": [{"applicable_legislation": [], "author": null, "author_email": null, "conforms_to": "", "contact_email": "opendata@housing.gov.ie", "contact_name": "", "contact_phone": "", "creator_user_id": "ef08264c-676d-48c5-aaad-6ce8aa18d521", "frequency": "Weekly", "high_value_dataset": false, "id": "18020dbe-8565-47d0-8632-a8fc4dc540a0", "isopen": true, "issued": "2017-10-06", "language": "en", "license_id": "CC-BY-4.0", "license_title": "Creative Commons Attribution 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/", "maintainer": null, "maintainer_email": null, "metadata_created": "2017-10-06T12:07:10.069145", "metadata_modified": "2026-09-22T08:18:17.914474", "name": "national-planning-applications", "notes": "", "notes_translated": {}, "num_resources": 5, "num_tags": 5, "organization": {"id": "department-of-housing-planning-community-and-local-government", "name": "department-of-housing-local-government-and-heritage", "title": "Department of Housing, Local Government and Heritage", "type": "organization", "description": "The Department's mission is to support the sustainable and efficient delivery of well-planned homes and effective local government.\r\n", "image_url": "2025-04-23-110538.306273DoHLGH.png", "created": "2018-03-05T11:24:53.294724", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "department-of-housing-planning-community-and-local-government", "private": false, "provenance": "", "rights": "", "spatial": "", "spatial_other": "National", "spatial_resolution": "", "spatial_uri": "", "srs": ["epsg:2157"], "state": "active", "temporal": "", "temporal_start": "2010-01-01", "theme": "Housing", "title": "", "title_translated": {}, "type": "dataset", "url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer", "version": "", "vertical_extent": "", "resources": [{"access_url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer", "api_access_url": "", "api_response_formats": [], "api_type": "", "applicable_legislation": [], "cache_last_updated": null, "cache_url": null, "created": "2017-10-06T12:07:10.220389", "datastore_active": false, "description": "", "download_url": "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApp
+### https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=DescribeFeatureType&typeName=bag:verblijfsobject
+1902 bytes
+<?xml version='1.0' encoding="UTF-8" ?>
+<schema
+   targetNamespace="http://bag.geonovum.nl" 
+   xmlns:bag="http://bag.geonovum.nl" 
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   elementFormDefault="qualified" version="0.1" >
 
-### https://datos.madrid.es/egob/catalogo.json?q=licencias
-ERROR https://datos.madrid.es/egob/catalogo.json?q=licencias -> HTTP 404: <!DOCTYPE html>
-<!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="es"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-      <meta name="generator" content="ckan 2.9.11" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+  <import namespace="http://www.opengis.net/gml/3.2"
+          schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
 
-### https://opendata.paris.fr/api/explore/v2.1/catalog/datasets?where=search(%22permis%22)&limit=5
-46706 bytes
-{"total_count": 11, "results": [{"visibility": "domain", "fields": [], "dataset_id": "votation_suv_2024_bv", "dataset_uid": "da_zuu6lz", "has_records": false, "features": [], "attachments": [{"id": "votation_suv_2024_02_04_secteur_bv_xlsx", "title": "Votation_SUV_2024-02-04_secteur_bv.xlsx", "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/votation_suv_2024_bv/attachments/votation_suv_2024_02_04_secteur_bv_xlsx"}], "alternative_exports": [], "data_visible": true, "metas": {"default": {"title": "Votation \u2013 Votation f\u00e9vrier 2024 - Pour ou contre la cr\u00e9ation d'un tarif sp\u00e9cifique pour le stationnement des voitures individuelles lourdes, encombrantes, polluantes ?", "description": "<p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><span style=\"font-weight: bolder; font-size: 14.6667px; color: rgb(7, 31, 50); font-family: Calibri, sans-serif;\">R\u00e9sultats de la votation du 4 f\u00e9vrier 2024 par bureau de vote</span><br/></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><font color=\"#071f32\" face=\"Calibri, sans-serif\"><span style=\"font-size: 14.6667px;\"><span style=\"font-weight: bolder;\"><br/></span></span></font></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><font color=\"#071f32\" face=\"Calibri, sans-serif\"><span style=\"font-size: 14.6667px;\">Le dimanche 4 f\u00e9vrier 2024, la ville de Paris a organis\u00e9 une consultation citoyenne sur la cr\u00e9ation d\u2019un tarif de stationnement sp\u00e9cifique pour les SUV.</span></font></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><font color=\"#071f32\" face=\"Calibri, sans-serif\"><span style=\"font-size: 14.6667px;\"><br/></span></font></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><font color=\"#071f32\" face=\"Calibri, sans-serif\"><span style=\"font-size: 14.6667px;\">La votation s'est d\u00e9roul\u00e9e dans 222 bureaux de vote, r\u00e9partis sur 38 sites.</span></font></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><font color=\"#071f32\" face=\"Calibri, sans-serif\"><span style=\"font-size: 14.6667px;\"><br/></span></font></p><p style=\"font-family: sans-serif; margin: 0cm 0cm 0.0001pt;\"><span style=\"color: rgb(7, 31, 50); font-family: Calibri, sans-serif; font-size: 14.6667px;\">Ces bureaux de vote, dont le nombre a \u00e9t\u00e9 propos\u00e9 par chaque 
+  <element name="verblijfsobject" 
+           type="bag:verblijfsobjectType" 
+           substitutionGroup="gml:AbstractFeature" />
 
-### https://data.stad.gent/api/explore/v2.1/catalog/datasets?where=search(%22vergunning%22)&limit=5
-33 bytes
-{"total_count": 0, "results": []}
+  <complexType name="verblijfsobjectType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="geom" type="gml:GeometryPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="identificatie" minOccurs="0" type="string"/>
+          <element name="rdf_seealso" minOccurs="0" type="string"/>
+          <element name="oppervlakte" minOccurs="0" type="long"/>
+          <element name="status" minOccurs="0" type="string"/>
+          <element name="gebruiksdoel" minOccurs="0" type="string"/>
+          <element name="openbare_ruimte" minOccurs="0" type="string"/>
+          <element name="huisnummer" minOccurs="0" type="long"/>
+          <element name="huisletter" minOccurs="0" type="string"/>
+          <element name="toevoeging" minOccurs="0" type="string"/>
+          <element name="postcode" minOccurs="0" type="string"/>
+          <element name="woonplaats" minOccurs="0" type="string"/>
+          <element name="bouwjaar" minOccurs="0" type="long"/>
+          <element name="pandidentificatie" minOccurs="0" type="string"/>
+          <element name="pandstatus" minOccurs="0" type="string"/>
+          <element name="fuuid" minOccurs="0" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
 
-### https://data.wien.gv.at/daten/geo?service=WFS&request=GetCapabilities&version=1.1.0
-265425 bytes
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<wfs:WFS_Capabilities version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ows="http://www.opengis.net/ows" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wfs http://data.wien.gv.at/daten/geo/schemas/wfs/1.1.0/wfs.xsd" xmlns:ogdwien="https://www.wien.gv.at/ogdwien" updateSequence="690">
-  <ows:ServiceIdentification>
-    <ows:Title>GeoServer Web Feature Service</ows:Title>
-    <ows:Abstract>This is the reference implementation of WFS 1.0.0 and WFS 1.1.0, supports all WFS operations including Transaction.</ows:Abstract>
-    <ows:Keywords>
-      <ows:Keyword>WFS</ows:Keyword>
-      <ows:Keyword>WMS</ows:Keyword>
-      <ows:Keyword>GEOSERVER</ows:Keyword>
-    </ows:Keywords>
-    <ows:ServiceType>WFS</ows:ServiceType>
-    <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
-    <ows:Fees>https://creativecommons.org/licenses/by/3.0/at/deed.de</ows:Fees>
-    <ows:AccessConstraints>https://data.wien.gv.at/nutzungsbedingungen</ows:AccessConstraints>
-  </ows:ServiceIdentification>
-  <ows:ServiceProvider>
-    <ows:ProviderName>Open Government Data Wien</ows:ProviderName>
-    <ows:ServiceContact>
-      <ows:IndividualName />
-      <ows:PositionName />
-      <ows:ContactInfo>
-        <ows:Phone>
-          <ows:Voice />
-          <ows:Facsimile />
-        </ows:Phone>
-        <ows:Address>
-          <ows:DeliveryPoint />
-          <ows:City />
-          <ows:AdministrativeArea />
-          <ows:PostalCode />
-          <ows:Country />
-          <ows:ElectronicMailAddress />
-        </ows:Address>
-      </ows:ContactInfo>
-    </ows:ServiceContact>
-  </ows:ServiceProvider>
-  <ows:OperationsMetadata>
-    <ows:Operation name="GetCapabilities">
-      <ows:DCP>
-        <ows:HTTP>
-          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
-          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
-        </ows:HTTP>
-      </ows:DCP>
-      <ows:Parameter name="AcceptVersions">
-        <ows:Value>1.0.0</ows:Value>
-        <ows:Value>1.1.0</ows:Value>
-      </ows:Parameter>
-      <ows:Parameter name="AcceptFormats">
-        <ows:Value>text/xml</ows:Value>
-      </ows:Parameter>
-      <ows:Parameter name="Sections">
-        <ows:Value>ServiceIdentification</o
+</schema>
+

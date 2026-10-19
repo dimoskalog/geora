@@ -18,7 +18,8 @@ DAYS = 90
 
 # ---------------------------------------------------------------- Denmark ----
 DK_BBOX = [7.8, 54.5, 15.3, 57.8]
-DK_URLS = ["https://www.findsmiley.dk/xml/allekontrolresultater.xml",
+DK_URLS = ["https://pub.fvst.dk/publikationer/Smileydata.xml",
+           "https://www.findsmiley.dk/xml/allekontrolresultater.xml",
            "https://www.foedevarestyrelsen.dk/_layouts/15/sdata/smiley_xml.zip",
            "https://www.findsmiley.dk/xml/allekontrolresultater.zip"]
 SMILEY = {"1": "no remarks", "2": "order issued", "3": "injunction or ban", "4": "fine or police report"}
@@ -78,10 +79,21 @@ PRH = "https://avoindata.prh.fi/opendata-ytj-api/v3/companies"
 
 
 def fi_postcodes():
-    res = http("https://geo.stat.fi/geoserver/postialue/wfs",
-               {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": "postialue:pno_2026",
-                "outputFormat": "application/json", "srsName": "EPSG:4326", "propertyName": "postinumeroalue,nimi,geom"},
-               timeout=600)
+    res, err = None, None
+    for layer in ("postialue:pno_2026", "postialue:pno_2025", "postialue:pno"):
+        try:
+            res = http("https://geo.stat.fi/geoserver/postialue/wfs",
+                       {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeNames": layer,
+                        "outputFormat": "application/json", "srsName": "EPSG:4326"}, timeout=600, tries=2)
+            log(f"   postcode layer {layer}: {len(res.get('features', []))} areas")
+            break
+        except RuntimeError as e:
+            err = e
+            log(f"   postcode layer {layer}: {str(e)[:300]}")
+    if not res:
+        raise err
+    if res.get("features"):
+        log("   postcode properties: " + ", ".join(list(res["features"][0].get("properties", {}))[:12]))
     out = {}
     for f in res.get("features", []):
         pts = []
@@ -95,7 +107,9 @@ def fi_postcodes():
         if pts:
             a, b = sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
             lon, lat = (a, b) if a < 40 else (b, a)
-            out[f["properties"].get("postinumeroalue")] = (lat, lon, f["properties"].get("nimi"))
+            pr = f.get("properties") or {}
+            code = pr.get("postinumeroalue") or pr.get("posti_alue") or pr.get("pno")
+            out[str(code)] = (lat, lon, pr.get("nimi"))
     return out
 
 

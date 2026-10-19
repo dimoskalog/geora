@@ -750,7 +750,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") document.get
 
 function showCountry(code) {
   const c = COUNTRIES[code], tier = TIERS[c.t];
-  const live = REGIONS.filter(r => r.country === { "250": "FR", "840": "US", "410": "KR", "826": "GB", "578": "NO", "124": "CA", "208": "DK", "246": "FI", "233": "EE" }[code]);
+  const live = REGIONS.filter(r => r.country === { "250": "FR", "840": "US", "410": "KR", "826": "GB", "578": "NO", "124": "CA", "208": "DK", "246": "FI", "233": "EE", "702": "SG", "756": "CH" }[code]);
   openPanel(`<div class="label">Country coverage</div><h2>${esc(c.n)}</h2>
     <div class="score"><b>${c.s}</b><span class="label">observability / 100</span></div>
     <div class="meter"><i style="width:${c.s}%;background:${tier.color}"></i></div>

@@ -7,9 +7,9 @@ Run every adapter, write data/<region>/*.json, data/regions.json and history/las
 import json, os, sys, time, traceback
 from concurrent.futures import ThreadPoolExecutor
 from pipeline import core
-from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics
+from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics, world
 
-ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics]
+ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics, world]
 
 
 KEYS = ("id", "name", "country", "center", "bbox", "events", "first", "last", "generated", "sources", "focus", "focus_name")
@@ -45,6 +45,16 @@ def main():
             jobs += [j for j in adapter.regions() if not only or j[0] in only]
         except Exception as e:
             core.log(f"ADAPTER {adapter.__name__} FAILED: {e}")
+
+    merged = {}                               # an adapter may add sources to a region defined elsewhere
+    for rid, meta, fns in jobs:
+        if rid in merged:
+            m0, f0 = merged[rid]
+            m0["sources"] = list(dict.fromkeys((m0.get("sources") or []) + (meta.get("sources") or [])))
+            f0 += fns
+        else:
+            merged[rid] = (dict(meta), list(fns))
+    jobs = [(rid, m, f) for rid, (m, f) in merged.items() if "name" in m]
 
     def run_region(job):
         rid, meta, fns = job

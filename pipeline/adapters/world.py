@@ -398,28 +398,38 @@ def dutch_construction():
 
 # ------------------------------------------------------------ Washington DC ----
 def dc_new_licences():
+    from pipeline.core import geocode_us
     log("\n== DC new basic business licences")
     t0 = time.strftime("%Y-%m-%d", time.gmtime(time.time() - DAYS * 86400))
-    res = http("https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/0/query",
-               {"where": f"INITIALISSUEDATE >= DATE '{t0}'", "outFields": "INITIALISSUEDATE,BUSINESSACTIVITY,PREMISEADDRESS,"
-                "ENTITYNAME,ENTITYTRADENAME,CUSTOMERNUMBER,CATEGORYSERVICETYPE,LICENSESTATUS",
-                "outSR": 4326, "f": "geojson", "resultRecordCount": 20000}, timeout=300)
+    feats, off = [], 0
+    while off < 30000:
+        res = http("https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/0/query",
+                   {"where": f"INITIALISSUEDATE >= DATE '{t0}'", "outFields": "INITIALISSUEDATE,BUSINESSACTIVITY,PREMISEADDRESS,"
+                    "ENTITYNAME,ENTITYTRADENAME,CUSTOMERNUMBER,CATEGORYSERVICETYPE", "returnGeometry": "false",
+                    "f": "json", "resultOffset": off, "resultRecordCount": 2000}, timeout=300)
+        got = [f.get("attributes") or {} for f in res.get("features") or []]
+        feats += got
+        off += len(got)
+        if len(got) < 2000:
+            break
+    rows = [p for p in feats if "rental" not in str(p.get("BUSINESSACTIVITY") or "").lower()
+            and "housing" not in str(p.get("CATEGORYSERVICETYPE") or "").lower() and p.get("PREMISEADDRESS")]
+    log(f"   {len(feats)} licences; {len(rows)} after leaving out home rentals")
+    def street(a):
+        parts = [x.strip() for x in str(a).split(",")]
+        return parts[0], next((x for x in parts if x.isdigit() and len(x) == 5), "")
+    geo = geocode_us([(str(i), *street(p["PREMISEADDRESS"])[:1], "Washington", "DC", street(p["PREMISEADDRESS"])[1])
+                      for i, p in enumerate(rows)])
     out = []
-    feats = res.get("features") or []
-    if feats:
-        log(f"   sample: {str(feats[0])[:400]}")
-    for f in feats:
-        p = f.get("properties") or {}
-        c = (f.get("geometry") or {}).get("coordinates") or [None, None]
-        when = p.get("INITIALISSUEDATE")
-        if isinstance(when, (int, float)):
-            when = time.strftime("%Y-%m-%d", time.gmtime(when / 1000))
-        name = title_case(p.get("ENTITYTRADENAME") or p.get("ENTITYNAME"))
-        out.append(event("business", "Business licence", when, num(c[1]), num(c[0]), f"{name}: new business licence",
+    for i, p in enumerate(rows):
+        lat, lon = geo.get(str(i), (None, None))
+        when = time.strftime("%Y-%m-%d", time.gmtime((p.get("INITIALISSUEDATE") or 0) / 1000))
+        name = title_case(p.get("ENTITYTRADENAME") or p.get("ENTITYNAME")) or "Business"
+        out.append(event("business", "Business licence", when, lat, lon, f"{name}: new business licence",
                          f"{title_case(p.get('BUSINESSACTIVITY'))} · {title_case(p.get('CATEGORYSERVICETYPE'))}",
-                         "DC Basic Business Licenses", p.get("CUSTOMERNUMBER"), p.get("PREMISEADDRESS"),
-                         p.get("PREMISEADDRESS"), None, [-77.2, 38.78, -76.9, 39.0]))
-    log(f"   {len(feats)} licences, {len([x for x in out if x])} located")
+                         "DC Basic Business Licenses", p.get("CUSTOMERNUMBER"), street(p["PREMISEADDRESS"])[0].upper(),
+                         street(p["PREMISEADDRESS"])[0], None, [-77.2, 38.78, -76.9, 39.0]))
+    log(f"   located {len([x for x in out if x])}")
     return out
 
 

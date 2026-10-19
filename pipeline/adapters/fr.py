@@ -9,7 +9,7 @@ from pipeline.core import http, event, num, title_case, since, log, clean
 
 REGION = "fr"
 META = {"name": "France", "country": "FR", "center": [2.35, 46.6], "bbox": [-5.3, 41.2, 9.7, 51.2],
-        "focus": [2.3488, 48.8534], "focus_name": "Paris", "sources": ["BODACC", "Alim'confiance", "SIRENE"]}
+        "focus": [2.3488, 48.8534], "focus_name": "Paris", "sources": ["BODACC", "Alim'confiance", "SIRENE", "Sitadel (SDES)"]}
 BODACC = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets/annonces-commerciales/exports/json"
 ALIM = "https://dgal.opendatasoft.com/api/explore/v2.1/catalog/datasets/export_alimconfiance/exports/json"
 DAYS = 30
@@ -236,5 +236,74 @@ def sirene_paris():
     return out
 
 
+# --------------------------------------------------------------- Sitadel ----
+DIDO = "https://data.statistiques.developpement-durable.gouv.fr/dido/api/v1/datafiles"
+SITADEL = {  # rid -> label
+    "8b35affb-55fc-4c1f-915b-7750f974446a": "logements",
+    "f8f0700f-806c-40a7-83b1-f21cf507e7c4": "locaux",
+    "1a9a2f0c-56fe-4e69-84a7-fbbda2121f02": "demolir",
+}
+LOCAUX = {"COM": "shops", "BUR": "offices", "IND": "industry", "ENT": "warehouses", "HEB": "hotels",
+          "PUB": "public buildings", "AGR": "farm buildings"}
+
+
+def sitadel_rows(rid):
+    meta = http(f"{DIDO}/{rid}", timeout=120)
+    params = {"millesime": meta.get("millesime"), "withColumnName": "true", "withColumnDescription": "false",
+              "withColumnUnit": "false", "DATE_REELLE_AUTORISATION": f"gte:{since(150)}"}
+    body = http(f"{DIDO}/{rid}/csv", params, raw=True, timeout=900, headers={"Accept": "text/csv"})
+    text = body.decode("utf-8-sig", "replace")
+    rows = list(csv.DictReader(io.StringIO(text), delimiter=";" if text[:3000].count(";") > text[:3000].count(",") else ","))
+    log(f"   {SITADEL[rid]}: {len(rows)} rows (data up to {meta.get('temporal_coverage', {}).get('end')})")
+    return rows
+
+
+def sitadel():
+    log("\n== France Sitadel building permits (homes, commercial space, demolitions)")
+    recs = []
+    for rid, what in SITADEL.items():
+        try:
+            rows = sitadel_rows(rid)
+        except RuntimeError as e:
+            log(f"   {what}: {str(e)[:200]}")
+            continue
+        for r in rows:
+            d = str(r.get("DATE_REELLE_AUTORISATION") or "")[:10]
+            if d < since(150):
+                continue
+            if what == "logements":
+                n = int(num(r.get("NB_LGT_TOT_CREES")) or 0)
+                if n < 2:
+                    continue                       # single houses are left out: thousands a week, little signal each
+                title, sub = f"Permit: {n} new homes", "New homes"
+                amount = None
+            elif what == "locaux":
+                parts = {k: num(r.get(f"SURF_{k}_CREEE")) or 0 for k in LOCAUX}
+                total = sum(parts.values())
+                if total < 200:
+                    continue
+                main = max(parts, key=parts.get)
+                title, sub = f"Permit: {total:,.0f} m² of new {LOCAUX[main]}", "Commercial space"
+            else:
+                title, sub = "Demolition permit", "Demolition"
+            street = f"{r.get('ADR_NUM_TER') or ''} {r.get('ADR_LIBVOIE_TER') or ''}".strip()
+            cp = r.get("ADR_CODPOST_TER") or ""
+            city = r.get("ADR_LOCALITE_TER") or ""
+            num_id = r.get("NUM_DAU") or r.get("NUM_PC") or r.get("NUM_PD") or r.get("NUM_PA") or ""
+            recs.append({"gid": str(len(recs)), "street": street, "cp": cp, "city": city, "date": d, "title": title,
+                         "sub": sub, "rid": num_id, "detail": "; ".join(x for x in [r.get("NATURE_PROJET_DECLAREE") and
+                         f"Project type {r.get('NATURE_PROJET_DECLAREE')}", r.get("DENOM_DEM"), f"Department {r.get('DEP_LIBELLE') or ''}"] if x)})
+    log(f"   permits kept: {len(recs)}")
+    geo = geocode([(x["gid"], f"{x['street']} {x['city']}".strip(), x["cp"]) for x in recs if x["cp"] and x["street"]])
+    out = []
+    for x in recs:
+        g = geo.get(x["gid"])
+        if g:
+            out.append(event("construction", x["sub"], x["date"], g[0], g[1], x["title"], x["detail"], "Sitadel (SDES)",
+                             x["rid"], norm_fr(x["street"], x["cp"]), f"{x['street']}, {x['cp']} {x['city']}", None, META["bbox"]))
+    log(f"   located {len(out)}")
+    return out
+
+
 def regions():
-    return [(REGION, META, [bodacc, alimconfiance, sirene_paris])]
+    return [(REGION, META, [bodacc, alimconfiance, sirene_paris, sitadel])]

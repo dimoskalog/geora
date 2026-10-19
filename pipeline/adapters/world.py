@@ -396,6 +396,30 @@ def dutch_construction():
     return out
 
 
+# ------------------------------------------------------------ Washington DC ----
+def dc_new_licences():
+    log("\n== DC new basic business licences")
+    t0 = time.strftime("%Y-%m-%d", time.gmtime(time.time() - DAYS * 86400))
+    res = http("https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/0/query",
+               {"where": f"INITIALISSUEDATE >= DATE '{t0}'", "outFields": "INITIALISSUEDATE,BUSINESSACTIVITY,PREMISEADDRESS,"
+                "ENTITYNAME,ENTITYTRADENAME,CUSTOMERNUMBER,CATEGORYSERVICETYPE,LICENSESTATUS",
+                "outSR": 4326, "f": "geojson", "resultRecordCount": 20000}, timeout=300)
+    out = []
+    for f in res.get("features") or []:
+        p = f.get("properties") or {}
+        c = (f.get("geometry") or {}).get("coordinates") or [None, None]
+        when = p.get("INITIALISSUEDATE")
+        if isinstance(when, (int, float)):
+            when = time.strftime("%Y-%m-%d", time.gmtime(when / 1000))
+        name = title_case(p.get("ENTITYTRADENAME") or p.get("ENTITYNAME"))
+        out.append(event("business", "Business licence", when, num(c[1]), num(c[0]), f"{name}: new business licence",
+                         f"{title_case(p.get('BUSINESSACTIVITY'))} · {title_case(p.get('CATEGORYSERVICETYPE'))}",
+                         "DC Basic Business Licenses", p.get("CUSTOMERNUMBER"), p.get("PREMISEADDRESS"),
+                         p.get("PREMISEADDRESS"), None, [-77.2, 38.78, -76.9, 39.0]))
+    log(f"   {len(out)} licences")
+    return out
+
+
 def regions():
     return [
         ("ca-vancouver", {"name": "Vancouver", "country": "CA", "center": [-123.12, 49.25], "bbox": VAN_BBOX,
@@ -404,6 +428,7 @@ def regions():
                          "sources": ["Winnipeg Building Permits"]}, [winnipeg_permits]),
         ("ca-calgary", {"sources": ["Calgary Business Licences"]}, [calgary_new_businesses]),
         ("us-nyc", {"sources": ["NYC DCWP Licenses"]}, [nyc_new_licences]),
+        ("us-dc", {"sources": ["DC Basic Business Licenses"]}, [dc_new_licences]),
         ("sg", {"name": "Singapore", "country": "SG", "center": [103.82, 1.35], "bbox": SG_BBOX,
                 "sources": ["ACRA (data.gov.sg)", "OneMap"]}, [singapore_new_companies]),
         ("ch", {"name": "Switzerland", "country": "CH", "center": [8.23, 46.8], "focus": [8.5417, 47.3769], "focus_name": "Zurich",

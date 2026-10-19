@@ -405,7 +405,10 @@ def dc_new_licences():
                 "ENTITYNAME,ENTITYTRADENAME,CUSTOMERNUMBER,CATEGORYSERVICETYPE,LICENSESTATUS",
                 "outSR": 4326, "f": "geojson", "resultRecordCount": 20000}, timeout=300)
     out = []
-    for f in res.get("features") or []:
+    feats = res.get("features") or []
+    if feats:
+        log(f"   sample: {str(feats[0])[:400]}")
+    for f in feats:
         p = f.get("properties") or {}
         c = (f.get("geometry") or {}).get("coordinates") or [None, None]
         when = p.get("INITIALISSUEDATE")
@@ -416,7 +419,7 @@ def dc_new_licences():
                          f"{title_case(p.get('BUSINESSACTIVITY'))} · {title_case(p.get('CATEGORYSERVICETYPE'))}",
                          "DC Basic Business Licenses", p.get("CUSTOMERNUMBER"), p.get("PREMISEADDRESS"),
                          p.get("PREMISEADDRESS"), None, [-77.2, 38.78, -76.9, 39.0]))
-    log(f"   {len(out)} licences")
+    log(f"   {len(feats)} licences, {len([x for x in out if x])} located")
     return out
 
 
@@ -470,9 +473,11 @@ def madrid_ndp():
     rows = _csv(_mad_resource("213605-0-callejero-oficial-madrid", "direccionesvigentes"))
     cols = list(rows[0]) if rows else []
     log(f"   address points: {len(rows)}; columns: {cols}")
-    c_ndp = next((c for c in cols if "NDP" in c.upper()), None)
-    c_x = next((c for c in cols if "UTMX" in c.upper() or c.upper().startswith("COORDENADA_X")), None)
-    c_y = next((c for c in cols if "UTMY" in c.upper() or c.upper().startswith("COORDENADA_Y")), None)
+    c_ndp = "COD_NDP" if "COD_NDP" in cols else next((c for c in cols if "NDP" in c.upper() and "TIPO" not in c.upper()), None)
+    c_x = "UTMX_ETRS" if "UTMX_ETRS" in cols else next((c for c in cols if "UTMX" in c.upper()), None)
+    c_y = "UTMY_ETRS" if "UTMY_ETRS" in cols else next((c for c in cols if "UTMY" in c.upper()), None)
+    if rows:
+        log(f"   sample address point: {[rows[0].get(k) for k in (c_ndp, c_x, c_y, 'LATITUD', 'LONGITUD')]}")
     out = {}
     for r in rows:
         x, y = num(str(r.get(c_x) or "").replace(",", ".")), num(str(r.get(c_y) or "").replace(",", "."))

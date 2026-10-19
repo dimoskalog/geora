@@ -41,7 +41,10 @@ def _iso(d):
     m = re.match(r"(\d{4})-(\d\d)-(\d\d)", d)
     if m:
         return m.group(0)
-    m = re.match(r"(\d\d)[.\-/](\d\d)[.\-/](\d{4})", d)
+    m = re.match(r"(\d\d?)/(\d\d?)/(\d{4})", d)          # the smiley file uses US month/day/year
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    m = re.match(r"(\d\d)[.\-](\d\d)[.\-](\d{4})", d)
     return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else ""
 
 

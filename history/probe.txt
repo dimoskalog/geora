@@ -1,1817 +1,186 @@
-### https://api.us.socrata.com/api/catalog/v1?q=new%20business%20registrations&limit=20&only=datasets
-163527 bytes
+### https://data.oregon.gov/resource/esjy-u4fc.json?$limit=1
+347 bytes
+[{"registry_number":"262289995","business_name":"2611 SE 51ST AVE LLC","entity_type":"DOMESTIC LIMITED LIABILITY COMPANY","registry_date":"2026-09-01T00:00:00.000","associated_name_type":"INDIVIDUAL WITH DIRECT KNOWLEDGE","first_name":"KRISTY","last_name":"QUERNA","address_":"2129 SE 51ST AVE","city":"PORTLAND","state":"OR","zip_code":"97215"}]
+
+
+### https://data.lacity.org/resource/6rrh-rzua.json?$limit=1&$order=location_start_date%20DESC
+766 bytes
+[{"location_account":"0003607288-0001-8","business_name":"GIRLFRIENDS UNFILTERED INC.","street_address":"555 UNIVERSAL HOLLYWOOD DRIVE","city":"UNIVERSAL CITY","zip_code":"91608-1001","location_description":"555 Universal Hollywood 91608-1001","mailing_address":"1015 N LAKE AVENUE","mailing_city":"PASADENA","mailing_zip_code":"91104-4573","naics":"454390","primary_naics_description":"Other direct selling establishments (including door-to-door retailing, frozen food plan providers, party plan merchandisers, & coffee-break service providers)","council_district":"4","location_start_date":"2027-04-01T00:00:00.000","location_1":{"latitude":"34.1369","longitude":"-118.3583","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"}}]
+
+
+### https://data.ct.gov/api/catalog/v1?q=business%20registry&limit=5
+44128 bytes
 {
   "results" :
     [
       {
         "resource" :
           {
-            "name" : "Business Registration by Fiscal Year",
-            "id" : "6qbs-9m8d",
+            "name" : "Connecticut Business Registry - Business Master",
+            "id" : "n7gp-d28j",
             "resource_name" : null,
             "parent_fxf" : [],
-            "description" : "Data provided by Office of Finance as of December 2021. This provides the annual count and percent change for active business listings with the City of Los Angeles.",
-            "attribution" : "Office of Finance",
-            "attribution_link" : null,
+            "description" : "This is the master business table (account object) from the Connecticut Business Registry, maintained by the Secretary of the State, Business Services Division.",
+            "attribution" : "Secretary of the State",
+            "attribution_link" : "http://business.ct.gov",
             "contact_email" : null,
             "type" : "dataset",
-            "updatedAt" : "2022-03-08T21:13:55.000Z",
-            "createdAt" : "2022-03-02T22:22:36.000Z",
-            "metadata_updated_at" : "2022-03-08T21:13:55.000Z",
-            "data_updated_at" : "2022-03-02T22:35:24.000Z",
+            "updatedAt" : "2026-10-19T09:42:47.000Z",
+            "createdAt" : "2021-07-28T17:35:21.000Z",
+            "metadata_updated_at" : "2023-09-25T17:20:52.000Z",
+            "data_updated_at" : "2026-10-19T09:42:47.000Z",
             "page_views" :
               {
-                "page_views_last_week" : 33,
-                "page_views_last_month" : 127,
-                "page_views_total" : 2124,
-                "page_views_last_week_log" : 5.08746284125034,
-                "page_views_last_month_log" : 7.0,
-                "page_views_total_log" : 11.053247125912426
+                "page_views_last_week" : 1164,
+                "page_views_last_month" : 7377,
+                "page_views_total" : 64994,
+                "page_views_last_week_log" : 10.186114239541643,
+                "page_views_last_month_log" : 12.84901407369482,
+                "page_views_total_log" : 15.988041116880387
               },
             "columns_name" :
               [
-                "# Registered (Routine)",
-                "Change Prior Year 2",
-                "# Registered (Discovered)",
-                "Change Prior Year 1",
-                "Change Prior Year",
-                "# Registered (All)",
-                "Fiscal Year"
-              ],
-            "columns_field_name" :
-              [
-                "registered_routine",
-                "change_prior_year_2",
-                "registered_discovered",
-                "change_prior_year_1",
-                "change_prior_year",
-                "registered_all",
-                "fiscal_year"
-              ],
-            "columns_datatype" :
-              [
-                "Number",
-                "Number",
-                "Number",
-                "Number",
-                "Number",
-                "Number",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "Number of business registrations for the month via the generic application form. Usually, these types of registrations are processed via the Office of Finance public counters.",
-                "",
-                "Number of business registrations for the month via other sources, such as: Special Program 1 (AB63 platform) RMS Tax Discovery Program E-Application Registration Non-Compliance (NC) Issued. A field Tax Compliance Officer discovers a new business during a field investigation, sets up the account in LATAX and issues a Notice of Non-Compliance to the new business.  ",
-                "",
-                "",
-                "Total number of new business registrations for the month.",
-                ""
-              ],
-            "columns_format" :
-              [
-                {},
-                { "precisionStyle" : "percentage", "percentScale" : "1" },
-                {},
-                { "precisionStyle" : "percentage", "percentScale" : "1" },
-                { "precisionStyle" : "percentage", "percentScale" : "1" },
-                {},
-                {}
-              ],
-            "download_count" : 1699,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2022-03-02T22:35:30.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Administration & Finance",
-            "domain_tags" : [ "active businesses", "fiscal year" ],
-            "domain_metadata" :
-              [
-                { "key" : "Automated?_Automated?", "value" : "No" },
-                {
-                  "key" : "Location-Specified_What-geographic-unit-is-the-data-collected?",
-                  "value" : "City"
-                },
-                {
-                  "key" : "Location-Specified_Does-this-data-have-a-Location-column?-(Yes-or-No)",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Data-Owner_Department",
-                  "value" : "Office of Finance"
-                },
-                {
-                  "key" : "Committed-Update-Frequency_Refresh-rate",
-                  "value" : "Annual"
-                },
-                { "key" : "Automated-Dataset_Yes", "value" : "No" }
-              ]
-          },
-        "metadata" :
-          {
-            "domain" : "data.lacity.org",
-            "license" : "Creative Commons 1.0 Universal (Public Domain Dedication)"
-          },
-        "permalink" : "https://data.lacity.org/d/6qbs-9m8d",
-        "link" : "https://data.lacity.org/Administration-Finance/Business-Registration-by-Fiscal-Year/6qbs-9m8d",
-        "owner" :
-          {
-            "id" : "4vsd-swva",
-            "user_type" : "interactive",
-            "display_name" : "Eva Pereira"
-          },
-        "creator" :
-          {
-            "id" : "4vsd-swva",
-            "user_type" : "interactive",
-            "display_name" : "Eva Pereira"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "New York State Registered Tax Return Preparers and Facilitators",
-            "id" : "b7jj-bh4g",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "This Dataset contains tax return preparers and facilitators that have registered with the New York State Department of Taxation and Finance pursuant to Tax Law Section 32.",
-            "attribution" : "New York State Department of Taxation and Finance",
-            "attribution_link" : "http://www.tax.ny.gov/tp/",
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T11:06:58.000Z",
-            "createdAt" : "2014-07-03T16:14:32.000Z",
-            "metadata_updated_at" : "2026-10-19T11:06:36.000Z",
-            "data_updated_at" : "2026-10-19T11:06:58.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 373,
-                "page_views_last_month" : 1863,
-                "page_views_total" : 251916,
-                "page_views_last_week_log" : 8.546894459887637,
-                "page_views_last_month_log" : 10.86418614465428,
-                "page_views_total_log" : 17.94258895652542
-              },
-            "columns_name" :
-              [
-                "NY Registration Type",
-                "First Name",
-                "Middle Initial",
-                "Last Name",
-                "Business Name if Listed on Registration",
-                "City",
-                "State",
-                "Country",
-                "Zip",
-                "Zip Plus Four",
-                "Georeference",
-                "NYS Municipal Boundaries 2",
-                "New York Zip Codes 2",
-                "Counties 2"
-              ],
-            "columns_field_name" :
-              [
-                "ny_registration_type",
-                "first_name",
-                "middle_initial",
-                "last_name",
-                "business_name_if_listed_on_registration",
-                "city",
-                "state",
-                "country",
-                "zip",
-                "zip_plus_four",
-                "georeference",
-                ":@computed_region_yamh_8v7k",
-                ":@computed_region_wbg7_3whc",
-                ":@computed_region_kjdx_g34t"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Point",
-                "Number",
-                "Number",
-                "Number"
-              ],
-            "columns_description" :
-              [
-                "Type of registration: Preparer, Preparer/Facilitator,\nFacilitator. Please see Publication 58\n(http://www.tax.ny.gov/pdf/publications/income/pub58.pdf),\nissued by the New York State Department of Taxation and\nFinance, for further information about who is considered a\nPreparer and/or Facilitator.",
-                "Preparer’s First Name",
-                "Preparer’s Middle Initial",
-                "Preparer’s Last Name",
-                "Business Name as listed on Tax Preparer Registration; blank if no business name was listed on registration.",
-                "Preparer’s Address City as listed on Tax Preparer Registration",
-                "Preparer’s Address State as listed on Tax Preparer Registration",
-                "Preparer’s Address Country as listed on Tax Preparer Registration",
-                "Preparer’s Address Zip Code as listed on Tax Preparer\nRegistration",
-                "Preparer’s Address Zip Plus Four as listed on Tax Preparer Registration",
-                "Open Data/Socrata-generated geocoding information from supplied address components.",
-                "This column was automatically created in order to record in what polygon from the dataset 'NYS Municipal Boundaries' (yamh-8v7k) the point in column 'georeference' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "This column was automatically created in order to record in what polygon from the dataset 'New York Zip Codes' (wbg7-3whc) the point in column 'georeference' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "This column was automatically created in order to record in what polygon from the dataset 'Counties' (kjdx-g34t) the point in column 'georeference' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
-              ],
-            "columns_format" :
-              [
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "center" },
-                { "align" : "left" },
-                { "displayStyle" : "plain", "align" : "left" },
-                { "align" : "left" },
-                { "align" : "center" },
-                { "align" : "center" },
-                { "align" : "center" },
-                { "align" : "center" },
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 243660,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2021-06-30T20:00:20.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Government & Finance",
-            "domain_tags" :
-              [ "preparer", "registered", "tax return", "t&f registrations" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Summary_Dataset-Owner",
-                  "value" : "New York State Department of Taxation and Finance"
-                },
-                {
-                  "key" : "Dataset-Summary_Contact-Information",
-                  "value" : "opr.preparers@tax.ny.gov"
-                },
-                {
-                  "key" : "Dataset-Summary_Granularity",
-                  "value" : "Preparer"
-                },
-                { "key" : "Dataset-Summary_Coverage", "value" : "Statewide" },
-                {
-                  "key" : "Dataset-Summary_Posting-Frequency",
-                  "value" : "Daily"
-                },
-                {
-                  "key" : "Dataset-Summary_Organization",
-                  "value" : "Office of Processing and Taxpayer Services"
-                },
-                { "key" : "Dataset-Summary_Time-Period", "value" : "Current" },
-                { "key" : "Local-Data_Municipality_Column", "value" : "city" },
-                { "key" : "Local-Data_Municipality-Filter", "value" : "Yes" },
-                {
-                  "key" : "Disclaimers_Limitations",
-                  "value" : "Pursuant to Tax Law Section 32 Attorneys, CPAs, PAs, IRS Enrolled Agents, volunteer tax return preparers and the employees of these individuals are exempt from registration as tax return preparers.  "
-                },
-                {
-                  "key" : "Dataset-Information_Agency",
-                  "value" : "Taxation and Finance, Department of"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.ny.gov" },
-        "permalink" : "https://data.ny.gov/d/b7jj-bh4g",
-        "link" : "https://data.ny.gov/Government-Finance/New-York-State-Registered-Tax-Return-Preparers-and/b7jj-bh4g",
-        "owner" :
-          {
-            "id" : "xzik-pf59",
-            "user_type" : "interactive",
-            "display_name" : "NY Open Data"
-          },
-        "creator" :
-          {
-            "id" : "xzik-pf59",
-            "user_type" : "interactive",
-            "display_name" : "NY Open Data"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Licensed Businesses within the City of Everett",
-            "id" : "qvfa-2v26",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Licenses issued from the City's business license system. The system is updated as new businesses are added.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T09:45:36.000Z",
-            "createdAt" : "2019-05-13T22:09:33.000Z",
-            "metadata_updated_at" : "2026-10-19T09:45:25.000Z",
-            "data_updated_at" : "2026-10-19T09:45:36.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 304,
-                "page_views_last_month" : 1397,
-                "page_views_total" : 36097,
-                "page_views_last_week_log" : 8.252665432450248,
-                "page_views_last_month_log" : 10.449148645375438,
-                "page_views_total_log" : 15.139631286744654
-              },
-            "columns_name" :
-              [
-                "Registration",
-                "LegalEntityName",
-                "PrimaryDBA",
-                "UBI",
-                "NAICS",
-                "Address",
-                "IssueDate",
-                "FirstActivityDate",
-                "New Georeferenced Column",
-                "City Limits Shading",
-                "Neighborhoods",
-                "City Council Districts"
-              ],
-            "columns_field_name" :
-              [
-                "registration",
-                "legalentityname",
-                "primarydba",
-                "ubi",
-                "naics",
-                "address",
-                "issuedate",
-                "firstactivitydate",
-                "geocoded_column",
-                ":@computed_region_psyp_nrnc",
-                ":@computed_region_cx6t_gkq3",
-                ":@computed_region_wamu_3gk7"
-              ],
-            "columns_datatype" :
-              [
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Calendar date",
-                "Point",
-                "Number",
-                "Number",
-                "Number"
-              ],
-            "columns_description" :
-              [ "", "", "", "", "", "", "", "", "", "", "", "" ],
-            "columns_format" :
-              [
-                { "precisionStyle" : "standard", "noCommas" : "true" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                { "view" : "date" },
-                { "view" : "date" },
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 69252,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2021-12-28T22:37:11.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Economic and Cultural Vitality",
-            "domain_tags" : [ "business", "business license", "economy" ],
-            "domain_metadata" : []
-          },
-        "metadata" : { "domain" : "data.everettwa.gov" },
-        "permalink" : "https://data.everettwa.gov/d/qvfa-2v26",
-        "link" : "https://data.everettwa.gov/Economic-and-Cultural-Vitality/Licensed-Businesses-within-the-City-of-Everett/qvfa-2v26",
-        "owner" :
-          {
-            "id" : "sd8z-8g4t",
-            "user_type" : "interactive",
-            "display_name" : "Chris Fadden"
-          },
-        "creator" :
-          {
-            "id" : "sd8z-8g4t",
-            "user_type" : "interactive",
-            "display_name" : "Chris Fadden"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "New Businesses Registered Last Month",
-            "id" : "esjy-u4fc",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "New businesses registered with the Secretary of State Corporation Division during the previous month.",
-            "attribution" : "Corporation Division",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-14T21:44:33.000Z",
-            "createdAt" : "2011-10-03T15:11:39.000Z",
-            "metadata_updated_at" : "2026-10-14T21:44:19.000Z",
-            "data_updated_at" : "2026-10-14T21:44:33.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 375,
-                "page_views_last_month" : 2122,
-                "page_views_total" : 173209,
-                "page_views_last_week_log" : 8.554588851677638,
-                "page_views_last_month_log" : 11.051888655905378,
-                "page_views_total_log" : 17.40216269857733
-              },
-            "columns_name" :
-              [
-                "Registry Date",
-                "Zip Code",
-                "City",
-                "Address Continued",
-                "Address ",
-                "Not of Record Entity",
-                "Last Name",
-                "First Name",
-                "Associated Name Type",
-                "Entity Type",
-                "Business Name",
-                "Registry Number",
-                "State",
-                "Suffix",
-                "Middle Name",
-                "Entity of Record Name",
-                "Entity of Record Reg Number"
-              ],
-            "columns_field_name" :
-              [
-                "registry_date",
-                "zip_code",
-                "city",
-                "address_continued",
-                "address_",
-                "not_of_record_entity",
-                "last_name",
-                "first_name",
-                "associated_name_type",
-                "entity_type",
-                "business_name",
-                "registry_number",
-                "state",
-                "suffix",
-                "middle_name",
-                "entity_of_record_name",
-                "entity_of_record_reg_number"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [
-                { "view" : "date", "align" : "left" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 57965,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2018-10-01T15:22:00.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business name", "registration" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Oregon Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Record-Unit",
-                  "value" : "Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Agency-URL",
-                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
-                },
-                {
-                  "key" : "Dataset-Information_Notes",
-                  "value" : "For previous months see \"New Businesses - <month>"
-                }
-              ]
-          },
-        "metadata" :
-          {
-            "domain" : "data.oregon.gov",
-            "license" : "Public Domain U.S. Government"
-          },
-        "permalink" : "https://data.oregon.gov/d/esjy-u4fc",
-        "link" : "https://data.oregon.gov/business/New-Businesses-Registered-Last-Month/esjy-u4fc",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Contractor Registry Certificate",
-            "id" : "i4jv-zkey",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "The dataset includes a comprehensive list of contractor licenses that have been issued to businesses for the purpose of contractor registry assessment and remediation within New York State. Contractor Registry establishes a requirement that contractors register with the Bureau of Public Work and Prevailing Wage Enforcement prior to bidding on public work projects or commencing work on a private covered project that is subject to the prevailing wage.",
-            "attribution" : "New York State Department of Labor",
-            "attribution_link" : "https://dol.ny.gov/contractor-registry",
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T09:02:04.000Z",
-            "createdAt" : "2024-11-13T21:01:58.000Z",
-            "metadata_updated_at" : "2026-10-19T09:01:28.000Z",
-            "data_updated_at" : "2026-10-19T09:02:04.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 637,
-                "page_views_last_month" : 2591,
-                "page_views_total" : 49931,
-                "page_views_last_week_log" : 9.31741261376487,
-                "page_views_last_month_log" : 11.339850002884624,
-                "page_views_total_log" : 15.607677073765917
-              },
-            "columns_name" :
-              [
-                "Certificate Number",
-                "Business Name",
-                "DBA Name",
-                "Business Type",
-                "Business is MWBE Owned",
-                "Business is Publicly Traded",
-                "Business Officers",
-                "Address",
-                "Address 2",
-                "City",
-                "State",
-                "Zip Code",
-                "Phone",
-                "Issued Date",
-                "Expiration Date",
+                "Dissolution_date",
+                "Business_Street",
+                "Business_Country",
+                "Business_State",
+                "Date_of_Organization_Meeting",
+                "Mailing_International_Address",
+                "Category_Survey_Email_Address",
+                "Office_Jurisdiction_BusinessCity",
+                "Records_Address_City",
+                "Total_Authorized_Shares",
+                "State_or_Territory_Formation",
+                "Office_Jurisdiction_Address",
+                "Mailing_Jurisdiction_Country",
+                "Office_Jurisdiction_BusinessZipCode",
+                "Office_in_Jurisdiction_Country",
+                "Records_Address_Zip_Code",
                 "Status",
-                "Business has a NYS DOL Employer Registration Number",
-                "Reason business does not have a NYS DOL Employer Registration Number ",
-                "Business has a WCB Employer Number",
-                "Business has outstanding wage assessments",
-                "Business has been debarred",
-                "Debarment State or Federal Law",
-                "Debarment State",
-                "Debarment Start Date",
-                "Debarment End Date",
-                "Business has final determination for violation of Labor or Tax Law",
-                "Business has final determination safety standard violations",
-                "Business is associated with an apprenticeship program",
-                "Business is sponsor of a program ",
-                "Business is signatory to a group program",
-                "Business has Workers Compensation Insurance",
-                "Business is exempt from Workers Compensation Insurance ",
-                "Georeference",
-                "New York Zip Codes",
+                "AccountNumber",
+                "Country_Formation",
+                "NAICS_Sub_Code",
+                "Office_Jurisdiction_BusinessStreet",
+                "Record_Address",
+                "CREATE_DT",
+                "Annual_Report_Due_Date",
+                "Began_Transacting_in_CT",
+                "Business_Email_Address",
+                "Business_Name_in_state_country",
+                "Date_Registration",
+                "Office_Jurisdiction_BusinessState",
+                "Planning Regions",
                 "Counties",
-                "NYS Municipal Boundaries"
+                "Zip Code",
+                "Town Index",
+                "Org_Owned_by_Person_s_with_disabilities",
+                "Veteran_Owned_Organization",
+                "Woman_Owned_Organization",
+                "Organization_is_LGBTQI_Owned",
+                "Mailing_Jurisdiction_BusinessZipCode",
+                "Mailing_Address",
+                "Business_Unit",
+                "Citizenship",
+                "Minority_Owned_Organization",
+                "Geo_Location ",
+                "Mailing_Jurisdiction_BusinessUnit",
+                "Records_Address_State",
+                "Mailing_Jurisdiction_BusinessState",
+                "Business_City",
+                "NAICS_Code",
+                "Mailing_Jurisdiction_Address",
+                "Mail_Jurisdiction_International_address",
+                "Records_Address_Country",
+                "Business_Type",
+                "Mailing_Jurisdiction_BusinessCity",
+                "Reason_for_Administrative_Dissolution",
+                "Name",
+                "Business_ZIP",
+                "Formation_Place",
+                "Records_Address_Street",
+                "Mailing_Jurisdiction_BusinessStreet",
+                "Office_Jurisdiction_BusinessUnit",
+                "Records_Address_Unit",
+                "Id",
+                "Sub_status"
               ],
             "columns_field_name" :
               [
-                "certificate_number",
-                "business_name",
-                "dba_name",
-                "business_type",
-                "business_is_mwbe_owned",
-                "business_is_publicly_traded",
-                "business_officers",
-                "address",
-                "address_2",
-                "city",
-                "state",
-                "zip_code",
-                "phone",
-                "issued_date",
-                "expiration_date",
+                "dissolution_date",
+                "billingstreet",
+                "billingcountry",
+                "billingstate",
+                "date_of_organization_meeting",
+                "mailing_international_address",
+                "category_survey_email_address",
+                "office_jurisdiction",
+                "records_address_city",
+                "total_authorized_shares",
+                "state_or_territory_formation",
+                "office_jurisdiction_address",
+                "mailing_jurisdiction_country",
+                "office_jurisdiction_4",
+                "office_in_jurisdiction_country",
+                "records_address_zip_code",
                 "status",
-                "business_has_a_nys_dol_employer_registration_number",
-                "reason_business_does_not_have_a_nys_dol_employer_registration_number_",
-                "business_has_a_wcb_employer_number",
-                "business_has_outstanding_wage_assessments",
-                "business_has_been_debarred",
-                "debarment_state_or_federal_law",
-                "debarment_state",
-                "debarment_start_date",
-                "debarment_end_date",
-                "business_has_final_determination_for_violation_of_labor_or_tax_law",
-                "business_has_final_determination_safety_standard_violations",
-                "business_is_associated_with_an_apprenticeship_program",
-                "business_is_sponsor_of_a_program_",
-                "business_is_signatory_to_a_group_program",
-                "business_has_workers_compensation_insurance",
-                "business_is_exempt_from_workers_compensation_insurance_",
-                "georeference",
-                ":@computed_region_wbg7_3whc",
-                ":@computed_region_kjdx_g34t",
-                ":@computed_region_yamh_8v7k"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Number",
-                "Calendar date",
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Point",
-                "Number",
-                "Number",
-                "Number"
-              ],
-            "columns_description" :
-              [
-                "The unique identifier assigned to the business by DOL",
-                "The legal name of the business that holds the Contractor Registry License",
-                "The name that the business is commonly known as",
-                "The business type is the l
-
-### https://api.us.socrata.com/api/catalog/v1?q=business%20entities%20registry&limit=20&only=datasets
-120577 bytes
-{
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Active Businesses - ALL",
-            "id" : "tckn-sxa6",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "All Active businesses - Principal Place of Business address, Mailing address, Registered Agent, Authorized Representative.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-13T21:31:34.000Z",
-            "createdAt" : "2020-07-27T15:20:17.000Z",
-            "metadata_updated_at" : "2026-10-13T21:21:45.000Z",
-            "data_updated_at" : "2026-10-13T21:31:34.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 2837,
-                "page_views_last_month" : 12037,
-                "page_views_total" : 523094,
-                "page_views_last_week_log" : 11.470658874060552,
-                "page_views_last_month_log" : 13.555308101401328,
-                "page_views_total_log" : 18.99671345452789
-              },
-            "columns_name" :
-              [
-                "State",
-                "Suffix",
-                "Middle Name",
-                "Registry Number",
-                "Jurisdiction",
-                "City",
-                "Not of Record Entity",
-                "Address",
-                "First Name",
-                "Entity of Record Name",
-                "Address Continued",
-                "Registry Date",
-                "Entity of Record Reg Number",
-                "Zip",
-                "Last Name",
-                "Business Name",
-                "Business Details",
-                "Associated Name Type",
-                "Entity Type"
-              ],
-            "columns_field_name" :
-              [
-                "state",
-                "suffix",
-                "middle_name",
-                "registry_number",
-                "jurisdiction",
-                "city",
-                "not_of_record_entity",
-                "address",
-                "first_name",
-                "entity_of_record_name",
-                "address_continued",
-                "registry_date",
-                "entity_of_record_reg_number",
-                "zip",
-                "last_name",
-                "business_name",
-                "business_details",
-                "associated_name_type",
-                "entity_type"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "URL",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "Link to the business details",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 50336,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2020-07-27T16:58:49.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business registry" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Secretary of State - Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Weekly"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Weekly"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.oregon.gov" },
-        "permalink" : "https://data.oregon.gov/d/tckn-sxa6",
-        "link" : "https://data.oregon.gov/business/Active-Businesses-ALL/tckn-sxa6",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "New Businesses Registered Last Month",
-            "id" : "esjy-u4fc",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "New businesses registered with the Secretary of State Corporation Division during the previous month.",
-            "attribution" : "Corporation Division",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-14T21:44:33.000Z",
-            "createdAt" : "2011-10-03T15:11:39.000Z",
-            "metadata_updated_at" : "2026-10-14T21:44:19.000Z",
-            "data_updated_at" : "2026-10-14T21:44:33.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 375,
-                "page_views_last_month" : 2122,
-                "page_views_total" : 173209,
-                "page_views_last_week_log" : 8.554588851677638,
-                "page_views_last_month_log" : 11.051888655905378,
-                "page_views_total_log" : 17.40216269857733
-              },
-            "columns_name" :
-              [
-                "Registry Date",
-                "Zip Code",
-                "City",
-                "Address Continued",
-                "Address ",
-                "Not of Record Entity",
-                "Last Name",
-                "First Name",
-                "Associated Name Type",
-                "Entity Type",
-                "Business Name",
-                "Registry Number",
-                "State",
-                "Suffix",
-                "Middle Name",
-                "Entity of Record Name",
-                "Entity of Record Reg Number"
-              ],
-            "columns_field_name" :
-              [
-                "registry_date",
-                "zip_code",
-                "city",
-                "address_continued",
-                "address_",
-                "not_of_record_entity",
-                "last_name",
-                "first_name",
-                "associated_name_type",
-                "entity_type",
-                "business_name",
-                "registry_number",
-                "state",
-                "suffix",
-                "middle_name",
-                "entity_of_record_name",
-                "entity_of_record_reg_number"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [
-                { "view" : "date", "align" : "left" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 57965,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2018-10-01T15:22:00.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business name", "registration" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Oregon Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Record-Unit",
-                  "value" : "Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Agency-URL",
-                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
-                },
-                {
-                  "key" : "Dataset-Information_Notes",
-                  "value" : "For previous months see \"New Businesses - <month>"
-                }
-              ]
-          },
-        "metadata" :
-          {
-            "domain" : "data.oregon.gov",
-            "license" : "Public Domain U.S. Government"
-          },
-        "permalink" : "https://data.oregon.gov/d/esjy-u4fc",
-        "link" : "https://data.oregon.gov/business/New-Businesses-Registered-Last-Month/esjy-u4fc",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Nonprofit Corporations",
-            "id" : "8kyv-b2kw",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Nonprofit corporations active on the record of the Secretary of State Corporation Division as of the first working day of the month.",
-            "attribution" : "Corporation Division",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-14T21:33:26.000Z",
-            "createdAt" : "2012-05-01T20:50:34.000Z",
-            "metadata_updated_at" : "2026-10-14T21:31:43.000Z",
-            "data_updated_at" : "2026-10-14T21:33:26.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 682,
-                "page_views_last_month" : 6021,
-                "page_views_total" : 160841,
-                "page_views_last_week_log" : 9.415741768290092,
-                "page_views_last_month_log" : 12.556026992724679,
-                "page_views_total_log" : 17.295284655081794
-              },
-            "columns_name" :
-              [
-                "Address ",
-                "Middle Name",
-                "First Name",
-                "Entity Type",
-                "Business Name",
-                "Registry Number",
-                "Associated Name Type",
-                "Last Name",
-                "Nonprofit Type",
-                "Registry Date",
-                "Entity of Record Reg Number",
-                "Entity of Record Name",
-                "City",
-                "State",
-                "Zip Code",
-                "Suffix",
-                "Address Continued",
-                "Not of Record Entity"
-              ],
-            "columns_field_name" :
-              [
-                "address",
-                "middle_name",
-                "first_name",
-                "entity_type",
-                "business_name",
-                "registry_number",
-                "associated_name_type",
-                "last_name",
-                "nonprofit_type",
-                "registry_date",
-                "entity_of_record_reg_number",
-                "entity_of_record_name",
-                "city",
-                "state",
-                "zip_code",
-                "suffix",
-                "address_continued",
-                "not_of_record_entity"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                  "precisionStyle" : "standard",
-                  "rdf" : "",
-                  "noCommas" : "true",
-                  "align" : "right"
-                },
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 18519,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2018-10-01T14:58:46.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "registration", "nonprofit name", "nonprofit" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Oregon Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Agency-URL",
-                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.oregon.gov" },
-        "permalink" : "https://data.oregon.gov/d/8kyv-b2kw",
-        "link" : "https://data.oregon.gov/business/Active-Nonprofit-Corporations/8kyv-b2kw",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Benefit Companies",
-            "id" : "baig-8b9x",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Updated weekly. Corporations and Limited Liability Companies designated as benefit companies.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-13T21:12:24.000Z",
-            "createdAt" : "2014-01-02T22:27:08.000Z",
-            "metadata_updated_at" : "2026-10-13T21:12:21.000Z",
-            "data_updated_at" : "2026-10-13T21:12:24.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 129,
-                "page_views_last_month" : 683,
-                "page_views_total" : 63197,
-                "page_views_last_week_log" : 7.022367813028454,
-                "page_views_last_month_log" : 9.417852514885897,
-                "page_views_total_log" : 15.947591282323069
-              },
-            "columns_name" :
-              [
-                "Entity Type",
-                "Registry Number",
-                "Benefit Designation Date",
-                "Business Details",
-                "Business Name"
-              ],
-            "columns_field_name" :
-              [
-                "entity_type",
-                "registry_number",
-                "benefit_designation_date",
-                "business_details",
-                "business_name"
-              ],
-            "columns_datatype" :
-              [ "Text", "Text", "Calendar date", "URL", "Text" ],
-            "columns_description" :
-              [ "", "", "", "Link to view business details", "" ],
-            "columns_format" :
-              [
-                {},
-                { "align" : "center" },
-                { "view" : "date", "align" : "left" },
-                {},
-                {}
-              ],
-            "download_count" : 28393,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2018-12-12T16:46:13.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business", "registration", "benefit" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Weekly"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Weekly"
-                }
-              ]
-          },
-        "metadata" :
-          { "domain" : "data.oregon.gov", "license" : "Public Domain" },
-        "permalink" : "https://data.oregon.gov/d/baig-8b9x",
-        "link" : "https://data.oregon.gov/business/Active-Benefit-Companies/baig-8b9x",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Intermediate Provider Registry",
-            "id" : "a6ec-cry4",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-16T21:37:36.000Z",
-            "createdAt" : "2019-03-28T20:34:19.000Z",
-            "metadata_updated_at" : "2019-04-12T16:28:54.000Z",
-            "data_updated_at" : "2026-10-16T21:37:36.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 45,
-                "page_views_last_month" : 1163,
-                "page_views_total" : 43712,
-                "page_views_last_week_log" : 5.523561956057013,
-                "page_views_last_month_log" : 10.184875342908283,
-                "page_views_total_log" : 15.415774772466035
-              },
-            "columns_name" :
-              [
-                "Business Name",
-                "Business Address",
-                "Regulatory Contact Name",
-                "Regulatory Contact Address",
-                "Rural Call Completion Contact Name",
-                "States Serviced",
-                "Regulatory Contact Telephone",
-                "Rural Call Completion Contact Department",
-                "Rural Call Completion Contact Email",
-                "Rural Call Completion Contact Telephone",
-                "Rural Call Completion Contact Address",
-                "Previous Business Names",
-                "Regulatory Contact Title",
-                "Regulatory Contact Email",
-                "Rural Call Completion Contact Title"
-              ],
-            "columns_field_name" :
-              [
-                "business_name",
-                "business_address",
-                "regulatory_contact_name",
-                "regulatory_contact_address",
-                "rural_call_completion_contact_name",
-                "states_serviced",
-                "regulatory_contact_telephone",
-                "rural_call_completion_contact_department",
-                "rural_call_completion_contact_email",
-                "rural_call_completion_contact_telephone",
-                "rural_call_completion_contact_address",
-                "previous_business_names",
-                "regulatory_contact_title",
-                "regulatory_contact_email",
-                "rural_call_completion_contact_title"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "FRN Entity Name",
-                "FRN Entity Address",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {} ],
-            "download_count" : 27224,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2019-04-12T16:28:54.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_tags" : [],
-            "domain_metadata" :
-              [
-                { "key" : "Common-Core_Bureau-Code", "value" : "356:00" },
-                { "key" : "Common-Core_Program-Code", "value" : "000:000" }
-              ]
-          },
-        "metadata" : { "domain" : "opendata.fcc.gov" },
-        "permalink" : "https://opendata.fcc.gov/d/a6ec-cry4",
-        "link" : "https://opendata.fcc.gov/dataset/Intermediate-Provider-Registry/a6ec-cry4",
-        "owner" :
-          {
-            "id" : "n6fk-997k",
-            "user_type" : "interactive",
-            "display_name" : "Alireza Shadman"
-          },
-        "creator" :
-          {
-            "id" : "n6fk-997k",
-            "user_type" : "interactive",
-            "display_name" : "Alireza Shadman"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Businesses - County Data",
-            "id" : "6g49-bcrm",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Listing of All Active Business.  The data displayed is based on the  Principal Place of Business  residing in Oregon only.   The county was determined by a City-Zip combination.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-08-14T14:57:37.000Z",
-            "createdAt" : "2020-04-30T21:09:31.000Z",
-            "metadata_updated_at" : "2026-08-14T14:54:55.000Z",
-            "data_updated_at" : "2026-08-14T14:57:37.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 629,
-                "page_views_last_month" : 10352,
-                "page_views_total" : 27099,
-                "page_views_last_week_log" : 9.29920801838728,
-                "page_views_last_month_log" : 13.337761259156672,
-                "page_views_total_log" : 14.726005231128598
-              },
-            "columns_name" :
-              [
-                "Registry Date",
-                "PPB Zip",
-                "EntityType",
-                "Anniversary Date",
-                "Registry Number",
-                "PPB County",
-                "Business Name",
-                "PPB City",
-                "PPB State",
-                "PPB CityZip"
-              ],
-            "columns_field_name" :
-              [
-                "registry_date",
-                "zip",
-                "e_type",
-                "anniversary_date",
-                "registry_number",
-                "county",
-                "business_name",
-                "city",
-                "state",
-                "cityzip"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Number",
-                "Text",
-                "Calendar date",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "Zip code for Principal Place of Business",
-                "Entity Type",
-                "Date Renewal is Due",
-                "",
-                " Lookup Based on City Zip combination",
-                "",
-                "City of Principal Place of Business",
-                "Only Oregon PPB are included in this dataset",
-                ""
-              ],
-            "columns_format" :
-              [
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 66078,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2020-04-30T21:25:08.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business", "active", "county" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Ore
-
-### https://api.us.socrata.com/api/catalog/v1?q=active%20businesses&limit=20&only=datasets
-157017 bytes
-{
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Listing of Active Businesses",
-            "id" : "6rrh-rzua",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Listing of all active businesses currently registered with the Office of Finance. An \"active\" business is defined as a registered business whose owner has not notified the Office of Finance of a cease of business operations. Update Interval: Monthly.\n\nNAICS Codes are from 2007 NAICS:\nhttps://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2007",
-            "attribution" : "Office of Finance",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-15T18:06:00.000Z",
-            "createdAt" : "2014-05-21T17:21:35.000Z",
-            "metadata_updated_at" : "2026-10-15T18:03:36.000Z",
-            "data_updated_at" : "2026-10-15T18:06:00.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 1889,
-                "page_views_last_month" : 10863,
-                "page_views_total" : 821375,
-                "page_views_last_week_log" : 10.884170519108435,
-                "page_views_last_month_log" : 13.407267764244732,
-                "page_views_total_log" : 19.6476832678862
-              },
-            "columns_name" :
-              [
-                "Precinct Boundaries",
-                "LOCATION",
-                "LOCATION START DATE",
-                "PRIMARY NAICS DESCRIPTION",
-                "NAICS",
-                "MAILING CITY",
-                "MAILING ADDRESS",
-                "LOCATION DESCRIPTION",
-                "CITY",
-                "STREET ADDRESS",
-                "DBA NAME",
-                "BUSINESS NAME",
-                "LOCATION ACCOUNT #",
-                "LOCATION (state)",
-                "COUNCIL DISTRICT",
-                "LOCATION (zip)",
-                "MAILING ZIP CODE",
-                "LOCATION (city)",
-                "LOCATION END DATE",
-                "ZIP CODE",
-                "LOCATION (address)",
-                "LA Specific Plans",
-                "Census Tracts",
-                "Council Districts",
-                "Neighborhood Councils (Certified)",
-                "Zip Codes"
-              ],
-            "columns_field_name" :
-              [
-                ":@computed_region_tatf_ua23",
-                "location_1",
-                "location_start_date",
-                "primary_naics_description",
-                "naics",
-                "mailing_city",
+                "accountnumber",
+                "country_formation",
+                "naics_sub_code",
+                "office_jurisdiction_2",
+                "record_address",
+                "create_dt",
+                "annual_report_due_date",
+                "began_transacting_in_ct",
+                "business_email_address",
+                "business_name_in_state_country",
+                "date_registration",
+                "office_jurisdiction_1",
+                ":@computed_region_snd5_k6zv",
+                ":@computed_region_dam5_q64j",
+                ":@computed_region_nhmp_cq6b",
+                ":@computed_region_m4y2_whse",
+                "org_owned_by_person_s_with",
+                "veteran_owned_organization",
+                "woman_owned_organization",
+                "organization_is_lgbtqi_owned",
+                "mailing_jurisdiction_4",
                 "mailing_address",
-                "location_description",
-                "city",
-                "street_address",
-                "dba_name",
-                "business_name",
-                "location_account",
-                "location_1_state",
-                "council_district",
-                "location_1_zip",
-                "mailing_zip_code",
-                "location_1_city",
-                "location_end_date",
-                "zip_code",
-                "location_1_address",
-                ":@computed_region_ur2y_g4cx",
-                ":@computed_region_k96s_3jcv",
-                ":@computed_region_kqwf_mjcx",
-                ":@computed_region_2dna_qi2s",
-                ":@computed_region_qz3q_ghft"
+                "billing_unit",
+                "citizenship",
+                "minority_owned_organization",
+                "geo_location",
+                "mailing_jurisdiction_3",
+                "records_address_state",
+                "mailing_jurisdiction_1",
+                "billingcity",
+                "naics_code",
+                "mailing_jurisdiction_address",
+                "mail_jurisdiction",
+                "records_address_country",
+                "business_type",
+                "mailing_jurisdiction",
+                "reason_for_administrative",
+                "name",
+                "billingpostalcode",
+                "formation_place",
+                "records_address_street",
+                "mailing_jurisdiction_2",
+                "office_jurisdiction_3",
+                "records_address_unit",
+                "id",
+                "sub_status"
               ],
             "columns_datatype" :
               [
-                "Number",
-                "Point",
+                "Calendar date",
+                "Text",
+                "Text",
+                "Text",
                 "Calendar date",
                 "Text",
                 "Text",
                 "Text",
                 "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
                 "Number",
                 "Text",
                 "Text",
@@ -1819,67 +188,179 @@
                 "Text",
                 "Text",
                 "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Calendar date",
+                "Calendar date",
+                "Text",
+                "Text",
+                "Calendar date",
+                "Text",
                 "Number",
                 "Number",
                 "Number",
                 "Number",
-                "Number"
+                "Checkbox",
+                "Checkbox",
+                "Checkbox",
+                "Checkbox",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Checkbox",
+                "Point",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text"
               ],
             "columns_description" :
               [
+                "If the entity is dissolved, the date it dissolved.  This is also the withdrawal date if a foreign registered entity",
+                "Business Street",
+                "Business Country",
+                "Business State",
+                "Date of Organization Meeting",
+                "Mailing International Address",
+                "Email address provided on business survey",
+                "Office Jurisdiction City",
+                "Records Address City",
+                "Total Authorized Shares",
+                "Formation State Or Territory",
+                "Office Jurisdiction Address",
+                "Mailing Jurisdiction_Country",
+                "Office Jurisdiction Zip Code",
+                "Office Jurisdiction Country",
+                "Records Address Zip Code",
+                "Business Status",
+                "Business ID number (Authoritative Legal Entity Identifier) Unique",
+                "Country of Formation",
+                "NAICS Subcode",
+                "Office Jurisdiction Street",
+                "Records Address",
+                "Date this data set was last refreshed",
+                "Annual Report Due Date",
+                "Date business began transacting business in CT, if a foreign registered entity",
+                "Business Email Address",
+                "Name of the business in the jurisdiction of formation, if foreign registered entity",
+                "For domestic businesses, this is the date the business was formed.  For foreign businesses, this is the date they registered in Connecticut.",
+                "Office Jurisdiction State",
+                "This column was automatically created in order to record in what polygon from the dataset 'Planning Regions' (snd5-k6zv) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+                "This column was automatically created in order to record in what polygon from the dataset 'Counties' (dam5-q64j) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+                "This column was automatically created in order to record in what polygon from the dataset 'Zip Code' (nhmp-cq6b) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+                "This column was automatically created in order to record in what polygon from the dataset 'Town Index' (m4y2-whse) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+                "Survey result for owned by person with a disability",
+                "Survey result for veteran-owned",
+                "Survey result for woman-owned",
+                "Survey result for LGBTQI-owned",
+                "Mailing Jurisdiction Zip Code",
+                "Mailing Address",
+                "Business Unit",
+                "Formation jurisdiction",
+                "Survey result for minority-owned",
                 "",
-                "Latitude & Longitude, if present, for this business location.",
-                "The start date of the first business activity registered at this location.",
-                "Description of the primary NAICS code. Descriptions that are noted as \"(1997 NAICS)\" apply the code and description designated in 1997 as referred to in the New Business Exemption Ordinance.",
-                "The self-reported North American Industry Classification System (NAICS) code, which is used in classifying business establishments.",
-                "Mailing address city of the business.",
-                "Mailing address of the business.",
-                "Abbreviated address description of the business location.",
-                "City of the business location.",
-                "Street address of the business location.",
-                "Doing Business As (DBA) name. If more than one DBA name exists, then all names are shown as a pipe-separated list.",
-                "The legal name of the business.",
-                "The account number of the business location.",
-                "",
-                "The council district # reflects the current council district assignment for that location address. \"0\" means the business location is out of the City.",
-                "",
-                "Mailing address Zip code of the business.",
-                "",
-                "The most recent end date of all business activities at the location.",
-                "Zip code of the business location.",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "Mailing Jurisdiction Unit",
+                "Records Address State",
+                "Mailing Jurisdiction State",
+                "Business City",
+                "NAICS Code",
+                "Mailing Jurisdiction Address",
+                "Mail Jurisdiction International Address",
+                "Records Address Country",
+                "Business Type",
+                "Mailing Jurisdiction City",
+                "If the entity was administratively dissolved/forfeited, the reason for administrative dissolution",
+                "Business Name",
+                "Business Zip Code",
+                "Formation Place",
+                "Records Address Street",
+                "Mailing Jurisdiction Street",
+                "Office Jurisdiction Unit",
+                "Records Address Unit",
+                "System generated unique identifier.  This is the unique key to associate the subsidiary data sets. ",
+                "Business sub-status"
               ],
             "columns_format" :
               [
                 {},
-                { "view" : "address_coords", "align" : "left" },
-                { "view" : "date", "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
                 {},
-                {
-                  "precisionStyle" : "standard",
-                  "noCommas" : "false",
-                  "align" : "right"
-                },
                 {},
-                { "align" : "left" },
                 {},
-                { "align" : "left" },
-                { "align" : "left" },
+                { "view" : "date" },
+                {},
+                { "displayStyle" : "email" },
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                { "view" : "date" },
+                { "view" : "date" },
+                { "view" : "date" },
+                { "displayStyle" : "email" },
+                {},
+                { "view" : "date" },
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
                 {},
                 {},
                 {},
@@ -1887,7 +368,7 @@
                 {},
                 {}
               ],
-            "download_count" : 261419,
+            "download_count" : 78093,
             "provenance" : "official",
             "lens_view_type" : "tabular",
             "lens_display_type" : "table",
@@ -1895,54 +376,439 @@
             "backend" : "nbe",
             "blob_mime_type" : null,
             "hide_from_data_json" : false,
-            "publication_date" : "2019-06-16T22:24:20.000Z"
+            "publication_date" : "2022-11-08T00:29:01.000Z"
           },
         "classification" :
           {
             "categories" : [],
             "tags" : [],
-            "domain_category" : "Administration & Finance",
-            "domain_tags" : [],
+            "domain_category" : "Business",
+            "domain_tags" :
+              [
+                "registry",
+                "economic development",
+                "business registration",
+                "business"
+              ],
             "domain_metadata" :
               [
                 {
-                  "key" : "Data-Owner_Data-Owner",
-                  "value" : "Office of Finance"
+                  "key" : "Agency_Agency",
+                  "value" : "Office of the Secretary of the State"
                 },
-                {
-                  "key" : "Data-Owner_Department",
-                  "value" : "Office of Finance"
-                },
-                {
-                  "key" : "Location-Specified_Does-this-data-have-a-Location-column?-(Yes-or-No)",
-                  "value" : "Yes"
-                },
-                {
-                  "key" : "Committed-Update-Frequency_Refresh-rate",
-                  "value" : "Monthly"
-                }
+                { "key" : "Details_Geographic-Unit", "value" : "State" },
+                { "key" : "Details_Update-Frequency", "value" : "Daily" }
               ]
           },
-        "metadata" :
-          {
-            "domain" : "data.lacity.org",
-            "license" : "Creative Commons 1.0 Universal (Public Domain Dedication)"
-          },
-        "permalink" : "https://data.lacity.org/d/6rrh-rzua",
-        "link" : "https://data.lacity.org/Administration-Finance/Listing-of-Active-Businesses/6rrh-rzua",
+        "metadata" : { "domain" : "data.ct.gov", "license" : "Public Domain" },
+        "permalink" : "https://data.ct.gov/d/n7gp-d28j",
+        "link" : "https://data.ct.gov/Business/Connecticut-Business-Registry-Business-Master/n7gp-d28j",
         "owner" :
           {
-            "id" : "c255-4shb",
+            "id" : "378a-ws5r",
             "user_type" : "interactive",
-            "display_name" : "Office of Finance OpenData"
+            "display_name" : "William Rosenstein"
           },
         "creator" :
           {
-            "id" : "c255-4shb",
+            "id" : "378a-ws5r",
             "user_type" : "interactive",
-            "display_name" : "Office of Finance OpenData"
+            "display_name" : "William Rosenstein"
           }
       },
+      {
+        "resource" :
+          {
+            "name" : "Connecticut Business Registry - Principals",
+            "id" : "ka36-64k6",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "This dataset is the principals object from the Connecticut Business Registry. The dataset provides principal information for all principals reported to the Connecticut Secretary of the State, Business Services Division.  A principal is an officer or director of a corporation, a member or manager of an LLC or a partner in a limited liability partnership.  \n\nThis data may be linked to the master data set using the unique identifier in the first column.",
+            "attribution" : "Connecticut Secretary of the State",
+            "attribution_link" : null,
+            "contact_email" : null,
+            "type" : "dataset",
+            "updatedAt" : "2026-10-19T08:52:06.000Z",
+            "createdAt" : "2021-08-09T13:19:18.000Z",
+            "metadata_updated_at" : "2023-06-12T17:24:12.000Z",
+            "data_updated_at" : "2026-10-19T08:52:06.000Z",
+            "page_views" :
+              {
+                "page_views_last_week" : 369,
+                "page_views_last_month" : 1779,
+                "page_views_total" : 13979,
+                "page_views_last_week_log" : 8.531381460516313,
+                "page_views_last_month_log" : 10.79766152585376,
+                "page_views_total_log" : 13.771076740262798
+              },
+            "columns_name" :
+              [
+                "Residence Country",
+                "Last Name",
+                "Unique_Key",
+                "Residence State",
+                "Residence City",
+                "Business Street Address 2",
+                "Residence International Address",
+                "Residence Street Address 2",
+                "Business City",
+                "First Name",
+                "Business State",
+                "Business Street Address 3",
+                "Principal Name",
+                "Residence Address",
+                "Designation",
+                "Type",
+                "Middle Name",
+                "Suffix",
+                "Business Country",
+                "Business Zip Code",
+                "Residence Zip Code",
+                "Residence Street Address 1",
+                "Business Street Address 1",
+                "CREATE_DT",
+                "Residence Street Address 3",
+                "Business International Address"
+              ],
+            "columns_field_name" :
+              [
+                "residence_country",
+                "lastname",
+                "business_id",
+                "residence_state",
+                "residence_city",
+                "business_street_address_2",
+                "residence_internationaladdress",
+                "residence_street_address_1",
+                "business_city",
+                "firstname",
+                "business_state",
+                "business_street_address_3",
+                "name__c",
+                "residence_address",
+                "designation",
+                "type",
+                "middlename",
+                "suffix",
+                "business_country",
+                "business_zip_code",
+                "residence_zip_code",
+                "residence_street_address",
+                "business_street_address_1",
+                "create_dt",
+                "residence_street_address_2",
+                "business_internationaladdress"
+              ],
+            "columns_datatype" :
+              [
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text"
+              ],
+            "columns_description" :
+              [
+                "Principal's residence country",
+                "If individual, principal last name",
+                "This is the unique key to associate the principal data to the data found on the Connecticut Business Registry - Business Master data set.",
+                "Principal's residence state",
+                "Principal's residence city",
+                "Principal's business street 2",
+                "Principal's residence address, if international",
+                "Principal's residence address 2",
+                "Principal's business city",
+                "If individual, principal first name",
+                "Principal's business state",
+                "Principal's business street 3",
+                "Concatenated name of the principal",
+                "Concatenated principal's residence address",
+                "Whether designated an officer or director",
+                "Principal type is business or individual",
+                "If individual, principal middle name",
+                "If individual, principal suffix",
+                "Principal's business country",
+                "Principal's business zip",
+                "Principal's residence zip",
+                "Principal's residence address 1",
+                "Principal's business street 1",
+                "Date the data was extracted",
+                "Principal's residence address 3",
+                "Principal's business address, if international"
+              ],
+            "columns_format" :
+              [
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+              ],
+            "download_count" : 59074,
+            "provenance" : "official",
+            "lens_view_type" : "tabular",
+            "lens_display_type" : "table",
+            "locked" : false,
+            "backend" : "nbe",
+            "blob_mime_type" : null,
+            "hide_from_data_json" : false,
+            "publication_date" : "2021-08-09T14:33:38.000Z"
+          },
+        "classification" :
+          {
+            "categories" : [],
+            "tags" : [],
+            "domain_category" : "Business",
+            "domain_tags" :
+              [
+                "principals",
+                "business registration",
+                "principal",
+                "business"
+              ],
+            "domain_metadata" :
+              [
+                {
+                  "key" : "Agency_Agency",
+                  "value" : "Office of the Secretary of the State"
+                },
+                { "key" : "Details_Update-Frequency", "value" : "Daily" }
+              ]
+          },
+        "metadata" : { "domain" : "data.ct.gov" },
+        "permalink" : "https://data.ct.gov/d/ka36-64k6",
+        "link" : "https://data.ct.gov/Business/Connecticut-Business-Registry-Principals/ka36-64k6",
+        "owner" :
+          {
+            "id" : "378a-ws5r",
+            "user_type" : "interactive",
+            "display_name" : "William Rosenstein"
+          },
+        "creator" :
+          {
+            "id" : "378a-ws5r",
+            "user_type" : "interactive",
+            "display_name" : "William Rosenstein"
+          }
+      },
+      {
+        "resource" :
+          {
+            "name" : "Connecticut Business Registry - Agents",
+            "id" : "qh2m-n44y",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "This dataset is the agent object from the Connecticut Business Registry.  The dataset provides agent information for all statutory agents reported to the Connecticut Secretary of the State, Business Services Division.\n\nLink this data set to the Connecticut Business Registry - Business Master using the unique key value in the first column.",
+            "attribution" : "Connecticut Secretary of the State",
+            "attribution_link" : null,
+            "contact_email" : null,
+            "type" : "dataset",
+            "updatedAt" : "2026-10-19T07:56:51.000Z",
+            "createdAt" : "2021-08-04T15:22:15.000Z",
+            "metadata_updated_at" : "2023-06-12T17:25:27.000Z",
+            "data_updated_at" : "2026-10-19T07:56:51.000Z",
+            "page_views" :
+              {
+                "page_views_last_week" : 212,
+                "page_views_last_month" : 1185,
+                "page_views_total" : 12896,
+                "page_views_last_week_log" : 7.734709620225839,
+                "page_views_last_month_log" : 10.211888294546005,
+                "page_views_total_log" : 13.65474789570446
+              },
+            "columns_name" :
+              [
+                "Mailing Street Address 1",
+                "Mailing Street Address 2",
+                "Mailing Street Address 3",
+                "Mailing City",
+                "Mailing Zip Code",
+                "Mailing State",
+                "Mailing Country",
+                "Residence Street Address 1",
+                "Residence Street Address 2",
+                "Residence Street Address 3",
+                "Residence City",
+                "Residence State",
+                "Residence Zip Code",
+                "Residence Country",
+                "CREATE_DT",
+                "Unique Key",
+                "Business ID",
+                "Business Street Address 1",
+                "Business Address",
+                "Agent Suffix",
+                "Agent Name",
+                "Business Zip Code",
+                "Business Country",
+                "Business International Address",
+                "Mailing Address",
+                "Agent Email",
+                "Business City",
+                "Business Street Address 3",
+                "Business Street Address 2",
+                "Agent Phone",
+                "Agent Account ALEI",
+                "Agent Last Name",
+                "Agent Middle Name",
+                "Agent First Name",
+                "Business State",
+                "Agent Type"
+              ],
+            "columns_field_name" :
+              [
+                "mailing_street_address_1",
+                "mailing_street_address_2",
+                "mailing_street_address_3",
+                "mailing_city",
+                "mailing_zip_code",
+                "mailing_state",
+                "mailing_country",
+                "residence_street_address",
+                "residence_street_address_1",
+                "residence_street_address_2",
+                "residence_city",
+                "residence_state",
+                "residence_zip_code",
+                "residence_country",
+                "create_dt",
+                "business_key",
+                "business_id",
+                "business_street_address_1",
+                "business_address",
+                "suffix",
+                "name__c",
+                "business_zip_code",
+                "business_country",
+                "business_internationaladdress",
+                "mailing_address",
+                "email",
+                "business_city",
+                "business_street_address_3",
+                "business_street_address_2",
+                "agent_phone",
+                "agent_account_alei",
+                "lastname",
+                "middlename",
+                "firstname",
+                "business_state",
+                "type"
+              ],
+            "columns_datatype" :
+              [
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text"
+              ],
+            "columns_description" :
+              [
+                "Agent mailing address street 1",
+                "Agent mailing address street 2",
+                "Agent mailing address street 3",
+                "Agent mailing address city",
+                "Agent mailing address zip",
+                "Agent mailing address state",
+                "Agent mailing address country",
+                "Agent residence address street 1",
+                "Agent residence address street 2",
+                "Agent residence address street 3",
+                "Agent residence address street city",
+                "Agent residence address state",
+                "Agent residence address zip",
+                "Agent residence address country",
+                "Date this data set was extracted",
+                "Unique identifier to associate the agent records with the corresponding business records. ",
+                "Business ID for the business that has appointed the agent. Legacy field, no longer used for new businesses. Use unique key.",
+                "Agent business address, street 1",
+                "Concatenated agent business address",
+                "If individual agent, the agent's suffix",
+                "Concatenated full name or business name of the agent.  Will be null where no agent is appointed.",
+                "Agent business address zip",
+                "Agent business address country",
+                "Agent's business address if international",
+                "Concatenated agent mailing address",
+                "Agent
+
+### https://api.us.socrata.com/api/catalog/v1?ids=6qbs-9m8d,tckn-sxa6,6g49-bcrm,wnbq-64tb,s9wt-dsfz,qvfa-2v26
+35146 bytes
+{
+  "results" :
+    [
       {
         "resource" :
           {
@@ -2117,156 +983,6 @@
         "metadata" : { "domain" : "data.oregon.gov" },
         "permalink" : "https://data.oregon.gov/d/tckn-sxa6",
         "link" : "https://data.oregon.gov/business/Active-Businesses-ALL/tckn-sxa6",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Businesses - County Data",
-            "id" : "6g49-bcrm",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Listing of All Active Business.  The data displayed is based on the  Principal Place of Business  residing in Oregon only.   The county was determined by a City-Zip combination.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-08-14T14:57:37.000Z",
-            "createdAt" : "2020-04-30T21:09:31.000Z",
-            "metadata_updated_at" : "2026-08-14T14:54:55.000Z",
-            "data_updated_at" : "2026-08-14T14:57:37.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 629,
-                "page_views_last_month" : 10352,
-                "page_views_total" : 27099,
-                "page_views_last_week_log" : 9.29920801838728,
-                "page_views_last_month_log" : 13.337761259156672,
-                "page_views_total_log" : 14.726005231128598
-              },
-            "columns_name" :
-              [
-                "Registry Date",
-                "PPB Zip",
-                "EntityType",
-                "Anniversary Date",
-                "Registry Number",
-                "PPB County",
-                "Business Name",
-                "PPB City",
-                "PPB State",
-                "PPB CityZip"
-              ],
-            "columns_field_name" :
-              [
-                "registry_date",
-                "zip",
-                "e_type",
-                "anniversary_date",
-                "registry_number",
-                "county",
-                "business_name",
-                "city",
-                "state",
-                "cityzip"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Number",
-                "Text",
-                "Calendar date",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "Zip code for Principal Place of Business",
-                "Entity Type",
-                "Date Renewal is Due",
-                "",
-                " Lookup Based on City Zip combination",
-                "",
-                "City of Principal Place of Business",
-                "Only Oregon PPB are included in this dataset",
-                ""
-              ],
-            "columns_format" :
-              [
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 66078,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2020-04-30T21:25:08.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business", "active", "county" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Oregon Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Record-Unit",
-                  "value" : "Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Agency-URL",
-                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.oregon.gov" },
-        "permalink" : "https://data.oregon.gov/d/6g49-bcrm",
-        "link" : "https://data.oregon.gov/business/Active-Businesses-County-Data/6g49-bcrm",
         "owner" :
           {
             "id" : "ngr9-eh9y",
@@ -2438,6 +1154,277 @@
       {
         "resource" :
           {
+            "name" : "Licensed Businesses within the City of Everett",
+            "id" : "qvfa-2v26",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "Licenses issued from the City's business license system. The system is updated as new businesses are added.",
+            "attribution" : null,
+            "attribution_link" : null,
+            "contact_email" : null,
+            "type" : "dataset",
+            "updatedAt" : "2026-10-19T09:45:36.000Z",
+            "createdAt" : "2019-05-13T22:09:33.000Z",
+            "metadata_updated_at" : "2026-10-19T09:45:25.000Z",
+            "data_updated_at" : "2026-10-19T09:45:36.000Z",
+            "page_views" :
+              {
+                "page_views_last_week" : 304,
+                "page_views_last_month" : 1397,
+                "page_views_total" : 36097,
+                "page_views_last_week_log" : 8.252665432450248,
+                "page_views_last_month_log" : 10.449148645375438,
+                "page_views_total_log" : 15.139631286744654
+              },
+            "columns_name" :
+              [
+                "Registration",
+                "LegalEntityName",
+                "PrimaryDBA",
+                "UBI",
+                "NAICS",
+                "Address",
+                "IssueDate",
+                "FirstActivityDate",
+                "New Georeferenced Column",
+                "City Limits Shading",
+                "Neighborhoods",
+                "City Council Districts"
+              ],
+            "columns_field_name" :
+              [
+                "registration",
+                "legalentityname",
+                "primarydba",
+                "ubi",
+                "naics",
+                "address",
+                "issuedate",
+                "firstactivitydate",
+                "geocoded_column",
+                ":@computed_region_psyp_nrnc",
+                ":@computed_region_cx6t_gkq3",
+                ":@computed_region_wamu_3gk7"
+              ],
+            "columns_datatype" :
+              [
+                "Number",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Calendar date",
+                "Calendar date",
+                "Point",
+                "Number",
+                "Number",
+                "Number"
+              ],
+            "columns_description" :
+              [ "", "", "", "", "", "", "", "", "", "", "", "" ],
+            "columns_format" :
+              [
+                { "precisionStyle" : "standard", "noCommas" : "true" },
+                {},
+                {},
+                {},
+                {},
+                {},
+                { "view" : "date" },
+                { "view" : "date" },
+                {},
+                {},
+                {},
+                {}
+              ],
+            "download_count" : 69252,
+            "provenance" : "official",
+            "lens_view_type" : "tabular",
+            "lens_display_type" : "table",
+            "locked" : false,
+            "backend" : "nbe",
+            "blob_mime_type" : null,
+            "hide_from_data_json" : false,
+            "publication_date" : "2021-12-28T22:37:11.000Z"
+          },
+        "classification" :
+          {
+            "categories" : [],
+            "tags" : [],
+            "domain_category" : "Economic and Cultural Vitality",
+            "domain_tags" : [ "business", "business license", "economy" ],
+            "domain_metadata" : []
+          },
+        "metadata" : { "domain" : "data.everettwa.gov" },
+        "permalink" : "https://data.everettwa.gov/d/qvfa-2v26",
+        "link" : "https://data.everettwa.gov/Economic-and-Cultural-Vitality/Licensed-Businesses-within-the-City-of-Everett/qvfa-2v26",
+        "owner" :
+          {
+            "id" : "sd8z-8g4t",
+            "user_type" : "interactive",
+            "display_name" : "Chris Fadden"
+          },
+        "creator" :
+          {
+            "id" : "sd8z-8g4t",
+            "user_type" : "interactive",
+            "display_name" : "Chris Fadden"
+          }
+      },
+      {
+        "resource" :
+          {
+            "name" : "Active Businesses - County Data",
+            "id" : "6g49-bcrm",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "Listing of All Active Business.  The data displayed is based on the  Principal Place of Business  residing in Oregon only.   The county was determined by a City-Zip combination.",
+            "attribution" : null,
+            "attribution_link" : null,
+            "contact_email" : null,
+            "type" : "dataset",
+            "updatedAt" : "2026-08-14T14:57:37.000Z",
+            "createdAt" : "2020-04-30T21:09:31.000Z",
+            "metadata_updated_at" : "2026-08-14T14:54:55.000Z",
+            "data_updated_at" : "2026-08-14T14:57:37.000Z",
+            "page_views" :
+              {
+                "page_views_last_week" : 629,
+                "page_views_last_month" : 10352,
+                "page_views_total" : 27099,
+                "page_views_last_week_log" : 9.29920801838728,
+                "page_views_last_month_log" : 13.337761259156672,
+                "page_views_total_log" : 14.726005231128598
+              },
+            "columns_name" :
+              [
+                "Registry Date",
+                "PPB Zip",
+                "EntityType",
+                "Anniversary Date",
+                "Registry Number",
+                "PPB County",
+                "Business Name",
+                "PPB City",
+                "PPB State",
+                "PPB CityZip"
+              ],
+            "columns_field_name" :
+              [
+                "registry_date",
+                "zip",
+                "e_type",
+                "anniversary_date",
+                "registry_number",
+                "county",
+                "business_name",
+                "city",
+                "state",
+                "cityzip"
+              ],
+            "columns_datatype" :
+              [
+                "Calendar date",
+                "Number",
+                "Text",
+                "Calendar date",
+                "Number",
+                "Text",
+                "Text",
+                "Text",
+                "Text",
+                "Text"
+              ],
+            "columns_description" :
+              [
+                "",
+                "Zip code for Principal Place of Business",
+                "Entity Type",
+                "Date Renewal is Due",
+                "",
+                " Lookup Based on City Zip combination",
+                "",
+                "City of Principal Place of Business",
+                "Only Oregon PPB are included in this dataset",
+                ""
+              ],
+            "columns_format" :
+              [
+                { "view" : "date" },
+                { "noCommas" : "true" },
+                {},
+                { "view" : "date" },
+                { "noCommas" : "true" },
+                {},
+                {},
+                {},
+                {},
+                {}
+              ],
+            "download_count" : 66078,
+            "provenance" : "official",
+            "lens_view_type" : "tabular",
+            "lens_display_type" : "table",
+            "locked" : false,
+            "backend" : "nbe",
+            "blob_mime_type" : null,
+            "hide_from_data_json" : false,
+            "publication_date" : "2020-04-30T21:25:08.000Z"
+          },
+        "classification" :
+          {
+            "categories" : [],
+            "tags" : [],
+            "domain_category" : "business",
+            "domain_tags" : [ "business", "active", "county" ],
+            "domain_metadata" :
+              [
+                {
+                  "key" : "Dataset-Information_Agency-Name",
+                  "value" : "Oregon Secretary of State"
+                },
+                {
+                  "key" : "Dataset-Information_Data-Change-Frequency",
+                  "value" : "Monthly"
+                },
+                {
+                  "key" : "Dataset-Information_Record-Unit",
+                  "value" : "Corporation Division"
+                },
+                {
+                  "key" : "Dataset-Information_Data-Dictionary",
+                  "value" : "No"
+                },
+                {
+                  "key" : "Dataset-Information_Data-Publishing-Frequency",
+                  "value" : "Monthly"
+                },
+                {
+                  "key" : "Dataset-Information_Agency-URL",
+                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
+                }
+              ]
+          },
+        "metadata" : { "domain" : "data.oregon.gov" },
+        "permalink" : "https://data.oregon.gov/d/6g49-bcrm",
+        "link" : "https://data.oregon.gov/business/Active-Businesses-County-Data/6g49-bcrm",
+        "owner" :
+          {
+            "id" : "ngr9-eh9y",
+            "user_type" : "interactive",
+            "display_name" : "Judy Weems"
+          },
+        "creator" :
+          {
+            "id" : "ngr9-eh9y",
+            "user_type" : "interactive",
+            "display_name" : "Judy Weems"
+          }
+      },
+      {
+        "resource" :
+          {
             "name" : "Active Business Licenses Denver",
             "id" : "s9wt-dsfz",
             "resource_name" : null,
@@ -2558,4 +1545,122 @@
                   "value" : "Business Intelligence Center of CO"
                 },
                 {
-                  "
+                  "key" : "Dataset-Coverage_Geographic-Coverage",
+                  "value" : "City of Denver"
+                },
+                {
+                  "key" : "Dataset-Coverage_Unit-of-Analysis",
+                  "value" : "Tabular"
+                },
+                {
+                  "key" : "Geospatial_Horizontal-Coordinate-System",
+                  "value" : ""
+                },
+                {
+                  "key" : "Geospatial_Coordinate-System-Disclaimer",
+                  "value" : ""
+                },
+                { "key" : "Geospatial_Horizontal-Accuracy", "value" : "" },
+                {
+                  "key" : "Geospatial_Web-Display-Coordinate-System",
+                  "value" : ""
+                },
+                { "key" : "Geospatial_Collection-Method", "value" : "" },
+                { "key" : "Data-Updates_Update-Method", "value" : "" },
+                {
+                  "key" : "Data-Updates_Expected-Update-Frequency",
+                  "value" : "monthly"
+                },
+                {
+                  "key" : "Data-Updates_Total-Records-at-Initial-Publish",
+                  "value" : "12560"
+                },
+                { "key" : "Data-Updates_Update-Type", "value" : "Automated" },
+                {
+                  "key" : "Data-Updates_Source-Update-Schedule",
+                  "value" : "As Needed"
+                },
+                {
+                  "key" : "Data-Updates_Total-Records-At-Initial-Publish",
+                  "value" : "12560"
+                },
+                {
+                  "key" : "Data-Updates_Update-Schedule",
+                  "value" : "monthly"
+                },
+                {
+                  "key" : "Data-Description_Date-of-Initial-Dataset-Creation",
+                  "value" : ""
+                },
+                { "key" : "Data-Description_Collection-Mode", "value" : "" },
+                {
+                  "key" : "Data-Description_Row-Label",
+                  "value" : "BFN, license type, license status, license sub-type, expiration date of license, entity name and address"
+                },
+                {
+                  "key" : "Data-Description_Newest-Record-in-Dataset",
+                  "value" : "3/17/2070"
+                },
+                {
+                  "key" : "Data-Description_Long-Description",
+                  "value" : "Business licences in Denver including license type, status, end date, and entity details (name and address)."
+                },
+                {
+                  "key" : "Data-Description_Oldest-Record-in-Dataset",
+                  "value" : "3/28/2014"
+                },
+                {
+                  "key" : "Data-Description_Data-Collection-Instrument",
+                  "value" : ""
+                },
+                { "key" : "Data-Description_Collection-Method", "value" : "" },
+                {
+                  "key" : "Publisher_Publisher-Name",
+                  "value" : "Business Intelligence Center of CO"
+                },
+                {
+                  "key" : "Additional-Dataset-Documentation_Technical-Documentation",
+                  "value" : ""
+                },
+                {
+                  "key" : "Additional-Dataset-Documentation_Data-Dictionary",
+                  "value" : ""
+                },
+                {
+                  "key" : "Additional-Dataset-Documentation_Additional-Metadata",
+                  "value" : ""
+                },
+                {
+                  "key" : "Data-Quality_Expected-Update-Frequency",
+                  "value" : "Never"
+                }
+              ]
+          },
+        "metadata" :
+          { "domain" : "data.colorado.gov", "license" : "Public Domain" },
+        "permalink" : "https://data.colorado.gov/d/s9wt-dsfz",
+        "link" : "https://data.colorado.gov/Business/Active-Business-Licenses-Denver/s9wt-dsfz",
+        "owner" :
+          {
+            "id" : "azfj-qb4j",
+            "user_type" : "interactive",
+            "display_name" : "Business Intelligence Center of CO"
+          },
+        "creator" :
+          {
+            "id" : "azfj-qb4j",
+            "user_type" : "interactive",
+            "display_name" : "Business Intelligence Center of CO"
+          }
+      },
+      {
+        "resource" :
+          {
+            "name" : "Business Registration by Fiscal Year",
+            "id" : "6qbs-9m8d",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "Data provided by Office of Finance as of December 2021. This provide
+
+### https://data.iowa.gov/api/catalog/v1?q=business%20entities&limit=5
+ERROR https://data.iowa.gov/api/catalog/v1?q=business%20entities&limit=5 -> HTTP 404: <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/30hguuxlcpzu1.js"/><script src="/_next/static/chunks/1jn8jq6qk_dod.js" async=""></

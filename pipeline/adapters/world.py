@@ -548,8 +548,12 @@ def la_new_locations():
 def seattle_new_licences():
     from pipeline.core import geocode_us
     log("\n== Seattle new business licence certificates")
-    rows = socrata("cos-data.seattle.gov", "wnbq-64tb", f"license_start_date >= '{since(DAYS)}' AND license_start_date <= '{since(0)}'",
+    rows = socrata("cos-data.seattle.gov", "wnbq-64tb", f"license_start_date >= '{since(DAYS).replace('-', '')}' AND license_start_date <= '{since(0).replace('-', '')}'",
                    "license_start_date DESC", 20000, label="licences")
+    for r in rows:
+        d = str(r.get("license_start_date") or "")
+        if re.match(r"\d{8}$", d):
+            r["license_start_date"] = f"{d[:4]}-{d[4:6]}-{d[6:]}"
     rows = [r for r in rows if str(r.get("city") or "").upper().startswith("SEATTLE") and r.get("street_address")]
     geo = geocode_us([(str(i), r.get("street_address"), "Seattle", "WA", str(r.get("zip") or "")[:5]) for i, r in enumerate(rows)])
     out = []

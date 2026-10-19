@@ -11,6 +11,7 @@ on:
         default: ""
   push:
     branches: [main]
+    paths-ignore: ["history/**", "pipeline/probe*", ".github/workflows/probe.yml"]
 
 permissions:
   contents: write             # to save the daily history file

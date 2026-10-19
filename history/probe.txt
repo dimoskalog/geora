@@ -1,15 +1,261 @@
-### https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0/query?where=1%3D1&outFields=*&resultRecordCount=1&orderByFields=ReceivedDate%20DESC&f=json&outSR=4326
-6940 bytes
-{"objectIdFieldName":"OBJECTID","uniqueIdField":{"name":"OBJECTID","isSystemMaintained":true},"globalIdFieldName":"","geometryType":"esriGeometryPoint","spatialReference":{"wkid":4326,"latestWkid":4326},"fields":[{"name":"OBJECTID","type":"esriFieldTypeOID","alias":"OBJECTID","sqlType":"sqlTypeOther","domain":null,"defaultValue":null},{"name":"PlanningAuthority","type":"esriFieldTypeString","alias":"Planning Authority","sqlType":"sqlTypeOther","length":100,"domain":null,"defaultValue":null},{"name":"ApplicationNumber","type":"esriFieldTypeString","alias":"Application Number","sqlType":"sqlTypeOther","length":50,"domain":null,"defaultValue":null},{"name":"DevelopmentDescription","type":"esriFieldTypeString","alias":"Development Description","sqlType":"sqlTypeOther","length":12500,"domain":null,"defaultValue":null},{"name":"DevelopmentAddress","type":"esriFieldTypeString","alias":"Development Address","sqlType":"sqlTypeOther","length":7500,"domain":null,"defaultValue":null},{"name":"DevelopmentPostcode","type":"esriFieldTypeString","alias":"Development Postcode","sqlType":"sqlTypeOther","length":50,"domain":null,"defaultValue":null},{"name":"ITMEasting","type":"esriFieldTypeDouble","alias":"ITMEasting","sqlType":"sqlTypeOther","domain":null,"defaultValue":null},{"name":"ITMNorthing","type":"esriFieldTypeDouble","alias":"ITMNorthing","sqlType":"sqlTypeOther","domain":null,"defaultValue":null},{"name":"ApplicationStatus","type":"esriFieldTypeString","alias":"Application Status","sqlType":"sqlTypeOther","length":4500,"domain":null,"defaultValue":null},{"name":"ApplicationType","type":"esriFieldTypeString","alias":"Application Type","sqlType":"sqlTypeOther","length":150,"domain":null,"defaultValue":null},{"name":"ApplicantForename","type":"esriFieldTypeString","alias":"Applicant Forename","sqlType":"sqlTypeOther","length":2500,"domain":null,"defaultValue":null},{"name":"ApplicantSurname","type":"esriFieldTypeString","alias":"Applicant Surname","sqlType":"sqlTypeOther","length":2500,"domain":null,"defaultValue":null},{"name":"ApplicantAddress","type":"esriFieldTypeString","alias":"Applicant Address","sqlType":"sqlTypeOther","length":2500,"domain":null,"defaultValue":null},{"name":"Decision","type":"esriFieldTypeString","alias":"Decision","sqlType":"sqlTypeOther","length":12500,"domain":null,"defaultValue":null},{"name":"LandUseCode","type":"esriFieldTypeString","alias":"Land Use Code","sqlType":"sqlTypeOther","length":100,"domain":null,"defaultValue":null},{"name
+### https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/development-activity-monitor/records?limit=1&order_by=year_completed%20desc
+1102 bytes
+{"total_count": 1451, "results": [{"data_format": "Post May 16", "development_key": "X0009200", "status": "COMPLETED", "year_completed": "2026", "clue_small_area": "West Melbourne (Residential)", "clue_block": 91, "street_address": "488-494 La Trobe Street WEST MELBOURNE VIC 3003", "property_id": "105468", "property_id_2": null, "property_id_3": null, "property_id_4": null, "property_id_5": null, "floors_above": 17, "resi_dwellings": 0, "studio_dwe": 0, "one_bdrm_dwe": 0, "two_bdrm_dwe": 0, "three_bdrm_dwe": 0, "student_apartments": 0, "student_beds": 0, "student_accommodation_units": 0, "institutional_accom_beds": 0, "hotel_rooms": 195, "serviced_apartments": 0, "hotels_serviced_apartments": 195, "hostel_beds": 0, "childcare_places": 0, "office_flr": 0, "retail_flr": 85, "industrial_flr": 0, "storage_flr": 0, "education_flr": 0, "hospital_flr": 0, "recreation_flr": 0, "publicdispaly_flr": 0, "community_flr": 0, "car_spaces": 9, "bike_spaces": 48, "town_planning_application": "TP-2018-749/A", "longitude": 144.9524, "latitude": -37.8125, "geopoint": {"lon": 144.9524, "lat": -37.8125}}]}
 
-### https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0?f=json
-195508 bytes
-{"currentVersion":12,"id":0,"name":"Planning Application Points","type":"Feature Layer","serviceItemId":"8f69dffe26324ba3acc653cf6cb5cf8b","cacheMaxAge":3600,"sourceSchemaChangesAllowed":true,"hasViews":true,"displayField":"ApplicantForename","description":"","copyrightText":"","defaultVisibility":true,"editingInfo":{"lastEditDate":1791906952529,"schemaLastEditDate":1791906952529,"dataLastEditDate":1791906952529},"relationships":[],"isDataVersioned":false,"hasContingentValuesDefinition":false,"supportsAppend":true,"supportsCalculate":true,"supportsASyncCalculate":true,"supportsTruncate":true,"supportsAttachmentsByUploadId":true,"supportsAttachmentsResizing":true,"supportsRollbackOnFailureParameter":true,"supportsStatistics":true,"supportsExceedsLimitStatistics":true,"supportsAdvancedQueries":true,"supportsValidateSql":true,"supportsCoordinatesQuantization":true,"supportsLayerOverrides":true,"supportsTilesAndBasicQueriesMode":true,"supportsFieldDescriptionProperty":true,"supportsQuantizationEditMode":true,"supportsColumnStoreIndex":true,"supportsApplyEditsWithGlobalIds":false,"supportsReturningQueryGeometry":true,"enableNullGeometry":false,"advancedQueryCapabilities":{"supportsPagination":true,"supportsPaginationOnAggregatedQueries":true,"supportsQueryRelatedPagination":true,"supportsQueryWithDistance":true,"supportsOutDistance":true,"supportsReturningQueryExtent":true,"supportsStatistics":true,"supportsOrderBy":true,"supportsDistinct":true,"supportsQueryWithResultType":true,"supportsSqlExpression":true,"supportsTimeRelation":true,"supportsAdvancedQueryRelated":true,"supportsCountDistinct":true,"supportsPercentileStatistics":true,"supportsApproxPercentileStatistics":true,"supportsSpatialAggregationStatistics":true,"supportedSpatialAggregationStatistics":["EnvelopeAggregate","CentroidAggregate","ConvexHullAggregate"],"supportsLod":true,"supportsQueryWithLodSR":false,"supportedLodTypes":["geohash"],"supportsReturningGeometryCentroid":false,"supportsReturningGeometryEnvelope":false,"supportsQueryWithDatumTransformation":true,"supportsCurrentUserQueries":true,"supportsHavingClause":true,"supportsOutFieldSQLExpression":true,"supportsMaxRecordCountFactor":true,"supportsTopFeaturesQuery":true,"supportsDisjointSpatialRel":true,"supportsQueryWithCacheHint":true,"supportedOperationsWithCacheHint":["query","queryTopFilter","queryAnalytics","queryAttachments","queryRelated","queryBins","queryPivot"],"supportsQueryAnalytic":true,"supportsQueryPivot":true,"supportsQueryB
+### https://data.brisbane.qld.gov.au/api/explore/v2.1/catalog/datasets?where=search(%22development%22)&limit=8&select=dataset_id
+533 bytes
+{"total_count": 172, "results": [{"dataset_id": "parking-occupancy-forecasting-2023-2024"}, {"dataset_id": "sealed-plan-boundaries"}, {"dataset_id": "protected-vegetation-natural-assets-local-law-2003-council-vegetation"}, {"dataset_id": "cp14-zoning-overlay"}, {"dataset_id": "protected-vegetation-natural-assets-local-law-2003-waterway-and-wetland-vegetati"}, {"dataset_id": "cp14-commercial-character-building-overlay"}, {"dataset_id": "cp14-potential-and-actual-acid-sulfate-soils"}, {"dataset_id": "cp14-lgip-projection-area"}]}
 
-### https://donnees.montreal.ca/api/3/action/datastore_search?resource_id=5232a72d-235a-48eb-ae20-bb9d501300ad&limit=1
-1950 bytes
-{"help": "https://donnees.montreal.ca/api/3/action/help_show?name=datastore_search", "success": true, "result": {"include_total": true, "limit": 1, "records_format": "objects", "resource_id": "5232a72d-235a-48eb-ae20-bb9d501300ad", "total_estimation_threshold": null, "records": [{"_id":1,"no_demande":"1200002428","id_permis":"1200007339","date_debut":"1997-09-04","date_emission":"1997-09-05","emplacement":"36  rue Saulnier","arrondissement":"L'Île-Bizard - Sainte-Geneviève","code_type_base_demande":"CA","description_type_demande":"Piscine","description_type_batiment":"Résidentiel","description_categorie_batiment":"Permis ancien système","nature_travaux":"CONSTRUCTION D'UNE PISCINE CREUSEE, DE 13'-10 X 24'-0 EN FIBRE DE VERRE, DOIT ETRE CONFORME A L'ARTICLE :, 3.3.4 DU REGLEMENT DE ZONAGE 319., CLOTURE DE MAILLE CIMENTEE DE 4' DE","nb_logements":"0","longitude":"-73.87152072994073","latitude":"45.5045093361815","loc_x":"275767.88","loc_y":"5040576.92"}], "fields": [{"id": "_id", "type": "int"}, {"id": "no_demande", "type": "text"}, {"id": "id_permis", "type": "text"}, {"id": "date_debut", "type": "text"}, {"id": "date_emission", "type": "text"}, {"id": "emplacement", "type": "text"}, {"id": "arrondissement", "type": "text"}, {"id": "code_type_base_demande", "type": "text"}, {"id": "description_type_demande", "type": "text"}, {"id": "description_type_batiment", "type": "text"}, {"id": "description_categorie_batiment", "type": "text"}, {"id": "nature_travaux", "type": "text"}, {"id": "nb_logements", "type": "text"}, {"id": "longitude", "type": "text"}, {"id": "latitude", "type": "text"}, {"id": "loc_x", "type": "text"}, {"id": "loc_y", "type": "text"}], "_links": {"start": "/api/3/action/datastore_search?resource_id=5232a72d-235a-48eb-ae20-bb9d501300ad&limit=1", "next": "/api/3/action/datastore_search?resource_id=5232a72d-235a-48eb-ae20-bb9d501300ad&limit=1&offset=1"}, "total": 562284, "total_was_estimated": false}}
+### https://www.planningportal.nsw.gov.au/opendata/api/3/action/package_show?id=online-da-data-api
+8543 bytes
+{"help": "https://www.planningportal.nsw.gov.au/opendata/api/3/action/help_show?name=package_show", "success": true, "result": {"approvaldate": "2023-07-05", "asset_details": "{\"id\": \"fd14ea83-b3d7-4ba8-9117-fee183823dbb\", \"storage_format\": \"JSON\", \"source_system\": \"SQL Server\", \"security\": \"official\", \"accuracy\": [true, true, true, true, true], \"interpretability\": [true, true, true, true, true], \"oeh_theme_one\": \"corporate\", \"identify\": [true, true, true, true, true, true, true, false, false, false], \"package_id\": \"964bd5b2-980c-4fb1-9c1f-9d1602eebc9a\", \"asset_location\": \"\", \"opendata_ready\": true, \"institutional\": [true, true, true, true, true], \"coherence\": [true, true, true, true, true], \"accessibility\": [true, true, true, true, false], \"oeh_theme_two\": \"--Nothing selected--\", \"bit_dqs\": 16777215, \"creator\": {\"email\": \"Denniss.Reddy@planning.nsw.gov.au\", \"name\": \"Denniss Reddy\", \"contact\": \"02 9860 1457\", \"package_id\": \"964bd5b2-980c-4fb1-9c1f-9d1602eebc9a\", \"business_unit\": \"Department Planning Housing and Infrastructure\", \"id\": \"c1676acb-c8dc-4bd6-8b90-0e61302c2ced\", \"position\": \"Manager Data Analytics\", \"role\": \"creator\"}, \"owner\": {}, \"custodian\": {\"email\": null, \"name\": null, \"contact\": null, \"package_id\": \"964bd5b2-980c-4fb1-9c1f-9d1602eebc9a\", \"business_unit\": null, \"id\": \"1527c754-fe02-4964-bde4-e32a3d275b69\", \"position\": \"ED e-Planning\", \"role\": \"custodian\"}, \"steward\": {\"email\": \"Denniss.Reddy@planning.nsw.gov.au\", \"name\": \"Denniss Reddy\", \"contact\": null, \"package_id\": \"964bd5b2-980c-4fb1-9c1f-9d1602eebc9a\", \"business_unit\": null, \"id\": \"49f9834d-c3b4-4500-a6fb-5cb0a6bd6c41\", \"position\": \"Manager Data Analytics\", \"role\": \"steward\"}}", "author": null, "author_email": null, "creatorName": "", "creator_user_id": "0106c1f2-85ad-4f5e-a17d-a5b8f7030b95", "dataset_template": "non_geospatial", "datum": "GDA94 / Geographic", "edition": "1", "extent_supplemental": "", "geospatial_representation": "non_geospatial", "geospatial_topic": ["structure"], "hierarchy_weight": "0", "id": "88c61ad1-7096-45ae-b1ac-94963e4cfca1", "identification_status": "onGoing", "isopen": true, "keywords_string": "LAND,LAND-Ownership,HUMAN-ENVIRONMENT-Planning,LAND-Use,HUMAN-ENVIRONMENT-Structures-and-Facilities", "language": "eng", "license_id": "cc-by", "license_title": "Creative Commons Attribution", "license_url": "http://www.opendefin
 
-### https://donnees.montreal.ca/api/3/action/resource_search?query=name:permis&limit=3
-4463 bytes
-{"help": "https://donnees.montreal.ca/api/3/action/help_show?name=resource_search", "success": true, "result": {"count": 19, "results": [{"id": "becd3569-a5e6-4ea7-a842-ea49937ec9fc", "package_id": "b55d8446-ada2-4645-91c1-d5db8707caf3", "url": "https://donnees.montreal.ca/dataset/b55d8446-ada2-4645-91c1-d5db8707caf3/resource/becd3569-a5e6-4ea7-a842-ea49937ec9fc/download/mesure-harmonisee-delais-permis-t4-2025.csv", "format": "CSV", "description": "", "hash": "16ded6e084026f3007dc7673efd1d908", "position": 2, "name": "Mesure harmonis\u00e9e des d\u00e9lais de permis - T4 2025", "resource_type": "donnees", "mimetype": "text/csv", "mimetype_inner": null, "size": 101152, "created": "2026-02-06T19:00:59.727289", "last_modified": "2026-02-06T19:00:59.613773", "metadata_modified": "2026-02-06T19:01:05.953958", "cache_url": null, "cache_last_updated": null, "url_type": "upload", "state": "active", "relidi_condon_boolee": "", "relidi_condon_datheu": "", "relidi_condon_nombre": "", "relidi_condon_valinc": "", "relidi_confic_epsg": "", "relidi_confic_pascom": "", "relidi_confic_separateur_virgule": "oui", "relidi_confic_utf8": "oui", "relidi_description_champs": "relidi.descha.foudoc", "relidi_ressource_complementaire": "[]", "datastore_active": true, "ignore_hash": false, "ckan_url": "https://donnees.montreal.ca", "resource_id": "becd3569-a5e6-4ea7-a842-ea49937ec9fc", "set_url_type": false, "task_created": "2026-02-06 19:01:01.314810", "original_url": "https://donnees.montreal.ca/dataset/b55d8446-ada2-4645-91c1-d5db8707caf3/resource/becd3569-a5e6-4ea7-a842-ea49937ec9fc/download/mesure-harmonisee-delais-permis-t4-2025.csv", "datastore_contains_all_records_of_source_file": true}, {"id": "5023618e-8f5a-45f1-b968-d1c2a754bfb3", "package_id": "c2a4c800-e62e-4e62-b133-53542928b571", "url": "https://donnees.montreal.ca/dataset/c2a4c800-e62e-4e62-b133-53542928b571/resource/5023618e-8f5a-45f1-b968-d1c2a754bfb3/download/applicateurs-commerciaux-pesticides-titulaires-permis-2025.csv", "format": "CSV", "description": "", "hash": "db46d3af6209699fe3b79ac94bd54e45", "position": 2, "name": "Applicateurs commerciaux de pesticides titulaires permis (2025)", "resource_type": "donnees", "mimetype": "text/csv", "mimetype_inner": null, "size": 4597, "created": "2025-03-12T13:51:06.599142", "last_modified": "2026-01-27T14:26:24.665917", "metadata_modified": "2026-01-27T14:26:30.279181", "cache_url": null, "cache_last_updated": null, "url_type": "upload", "state": "active", "datastore_ac
+### https://datos.madrid.es/api/3/action/package_search?q=licencias&rows=5
+1361375 bytes
+{"help": "https://datos.madrid.es/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 20, "facets": {}, "results": [{"api": "yes", "author": "Ayuntamiento de Madrid", "author_email": "dgtransparenciayc@madrid.es", "catalog_obligation": "213", "cipam_item_url": "https://servpub.madrid.es/CIPAM_FTP/#/213/view", "contact_person": "", "contact_person_email": "", "creator_user_id": "97e49bde-5cce-46b3-8ad0-ed300d2e85d9", "dataset_downloads": "14332", "dataset_type": "fichero", "dcat_type": "https://publications.europa.eu/resource/authority/dataset-type/STATISTICAL", "decentralized": "no", "description_item": "", "districts_data": "yes", "frequency": "https://publications.europa.eu/resource/authority/frequency/MONTHLY", "gender_data": "no", "geolocation_data": "no", "granularity": 3, "id": "640505-0-licencias-urbanisticas-otorgadas", "isopen": true, "issued": "2026-06-24 00:00:00.000", "language": "https://publications.europa.eu/resource/authority/language/SPA", "level_0_manager": "", "level_2_manager": "", "license_id": "cc-by", "license_title": "Creative Commons Attribution 4.0 International (CC BY 4.0)", "license_url": "https://creativecommons.org/licenses/by/4.0/legalcode.es", "maintainer": "Ayuntamiento de Madrid", "maintainer_email": "dgtransparenciayc@madrid.es", "metadata_created": "2026-06-24T00:00:00", "metadata_modified": "2026-10-05T00:00:00", "modified": "2026-10-05 00:00:00.000", "name": "640505-0-licencias-urbanisticas-otorgadas", "notes": "Informaci\u00f3n sobre las licencias urban\u00edsticas otorgadas presentadas desde el a\u00f1o 2023, as\u00ed como un extracto de su contenido: objeto de la licencia, tipo de procedimiento, emplazamiento, r\u00e9gimen de uso, condiciones de la obra, nivel de protecci\u00f3n y otros datos como la geolocalizaci\u00f3n.\r\n****\r\nPuedes encontrar m\u00e1s informaci\u00f3n sobre estos datos en el [Portal de transparencia > Licencias urban\u00edsticas y declaraciones responsables](https://transparencia.madrid.es/portales/transparencia/es/Transparencia-por-sectores/Urbanismo-Obras/Licencias-y-autorizaciones/Licencias-urbanisticas-y-declaraciones-responsables/?vgnextfmt=default&vgnextoid=2587a805cface910VgnVCM200000f921e388RCRD&vgnextchannel=dee9508929a56510VgnVCM1000008a4a900aRCRD)", "num_resources": 3, "num_tags": 3, "observation_notes": "", "organization": {"id": "0ea76d4a-0c7f-4321-854c-73c4bfb6f868", "name": "ayuntamiento-de-madrid", "title": "Ayuntamiento de Madrid", "type": "organ
+
+### https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search?q=obres&rows=5
+135990 bytes
+{"help": "https://opendata-ajuntament.barcelona.cat/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 5, "sort": "fecha_publicacion desc", "facets": {}, "results": [{"notes_translated": {"ca": "Fotografies referents a la planificaci\u00f3 urban\u00edstica de la ciutat. S\u2019inclouen imatges de projectes urbans: maquetes, pl\u00e0nols ; anteriors, durant les obres i posteriors a la realitzaci\u00f3 d\u2019aquestes", "en": "Photographs concerning urban planning in the city. These include photos of urban projects: models, plans, before, during and after these projects are carried out", "es": "Fotograf\u00edas referentes a la planificaci\u00f3n urban\u00edstica de la ciudad. Se incluyen im\u00e1genes de proyectos urbanos: maquetas, planos; anteriores, durante las obras y posteriores a su realizaci\u00f3n"}, "geolocation": "No", "code": "Cataleg_Fotografies_Projectes_Urbans_BCNROC", "url_tornada": {"ca": "http://hdl.handle.net/11703/125998 ", "en": "http://hdl.handle.net/11703/125998 ", "es": "http://hdl.handle.net/11703/125998 "}, "dataset_fields_description": "", "fuente": "Ajuntament de Barcelona", "private": false, "num_tags": 2, "api": "No", "frequency": "MENSUAL", "id": "786f6798-f1df-4d7b-b76a-81d6305d6554", "title_translated": {"ca": "Cat\u00e0leg de fotografies de plans i projectes urban\u00edstics al Repositori Obert de Coneixement de l'Ajuntament de Barcelona (BCNROC) ", "en": "Photographic catalogue of plans and projects concerning urban planning in Barcelona  on the Open Repository of Knowledge of the City Council of Barcelona (BCNROC)", "es": "Cat\u00e1logo de fotografias de planes y proyectos urban\u00edsticos en el Repositorio Abierto de Conocimiento del Ayuntamiento de Barcelona (BCNROC)"}, "metadata_modified": "2023-03-30T08:11:25.994249", "author": "Ger\u00e8ncia de Serveis Generals", "author_email": null, "isopen": true, "long_format": "No", "state": "active", "version": "", "relationships_as_object": [], "department": "Servei de Documentaci\u00f3 i Acc\u00e9s al Coneixement (SEDAC)", "creator_user_id": "ffabeed1-7ccb-44d0-8024-e60b724d47f3", "type": "dataset", "resources": [{"cache_last_updated": null, "token_type": "", "package_id": "786f6798-f1df-4d7b-b76a-81d6305d6554", "datastore_active": false, "id": "416b741d-dca4-4d53-abf0-ff126a618f37", "size": "1", "state": "active", "archiver": "{'is_broken_printable': 'Not sure if broken', 'updated': '2017-12-28T02:22:10.995948', 'cache_filepath': None, 'las
+
+### https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search?q=locals%20planta%20baixa&rows=3
+41988 bytes
+{"help": "https://opendata-ajuntament.barcelona.cat/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 2, "sort": "fecha_publicacion desc", "facets": {}, "results": [{"notes_translated": {"ca": "Cens de locals en planta baixa de la ciutat de Barcelona destinats a activitat econ\u00f2mica   ", "en": "Census of ground floor premises in the city of Barcelona intended for economic activity  ", "es": "Censo de locales en planta baja de la ciudad de Barcelona destinados a actividad econ\u00f3mica  \r\n"}, "geolocation": "Yes_with_map_view", "dades_alt_valor": "No", "url_tornada": {"ca": "https://ajuntament.barcelona.cat/comerc/ca/observatori", "en": "https://ajuntament.barcelona.cat/comerc/en/observatori", "es": "https://ajuntament.barcelona.cat/comerc/es/observatori"}, "dataset_fields_description": "__NOTA IMPORTANT:__ Les dades a partir de 2022  corresponen als locals que es troben en actiu o pendents d'activitat. Les dades anteriors a 2022 corresponen a tots els locals , independentment que estiguin o no  en actiu  o pendents d'activitat, categoritzats pels diferents usos i estats.  \r\n\r\nEl fitxer del 2022 est\u00e0 creat amb diferent metodologia que la resta, aix\u00f2 fa que les dades no siguin comparables.    \r\n\r\nEl cens 2019 \u00e9s una evoluci\u00f3 del cens 2016 i ambdues bases de dades s\u00f3n comparables. Tots els locals censats mantenen el vincle amb el codi de classificaci\u00f3 del 2016 per poder disposar dels valors agregats i comparats amb el valor afegit que cada local incorpora un identificador alfanum\u00e8ric \u00fanic i s\u2019adequa la geolocalitzaci\u00f3 del local amb el parcel.lari i carrerers vigents, assignant una adre\u00e7a i una posici\u00f3 georeferenciada a cada unitat.    \r\n\r\nEl fitxer del 2014 est\u00e0 creat amb diferent metodologia que el del 2016, aix\u00f2 fa que les dades no siguin comparables.   \r\n\r\n  ", "fuente": "Ajuntament de Barcelona", "tag": "Activitats econ\u00f2miques,Cens,Sectors econ\u00f2mics,Any 2022,Seccions censals,Any 2014,Any 2016,Locals,Any 2019,Any 2024", "private": false, "num_tags": 10, "code": "cens-locals-planta-baixa-act-economica", "frequency": "PETICIO_NEGOCI", "id": "fe177673-0f83-42e7-b35a-ddea901be8bc", "title_translated": {"ca": "Cens de locals en planta baixa destinats a activitat econ\u00f2mica de la ciutat de Barcelona", "en": "Census of premises on the ground floor intended for economic activity in the city of Barcelona", "es": "Censo  de 
+
+### https://dati.comune.milano.it/api/3/action/package_search?q=esercizi%20commerciali&rows=5
+38811 bytes
+{"help": "https://dati.comune.milano.it/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 8, "sort": "score desc, metadata_modified desc", "facets": {}, "results": [{"license_title": "Creative Commons Attribution", "maintainer": "Comune di Milano - Unit\u00e0 Analytics e Open Data", "dataset_is_local": true, "private": false, "maintainer_email": "opendatamilano@comune.milano.it", "num_tags": 8, "id": "726fb09b-e2ce-4407-8579-51aef8027498", "metadata_created": "2017-11-09T14:36:53.806994", "metadata_modified": "2026-08-31T14:55:21.939623", "author": "", "author_email": "", "state": "active", "version": "", "relationships_as_object": [], "license_id": "cc-by", "type": "dataset", "resources": [{"cache_last_updated": null, "package_id": "726fb09b-e2ce-4407-8579-51aef8027498", "distribution_format": "CSV", "datastore_active": true, "id": "bdb64cee-0f60-4271-8e35-dcda7a07de33", "size": 845128, "state": "active", "hash": "", "description": "anteprima disponibile", "format": "CSV", "mimetype_inner": null, "url_type": "upload", "mimetype": "text/csv", "cache_url": null, "name": "ds59_commercio_pubblici_esercizi_fuori_piano.csv", "created": "2026-08-31T14:38:58.613152", "url": "https://dati.comune.milano.it/dataset/726fb09b-e2ce-4407-8579-51aef8027498/resource/bdb64cee-0f60-4271-8e35-dcda7a07de33/download/ds59_commercio_pubblici_esercizi_fuori_piano.csv", "last_modified": "2026-08-31T14:38:58.500479", "license_type": "https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40", "position": 0, "revision_id": "f131083f-ba27-44e6-bc9f-f7b72772ae0b", "resource_type": null}, {"cache_last_updated": null, "package_id": "726fb09b-e2ce-4407-8579-51aef8027498", "distribution_format": "JSON", "datastore_active": false, "id": "beff4833-9090-4aa1-915b-fa73ec276752", "size": 2211606, "state": "active", "hash": "", "description": "anteprima disponibile", "format": "JSON", "mimetype_inner": null, "url_type": "upload", "mimetype": "application/json", "cache_url": null, "name": "ds59_commercio_pubblici_esercizi_fuori_piano.json", "created": "2026-08-31T14:39:08.398649", "url": "https://dati.comune.milano.it/dataset/726fb09b-e2ce-4407-8579-51aef8027498/resource/beff4833-9090-4aa1-915b-fa73ec276752/download/ds59_commercio_pubblici_esercizi_fuori_piano.json", "last_modified": "2026-08-31T14:39:08.342423", "license_type": "https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40", "position": 1, "revision_id": "5afc87f4-c9b6-4a32-b74b-f4d3a
+
+### https://dados.cm-lisboa.pt/api/3/action/package_search?q=licenciamento&rows=5
+ERROR https://dados.cm-lisboa.pt/api/3/action/package_search?q=licenciamento&rows=5 -> HTTP 403: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
+
+### https://datos.cdmx.gob.mx/api/3/action/package_search?q=establecimientos&rows=5
+ERROR https://datos.cdmx.gob.mx/api/3/action/package_search?q=establecimientos&rows=5 -> URLError(TimeoutError('timed out'))
+
+### https://data-aucklandcouncil.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+1435801 bytes
+{
+	"@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+	"@type": "dcat:Catalog",
+	"conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+	"describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+	"dataset": [
+		{
+			"@type": "dcat:Dataset",
+			"identifier": "https://www.arcgis.com/home/item.html?id=a779bdbdb56b472688cf8d05fe11b320",
+			"landingPage": "https://data-aucklandcouncil.opendata.arcgis.com/documents/aucklandcouncil::kiwirail-open-data",
+			"title": "KiwiRail Open Data",
+			"description": "<div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'>This link directs to KiwiRail Open Data website. </div><div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'><br /></div><div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'>By clicking this link, you will be directed away from the Auckland Council Open Data Portal to a third-party website.</div><div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'><br /></div><div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, sans-serif; font-size:16px;'>It is important to note that all third-party data is subject to the terms and conditions of the copyright owner. Auckland Council is not responsible for the accuracy, reliability or completeness of this third-party data. </div>",
+			"keyword": [
+				"External Resource",
+				"Rail"
+			],
+			"issued": "2024-03-13T00:31:07.000Z",
+			"modified": "2024-03-14T22:11:51.000Z",
+			"publisher": {
+				"name": "Auckland Council"
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "OpenDataUser",
+				"hasEmail": "{{orgContactEmail}}"
+			},
+			"accessLevel": "public",
+			"spatial": "",
+			"license": "",
+			"distribution": [
+				{
+					"@type": "dcat:Distribution",
+					"title": "ArcGIS Hub Dataset",
+					"format": "Web Page",
+					"mediaType": "text/html",
+					"accessURL": "https://data-aucklandcouncil.opendata.arcgis.com/documents/aucklandcouncil::kiwirail-open-dat
+
+### https://data.wien.gv.at/daten/geo?service=WFS&request=GetCapabilities&version=1.1.0
+265425 bytes
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wfs:WFS_Capabilities version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ows="http://www.opengis.net/ows" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wfs http://data.wien.gv.at/daten/geo/schemas/wfs/1.1.0/wfs.xsd" xmlns:ogdwien="https://www.wien.gv.at/ogdwien" updateSequence="690">
+  <ows:ServiceIdentification>
+    <ows:Title>GeoServer Web Feature Service</ows:Title>
+    <ows:Abstract>This is the reference implementation of WFS 1.0.0 and WFS 1.1.0, supports all WFS operations including Transaction.</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>WFS</ows:Keyword>
+      <ows:Keyword>WMS</ows:Keyword>
+      <ows:Keyword>GEOSERVER</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType>WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+    <ows:Fees>https://creativecommons.org/licenses/by/3.0/at/deed.de</ows:Fees>
+    <ows:AccessConstraints>https://data.wien.gv.at/nutzungsbedingungen</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>Open Government Data Wien</ows:ProviderName>
+    <ows:ServiceContact>
+      <ows:IndividualName />
+      <ows:PositionName />
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice />
+          <ows:Facsimile />
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint />
+          <ows:City />
+          <ows:AdministrativeArea />
+          <ows:PostalCode />
+          <ows:Country />
+          <ows:ElectronicMailAddress />
+        </ows:Address>
+      </ows:ContactInfo>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
+          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:Value>1.0.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptFormats">
+        <ows:Value>text/xml</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="Sections">
+        <ows:Value>ServiceIdentification</o
+
+### https://www.data.gouv.fr/api/1/datasets/?q=sitadel%20permis%20de%20construire&page_size=3
+93 bytes
+{"data": [], "next_page": null, "page": 1, "page_size": 3, "previous_page": null, "total": 0}
+
+### https://data.milwaukee.gov/api/3/action/package_search?q=permits&rows=3
+19960 bytes
+{"help": "https://data.milwaukee.gov/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 7, "facets": {}, "results": [{"author": "", "author_email": "", "creator_user_id": "b2a7cdab-d171-4425-bfc1-debc381f92d8", "id": "9bada2e0-fad5-4545-8674-1b2c8c4e9f2f", "isopen": true, "license_id": "cc-by", "license_title": "Creative Commons Attribution", "license_url": "http://www.opendefinition.org/licenses/cc-by", "maintainer": "", "maintainer_email": "", "metadata_created": "2018-05-18T17:16:19.079555", "metadata_modified": "2026-10-19T08:50:10.579048", "name": "buildingpermits", "notes": "_Update Frequency: Monthly_\r\n\r\nData-set contains information related to residential and commercial permit work data such as date, construction cost and location.\r\n\r\n__To download XML and JSON files, click the CSV option below and click the down arrow next to the Download button in the upper right on its page.__", "num_resources": 1, "num_tags": 0, "organization": {"id": "86711204-aae5-4c87-950a-90c9fe8e71df", "name": "department-of-neighborhood-services", "title": "Department of Neighborhood Services ", "type": "organization", "description": "Through the enforcement of Building, Zoning, Fire, Environmental, Property Maintenance and other ordinances, DNS protects the value of investments in neighborhoods and commercial properties and supports community goals of building safe and healthy neighborhoods and increasing investment and economic vitality throughout the City.\r\n\r\n", "image_url": "2018-05-23-141211.660131DNS.jpg", "created": "2018-05-23T14:12:11.673372", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "86711204-aae5-4c87-950a-90c9fe8e71df", "private": false, "state": "active", "title": "Residential and Commercial Permit Work Data", "type": "dataset", "url": "", "version": "", "groups": [{"description": "__This group contains the Master Property File, \r\nMaster Address Index, \r\nNeighborhood boundaries,\r\nland-use maps, \r\nparcel outlines\r\nand community living arrangements.__", "display_name": "Housing & Property ", "id": "bd714b69-45ae-46fd-adea-62e65845d8d8", "image_display_url": "https://data.milwaukee.gov/uploads/group/2018-05-14-170535.852912house-orange.jpg", "name": "housing-and-property-information", "title": "Housing & Property "}], "resources": [{"cache_last_updated": null, "cache_url": null, "ckan_url": "https://data.milwaukee.gov", "created": "2018-05-18T17:17:56.134569", "d
+
+### https://www.portlandmaps.com/od/rest/services/
+3272 bytes
+<html lang="en">
+
+<head>
+<title>Folder: /</title>
+<link href="/od/rest/static/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<table width="100%" class="userTable">
+ <tr>
+ <td class="titlecell">
+ ArcGIS REST Services Directory
+ </td>
+ <td align="right">
+   <a href="https://www.portlandmaps.com/od/rest/login">Login</a>
+       
+            | <a href="https://www.portlandmaps.com/od/tokens/">Get Token</a>
+       </td>
+ </tr>
+</table>
+<table width="100%" class="navTable">
+<tr valign="top">
+<td class="breadcrumbs">
+<a href="/od/rest/services">Home</a>
+
+  &gt; <a href="/od/rest/services">services</a>
+  </td>
+<td align="right">
+ <a href="https://www.portlandmaps.com/od/help/en/rest/router.html?f=rest/services" target="_blank">API Reference</a>
+</td>
+</tr>
+</table><table>
+  <tr>
+  <td class="apiref">
+  <a href="?f=pjson" target="_blank">JSON</a>
+     | <a href="https://www.portlandmaps.com/od/services?wsdl" target="">SOAP</a>
+    </td>
+  </tr>
+  </table>
+  <h2>Folder: /</h2>
+
+<div class="rbody">
+
+<b>Current Version: </b>11.5<br/><br/>
+
+<b>Folders: </b>
+ <ul>
+ <li><a href="/od/rest/services/Utilities">Utilities</a></li>
+	</ul>
+<b>Services: </b>
+<ul>
+<li><a href="/od/rest/services/COP_OpenData_ARPA/MapServer">COP_OpenData_ARPA</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Boundary/MapServer">COP_OpenData_Boundary</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_CityProjects/MapServer">COP_OpenData_CityProjects</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Environment/MapServer">COP_OpenData_Environment</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_ImportantPlaces/MapServer">COP_OpenData_ImportantPlaces</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Miscellaneous/MapServer">COP_OpenData_Miscellaneous</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_PlanningDevelopment/MapServer">COP_OpenData_PlanningDevelopment</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Property/MapServer">COP_OpenData_Property</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_PublicSafetyHazards/MapServer">COP_OpenData_PublicSafetyHazards</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Transportation/MapServer">COP_OpenData_Transportation</a> (MapServer)</li>
+    <li><a href="/od/rest/services/COP_OpenData_Utilities/MapServer">COP_OpenData_Utilities</a
+
+### https://opendata.dc.gov/api/feed/dcat-us/1.1.json
+6489984 bytes
+{
+	"@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+	"@type": "dcat:Catalog",
+	"conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+	"describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+	"dataset": [
+		{
+			"@type": "dcat:Dataset",
+			"identifier": "https://www.arcgis.com/home/item.html?id=a1f7acf65795451d89f0a38565a975b3&sublayer=5",
+			"landingPage": "https://opendata.dc.gov/datasets/DCGIS::capital-bikeshare-locations",
+			"title": "Capital Bikeshare Locations",
+			"description": "<div style='text-align:Left;'><div><div><p><span>Capital Bikeshare is metro DC's bikeshare service, with 5,000 bikes and 600+ stations across 7 jurisdictions: Washington, DC.; Arlington, VA; Alexandria, VA; Montgomery, MD; Prince George's County, MD; Fairfax County, VA; and the City of Falls Church, VA. For more information, please visit </span><a href='https://www.capitalbikeshare.com:443/' style='text-decoration:underline;' rel='nofollow ugc'><span>https://www.capitalbikeshare.com</span></a><span>.</span></p></div></div></div>",
+			"keyword": [
+				"capital bikeshare",
+				"bike",
+				"bicycle",
+				"washington dc",
+				"transportation",
+				"dc",
+				"district of columbia",
+				"DDOT"
+			],
+			"issued": "2015-02-27T21:14:34.000Z",
+			"modified": "2026-10-19T08:27:07.000Z",
+			"publisher": {
+				"name": "Capital Bikeshare"
+			},
+			"contactPoint": {
+				"@type": "vcard:Contact",
+				"fn": "DCGISopendata",
+				"hasEmail": "mailto:gisgroup@dc.gov"
+			},
+			"accessLevel": "public",
+			"spatial": "-140.9514,-69.9944,103.0002,89.0000",
+			"license": "https://creativecommons.org/licenses/by/4.0",
+			"distribution": [
+				{
+					"@type": "dcat:Distribution",
+					"title": "ArcGIS Hub Dataset",
+					"format": "Web Page",
+					"mediaType": "text/html",
+					"accessURL": "https://opendata.dc.gov/datasets/DCGIS::capital-bikeshare-locations"
+				},
+				{
+					"@type": "dcat:Distribution",
+					"title": "ArcGIS GeoService",
+					"format": "ArcGIS GeoServices REST API",
+					"mediaType": "application/json",
+					"accessURL": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Transportation_Bikes_Trails_WebMercator/MapServer/5"
+				},
+				{
+					"@type": "dcat:Distribution",
+					"title": "OGC WMS",
+					"format": "OGC WMS",
+					"mediaType": "application/vnd.ogc.wms_xml",
+					"accessURL": "https://maps2.dcgis.dc.gov/dcgis/services/DCGIS_DATA/Transportation_Bikes_Trails_WebMercator/MapServer/WMSServer?request=GetCapabilit

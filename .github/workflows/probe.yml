@@ -18,4 +18,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add history/probe.txt
-          git diff --cached --quiet || (git commit -m "Probe results" && git pull --rebase -X ours origin main && git push)
+          git diff --cached --quiet || (git commit -m "Probe results" && git pull --rebase -X theirs origin main && git push)

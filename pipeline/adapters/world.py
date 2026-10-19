@@ -8,6 +8,9 @@ New York    NYC Department of Consumer and Worker Protection premises licences c
 Singapore   ACRA entities (data.gov.sg), newly registered; located by postal code with OneMap.
 Switzerland SHAB / Swiss Official Gazette of Commerce: new registrations (HR01) and deletions (HR03),
             located with the federal geo.admin.ch address search.
+Ireland     National planning applications (all councils), with coordinates.
+Montreal    Ville de Montréal building permits, with coordinates.
+Netherlands BAG buildings under construction (dated by first sight).
 """
 import re, time
 import xml.etree.ElementTree as ET
@@ -265,6 +268,134 @@ def swiss_register():
     return out
 
 
+# ---------------------------------------------------------------- Ireland ----
+IE_FS = "https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0/query"
+IE_BBOX = [-10.7, 51.3, -5.9, 55.5]
+
+
+def ireland_planning():
+    log("\n== Ireland national planning applications")
+    out, off = [], 0
+    while off < 40000:
+        res = http(IE_FS, {"where": f"ReceivedDate >= DATE '{since(DAYS)}'", "outFields": "*", "outSR": 4326, "f": "geojson",
+                           "orderByFields": "ReceivedDate DESC", "resultOffset": off, "resultRecordCount": 2000}, timeout=180)
+        feats = res.get("features") or []
+        if off == 0 and feats:
+            log("   fields: " + ", ".join(list(feats[0].get("properties") or {})[:40]))
+        for f in feats:
+            p = f.get("properties") or {}
+            c = (f.get("geometry") or {}).get("coordinates") or [None, None]
+            when = p.get("ReceivedDate")
+            if isinstance(when, (int, float)):
+                when = time.strftime("%Y-%m-%d", time.gmtime(when / 1000))
+            desc = clean(p.get("DevelopmentDescription"), 400)
+            kind, sub, title = classify_permit(p.get("ApplicationType"), desc, None)
+            if kind == "maintenance" and re.search(r"\b(construct|erect|build)\w*\b.*\b(dwelling|house|apartment|units?|building|warehouse|shop|office)", desc, re.I):
+                kind, sub, title = "construction", "New building", "Planning application: new building"
+            else:
+                title = "Planning application" + (f": {sub.lower()}" if kind != "maintenance" else "")
+            units = num(p.get("NumResidentialUnits"))
+            if units:
+                title += f" - {int(units)} home{'s' if units != 1 else ''}"
+            status = p.get("ApplicationStatus") or ""
+            out.append(event(kind, sub, when, num(c[1]), num(c[0]), title,
+                             f"{p.get('PlanningAuthority') or ''} · {status} · {desc}", "Irish planning applications",
+                             f"{p.get('PlanningAuthority')}-{p.get('ApplicationNumber')}", clean(p.get("DevelopmentAddress"), 120),
+                             clean(p.get("DevelopmentAddress"), 120), None, IE_BBOX))
+        off += len(feats)
+        if len(feats) < 2000:
+            break
+    log(f"   {off} applications")
+    return out
+
+
+# --------------------------------------------------------------- Montreal ----
+MTL_RES = "5232a72d-235a-48eb-ae20-bb9d501300ad"
+
+
+def montreal_permits():
+    log("\n== Montreal building permits")
+    try:
+        res = http("https://donnees.montreal.ca/api/3/action/datastore_search_sql",
+                   {"sql": f'SELECT * FROM "{MTL_RES}" WHERE date_emission >= \'{since(DAYS)}\' ORDER BY date_emission DESC LIMIT 32000'},
+                   timeout=300)
+        rows = res["result"]["records"]
+    except (RuntimeError, KeyError) as e:
+        log(f"   sql not available ({str(e)[:100]}); paging newest first")
+        rows, off = [], 0
+        while off < 40000:
+            res = http("https://donnees.montreal.ca/api/3/action/datastore_search",
+                       {"resource_id": MTL_RES, "sort": "date_emission desc", "limit": 5000, "offset": off}, timeout=300)
+            recs = res["result"]["records"]
+            rows += recs
+            off += len(recs)
+            if not recs or str(recs[-1].get("date_emission")) < since(DAYS):
+                break
+    rows = [r for r in rows if str(r.get("date_emission")) >= since(DAYS)]
+    log(f"   {len(rows)} permits")
+    out = []
+    for r in rows:
+        units = num(r.get("nb_logements")) or 0
+        typ = r.get("description_type_demande") or ""
+        kind, sub, title = classify_permit(typ, r.get("nature_travaux"), None)
+        if "construction" == typ.lower().strip() or (units and "transformation" not in typ.lower()):
+            kind, sub, title = "construction", "New building", "New building permit"
+        if units:
+            title += f" - {int(units)} home{'s' if units != 1 else ''}"
+        out.append(event(kind, sub, r.get("date_emission"), num(r.get("latitude")), num(r.get("longitude")), title,
+                         f"{typ} · {r.get('description_type_batiment') or ''} · {clean(r.get('nature_travaux'), 200)}",
+                         "Montréal building permits", r.get("id_permis"), r.get("emplacement"),
+                         f"{r.get('emplacement') or ''}, {r.get('arrondissement') or ''}", None, [-74.05, 45.38, -73.45, 45.75]))
+    return out
+
+
+# ------------------------------------------------------------ Netherlands ----
+BAG_WFS = "https://service.pdok.nl/lv/bag/wfs/v2_0"
+NL_BBOX = [3.2, 50.7, 7.3, 53.6]
+
+
+def dutch_construction():
+    """BAG buildings whose status is 'Bouw gestart' (construction started). The register publishes the status, not the
+    day it changed, so each building is dated by the first day GEORA saw it under construction."""
+    log("\n== Netherlands: buildings under construction (BAG)")
+    flt = ("<Filter><PropertyIsEqualTo><PropertyName>status</PropertyName><Literal>Bouw gestart</Literal>"
+           "</PropertyIsEqualTo></Filter>")
+    out, start = [], 0
+    while start < 80000:
+        res = http(BAG_WFS, {"service": "WFS", "version": "2.0.0", "request": "GetFeature", "typeName": "bag:pand",
+                             "outputFormat": "application/json", "srsName": "EPSG:4326", "count": 1000,
+                             "startIndex": start, "filter": flt}, timeout=180)
+        feats = res.get("features") or []
+        for f in feats:
+            p = f.get("properties") or {}
+            pts = []
+            def walk(c):
+                if c and isinstance(c[0], (int, float)):
+                    pts.append(c)
+                elif c:
+                    for x in c:
+                        walk(x)
+            walk((f.get("geometry") or {}).get("coordinates"))
+            if not pts:
+                continue
+            a_, b_ = sum(q[0] for q in pts) / len(pts), sum(q[1] for q in pts) / len(pts)
+            lat, lon = (a_, b_) if a_ > 40 else (b_, a_)    # Dutch latitudes are > 50, longitudes < 8
+            units = p.get("aantal_verblijfsobjecten") or 0
+            use = str(p.get("gebruiksdoel") or "").replace("functie", "")
+            e = event("construction", "Construction started", since(0), lat, lon,
+                      "Construction under way" + (f" - {units} unit{'s' if units != 1 else ''}" if units else ""),
+                      f"Use: {use}. Planned build year {p.get('bouwjaar') or '?'}. Date shown is the first day GEORA saw construction under way.",
+                      "BAG (Kadaster)", p.get("identificatie"), f"BAG {p.get('identificatie')}", None, None, NL_BBOX)
+            if e:
+                e["properties"]["undated"] = True
+            out.append(e)
+        start += len(feats)
+        if len(feats) < 1000:
+            break
+    log(f"   {start} buildings under construction")
+    return out
+
+
 def regions():
     return [
         ("ca-vancouver", {"name": "Vancouver", "country": "CA", "center": [-123.12, 49.25], "bbox": VAN_BBOX,
@@ -277,4 +408,10 @@ def regions():
                 "sources": ["ACRA (data.gov.sg)", "OneMap"]}, [singapore_new_companies]),
         ("ch", {"name": "Switzerland", "country": "CH", "center": [8.23, 46.8], "focus": [8.5417, 47.3769], "focus_name": "Zurich",
                 "bbox": CH_BBOX, "sources": ["SHAB / Swiss commercial register", "geo.admin.ch"]}, [swiss_register]),
+        ("ie", {"name": "Ireland", "country": "IE", "center": [-8.0, 53.4], "focus": [-6.2603, 53.3498], "focus_name": "Dublin",
+                "bbox": IE_BBOX, "sources": ["Irish planning applications"]}, [ireland_planning]),
+        ("ca-montreal", {"name": "Montréal", "country": "CA", "center": [-73.65, 45.53], "bbox": [-74.05, 45.38, -73.45, 45.75],
+                         "sources": ["Montréal building permits"]}, [montreal_permits]),
+        ("nl", {"name": "Netherlands", "country": "NL", "center": [5.3, 52.2], "focus": [4.9041, 52.3676], "focus_name": "Amsterdam",
+                "bbox": NL_BBOX, "sources": ["BAG (Kadaster)"]}, [dutch_construction]),
     ]

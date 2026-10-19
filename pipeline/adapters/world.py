@@ -569,6 +569,123 @@ def seattle_new_licences():
     return out
 
 
+# ------------------------------------------------------------ Connecticut ----
+def ct_new_businesses():
+    from pipeline.core import geocode_us
+    log("\n== Connecticut business registry: new registrations")
+    rows = socrata("data.ct.gov", "n7gp-d28j", f"date_registration >= '{since(30)}' AND billingstate = 'CT'",
+                   "date_registration DESC", 30000, label="registrations")
+    rows = [r for r in rows if r.get("billingstreet") and str(r.get("billingstreet")).strip()[:1].isdigit()]
+    shared = {}
+    for r in rows:
+        k = (str(r["billingstreet"]).upper(), r.get("billingcity"))
+        shared[k] = shared.get(k, 0) + 1
+    rows = [r for r in rows if shared[(str(r["billingstreet"]).upper(), r.get("billingcity"))] < 3]
+    log(f"   {len(rows)} with a street address (shared registered-agent addresses left out)")
+    geo = geocode_us([(str(i), r["billingstreet"], r.get("billingcity") or "", "CT", str(r.get("billingpostalcode") or "")[:5])
+                      for i, r in enumerate(rows)])
+    out = []
+    for i, r in enumerate(rows):
+        lat, lon = geo.get(str(i), (None, None))
+        out.append(event("business", "Business registered", r.get("date_registration"), lat, lon,
+                         f"{r.get('name')}: new {r.get('business_type') or 'business'}",
+                         re.sub(r"\s*\(\d+\)$", "", str(r.get("naics_code") or "")), "Connecticut Business Registry",
+                         r.get("accountnumber"), f"{str(r['billingstreet']).upper()}|{r.get('billingcity')}",
+                         f"{r['billingstreet']}, {r.get('billingcity') or ''}", None, [-73.8, 40.9, -71.7, 42.1]))
+    log(f"   located {len([x for x in out if x])}")
+    return out
+
+
+# ----------------------------------------------------------------- Latvia ----
+LV = "https://data.gov.lv/dati/api/3/action"
+LV_BBOX = [20.9, 55.6, 28.3, 58.1]
+
+
+def _lv_resource(query, needle):
+    res = http(f"{LV}/package_search", {"q": query, "rows": 20}, timeout=120)["result"]["results"]
+    for pkg in res:
+        for r in pkg.get("resources") or []:
+            if needle in (r.get("url") or "").lower():
+                return r["url"]
+    raise RuntimeError(f"no resource matching {needle}")
+
+
+def _lv_csv(url):
+    import csv, io
+    body = http(url, raw=True, timeout=900, headers={"Accept": "*/*"})
+    if body[:2] == b"PK":
+        import zipfile
+        z = zipfile.ZipFile(io.BytesIO(body))
+        body = z.read([n for n in z.namelist() if n.lower().endswith(".csv")][0])
+    text = body.decode("utf-8-sig", "replace")
+    d = ";" if text[:2000].count(";") > text[:2000].count(",") else ","
+    return list(csv.DictReader(io.StringIO(text), delimiter=d))
+
+
+def latvia_new_companies():
+    log("\n== Latvia Register of Enterprises: new registrations")
+    reg = _lv_csv(_lv_resource("uznemumu registrs", "/register.csv"))
+    cols = list(reg[0]) if reg else []
+    log(f"   register rows: {len(reg)}; columns: {cols[:25]}")
+    new = [r for r in reg if str(r.get("registered") or "")[:10] >= since(30) and not r.get("terminated")
+           and r.get("addressid")]
+    shared = {}
+    for r in new:
+        shared[r["addressid"]] = shared.get(r["addressid"], 0) + 1
+    new = [r for r in new if shared[r["addressid"]] < 3]
+    log(f"   new: {len(new)} (shared addresses left out)")
+    want = {str(r["addressid"]) for r in new}
+    eka = _lv_csv(_lv_resource("adresu registrs eku", "aw_eka"))
+    ecols = list(eka[0]) if eka else []
+    log(f"   building addresses: {len(eka)}; columns: {ecols[:25]}")
+    c_lat = next((c for c in ecols if c.upper() in ("DD_N", "LAT", "LATITUDE")), None)
+    c_lon = next((c for c in ecols if c.upper() in ("DD_E", "LON", "LONGITUDE")), None)
+    coords = {}
+    for e in eka:
+        k = str(e.get("KODS") or e.get("kods") or "")
+        if k in want and c_lat and c_lon:
+            coords[k] = (num(str(e[c_lat]).replace(",", ".")), num(str(e[c_lon]).replace(",", ".")))
+    out = []
+    for r in new:
+        lat, lon = coords.get(str(r["addressid"]), (None, None))
+        out.append(event("business", "Company registered", str(r.get("registered"))[:10], lat, lon,
+                         f"{r.get('name')}: new {str(r.get('type_text') or 'company').lower()}", r.get("regtype_text"),
+                         "Latvian Register of Enterprises", r.get("regcode"), f"LV {r['addressid']}", r.get("address"), None, LV_BBOX))
+    log(f"   located {len([x for x in out if x])}")
+    return out
+
+
+# -------------------------------------------------------------- Melbourne ----
+def melbourne_developments():
+    """City of Melbourne Development Activity Monitor: projects applied for, approved or under construction.
+    The dataset has no status date, so each project is dated by the first day GEORA saw it in that status."""
+    log("\n== Melbourne development activity monitor")
+    out = []
+    for status in ("APPLIED", "APPROVED", "UNDER CONSTRUCTION"):
+        res = http("https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/development-activity-monitor/exports/json",
+                   {"where": f'status="{status}"'}, timeout=120)
+        for r in res:
+            homes = int(num(r.get("resi_dwellings")) or 0)
+            hotel = int(num(r.get("hotel_rooms")) or 0)
+            office = num(r.get("office_flr")) or 0
+            retail = num(r.get("retail_flr")) or 0
+            bits = [f"{homes} homes" if homes else "", f"{hotel} hotel rooms" if hotel else "",
+                    f"{office:,.0f} m² offices" if office else "", f"{retail:,.0f} m² retail" if retail else ""]
+            what = ", ".join(b for b in bits if b)
+            label = {"APPLIED": "Development applied for", "APPROVED": "Development approved",
+                     "UNDER CONSTRUCTION": "Under construction"}[status]
+            e = event("construction", label, since(0), num(r.get("latitude")), num(r.get("longitude")),
+                      f"{label}: {r.get('floors_above') or '?'} floors" + (f" - {what}" if what else ""),
+                      f"{r.get('clue_small_area') or ''} · {r.get('town_planning_application') or ''}. Date shown is the first day GEORA saw this status.",
+                      "City of Melbourne development activity monitor", f"{r.get('development_key')}-{status}",
+                      r.get("street_address"), r.get("street_address"), None, [144.85, -37.88, 145.05, -37.75])
+            if e:
+                e["properties"]["undated"] = True
+            out.append(e)
+    log(f"   {len(out)} projects")
+    return out
+
+
 def regions():
     return [
         ("ca-vancouver", {"name": "Vancouver", "country": "CA", "center": [-123.12, 49.25], "bbox": VAN_BBOX,
@@ -590,6 +707,13 @@ def regions():
                          "sources": ["Montréal building permits"]}, [montreal_permits]),
         ("es-madrid", {"name": "Madrid", "country": "ES", "center": [-3.7038, 40.4168], "bbox": MAD_BBOX,
                        "sources": ["Madrid licencias urbanísticas"]}, [madrid_licences]),
+        ("us-ct", {"name": "Connecticut", "country": "US", "center": [-72.7, 41.6], "bbox": [-73.8, 40.9, -71.7, 42.1],
+                   "focus": [-72.9279, 41.3083], "focus_name": "New Haven", "sources": ["Connecticut Business Registry"]},
+         [ct_new_businesses]),
+        ("lv", {"name": "Latvia", "country": "LV", "center": [24.6, 56.9], "focus": [24.1052, 56.9496], "focus_name": "Riga",
+                "bbox": LV_BBOX, "sources": ["Latvian Register of Enterprises", "VZD address register"]}, [latvia_new_companies]),
+        ("au-melbourne", {"name": "Melbourne", "country": "AU", "center": [144.96, -37.81], "bbox": [144.85, -37.88, 145.05, -37.75],
+                          "sources": ["City of Melbourne development activity monitor"]}, [melbourne_developments]),
         ("nl", {"name": "Netherlands", "country": "NL", "center": [5.3, 52.2], "focus": [4.9041, 52.3676], "focus_name": "Amsterdam",
                 "bbox": NL_BBOX, "sources": ["BAG (Kadaster)"]}, [dutch_construction]),
     ]

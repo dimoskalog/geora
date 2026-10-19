@@ -1,180 +1,132 @@
-### https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/issued-building-permits/records?limit=1&order_by=issuedate%20desc
-1438 bytes
-{"total_count": 52419, "results": [{"permitnumber": "BP-2026-01936", "permitnumbercreateddate": "2026-06-11", "issuedate": "2026-10-16", "permitelapseddays": 127, "projectvalue": 28524767.0, "typeofwork": "New Building", "address": "5282 GRANVILLE STREET, Vancouver, BC", "projectdescription": "Certified Professional Program - New Building - To construct a 6-storey residential building (124 dwelling units) consisting of:\n  1st to 5th storeys - dwelling units\n  6th storey (rooftop) - indoor & outdoor amenities\n\nall over 1 level of underground parking accessed from the lane.\n\nNotes:\n1. This permit has been reviewed under the provisions of VBBL 2025.\n2. A radio antenna system is required.\n\nSTAGED CONSTRUCTION\nSTAGE I: Excavation & Shoring; Foundation up to Grade (S.Yoo)\nISSUED: Oct. 16, 2026", "permitcategory": null, "applicant": "John Buscemi DBA: GHL Consultants Ltd", "applicantaddress": "700 West Pender Suite 800\r\nVancouver , BC  V6C 1G8", "propertyuse": ["Dwelling Uses"], "specificusecategory": ["Apartment"], "buildingcontractor": "STRAND CONTRACTING LTD.", "buildingcontractoraddress": "650 W GEORGIA STREET  \r\nUnit 2160\r\nVancouver, BC  V6B 4N7", "issueyear": "2026", "geolocalarea": "Shaughnessy", "geom": {"type": "Feature", "geometry": {"coordinates": [-123.1393456, 49.2382515], "type": "Point"}, "properties": {}}, "yearmonth": "2026-10", "geo_point_2d": {"lon": -123.1393456, "lat": 49.2382515}}]}
+### https://amtsblattportal.ch/api/v1/publications?publicationStates=PUBLISHED&subRubrics=HR01&pageRequest.size=2&pageRequest.sortOrders=publicationDate,DESC
+2709 bytes
+{"content":[{"meta":{"id":"ef3b36a8-3075-4699-9a02-a00600868c68","creationDate":"2026-10-15T12:16:54.466Z","updateDate":"2026-10-18T22:36:43.631Z","rubric":"HR","subRubric":"HR01","language":"fr","registrationOffice":{"id":"e15a629a-a08d-11e8-aa11-0050569d3c43","displayName":"Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister","street":"Bundesrain","streetNumber":"20","swissZipCode":"3003","town":"Bern","containsPostOfficeBox":false,"postOfficeBox":null,"municipalityId":null,"uid":null},"publicationOriginator":null,"publicationNumber":"HR01-1006787024","publicationState":"PUBLISHED","publicationDate":"2026-10-19T00:00:00.000Z","expirationDate":null,"primaryTenantCode":"shab","onBehalfOf":null,"invoiceAddressId":null,"legalRemedy":"L'entité juridique mentionnée a été inscrite au registre du commerce et jouit de la capacité juridique. <br />Publication selon les art. 9 et 35 ORC.","cantons":["NE"],"secondaryTenants":null,"repeatedPublications":null,"customsStampImages":[],"title":{"de":"Neueintragung SCENARCHIE Sàrl, Neuchâtel","en":"New entries SCENARCHIE Sàrl, Neuchâtel","it":"Nuove registrazioni SCENARCHIE Sàrl, Neuchâtel","fr":"Nouvelles entrées SCENARCHIE Sàrl, Neuchâtel"},"dossierReference":null,"copyDeadline":null},"links":[],"attachments":[],"content":null,"commented":false},{"meta":{"id":"04c53a56-8d38-4356-9535-a658116b7b37","creationDate":"2026-10-15T12:15:28.944Z","updateDate":"2026-10-18T22:36:56.938Z","rubric":"HR","subRubric":"HR01","language":"de","registrationOffice":{"id":"e15a629a-a08d-11e8-aa11-0050569d3c43","displayName":"Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister","street":"Bundesrain","streetNumber":"20","swissZipCode":"3003","town":"Bern","containsPostOfficeBox":false,"postOfficeBox":null,"municipalityId":null,"uid":null},"publicationOriginator":null,"publicationNumber":"HR01-1006786497","publicationState":"PUBLISHED","publicationDate":"2026-10-19T00:00:00.000Z","expirationDate":null,"primaryTenantCode":"shab","onBehalfOf":null,"invoiceAddressId":null,"legalRemedy":"Die aufgeführte Rechtseinheit wurde ins Handelsregister aufgenommen und ist rechtsfähig. <br />Publikation nach HRegV Art. 9 und Art. 35.","cantons":["SO"],"secondaryTenants":null,"repeatedPublications":null,"customsStampImages":[],"title":{"de":"Neueintragung AareFlex AG, Olten","en":"New entries AareFlex AG, Olten","it":"Nuove registrazioni AareFlex AG, Olten","fr":"Nouvelles entrées AareFlex AG, Olte
 
-### https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/business-licences/records?limit=1&order_by=issueddate%20desc
-646 bytes
-{"total_count": 206725, "results": [{"folderyear": "26", "licencersn": "5034693", "licencenumber": "26-289471", "licencerevisionnumber": "00", "businessname": "(Kelsey Wilson)", "businesstradename": null, "status": "Issued", "issueddate": "2026-12-01T17:04:52+00:00", "expireddate": "2026-12-31", "businesstype": "Long-term Rental", "businesssubtype": null, "unit": null, "unittype": null, "house": null, "street": null, "city": "Vancouver", "province": "BC", "country": null, "postalcode": null, "localarea": "West End", "numberofemployees": 0.0, "feepaid": 86.0, "extractdate": "2026-10-18T07:08:52+00:00", "geom": null, "geo_point_2d": null}]}
+### https://amtsblattportal.ch/api/v1/publications/886e4600-b58f-40c9-9276-be843fa35ddf/xml
+4134 bytes
+<?xml version='1.0' encoding='UTF-8'?>
+<HR03:publication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HR03="https://shab.ch/shab/HR03-export" xsi:schemaLocation="https://shab.ch/shab/HR03-export https://amtsblattportal.ch/api/v1/schemas/shab/1.26/HR03-export.xsd">
+<meta>
+  <id>886e4600-b58f-40c9-9276-be843fa35ddf</id>
+  <rubric>HR</rubric>
+  <subRubric>HR03</subRubric>
+  <language>fr</language>
+  <registrationOffice>
+    <id>e15a629a-a08d-11e8-aa11-0050569d3c43</id>
+    <displayName>Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister</displayName>
+    <street>Bundesrain</street>
+    <streetNumber>20</streetNumber>
+    <swissZipCode>3003</swissZipCode>
+    <town>Bern</town>
+    <containsPostOfficeBox>false</containsPostOfficeBox>
+  </registrationOffice>
+  <publicationNumber>HR03-1006787016</publicationNumber>
+  <publicationState>PUBLISHED</publicationState>
+  <publicationDate>2026-10-19</publicationDate>
+  <primaryTenantCode>shab</primaryTenantCode>
+  <cantons>VS</cantons>
+  <secondaryTenants>
+    <tenantCode>kabvs</tenantCode>
+    <publicationDate>2026-10-19</publicationDate>
+  </secondaryTenants>
+  <title>
+    <de>Löschung LEADERSPLACE SA, Lens</de>
+    <en>Deletion LEADERSPLACE SA, Lens</en>
+    <it>Cancellazione LEADERSPLACE SA, Lens</it>
+    <fr>Annulation LEADERSPLACE SA, Lens</fr>
+  </title>
+</meta>
+<content>
+  <testImport>false</testImport>
+  <journalNumber>4572</journalNumber>
+  <journalDate>2026-10-14</journalDate>
+  <publicationText>LEADERSPLACE SA, à Lens, CHE-106.161.694, société anonyme (No. FOSC 190 du 02.10.2025, Publ. 1006448120). Les actifs et les passifs envers les tiers sont repris par la société Société Immobilière Molard-Sud SA, à Nyon (CHE-102.533.590). La société est radiée par suite de fusion.</publicationText>
+  <commonsActual>
+    <company>
+      <name>LEADERSPLACE SA</name>
+      <uid>CHE-106.161.694</uid>
+      <uidOrganisationId>106161694</uidOrganisationId>
+      <uidOrganisationIdCategorie>CHE</uidOrganisationIdCategorie>
+      <code13>CH66003379964</code13>
+      <seat>Lens</seat>
+      <legalForm>0106</legalForm>
+      <noAddress>false</noAddress>
+      <address>
+        <street>Rue du Grand-Place</street>
+        <houseNumber>2</houseNumber>
+        <swissZipCode>3963</swissZipCode>
+        <town>Crans VS</town>
+      </address>
+    </company>
+    <purpose>La société a pour but l'exploitation d'une entreprise en la forme commerciale au moyen de la détention et de la loca
 
-### https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show?id=building-permits-active-permits
-6534 bytes
-{"help": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/help_show?name=package_show", "success": true, "result": {"author": "Ryan.Persaud@toronto.ca", "author_email": "Ryan.Persaud@toronto.ca", "creator_user_id": "329e1506-b545-4fc7-a4ea-e614f220eea7", "dataset_category": "Table", "date_published": "2019-07-23 16:43:02.720844", "excerpt": "Provides information on currently active Building Applications and Permits. Data collected from permit applications and updates made by City Staff when reviewing the application and inspecting the work on the issued permit.", "formats": ["CSV", "XML", "JSON"], "id": "108c2bd1-6945-46f6-af92-02f5658ee7f7", "information_url": "https://www.toronto.ca/services-payments/building-construction/", "is_retired": false, "isopen": false, "last_refreshed": "2026-10-19 10:23:19.136354", "license_id": "notspecified", "license_title": "License not specified", "limitations": "Information for applications where APPLICATION_DATE is earlier than Oct 1, 1999 is likely to be incomplete, because these were entered and processed on numerous pre-amalgamation legacy systems with varying data collection capabilities and standards.", "maintainer": null, "maintainer_email": "Ryan.Persaud@toronto.ca", "metadata_created": "2022-03-10T16:49:38.462083", "metadata_modified": "2026-10-19T10:23:21.313042", "name": "building-permits-active-permits", "notes": "Provides information on currently active Building Applications and Permits. \r\n\r\nA building permit is a municipally issued permit, required by the Building Code Act and enforced by the City of Toronto, associated with the construction/demolition of a physical structure\r\n\r\nData collected from permit applications and updates made by City Staff when reviewing the application and inspecting the work on the issued permit.\r\n", "num_resources": 4, "num_tags": 2, "organization": {"id": "6ed95875-f7d6-4200-964c-91024cc49cba", "name": "city-of-toronto", "title": "City of Toronto", "type": "organization", "description": "", "image_url": "", "created": "2022-03-10T15:38:51.044746", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_division": "Toronto Building", "owner_email": "Ryan.Persaud@toronto.ca", "owner_org": "6ed95875-f7d6-4200-964c-91024cc49cba", "private": false, "refresh_rate": "Daily", "state": "active", "title": "Building Permits - Active Permits", "topics": ["Permits and licenses"], "type": "dataset", "version": null, "resources": [{"cache_last
+### https://data.gov.sg/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&limit=2&sort=uen_issue_date%20desc
+1276 bytes
+{"success":true,"result":{"resource_id":"d_3f960c10fed6145404ca7b821f263b87","fields":[{"type":"text","id":"uen"},{"type":"text","id":"issuance_agency_desc"},{"type":"text","id":"uen_status_desc"},{"type":"text","id":"entity_name"},{"type":"text","id":"entity_type_desc"},{"type":"text","id":"uen_issue_date"},{"type":"text","id":"reg_street_name"},{"type":"text","id":"reg_postal_code"},{"type":"int4","id":"_id"}],"records":[{"_id":1060105,"uen":"202646800W","issuance_agency_desc":"ACRA","uen_status_desc":"Registered","entity_name":"MOOCHIROO PTE. LTD.","entity_type_desc":"Local Company","uen_issue_date":"2026-10-11","reg_street_name":"BUANGKOK CRESCENT","reg_postal_code":"536995"},{"_id":95,"uen":"202646791H","issuance_agency_desc":"ACRA","uen_status_desc":"Registered","entity_name":"PRIMEPIPE PLUMBING PTE. LTD.","entity_type_desc":"Local Company","uen_issue_date":"2026-10-10","reg_street_name":"UPPER THOMSON ROAD","reg_postal_code":"574344"}],"_links":{"start":"/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&limit=2&sort=uen_issue_date%20desc","next":"/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&offset=2&limit=2&sort=uen_issue_date%20desc"},"total":2127089,"limit":2,"sort":"uen_issue_date%20desc"}}
 
-### https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show?id=municipal-licensing-and-standards-business-licences-and-permits
-7305 bytes
-{"help": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/help_show?name=package_show", "success": true, "result": {"author": "MLSBusinessLicence@toronto.ca", "author_email": "MLSBusinessLicence@toronto.ca", "creator_user_id": "329e1506-b545-4fc7-a4ea-e614f220eea7", "dataset_category": "Table", "date_published": "2011-07-13 00:00:00", "excerpt": "Some businesses in Toronto require a business licence. Municipal Licensing & Standards (ML&S) issues licences to various types of businesses and trades, as well as some mobile businesses in the City.", "formats": ["CSV", "XML", "JSON", "XLS"], "id": "57b2285f-4f80-45fb-ae3e-41a02c3a137f", "information_url": "https://www.toronto.ca/services-payments/permits-licences-bylaws/", "is_retired": false, "isopen": false, "last_refreshed": "2026-10-17 06:11:24.281941", "license_id": "notspecified", "license_title": "License not specified", "maintainer": null, "maintainer_email": "MLSBusinessLicence@toronto.ca", "metadata_created": "2022-03-10T19:22:57.871978", "metadata_modified": "2026-10-17T06:11:26.377405", "name": "municipal-licensing-and-standards-business-licences-and-permits", "notes": "Some businesses in Toronto require a business licence. Municipal Licensing & Standards (ML&S) issues licences to various types of businesses and trades, as well as some mobile businesses in the City. This dataset contains information about specific categories of licences and permits incuding the licence/permit category, licence number, operating name, date issued, client's name, business address, business phone number, etc.\r\n\r\nDataset does not include licences/permits for personal licensees such as burlesque entertainer, holistic practitioners, taxi cab drivers.\r\n", "num_resources": 5, "num_tags": 2, "organization": {"id": "6ed95875-f7d6-4200-964c-91024cc49cba", "name": "city-of-toronto", "title": "City of Toronto", "type": "organization", "description": "", "image_url": "", "created": "2022-03-10T15:38:51.044746", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_division": "Municipal Licensing & Standards", "owner_email": "MLSBusinessLicence@toronto.ca", "owner_org": "6ed95875-f7d6-4200-964c-91024cc49cba", "private": false, "refresh_rate": "Daily", "state": "active", "title": "Municipal Licensing and Standards - Business Licences and Permits", "topics": ["Business", "Permits and licenses"], "type": "dataset", "version": null, "resources": [{"cache_last_updated": null, "cache_url": 
+### https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/datastore_search?resource_id=building-permits-active-permits&limit=1
+ERROR https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/datastore_search?resource_id=building-permits-active-permits&limit=1 -> HTTP 404: <html>
+	<head>
+		<title>403/404 Error</title>
+		<style>
+			body{margin:0;padding:0;font-family: Roboto;}
+			header{height: 70px;background:#165788;color:"#ffffff"}
+			header img{width: 120px; margin-top: 14px;}
+			.container{max-width: 1280px; width: 80vw; 
 
-### https://donnees.montreal.ca/api/3/action/package_show?id=permis-de-construction
-ERROR https://donnees.montreal.ca/api/3/action/package_show?id=permis-de-construction -> HTTP 404: {"help": "https://donnees.montreal.ca/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Indisponible"}, "success": false}
+### https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show?id=address-points-municipal-toronto-one-address-repository
+12047 bytes
+{"help": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/help_show?name=package_show", "success": true, "result": {"author": "gcc@toronto.ca", "author_email": "gcc@toronto.ca", "creator_user_id": "329e1506-b545-4fc7-a4ea-e614f220eea7", "dataset_category": "Map", "date_published": "2010-09-23 00:00:00", "excerpt": "This data set provides a point representation for addresses within the City of Toronto.", "formats": ["CSV", "SHP", "GEOJSON", "GPKG", "TXT"], "id": "abedd8bc-e3dd-4d45-8e69-79165a76e4fa", "is_retired": false, "isopen": false, "last_refreshed": "2026-10-19 11:40:22.873929", "license_id": "notspecified", "license_title": "License not specified", "limitations": "As part of our State of Good Repair project and data quality improvements, the Geospatial Competency Centre has removed a few deprecated attributes from our ADDRESS and ADDRESS_POINT dataset, and their associated web map services.\r\n\r\nThese attributes are *GENERALUSE* and *GENERALUSE_CODE* (also known as Feature Code and Feature Code Description). These two attributes are based on a historic dataset, have not been regularly maintained, and have no reliable, affordable sources for continued update.\r\n\r\nDue to these factors, these attributes were nullified (made blank) on Thursday, July 29, 2021. It is important to note that the attribute columns will remain in the database to ensure this change does not affect existing applications, however there will be no values in them.\r\n", "maintainer": null, "maintainer_email": "gcc@toronto.ca", "metadata_created": "2022-03-10T16:14:34.280801", "metadata_modified": "2026-10-19T11:40:44.572256", "name": "address-points-municipal-toronto-one-address-repository", "notes": "The One Address Repository data set provides a point representation for over 500,000 addresses within the City of Toronto. Each address point is described with a series of attributes including street number, street name, address type, feature class and real world coordinates.\r\n\r\nAll address points have a position on the correct side of the street, and are correctly positioned relative to neighbouring addresses. They are positioned within the parcel or the building footprint.\r\n\r\n\r\n\r\n", "num_resources": 10, "num_tags": 2, "organization": {"id": "6ed95875-f7d6-4200-964c-91024cc49cba", "name": "city-of-toronto", "title": "City of Toronto", "type": "organization", "description": "", "image_url": "", "created": "2022-03-10T15:38:51.044746", "is_organization": 
 
-### https://api.us.socrata.com/api/catalog/v1?domains=data.winnipeg.ca&q=permit&limit=5
-39005 bytes
-{
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Detailed Building Permit Data",
-            "id" : "it4w-cpf4",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "City of Winnipeg building permits issued since 2010, containing most information about the permit with the exception of declared construction value. For definitions of the building permit status, please see https://ppdportal.winnipeg.ca/Permits/PropertyPermitSearch/SearchFAQ.jsp\nTo see aggregate declared construction value of permits, see this dataset: https://data.winnipeg.ca/Development-Approvals-Building-Permits-Inspections/Aggregate-Building-Permit-Data/p5sy-gt7y/data\n\nThe detailed and aggregate building permit data has been revised because of a minor over-statement of approved dwelling units, and the counting methodology has been updated for more precision in reporting multi-family dwellings. Data before November 14, 2022 has not been updated.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-01T10:59:18.000Z",
-            "createdAt" : "2016-04-18T14:10:23.000Z",
-            "metadata_updated_at" : "2026-10-01T10:56:27.000Z",
-            "data_updated_at" : "2026-10-01T10:59:18.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 214,
-                "page_views_last_month" : 918,
-                "page_views_total" : 42867,
-                "page_views_last_week_log" : 7.74819284958946,
-                "page_views_last_month_log" : 9.843921051289035,
-                "page_views_total_log" : 15.387613489557392
-              },
-            "columns_name" :
-              [
-                "Community",
-                "Neighbourhood Name",
-                "Unit Type",
-                "Street Direction",
-                "Work Type",
-                "Permit Type",
-                "Address",
-                "Adding Secondary Suite",
-                "Location (address)",
-                "Location",
-                "Neighbourhood Number",
-                "Economic Development Category",
-                "Street Type",
-                "Street Number",
-                "Status",
-                "Location (zip)",
-                "Electoral Ward 2018",
-                "Zip Codes",
-                "Neighborhoods",
-                "Wards",
-                "Point
-
-### https://api-production.data.gov.sg/v2/public/api/collections/2/metadata
-2009 bytes
-{"code":0,"data":{"collectionMetadata":{"collectionId":"2","createdAt":"2017-06-12T19:29:13+08:00","name":"ACRA Information on Corporate Entities","description":"This collection provides datasets of registered entities in Singapore. Updated monthly, it is organized into 27 CSV files, one for each letter in the alphabet, and an 'others' dataset. This resource is designed for efficient exploration and analysis by businesses, researchers, and policymakers. Note: A significant number of columns have been removed in consideration of Section 12(2A) of the Companies Act which apply to gazetted companies. This is a more detailed version of the UEN dataset here (https://data.gov.sg/collections/1/view).","lastUpdatedAt":"2026-10-14T17:21:16+08:00","coverageStart":"1903-02-27T08:00:00+08:00","coverageEnd":"2023-03-30T08:00:00+08:00","frequency":"monthly","sources":["Accounting and Corporate Regulatory Authority"],"managedBy":"Accounting and Corporate Regulatory Authority","childDatasets":["d_af2042c77ffaf0db5d75561ce9ef5688","d_0cc5f52a1f298b916f317800251057f3","d_4e3db8955fdcda6f9944097bef3d2724","d_1cd970d8351b42be4a308d628a6dd9d3","d_e97e8e7fc55b85a38babf66b0fa46b73","d_df7d2d661c0c11a7c367c9ee4bf896c1","d_fa2ed456cf2b8597bb7e064b08fc3c7c","d_300ddc8da4e8f7bdc1bfc62d0d99e2e7","d_31af23fdb79119ed185c256f03cb5773","d_67e99e6eabc4aad9b5d48663b579746a","d_c0650f23e94c42e7a20921f4c5b75c24","d_3a3807c023c61ddfba947dc069eb53f2","d_478f45a9c541cbe679ca55d1cd2b970b","d_a2141adf93ec2a3c2ec2837b78d6d46e","d_181005ca270b45408b4cdfc954980ca2","d_8575e84912df3c28995b8e6e0e05205a","d_9af9317c646a1c881bb5591c91817cc6","d_5c4ef48b025fdfbc80056401f06e3df9","d_5573b0db0575db32190a2ad27919a7aa","d_2b8c54b2a490d2fa36b925289e5d9572","d_85518d970b8178975850457f60f1e738","d_72f37e5c5d192951ddc5513c2b134482","d_4526d47d6714d3b052eed4a30b8b1ed6","d_b58303c68e9cf0d2ae93b73ffdbfbfa1","d_acbc938ec77af18f94cecc4a7c9ec720","d_4130f1d9d365d9f1633536e959f62bb7","d_124a9bd407c7a25f8335b93b86e50fdd"]}},"errorMsg":""}
-
-### https://data.gov.sg/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&limit=2
-1226 bytes
-{"success":true,"result":{"resource_id":"d_3f960c10fed6145404ca7b821f263b87","fields":[{"type":"text","id":"uen"},{"type":"text","id":"issuance_agency_desc"},{"type":"text","id":"uen_status_desc"},{"type":"text","id":"entity_name"},{"type":"text","id":"entity_type_desc"},{"type":"text","id":"uen_issue_date"},{"type":"text","id":"reg_street_name"},{"type":"text","id":"reg_postal_code"},{"type":"int4","id":"_id"}],"records":[{"_id":1,"uen":"201201936C","issuance_agency_desc":"ACRA","uen_status_desc":"Deregistered","entity_name":"MILLENNIUM AUTOMATION & SYSTEMS PTE. LTD.","entity_type_desc":"Local Company","uen_issue_date":"2012-01-26","reg_street_name":"BENCOOLEN STREET","reg_postal_code":"189648"},{"_id":2,"uen":"53250767C","issuance_agency_desc":"ACRA","uen_status_desc":"Deregistered","entity_name":"PARTY ART ENTERTAINMENT","entity_type_desc":"Sole Proprietorship/ Partnership","uen_issue_date":"2013-12-13","reg_street_name":"CHOA CHU KANG AVENUE 4","reg_postal_code":"680448"}],"_links":{"start":"/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&limit=2","next":"/api/action/datastore_search?resource_id=d_3f960c10fed6145404ca7b821f263b87&offset=2&limit=2"},"total":2127089,"limit":2}}
-
-### https://www.onemap.gov.sg/api/common/elastic/search?searchVal=018989&returnGeom=Y&getAddrDetails=Y&pageNum=1
-583 bytes
-{
-  "error": "Authentication token missing. Please create an account and generate or renew your API Token.",
-  "found": 1,
-  "totalNumPages": 1,
-  "pageNum": 1,
-  "results": [
-    {
-      "SEARCHVAL": "ONE MARINA BOULEVARD",
-      "BLK_NO": "1",
-      "ROAD_NAME": "MARINA BOULEVARD",
-      "BUILDING": "ONE MARINA BOULEVARD",
-      "ADDRESS": "1 MARINA BOULEVARD ONE MARINA BOULEVARD SINGAPORE 018989",
-      "POSTAL": "018989",
-      "X": "30147.54928669333",
-      "Y": "29410.78636713326",
-      "LATITUDE": "1.282255138284972",
-      "LONGITUDE": "103.8526151421958"
-    }
-  ]
-}
-
-### https://amtsblattportal.ch/api/v1/publications?publicationStates=PUBLISHED&rubrics=HR&subRubrics=HR01&pageRequest.size=2&pageRequest.sortOrders=publicationDate,DESC
-2556 bytes
-{"content":[{"meta":{"id":"886e4600-b58f-40c9-9276-be843fa35ddf","creationDate":"2026-10-15T12:10:04.101Z","updateDate":"2026-10-18T22:35:36.332Z","rubric":"HR","subRubric":"HR03","language":"fr","registrationOffice":{"id":"e15a629a-a08d-11e8-aa11-0050569d3c43","displayName":"Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister","street":"Bundesrain","streetNumber":"20","swissZipCode":"3003","town":"Bern","containsPostOfficeBox":false,"postOfficeBox":null,"municipalityId":null,"uid":null},"publicationOriginator":null,"publicationNumber":"HR03-1006787016","publicationState":"PUBLISHED","publicationDate":"2026-10-19T00:00:00.000Z","expirationDate":null,"primaryTenantCode":"shab","onBehalfOf":null,"invoiceAddressId":null,"legalRemedy":null,"cantons":["VS"],"secondaryTenants":[{"tenantCode":"kabvs","publicationDate":"2026-10-19T00:00:00.000Z"}],"repeatedPublications":null,"customsStampImages":[],"title":{"de":"Löschung LEADERSPLACE SA, Lens","en":"Deletion LEADERSPLACE SA, Lens","it":"Cancellazione LEADERSPLACE SA, Lens","fr":"Annulation LEADERSPLACE SA, Lens"},"dossierReference":null,"copyDeadline":null},"links":[],"attachments":[],"content":null,"commented":false},{"meta":{"id":"d5c479cc-4f2d-4ca1-b33e-bcdcfb3afb76","creationDate":"2026-10-15T12:03:22.541Z","updateDate":"2026-10-18T22:35:37.089Z","rubric":"HR","subRubric":"HR03","language":"fr","registrationOffice":{"id":"e15a629a-a08d-11e8-aa11-0050569d3c43","displayName":"Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister","street":"Bundesrain","streetNumber":"20","swissZipCode":"3003","town":"Bern","containsPostOfficeBox":false,"postOfficeBox":null,"municipalityId":null,"uid":null},"publicationOriginator":null,"publicationNumber":"HR03-1006786870","publicationState":"PUBLISHED","publicationDate":"2026-10-19T00:00:00.000Z","expirationDate":null,"primaryTenantCode":"shab","onBehalfOf":null,"invoiceAddressId":null,"legalRemedy":null,"cantons":["VD"],"secondaryTenants":null,"repeatedPublications":null,"customsStampImages":[],"title":{"de":"Löschung Mosquitos Sàrl, en liquidation, Romanel-sur-Lausanne","en":"Deletion Mosquitos Sàrl, en liquidation, Romanel-sur-Lausanne","it":"Cancellazione Mosquitos Sàrl, en liquidation, Romanel-sur-Lausanne","fr":"Annulation Mosquitos Sàrl, en liquidation, Romanel-sur-Lausanne"},"dossierReference":null,"copyDeadline":null},"links":[],"attachments":[],"content":null,"commented":false}],"total":2339642,"pageRequest":{"sortOrders
-
-### https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Bahnhofstrasse%201%208001%20Zurich&type=locations&limit=1
-815 bytes
-{"fuzzy":"true","results":[{"attrs":{"detail":"bahnhofstrasse 1 8001 zuerich 261 zuerich ch zh","featureId":"2372863_0","geom_quadindex":"030003300030313231003","geom_st_box2d":"BOX(683185.69163938 246861.95630317475,683185.69163938 246861.95630317475)","label":"Bahnhofstrasse 1 <b>8001 Z\u00fcrich</b>","lat":47.367347717285156,"links":[{"href":"/rest/services/ech/MapServer/ch.swisstopo.amtliches-gebaeudeadressverzeichnis/101168982","rel":"related","title":"ch.swisstopo.amtliches-gebaeudeadressverzeichnis"},{"href":"/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/2372863_0","rel":"related","title":"ch.bfs.gebaeude_wohnungs_register"}],"lon":8.539949417114258,"num":1,"objectclass":"","origin":"address","rank":7,"x":246861.953125,"y":683185.6875,"zoomlevel":10},"id":2140027,"weight":1534}]}
+### https://data.winnipeg.ca/resource/it4w-cpf4.json?$limit=1&$order=issue_date%20DESC
+1052 bytes
+[{"issue_date":"2026-09-29T00:00:00.000","permit_number":"26-228689 HO","permit_group":"Residential","permit_type":"Housing","sub_type":"SFD & Att. Gar.","work_type":"Develop Lower Level","street_number":"15","street_name":"Harry Wyatt","street_type":"PL","neighbourhood_number":"5.521","neighbourhood_name":"PULBERRY","community":"Riel","applicant_business_name":"TENTEN KITCHENS & CONTRACTING","dwelling_units_created":"0","dwelling_units_lost":"0","location":{"latitude":"49.830079667819305","longitude":"-97.12966904680097","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"},"x_coordinate_nad83":"634509.0013","y_coordinate_nad83":"5521416.3308","includes_secondary_suite":"No","adding_secondary_suite":"No","removing_secondary_suite":"No","ward":"St. Vital","application_received_date":"2026-09-02T00:00:00.000","status":"Issued","point":{"type":"Point","coordinates":[-97.12966904680097,49.830079667819305]},"economic_development_category":"Residential","major_project":"No","address":"15 Harry Wyatt Place"}]
 
 
-### https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?PageSize=1&PageNumber=1
-ERROR https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?PageSize=1&PageNumber=1 -> HTTP 400: { "ErrorMessage": "Required parameters for OnlineDA endpoint is not met." }
+### https://donnees.montreal.ca/api/3/action/package_search?q=permis&rows=5
+74323 bytes
+{"help": "https://donnees.montreal.ca/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 22, "facets": {}, "results": [{"author": "Service de la culture, des sports et des loisirs - Bureau du cin\u00e9ma et de la t\u00e9l\u00e9vision de Montr\u00e9al", "author_email": "donneesouvertes@montreal.ca", "created": "2018-06-13T00:00:00", "creator_user_id": "fb71114a-ff23-4e0f-8b0f-7de51dd09d48", "ext_spatial": "ville-montreal", "extras_flag_donnees_normalise": "", "id": "b823cadc-0402-4392-a0f4-9128f8f7f58b", "isopen": true, "language": "FR", "license_id": "cc-by", "license_title": "Creative Commons Attribution 4.0 International", "license_url": "http://creativecommons.org/licenses/by/4.0/", "maintainer": null, "maintainer_email": null, "metadata_created": "2018-06-13T19:23:58.269854", "metadata_modified": "2026-09-17T18:50:24.893000", "methodologie": "Le fichier des protocoles de tournages liste les productions qui se sont d\u00e9roul\u00e9es tandis que le fichier de permis indique les lieux associ\u00e9s \u00e0 un protocole.\r\n\r\nPour assurer le bon d\u00e9roulement des productions, les donn\u00e9es sur les permis sont publi\u00e9es avec un d\u00e9lai de 30 jours suivant la fin du permis.\r\n\r\n### Dictionnaire de donn\u00e9es\r\nVoir les dictionnaires sp\u00e9cifiques \u00e0 chacun des fichiers.\r\n", "name": "permis-et-autorisations-de-tournage", "notes": "Ensemble de donn\u00e9es bas\u00e9 sur les demandes de permis de tournages et les protocoles administr\u00e9s par le Bureau du cin\u00e9ma et de la t\u00e9l\u00e9vision de Montr\u00e9al.  Les fichiers contiennent la liste des productions, ainsi que les lieux de productions sur le domaine public pour certains arrondissements. ", "num_resources": 6, "num_tags": 8, "organization": {"id": "11287be6-b543-4e28-97b4-99b7111f8de0", "name": "ville-de-montreal", "title": "Ville de Montr\u00e9al", "type": "organization", "description": "Montr\u00e9al estime que les donn\u00e9es ouvertes sont un \u00e9l\u00e9ment central dans l\u2019atteinte des objectifs en mati\u00e8re de transparence et de d\u00e9veloppement \u00e9conomique, mais aussi dans la r\u00e9solution des d\u00e9fis urbains. Plus ces donn\u00e9es sont rendues publiques et partag\u00e9es avec la communaut\u00e9, plus elles seront exploit\u00e9es \u00e0 leur plein potentiel dans un \u00e9cosyst\u00e8me montr\u00e9alais  en pleine effervescence.", "image_url": "2020-07-30-200823.9600772020-07-24-125118.477586logorosaceseulemen
 
-### https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search?q=llicencies%20activitats&rows=3
-226 bytes
-{"help": "https://opendata-ajuntament.barcelona.cat/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 0, "sort": "fecha_publicacion desc", "facets": {}, "results": [], "search_facets": {}}}
+### https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search?q=activitats&rows=5
+75584 bytes
+{"help": "https://opendata-ajuntament.barcelona.cat/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 20, "sort": "fecha_publicacion desc", "facets": {}, "results": [{"notes_translated": {"ca": "Quotes emeses per tipus d'activitat  (ep\u00edgraf) del padr\u00f3 de l\u2019Impost d\u2019Activitats Econ\u00f2miques de l\u2019Ajuntament de Barcelona. No inclou el rec\u00e0rrec  de la diputaci\u00f3", "en": "Quota Issued by Type of Activity (Category) from the Census of the Economic Activities Tax of the Barcelona City Council. Does not include the provincial surcharge", "es": "Cuotas emitidas por tipo de actividad (ep\u00edgrafe) del padr\u00f3n del Impuesto de Actividades Econ\u00f3micas del Ajuntament de Barcelona. No incluye el recargo de la diputaci\u00f3n"}, "geolocation": "No", "dades_alt_valor": "No", "url_tornada": {"ca": "https://ajuntament.barcelona.cat/hisenda/ca/tramits-gestions/iae-impost-sobre-activitats-economiques?profile=1", "en": "https://ajuntament.barcelona.cat/hisenda/es/tramites-gestiones/iae-impuesto-sobre-actividades-economicas?profile=1", "es": "https://ajuntament.barcelona.cat/hisenda/es/tramites-gestiones/iae-impuesto-sobre-actividades-economicas?profile=1"}, "dataset_fields_description": "", "fuente": "", "tag": "Padr\u00f3 activitats econ\u00f2miques,Ep\u00edgraf,Quota,Any 2022,IAE,Impost,Secci\u00f3,Any 2023,Any 2024,Any 2025", "private": false, "num_tags": 10, "code": "quota-padro-iae", "frequency": "ANUAL", "id": "ddc0cdee-229c-4bcd-aa71-ec959e6cee33", "title_translated": {"ca": "Quota del padr\u00f3 de l\u2019Impost d\u2019Activitats Econ\u00f2miques de l\u2019Ajuntament de Barcelona ", "en": "Quota of the register of Economic Activities Tax of the Barcelona City Council ", "es": "Cuota del padr\u00f3n del Impuesto de Actividades Econ\u00f3micas del Ayuntamiento de Barcelona "}, "metadata_modified": "2026-01-29T11:14:52.615872", "author": "Ger\u00e8ncia d\u2019\u00c0rea d\u2019Economia i Promoci\u00f3 Econ\u00f2mica", "author_email": null, "isopen": true, "long_format": "Yes", "state": "active", "version": "", "mar_od": "No", "relationships_as_object": [], "department": "Institut Municipal d\u2019Hisenda \u2013 Departament de Bases de Dades i Secretaria T\u00e8cnica", "creator_user_id": "6d593275-d059-4261-9004-e6df8677e3bf", "type": "dataset", "resources": [{"api_access_number_absolute": "53", "cache_last_updated": null, "token_type": "", "package_id": "ddc0cdee-229c-4bcd-aa71-ec959e6cee33"
 
-### https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets?where=search(%22permit%22)&limit=5
-23928 bytes
-{"total_count": 3, "results": [{"visibility": "domain", "fields": [{"name": "bayid", "description": "A system generated id tag for each bay object.", "annotations": {}, "label": "BayID", "type": "int"}, {"name": "deviceid", "description": "A system id for uniquely identifying the sensor device. ", "annotations": {}, "label": "DeviceID", "type": "int"}, {"name": "description1", "description": "Description: A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description1", "type": "text"}, {"name": "description2", "description": "Description: A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description2", "type": "text"}, {"name": "description3", "description": "Description: A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description3", "type": "text"}, {"name": "description4", "description": "Description: A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description4", "type": "text"}, {"name": "description5", "description": "Description: A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description5", "type": "text"}, {"name": "description6", "description": "A compact, semi-human-readable description of the overall restrictions. ", "annotations": {}, "label": "Description6", "type": "datetime"}, {"name": "disabilityext1", "description": "For bays that aren't limited to disabled permits, how much time (minutes) a vehicle with disabled permit can spend in the spot. Usually twice the regular amount of time. ", "annotations": {}, "label": "DisabilityExt1", "type": "int"}, {"name": "disabilityext2", "description": "For bays that aren't limited to disabled permits, how much time (minutes) a vehicle with disabled permit can spend in the spot. Usually twice the regular amount of time. ", "annotations": {}, "label": "DisabilityExt2", "type": "int"}, {"name": "disabilityext3", "description": "For bays that aren't limited to disabled permits, how much time (minutes) a vehicle with disabled permit can spend in the spot. Usually twice the regular amount of time. ", "annotations": {}, "label": "DisabilityExt3", "type": "int"}, {"name": "disabilityext4", "description": "For bays that aren't limited to disabled permits, how much time a vehicle with disabled permit can spend in the spot. Usually twice the r
+### https://opendata.cro.ie/api/3/action/package_show?id=companies
+4467 bytes
+{"help": "https://opendata.cro.ie/api/3/action/help_show?name=package_show", "success": true, "result": {"applicable_legislation": ["http://data.europa.eu/eli/reg_impl/2023/138/oj"], "author": null, "author_email": null, "conforms_to": "", "contact_email": "registrar@cro.ie", "contact_name": "", "contact_phone": "", "creator_user_id": "f5b7b0e1-7a46-4017-a036-da9c607c06e8", "frequency": "Daily", "high_value_dataset": "true", "hvd_category": "http://data.europa.eu/bna/c_a9135398", "id": "bf6f837d-0946-4c14-9a99-82cd6980c121", "isopen": true, "language": "en", "license_id": "CC-BY-4.0", "license_title": "Creative Commons Attribution 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/", "maintainer": null, "maintainer_email": null, "metadata_created": "2024-10-03T17:29:07.555039", "metadata_modified": "2026-10-19T04:00:20.717887", "name": "companies", "notes_translated": {"en": "This dataset provides a structured and machine-readable register of all companies recorded by the Companies Registration Office (CRO) in Ireland. It includes a daily snapshot of company records, covering both currently registered companies and historical records of dissolved or closed entities. The dataset aligns with the European Union\u2019s Open Data Directive (Directive (EU) 2019/1024) and the Implementing Regulation (EU) 2023/138, which designates company and company ownership data as a high-value dataset. Updated daily, it ensures timely access to corporate information and is available for bulk download and API access under the Creative Commons Attribution 4.0 (CC BY 4.0) licence, allowing unrestricted reuse with appropriate attribution. By increasing transparency, accountability, and economic innovation, this dataset supports public sector initiatives, research, and digital services development.", "ga": ""}, "num_resources": 1, "num_tags": 1, "organization": {"id": "d079014f-2ce2-496a-8076-221f01117659", "name": "companies", "title": "CRO", "type": "organization", "description": "", "image_url": "", "created": "2024-10-03T17:24:08.325774", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "d079014f-2ce2-496a-8076-221f01117659", "private": false, "provenance": "", "rights": "Under the CC-BY Licence, users must acknowledge the source of the Information in their product or application. Where the Information Provider does not provide a specific attribution statement users should include, or link to, this attribution statement: \
 
-### https://data.gov.lv/dati/api/3/action/package_show?id=uznemumu-registrs
-ERROR https://data.gov.lv/dati/api/3/action/package_show?id=uznemumu-registrs -> HTTP 404: {"help": "https://data.gov.lv/dati/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Nav atrasts"}, "success": false}
+### https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?filters=%7B%22filters%22%3A%7B%22LodgementDateFrom%22%3A%222026-10-01%22%7D%7D&PageSize=1&PageNumber=1
+ERROR https://api.apps1.nsw.gov.au/eplanning/data/v0/OnlineDA?filters=%7B%22filters%22%3A%7B%22LodgementDateFrom%22%3A%222026-10-01%22%7D%7D&PageSize=1&PageNumber=1 -> HTTP 400: { "ErrorMessage": "Required parameters for OnlineDA endpoint is not met." }
 
-### https://opendata.cro.ie/api/3/action/package_list
-142 bytes
-{"help": "https://opendata.cro.ie/api/3/action/help_show?name=package_list", "success": true, "result": ["companies", "financial-statements"]}
+### https://dados.gov.br/api/publico/conjuntos-dados?nomeConjuntoDados=cnpj
+ERROR https://dados.gov.br/api/publico/conjuntos-dados?nomeConjuntoDados=cnpj -> HTTP 401: 
 
-### https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
-ERROR https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/ -> HTTP 404: <!DOCTYPE html>
-<html class="ng-csp" data-placeholder-focus="false" lang="pt-BR" data-locale="pt_BR" translate="no" >
-	<head
- data-requesttoken="">
-		<meta charset="utf-8">
-		<title>
-			SERPRO+		</title>
-		<meta name="csp-nonce" nonce="QMai0Tbrolx1fCKri7PtZ6iCuCnapx3HWMiVeL+eAYs=">
-		<meta name="vie
-
-### https://download.geonames.org/export/zip/
-18988 bytes
-<html><head><title>GeoNames</title>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<link href="/geonames.ico" rel="shortcut icon">
-<link rel="stylesheet" href="/geonames.css" />
-</head>
-
-<body style="text-align:left;">
+### https://data.calgary.ca/resource/vdjc-pybd.json?$limit=1
+632 bytes
+[{"getbusid":"16485534","tradename":"CORE CONTRACTING","homeoccind":"N","address":"4852 50 AV NE","comdistcd":"WES","comdistnm":"WESTWINDS","licencetypes":"CONTRACTOR (NO PROVINCIAL LICENCE REQUIRED)","first_iss_dt":"2026-09-02T16:43:54.000Z","exp_dt":"2027-09-01T16:43:53.000Z","jobstatusdesc":"Licensed","point":{"type":"Point","coordinates":[-113.9641605,51.0987687]},"globalid":"{XXXXXXXX-XXXX-XXXX-XXXX-XXX677117469}",":@computed_region_4a3i_ccfj":"4",":@computed_region_kxmf_bzkv":"80",":@computed_region_4b54_tmc4":"9",":@computed_region_qeuu_piif":"127",":@computed_region_xxr9_iwz2":"5",":@computed_region_p8tp_5dkv":"1"}]
 
 
-<table id="topmenutable"><tbody><tr>
-<td class="topmenu">&nbsp;<a href="https://www.geonames.org/">GeoNames Home</a>&nbsp;|&nbsp;<a href="https://www.geonames.org/postal-codes/">Postal Codes</a>&nbsp;|&nbsp;<a href="https://www.geonames.org/export/">Download / Webservice</a>&nbsp;|&nbsp;<a href="https://www.geonames.org/about.html">About</a>&nbsp;|</td>
+### https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/business-licences/records?limit=2&where=geo_point_2d%20is%20not%20null&order_by=issueddate%20desc
+1722 bytes
+{"total_count": 103915, "results": [{"folderyear": "26", "licencersn": "5030585", "licencenumber": "26-285458", "licencerevisionnumber": "00", "businessname": "TRUE NATURE WELLNESS HOUSE LTD.", "businesstradename": "TIANYI HEALTH CENTRE", "status": "Issued", "issueddate": "2026-11-19T22:15:19+00:00", "expireddate": "2026-12-31", "businesstype": "Health Care Professionals and Services", "businesssubtype": null, "unit": "202", "unittype": "Unit", "house": "745", "street": "W BROADWAY", "city": "Vancouver", "province": "BC", "country": "CA", "postalcode": "V5Z 1J6", "localarea": "Fairview", "numberofemployees": 7.0, "feepaid": 123.0, "extractdate": "2026-10-18T07:08:52+00:00", "geom": {"type": "Feature", "geometry": {"coordinates": [-123.1209415906, 49.2636127942951], "type": "Point"}, "properties": {}}, "geo_point_2d": {"lon": -123.1209415906, "lat": 49.2636127942951}}, {"folderyear": "26", "licencersn": "5034009", "licencenumber": "26-288799", "licencerevisionnumber": "00", "businessname": "1454973 B.C. LTD", "businesstradename": "Hudson Wren Portraits", "status": "Issued", "issueddate": "2026-11-01T21:25:09+00:00", "expireddate": "2026-12-31", "businesstype": "Photography Production and Rehearsal Studio", "businesssubtype": null, "unit": "223", "unittype": "Unit", "house": "119", "street": "W PENDER ST", "city": "Vancouver", "province": "BC", "country": null, "postalcode": "V6B 1S5", "localarea": "Downtown", "numberofemployees": 2.0, "feepaid": 123.0, "extractdate": "2026-10-18T07:08:52+00:00", "geom": {"type": "Feature", "geometry": {"coordinates": [-123.108180167369, 49.2814635430598], "type": "Point"}, "properties": {}}, "geo_point_2d": {"lon": -123.108180167369, "lat": 49.2814635430598}}]}
 
-<td class="topsearch">
-   <form class="topsearch" name="searchForm" method="post" action="https://www.geonames.org/servlet/geonames" onsubmit="javascript:fulltextsearch();return false;">
+### https://data.cityofnewyork.us/resource/w7w3-xahh.json?$limit=1
+737 bytes
+[{"license_nbr":"0016371-DCA","business_name":"JAMES ROBINSON, INC.","business_unique_id":"BA-1322274-2022","business_category":"Secondhand Dealer - General","license_type":"Premises","license_status":"Active","license_creation_date":"2003-10-31T00:00:00.000","lic_expir_dd":"2027-07-31T00:00:00.000","contact_phone":"2127526166","address_type":"Complete Address","address_building":"480","address_street_name":"PARK AVENUE","address_city":"NEW YORK","address_state":"NY","address_zip":"10022","address_borough":"Manhattan","community_board":"105","council_district":"04","bin":"1036083","bbl":"1012940033","nta":"MN17","census_block_2010_":"1000","census_tract":"11202","latitude":"40.76248502732357","longitude":"-73.97012500177938"}]
 
-      search <input class="topmenu" name="q" size="20" value="" type="text">
 
-     <input name="srv" value="1" type="hidden">
-   </form>
-</td></tr>
-</tbody></table>
-<br/>
-For more information, check the ReadMe section below. The "last modified" timestamp is in Central European Time.
-<br/>
+### https://www.data.qld.gov.au/api/3/action/package_search?q=development%20application&rows=3
+36076 bytes
+{"help": "https://www.data.qld.gov.au/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 41, "facets": {}, "results": [{"author": "opendata@dsd.qld.gov.au", "author_email": "opendata@dsd.qld.gov.au", "creator_user_id": "72da7636-2731-4eed-bcee-8d6a2718da25", "data_driven_application": "NO", "id": "c6407619-84aa-4792-9ca6-d8570d28fe37", "isopen": true, "license_id": "CC-BY-4.0", "license_title": "Creative Commons Attribution 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/", "maintainer": "opendata@dsd.qld.gov.au", "maintainer_email": "opendata@dsd.qld.gov.au", "metadata_created": "2014-07-04T00:59:07.796117", "metadata_modified": "2019-07-10T17:41:14.151994", "name": "state-development-information-applications", "notes": "Right to Information Applications received in 2013/14, 2014/15, 2015/16 and 2016/17.", "num_resources": 4, "num_tags": 2, "organization": {"id": "cde0aede-7d4d-4a58-8ff7-e9176e087ff8", "name": "sport-racing-and-olympic-and-paralympic-games", "title": "Sport, Racing and Olympic and Paralympic Games", "type": "organization", "description": " ", "image_url": "", "created": "2013-08-14T23:19:23.440278", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "cde0aede-7d4d-4a58-8ff7-e9176e087ff8", "private": false, "security_classification": "PUBLIC", "state": "active", "title": "Department of State Development Right to Information Applications", "type": "dataset", "update_frequency": "annually", "version": "1.0", "extras": [{"key": "Security classification", "value": "PUBLIC"}, {"key": "Used in data-driven application", "value": "NO"}], "groups": [{"description": "", "display_name": "Government", "id": "c9160a78-4adb-44dd-956c-885428b1c040", "image_display_url": "", "name": "government", "title": "Government"}, {"description": "Public service corporate data, as opposed to Ministerial or Parliamentary (government) data.", "display_name": "Public service", "id": "41a366f7-816a-4ae3-99da-59d46ed1f668", "image_display_url": "", "name": "public-service", "title": "Public service"}], "resources": [{"archiver": {"resource_timestamp": "2019-07-10T17:41:08.771621", "status_id": 0, "is_broken": false, "reason": "", "url_redirected_to": null, "cache_filepath": "archive/cf/cf1eece0-a4b9-430d-a969-091d9bf29055/2016_17_DSD_RTI_Disclosure_Log.csv", "cache_url": "https://www.data.qld.gov.au/dataset/c6407619-84aa-4792-9ca6-d8570d28fe37/resource/cf1eece0-a4b9-430d-a969-091d9bf29
 
-<pre><img src="/icons/blank.gif" alt="Icon "> <a href="?C=N;O=D">Name</a>                    <a href="?C=M;O=A">Last modified</a>      <a href="?C=S;O=A">Size</a>  <a href="?C=D;O=A">Description</a><hr><img src="/icons/back.gif" alt="[PARENTDIR]"> <a href="/export/">Parent Directory</a>                             -   
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AD.zip">AD.zip</a>                  2026-10-19 04:06  1.6K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AE.zip">AE.zip</a>                  2026-10-19 04:06  1.5M  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AI.zip">AI.zip</a>                  2026-10-19 04:06  1.4K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AL.zip">AL.zip</a>                  2026-10-19 04:06  8.7K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AR.zip">AR.zip</a>                  2026-10-19 04:06  204K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AS.zip">AS.zip</a>                  2026-10-19 04:06  1.4K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AT.zip">AT.zip</a>                  2026-10-19 04:06  258K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AU.zip">AU.zip</a>                  2026-10-19 04:06  265K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AX.zip">AX.zip</a>                  2026-10-19 04:06  2.1K  
-<img src="/icons/compressed.gif" alt="[   ]"> <a href="AZ
+### https://data.sa.gov.au/data/api/3/action/package_search?q=development&rows=3
+26076 bytes
+{"help": "https://data.sa.gov.au/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 159, "facets": {}, "results": [{"author": "Adelaide City Council", "author_email": null, "contact_info": "false", "contact_point": "DataSA@sa.gov.au", "creator_user_id": "dd480e88-e684-4809-80eb-d7c840af0b9c", "data_granularity": "", "data_model": "", "data_state": "active", "id": "35711273-b0b0-49ab-9d42-f92cc27b0912", "isopen": true, "jurisdiction": "Local Government", "language": "eng", "license_id": "cc-by", "license_title": "Creative Commons Attribution", "license_url": "http://creativecommons.org/licenses/by/4.0", "maintainer": "faulstew", "maintainer_email": null, "metadata_created": "2013-05-18T03:34:12.589513", "metadata_modified": "2022-11-11T00:34:51.545269", "name": "current-development-applications", "notes": "*The data in this dataset will cease to be updated after 2021-03-19 with all Development Application processing transitioning to the SA Government ePlanning system.\r\n\r\nProvides details of all development applications that have been lodged with the Adelaide City Council that have not yet expired.\r\n\r\nMore information about development planning and building in the city can be found at: https://www.cityofadelaide.com.au/development/planning-building/development-approval/", "num_resources": 3, "num_tags": 8, "organization": {"id": "5c4d4341-d26e-45c3-9253-b76b80cc8218", "name": "adelaide-city-council", "title": "City of Adelaide", "type": "organization", "description": "The City of Adelaide has a justified reputation as a clean, attractive and accessible city centre. It takes great pride in its distinctive character and Park Lands.  Adelaide has a strong tradition of social reform and has highly regarded educational and medical institutions, a vigorous arts sector and internationally renowned festivals and events.\r\n\r\n", "image_url": "2017-06-08-053120.996374CUsersjacksm01Desktopacclogo.png", "created": "2013-05-05T21:49:49.235284", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "5c4d4341-d26e-45c3-9253-b76b80cc8218", "private": false, "spatial": "", "spatial_coverage": "Adelaide and North Adelaide", "state": "active", "syndicate": "true", "syndicated_id": "null", "temporal_coverage_from": "2014-01-01", "temporal_coverage_to": "2021-03-18", "title": "Development Applications", "type": "dataset", "unpublished": "false", "update_freq": "daily", "url": null, "version": null, 
+
+### https://open.canada.ca/data/api/3/action/package_search?q=business%20licences&rows=5
+39286 bytes
+{"help": "https://open.canada.ca/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 131, "facets": {}, "facet_ranges": {"portal_release_date": {"counts": ["1926-10-19T00:00:00Z", 18], "gap": "+100YEARS", "start": "1926-10-19T00:00:00Z", "end": "2126-10-19T00:00:00Z"}}, "facet_queries": {}, "results": [{"association_type": [], "audience": [], "author": null, "author_email": "infostats@statcan.gc.ca", "collection": "primary", "contributor": {}, "creator_user_id": "6b600515-c266-4584-a219-d084c980fd47", "data_series_issue_identification": {"fr": "Tableau 33100974", "en": "Table 33100974"}, "data_series_name": {"fr": "Tableau", "en": "Table"}, "date_published": "2025-03-03 08:30:00", "display_flags": [], "frequency": "as_needed", "geographic_region": [], "id": "ce790e37-6ebd-4f62-9860-df6ed8996ef1", "imso_approval": "true", "isopen": false, "jurisdiction": "federal", "keywords": {"fr": ["autre contenu li\u00e9 au rendement des entreprises et la propri\u00e9t\u00e9", "rendement des entreprises et propri\u00e9t\u00e9", "tableau"], "en": ["business performance and ownership", "other content related to business performance and ownership", "table"]}, "license_id": "ca-ogl-lgo", "license_title": "Open Government Licence - Canada", "license_url": "https://open.canada.ca/en/open-government-licence-canada", "maintainer": null, "maintainer_contact_form": {}, "maintainer_email": "infostats@statcan.gc.ca", "metadata_contact": {}, "metadata_created": "2025-03-03T15:32:56.487308", "metadata_modified": "2025-03-03T15:32:56.487316", "name": "ce790e37-6ebd-4f62-9860-df6ed8996ef1", "notes": "Obstacles experienced by businesses when hiring individuals with a professional certification or licence from another province or territory outside of the hiring province or territory over the last 12 months, by North American Industry Classification System (NAICS) and business employment size. <br>", "notes_translated": {"en": "Obstacles experienced by businesses when hiring individuals with a professional certification or licence from another province or territory outside of the hiring province or territory over the last 12 months, by North American Industry Classification System (NAICS) and business employment size. <br>", "fr": "Obstacles rencontr\u00e9s par les entreprises lorsqu\u2019elles ont embauch\u00e9 des personnes titulaires d\u2019une certification ou d\u2019une licence professionnelle provenant d\u2019une autre province ou d\u2019un autre t
+
+### https://www.dati.gov.it/opendata/api/3/action/package_search?q=SCIA%20attivita&rows=3
+41095 bytes
+{"help": "https://www.dati.gov.it/opendata/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 13, "facets": {}, "results": [{"author": null, "author_email": null, "creator_user_id": "e514c9c4-6d64-45d6-ae28-c70bd3592d59", "id": "8704bf58-fb70-4829-b04b-c62f26d36fa2", "isopen": false, "license_id": "Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)", "license_title": "Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)", "maintainer": null, "maintainer_email": null, "metadata_created": "2025-10-28T12:37:34.549634", "metadata_modified": "2026-10-17T14:16:07.397904", "name": "scia-segnalazioni-certificate-di-inizio-attivita-depositate", "notes": "Elenco delle SCIA (Segnalazioni certificate di Inizio Attivit\u00e0) depositate", "num_resources": 9, "num_tags": 2, "organization": {"id": "459fbd42-c496-4511-bac8-1f06e341d6ef", "name": "comune-di-bologna", "title": "Comune di Bologna", "type": "organization", "description": "", "image_url": "", "created": "2024-03-08T18:16:37.011539", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "459fbd42-c496-4511-bac8-1f06e341d6ef", "private": false, "state": "active", "title": "SCIA (segnalazioni certificate di inizio attivit\u00e0) depositate", "type": "dataset", "url": "", "version": null, "extras": [{"key": "contact_email", "value": "opendata@comune.bologna.it"}, {"key": "contact_name", "value": "Ufficio Dati e Open Data"}, {"key": "guid", "value": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/scia-segnalazioni-certificate-di-inizio-attivita-depositate"}, {"key": "landingpage", "value": "https://opendata.comune.bologna.it/explore/dataset/scia-segnalazioni-certificate-di-inizio-attivita-depositate/"}, {"key": "provenance", "value": "Dataset pubblicato da Comune di Bologna nel catalogo Open Data Bologna (https://opendata.comune.bologna.it), acquisito da Dati Gov IT tramite harvesting."}, {"key": "source_catalog_description", "value": "Catalogo dei dati aperti del Comune di Bologna."}, {"key": "source_catalog_homepage", "value": "https://opendata.comune.bologna.it"}, {"key": "source_catalog_language", "value": "http://publications.europa.eu/resource/authority/language/ITA"}, {"key": "source_catalog_modified", "value": "2026-10-17T08:52:29+00:00"}, {"key": "source_catalog_publisher", "value": "{\"uri\": \"\", \"name\": \"Comune di Bologna\", \"email\": \"\", \"url\": \"\", \"type\": \"\"}"}, {"key": "source_catalog_title"

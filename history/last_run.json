@@ -1,13 +1,13 @@
 {
- "started": "2026-10-19 13:01 UTC",
+ "started": "2026-10-19 13:07 UTC",
  "regions": {
   "es-madrid": {
    "name": "Madrid",
-   "events": 0,
+   "events": 1581,
    "parts": {
     "madrid_licences": {
-     "events": 0,
-     "seconds": 7
+     "events": 1581,
+     "seconds": 6
     }
    }
   },
@@ -17,82 +17,31 @@
    "parts": {
     "permits": {
      "events": 3282,
-     "seconds": 11
+     "seconds": 12
     },
     "dc_new_licences": {
      "events": 0,
-     "seconds": 2
-    }
-   }
-  },
-  "fr": {
-   "name": "France",
-   "events": 72872,
-   "parts": {
-    "bodacc": {
-     "events": 50745,
-     "seconds": 207
-    },
-    "alimconfiance": {
-     "events": 9216,
-     "seconds": 3
-    },
-    "sirene_paris": {
-     "events": 0,
-     "seconds": 0
-    },
-    "sitadel": {
-     "events": 12911,
-     "seconds": 89
+     "seconds": 1
     }
    }
   }
  },
- "minutes": 5.0,
+ "minutes": 0.2,
  "log_tail": [
-  "######## start fr · France",
-  "\n== France BODACC (sales of businesses, insolvencies, creations, removals)",
   "######## start us-dc · Washington, DC",
   "\n== Washington, DC (ArcGIS Hub opendata.dc.gov)",
   "######## start es-madrid · Madrid",
   "\n== Madrid urban planning licences granted",
-  "   Ventes et cessions: 3601 notices",
   "   address points: 214677; columns: ['COD_VIA', 'VIA_CLASE', 'VIA_PAR', 'VIA_NOMBRE', 'VIA_NOMBRE_ACENTOS', 'CLASE_APP', 'NUMERO', 'CALIFICADOR', 'TIPO_NDP', 'COD_NDP', 'DISTRITO', 'BARRIO', 'COD_POSTAL', 'UTMX_ED', 'UTMY_ED', 'UTMX_ETRS', 'UTMY_ETRS', 'LATITUD', 'LONGITUD', 'ANGULO_ROTULACION']",
-  "   licences in the last 180 days: 1625, located 0 (latest 2026-09-30)",
-  "   [es-madrid] could not reuse published data: https://dimoskalog.github.io/geora/data/es-madrid/manifest.json -> HTTP 404: <!DOCTYPE html>\n<html>\n  <head>\n    <meta h",
-  "   [es-madrid] no events; keeping it off the map",
+  "   sample address point: ['31076880', '448983,15', '4476500,95', \"40°26'15.32'' N\", \"3°36'5.49'' W\"]",
+  "   licences in the last 180 days: 1625, located 1581 (latest 2026-09-30)",
+  "   history: 1581 records seen for the first time today (1581 remembered)",
+  "######## done es-madrid: 1581 events",
   "   using 'Building Permits in Last 30 Days' (3282 records since 2026-07-21) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4",
-  "   Procédures collectives: 15000 notices",
   "\n== DC new basic business licences",
-  "   Créations: 25000 notices",
-  "   2000 licences",
+  "   sample: {'type': 'Feature', 'geometry': None, 'properties': {'INITIALISSUEDATE': 1786939200000, 'BUSINESSACTIVITY': 'One Family Rental', 'PREMISEADDRESS': '1400 Church St NW, Apt 203, Washington, DC, 20005, USA', 'ENTITYNAME': None, 'ENTITYTRADENAME': None, 'CUSTOMERNUMBER': '500526030339', 'CATEGORYSERVICETYPE': 'Housing and Lodging Services', 'LICENSESTATUS': 'Active'}}",
+  "   2000 licences, 0 located",
   "   history: 0 records seen for the first time today (27 remembered)",
-  "######## done us-dc: 3282 events",
-  "   Radiations: 10000 notices",
-  "   geocoded 4840 of 5000",
-  "   geocoded 9631 of 10000",
-  "   geocoded 14448 of 15000",
-  "   geocoded 19288 of 20000",
-  "   geocoded 24237 of 25000",
-  "   geocoded 29180 of 30000",
-  "   geocoded 34125 of 35000",
-  "   geocoded 39076 of 40000",
-  "   geocoded 44002 of 45000",
-  "   geocoded 48853 of 50000",
-  "   geocoded 51971 of 53221",
-  "\n== France Alim'confiance (food safety inspections)",
-  "   inspections: 9561",
-  "\n== SIRENE skipped (no INSEE_KEY secret)",
-  "\n== France Sitadel building permits (homes, commercial space, demolitions)",
-  "   logements: 29224 rows (data up to 2026-08-31)",
-  "   locaux: 18590 rows (data up to 2026-08-31)",
-  "   demolir: 5541 rows (data up to 2026-08-31)",
-  "   permits kept: 14734",
-  "   geocoded 4814 of 5000",
-  "   geocoded 9504 of 10000",
-  "   geocoded 13361 of 13947",
-  "   located 13361",
-  "   history: 6 records seen for the first time today (72575 remembered)",
-  "######## done fr: 72872 events"
+  "######## done us-dc: 3282 events"
  ]
 }

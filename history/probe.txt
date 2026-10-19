@@ -1,1666 +1,1305 @@
-### https://data.oregon.gov/resource/esjy-u4fc.json?$limit=1
-347 bytes
-[{"registry_number":"262289995","business_name":"2611 SE 51ST AVE LLC","entity_type":"DOMESTIC LIMITED LIABILITY COMPANY","registry_date":"2026-09-01T00:00:00.000","associated_name_type":"INDIVIDUAL WITH DIRECT KNOWLEDGE","first_name":"KRISTY","last_name":"QUERNA","address_":"2129 SE 51ST AVE","city":"PORTLAND","state":"OR","zip_code":"97215"}]
-
-
-### https://data.lacity.org/resource/6rrh-rzua.json?$limit=1&$order=location_start_date%20DESC
-766 bytes
-[{"location_account":"0003607288-0001-8","business_name":"GIRLFRIENDS UNFILTERED INC.","street_address":"555 UNIVERSAL HOLLYWOOD DRIVE","city":"UNIVERSAL CITY","zip_code":"91608-1001","location_description":"555 Universal Hollywood 91608-1001","mailing_address":"1015 N LAKE AVENUE","mailing_city":"PASADENA","mailing_zip_code":"91104-4573","naics":"454390","primary_naics_description":"Other direct selling establishments (including door-to-door retailing, frozen food plan providers, party plan merchandisers, & coffee-break service providers)","council_district":"4","location_start_date":"2027-04-01T00:00:00.000","location_1":{"latitude":"34.1369","longitude":"-118.3583","human_address":"{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"}}]
-
-
-### https://data.ct.gov/api/catalog/v1?q=business%20registry&limit=5
-44128 bytes
+### https://dimoskalog.github.io/geora/data/regions.json
+20723 bytes
 {
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Connecticut Business Registry - Business Master",
-            "id" : "n7gp-d28j",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "This is the master business table (account object) from the Connecticut Business Registry, maintained by the Secretary of the State, Business Services Division.",
-            "attribution" : "Secretary of the State",
-            "attribution_link" : "http://business.ct.gov",
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T09:42:47.000Z",
-            "createdAt" : "2021-07-28T17:35:21.000Z",
-            "metadata_updated_at" : "2023-09-25T17:20:52.000Z",
-            "data_updated_at" : "2026-10-19T09:42:47.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 1164,
-                "page_views_last_month" : 7377,
-                "page_views_total" : 64994,
-                "page_views_last_week_log" : 10.186114239541643,
-                "page_views_last_month_log" : 12.84901407369482,
-                "page_views_total_log" : 15.988041116880387
-              },
-            "columns_name" :
-              [
-                "Dissolution_date",
-                "Business_Street",
-                "Business_Country",
-                "Business_State",
-                "Date_of_Organization_Meeting",
-                "Mailing_International_Address",
-                "Category_Survey_Email_Address",
-                "Office_Jurisdiction_BusinessCity",
-                "Records_Address_City",
-                "Total_Authorized_Shares",
-                "State_or_Territory_Formation",
-                "Office_Jurisdiction_Address",
-                "Mailing_Jurisdiction_Country",
-                "Office_Jurisdiction_BusinessZipCode",
-                "Office_in_Jurisdiction_Country",
-                "Records_Address_Zip_Code",
-                "Status",
-                "AccountNumber",
-                "Country_Formation",
-                "NAICS_Sub_Code",
-                "Office_Jurisdiction_BusinessStreet",
-                "Record_Address",
-                "CREATE_DT",
-                "Annual_Report_Due_Date",
-                "Began_Transacting_in_CT",
-                "Business_Email_Address",
-                "Business_Name_in_state_country",
-                "Date_Registration",
-                "Office_Jurisdiction_BusinessState",
-                "Planning Regions",
-                "Counties",
-                "Zip Code",
-                "Town Index",
-                "Org_Owned_by_Person_s_with_disabilities",
-                "Veteran_Owned_Organization",
-                "Woman_Owned_Organization",
-                "Organization_is_LGBTQI_Owned",
-                "Mailing_Jurisdiction_BusinessZipCode",
-                "Mailing_Address",
-                "Business_Unit",
-                "Citizenship",
-                "Minority_Owned_Organization",
-                "Geo_Location ",
-                "Mailing_Jurisdiction_BusinessUnit",
-                "Records_Address_State",
-                "Mailing_Jurisdiction_BusinessState",
-                "Business_City",
-                "NAICS_Code",
-                "Mailing_Jurisdiction_Address",
-                "Mail_Jurisdiction_International_address",
-                "Records_Address_Country",
-                "Business_Type",
-                "Mailing_Jurisdiction_BusinessCity",
-                "Reason_for_Administrative_Dissolution",
-                "Name",
-                "Business_ZIP",
-                "Formation_Place",
-                "Records_Address_Street",
-                "Mailing_Jurisdiction_BusinessStreet",
-                "Office_Jurisdiction_BusinessUnit",
-                "Records_Address_Unit",
-                "Id",
-                "Sub_status"
-              ],
-            "columns_field_name" :
-              [
-                "dissolution_date",
-                "billingstreet",
-                "billingcountry",
-                "billingstate",
-                "date_of_organization_meeting",
-                "mailing_international_address",
-                "category_survey_email_address",
-                "office_jurisdiction",
-                "records_address_city",
-                "total_authorized_shares",
-                "state_or_territory_formation",
-                "office_jurisdiction_address",
-                "mailing_jurisdiction_country",
-                "office_jurisdiction_4",
-                "office_in_jurisdiction_country",
-                "records_address_zip_code",
-                "status",
-                "accountnumber",
-                "country_formation",
-                "naics_sub_code",
-                "office_jurisdiction_2",
-                "record_address",
-                "create_dt",
-                "annual_report_due_date",
-                "began_transacting_in_ct",
-                "business_email_address",
-                "business_name_in_state_country",
-                "date_registration",
-                "office_jurisdiction_1",
-                ":@computed_region_snd5_k6zv",
-                ":@computed_region_dam5_q64j",
-                ":@computed_region_nhmp_cq6b",
-                ":@computed_region_m4y2_whse",
-                "org_owned_by_person_s_with",
-                "veteran_owned_organization",
-                "woman_owned_organization",
-                "organization_is_lgbtqi_owned",
-                "mailing_jurisdiction_4",
-                "mailing_address",
-                "billing_unit",
-                "citizenship",
-                "minority_owned_organization",
-                "geo_location",
-                "mailing_jurisdiction_3",
-                "records_address_state",
-                "mailing_jurisdiction_1",
-                "billingcity",
-                "naics_code",
-                "mailing_jurisdiction_address",
-                "mail_jurisdiction",
-                "records_address_country",
-                "business_type",
-                "mailing_jurisdiction",
-                "reason_for_administrative",
-                "name",
-                "billingpostalcode",
-                "formation_place",
-                "records_address_street",
-                "mailing_jurisdiction_2",
-                "office_jurisdiction_3",
-                "records_address_unit",
-                "id",
-                "sub_status"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Calendar date",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Text",
-                "Number",
-                "Number",
-                "Number",
-                "Number",
-                "Checkbox",
-                "Checkbox",
-                "Checkbox",
-                "Checkbox",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Checkbox",
-                "Point",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "If the entity is dissolved, the date it dissolved.  This is also the withdrawal date if a foreign registered entity",
-                "Business Street",
-                "Business Country",
-                "Business State",
-                "Date of Organization Meeting",
-                "Mailing International Address",
-                "Email address provided on business survey",
-                "Office Jurisdiction City",
-                "Records Address City",
-                "Total Authorized Shares",
-                "Formation State Or Territory",
-                "Office Jurisdiction Address",
-                "Mailing Jurisdiction_Country",
-                "Office Jurisdiction Zip Code",
-                "Office Jurisdiction Country",
-                "Records Address Zip Code",
-                "Business Status",
-                "Business ID number (Authoritative Legal Entity Identifier) Unique",
-                "Country of Formation",
-                "NAICS Subcode",
-                "Office Jurisdiction Street",
-                "Records Address",
-                "Date this data set was last refreshed",
-                "Annual Report Due Date",
-                "Date business began transacting business in CT, if a foreign registered entity",
-                "Business Email Address",
-                "Name of the business in the jurisdiction of formation, if foreign registered entity",
-                "For domestic businesses, this is the date the business was formed.  For foreign businesses, this is the date they registered in Connecticut.",
-                "Office Jurisdiction State",
-                "This column was automatically created in order to record in what polygon from the dataset 'Planning Regions' (snd5-k6zv) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "This column was automatically created in order to record in what polygon from the dataset 'Counties' (dam5-q64j) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "This column was automatically created in order to record in what polygon from the dataset 'Zip Code' (nhmp-cq6b) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "This column was automatically created in order to record in what polygon from the dataset 'Town Index' (m4y2-whse) the point in column 'geo_location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
-                "Survey result for owned by person with a disability",
-                "Survey result for veteran-owned",
-                "Survey result for woman-owned",
-                "Survey result for LGBTQI-owned",
-                "Mailing Jurisdiction Zip Code",
-                "Mailing Address",
-                "Business Unit",
-                "Formation jurisdiction",
-                "Survey result for minority-owned",
-                "",
-                "Mailing Jurisdiction Unit",
-                "Records Address State",
-                "Mailing Jurisdiction State",
-                "Business City",
-                "NAICS Code",
-                "Mailing Jurisdiction Address",
-                "Mail Jurisdiction International Address",
-                "Records Address Country",
-                "Business Type",
-                "Mailing Jurisdiction City",
-                "If the entity was administratively dissolved/forfeited, the reason for administrative dissolution",
-                "Business Name",
-                "Business Zip Code",
-                "Formation Place",
-                "Records Address Street",
-                "Mailing Jurisdiction Street",
-                "Office Jurisdiction Unit",
-                "Records Address Unit",
-                "System generated unique identifier.  This is the unique key to associate the subsidiary data sets. ",
-                "Business sub-status"
-              ],
-            "columns_format" :
-              [
-                {},
-                {},
-                {},
-                {},
-                { "view" : "date" },
-                {},
-                { "displayStyle" : "email" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                { "view" : "date" },
-                { "view" : "date" },
-                { "view" : "date" },
-                { "displayStyle" : "email" },
-                {},
-                { "view" : "date" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 78093,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2022-11-08T00:29:01.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Business",
-            "domain_tags" :
-              [
-                "registry",
-                "economic development",
-                "business registration",
-                "business"
-              ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Agency_Agency",
-                  "value" : "Office of the Secretary of the State"
-                },
-                { "key" : "Details_Geographic-Unit", "value" : "State" },
-                { "key" : "Details_Update-Frequency", "value" : "Daily" }
-              ]
-          },
-        "metadata" : { "domain" : "data.ct.gov", "license" : "Public Domain" },
-        "permalink" : "https://data.ct.gov/d/n7gp-d28j",
-        "link" : "https://data.ct.gov/Business/Connecticut-Business-Registry-Business-Master/n7gp-d28j",
-        "owner" :
-          {
-            "id" : "378a-ws5r",
-            "user_type" : "interactive",
-            "display_name" : "William Rosenstein"
-          },
-        "creator" :
-          {
-            "id" : "378a-ws5r",
-            "user_type" : "interactive",
-            "display_name" : "William Rosenstein"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Connecticut Business Registry - Principals",
-            "id" : "ka36-64k6",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "This dataset is the principals object from the Connecticut Business Registry. The dataset provides principal information for all principals reported to the Connecticut Secretary of the State, Business Services Division.  A principal is an officer or director of a corporation, a member or manager of an LLC or a partner in a limited liability partnership.  \n\nThis data may be linked to the master data set using the unique identifier in the first column.",
-            "attribution" : "Connecticut Secretary of the State",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T08:52:06.000Z",
-            "createdAt" : "2021-08-09T13:19:18.000Z",
-            "metadata_updated_at" : "2023-06-12T17:24:12.000Z",
-            "data_updated_at" : "2026-10-19T08:52:06.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 369,
-                "page_views_last_month" : 1779,
-                "page_views_total" : 13979,
-                "page_views_last_week_log" : 8.531381460516313,
-                "page_views_last_month_log" : 10.79766152585376,
-                "page_views_total_log" : 13.771076740262798
-              },
-            "columns_name" :
-              [
-                "Residence Country",
-                "Last Name",
-                "Unique_Key",
-                "Residence State",
-                "Residence City",
-                "Business Street Address 2",
-                "Residence International Address",
-                "Residence Street Address 2",
-                "Business City",
-                "First Name",
-                "Business State",
-                "Business Street Address 3",
-                "Principal Name",
-                "Residence Address",
-                "Designation",
-                "Type",
-                "Middle Name",
-                "Suffix",
-                "Business Country",
-                "Business Zip Code",
-                "Residence Zip Code",
-                "Residence Street Address 1",
-                "Business Street Address 1",
-                "CREATE_DT",
-                "Residence Street Address 3",
-                "Business International Address"
-              ],
-            "columns_field_name" :
-              [
-                "residence_country",
-                "lastname",
-                "business_id",
-                "residence_state",
-                "residence_city",
-                "business_street_address_2",
-                "residence_internationaladdress",
-                "residence_street_address_1",
-                "business_city",
-                "firstname",
-                "business_state",
-                "business_street_address_3",
-                "name__c",
-                "residence_address",
-                "designation",
-                "type",
-                "middlename",
-                "suffix",
-                "business_country",
-                "business_zip_code",
-                "residence_zip_code",
-                "residence_street_address",
-                "business_street_address_1",
-                "create_dt",
-                "residence_street_address_2",
-                "business_internationaladdress"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "Principal's residence country",
-                "If individual, principal last name",
-                "This is the unique key to associate the principal data to the data found on the Connecticut Business Registry - Business Master data set.",
-                "Principal's residence state",
-                "Principal's residence city",
-                "Principal's business street 2",
-                "Principal's residence address, if international",
-                "Principal's residence address 2",
-                "Principal's business city",
-                "If individual, principal first name",
-                "Principal's business state",
-                "Principal's business street 3",
-                "Concatenated name of the principal",
-                "Concatenated principal's residence address",
-                "Whether designated an officer or director",
-                "Principal type is business or individual",
-                "If individual, principal middle name",
-                "If individual, principal suffix",
-                "Principal's business country",
-                "Principal's business zip",
-                "Principal's residence zip",
-                "Principal's residence address 1",
-                "Principal's business street 1",
-                "Date the data was extracted",
-                "Principal's residence address 3",
-                "Principal's business address, if international"
-              ],
-            "columns_format" :
-              [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 59074,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2021-08-09T14:33:38.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Business",
-            "domain_tags" :
-              [
-                "principals",
-                "business registration",
-                "principal",
-                "business"
-              ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Agency_Agency",
-                  "value" : "Office of the Secretary of the State"
-                },
-                { "key" : "Details_Update-Frequency", "value" : "Daily" }
-              ]
-          },
-        "metadata" : { "domain" : "data.ct.gov" },
-        "permalink" : "https://data.ct.gov/d/ka36-64k6",
-        "link" : "https://data.ct.gov/Business/Connecticut-Business-Registry-Principals/ka36-64k6",
-        "owner" :
-          {
-            "id" : "378a-ws5r",
-            "user_type" : "interactive",
-            "display_name" : "William Rosenstein"
-          },
-        "creator" :
-          {
-            "id" : "378a-ws5r",
-            "user_type" : "interactive",
-            "display_name" : "William Rosenstein"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Connecticut Business Registry - Agents",
-            "id" : "qh2m-n44y",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "This dataset is the agent object from the Connecticut Business Registry.  The dataset provides agent information for all statutory agents reported to the Connecticut Secretary of the State, Business Services Division.\n\nLink this data set to the Connecticut Business Registry - Business Master using the unique key value in the first column.",
-            "attribution" : "Connecticut Secretary of the State",
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T07:56:51.000Z",
-            "createdAt" : "2021-08-04T15:22:15.000Z",
-            "metadata_updated_at" : "2023-06-12T17:25:27.000Z",
-            "data_updated_at" : "2026-10-19T07:56:51.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 212,
-                "page_views_last_month" : 1185,
-                "page_views_total" : 12896,
-                "page_views_last_week_log" : 7.734709620225839,
-                "page_views_last_month_log" : 10.211888294546005,
-                "page_views_total_log" : 13.65474789570446
-              },
-            "columns_name" :
-              [
-                "Mailing Street Address 1",
-                "Mailing Street Address 2",
-                "Mailing Street Address 3",
-                "Mailing City",
-                "Mailing Zip Code",
-                "Mailing State",
-                "Mailing Country",
-                "Residence Street Address 1",
-                "Residence Street Address 2",
-                "Residence Street Address 3",
-                "Residence City",
-                "Residence State",
-                "Residence Zip Code",
-                "Residence Country",
-                "CREATE_DT",
-                "Unique Key",
-                "Business ID",
-                "Business Street Address 1",
-                "Business Address",
-                "Agent Suffix",
-                "Agent Name",
-                "Business Zip Code",
-                "Business Country",
-                "Business International Address",
-                "Mailing Address",
-                "Agent Email",
-                "Business City",
-                "Business Street Address 3",
-                "Business Street Address 2",
-                "Agent Phone",
-                "Agent Account ALEI",
-                "Agent Last Name",
-                "Agent Middle Name",
-                "Agent First Name",
-                "Business State",
-                "Agent Type"
-              ],
-            "columns_field_name" :
-              [
-                "mailing_street_address_1",
-                "mailing_street_address_2",
-                "mailing_street_address_3",
-                "mailing_city",
-                "mailing_zip_code",
-                "mailing_state",
-                "mailing_country",
-                "residence_street_address",
-                "residence_street_address_1",
-                "residence_street_address_2",
-                "residence_city",
-                "residence_state",
-                "residence_zip_code",
-                "residence_country",
-                "create_dt",
-                "business_key",
-                "business_id",
-                "business_street_address_1",
-                "business_address",
-                "suffix",
-                "name__c",
-                "business_zip_code",
-                "business_country",
-                "business_internationaladdress",
-                "mailing_address",
-                "email",
-                "business_city",
-                "business_street_address_3",
-                "business_street_address_2",
-                "agent_phone",
-                "agent_account_alei",
-                "lastname",
-                "middlename",
-                "firstname",
-                "business_state",
-                "type"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "Agent mailing address street 1",
-                "Agent mailing address street 2",
-                "Agent mailing address street 3",
-                "Agent mailing address city",
-                "Agent mailing address zip",
-                "Agent mailing address state",
-                "Agent mailing address country",
-                "Agent residence address street 1",
-                "Agent residence address street 2",
-                "Agent residence address street 3",
-                "Agent residence address street city",
-                "Agent residence address state",
-                "Agent residence address zip",
-                "Agent residence address country",
-                "Date this data set was extracted",
-                "Unique identifier to associate the agent records with the corresponding business records. ",
-                "Business ID for the business that has appointed the agent. Legacy field, no longer used for new businesses. Use unique key.",
-                "Agent business address, street 1",
-                "Concatenated agent business address",
-                "If individual agent, the agent's suffix",
-                "Concatenated full name or business name of the agent.  Will be null where no agent is appointed.",
-                "Agent business address zip",
-                "Agent business address country",
-                "Agent's business address if international",
-                "Concatenated agent mailing address",
-                "Agent
-
-### https://api.us.socrata.com/api/catalog/v1?ids=6qbs-9m8d,tckn-sxa6,6g49-bcrm,wnbq-64tb,s9wt-dsfz,qvfa-2v26
-35146 bytes
-{
-  "results" :
-    [
-      {
-        "resource" :
-          {
-            "name" : "Active Businesses - ALL",
-            "id" : "tckn-sxa6",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "All Active businesses - Principal Place of Business address, Mailing address, Registered Agent, Authorized Representative.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-13T21:31:34.000Z",
-            "createdAt" : "2020-07-27T15:20:17.000Z",
-            "metadata_updated_at" : "2026-10-13T21:21:45.000Z",
-            "data_updated_at" : "2026-10-13T21:31:34.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 2837,
-                "page_views_last_month" : 12037,
-                "page_views_total" : 523094,
-                "page_views_last_week_log" : 11.470658874060552,
-                "page_views_last_month_log" : 13.555308101401328,
-                "page_views_total_log" : 18.99671345452789
-              },
-            "columns_name" :
-              [
-                "State",
-                "Suffix",
-                "Middle Name",
-                "Registry Number",
-                "Jurisdiction",
-                "City",
-                "Not of Record Entity",
-                "Address",
-                "First Name",
-                "Entity of Record Name",
-                "Address Continued",
-                "Registry Date",
-                "Entity of Record Reg Number",
-                "Zip",
-                "Last Name",
-                "Business Name",
-                "Business Details",
-                "Associated Name Type",
-                "Entity Type"
-              ],
-            "columns_field_name" :
-              [
-                "state",
-                "suffix",
-                "middle_name",
-                "registry_number",
-                "jurisdiction",
-                "city",
-                "not_of_record_entity",
-                "address",
-                "first_name",
-                "entity_of_record_name",
-                "address_continued",
-                "registry_date",
-                "entity_of_record_reg_number",
-                "zip",
-                "last_name",
-                "business_name",
-                "business_details",
-                "associated_name_type",
-                "entity_type"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "URL",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "Link to the business details",
-                "",
-                ""
-              ],
-            "columns_format" :
-              [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 50336,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2020-07-27T16:58:49.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business registry" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Secretary of State - Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Weekly"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Weekly"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.oregon.gov" },
-        "permalink" : "https://data.oregon.gov/d/tckn-sxa6",
-        "link" : "https://data.oregon.gov/business/Active-Businesses-ALL/tckn-sxa6",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Business License Tax Certificate",
-            "id" : "wnbq-64tb",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "This dataset contains active business license tax certificate data for the City of Seattle",
-            "attribution" : "Department of Finance and Administrative Services",
-            "attribution_link" : "http://www.seattle.gov",
-            "contact_email" : "open.data@seattle.gov",
-            "type" : "dataset",
-            "updatedAt" : "2026-10-18T16:36:26.000Z",
-            "createdAt" : "2018-07-10T20:26:54.000Z",
-            "metadata_updated_at" : "2026-10-18T16:36:21.000Z",
-            "data_updated_at" : "2026-10-18T16:36:26.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 120,
-                "page_views_last_month" : 550,
-                "page_views_total" : 7096,
-                "page_views_last_week_log" : 6.9188632372745955,
-                "page_views_last_month_log" : 9.105908508571158,
-                "page_views_total_log" : 12.792993591002716
-              },
-            "columns_name" :
-              [
-                "Business Legal Name",
-                "Ownership Type",
-                "NAICS Description",
-                "NAICS Code",
-                "State",
-                "Zip",
-                "Business Phone",
-                "Street Address",
-                "Trade Name",
-                "City Account Number",
-                "City",
-                "License Start Date",
-                "UBI"
-              ],
-            "columns_field_name" :
-              [
-                "business_legal_name",
-                "ownership_type",
-                "naics_description",
-                "naics_code",
-                "state",
-                "zip",
-                "business_phone",
-                "street_address",
-                "trade_name",
-                "city_account_number",
-                "city",
-                "license_start_date",
-                "ubi"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "Legal name of the business.",
-                "Type of business, such as sole proprietorship (SP), partnership (PT), or limited liability corporation (LLC).",
-                "Full description of North American Industry Classification System (NAICS) code.",
-                "A code identifying the type of business. NAICS stands for North American Industry Classification System.",
-                "State  in which the business is located.",
-                "ZIP code  in which the business is located.",
-                "Phone number provided by the business.",
-                "Physical (street) address at which the business is located.",
-                "Doing Business As (DBA), also known as the trade name of the business.",
-                "Unique license number issued by the City of Seattle.",
-                "City",
-                "Date business was opened in Seattle.",
-                "Unified Business Identifier (UBI) number issued by the City of Seattle."
-              ],
-            "columns_format" :
-              [
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                { "align" : "left" },
-                {},
-                { "view" : "date", "align" : "left" },
-                { "align" : "left" }
-              ],
-            "download_count" : 83281,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2022-11-22T19:35:47.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "City Administration",
-            "domain_tags" : [ "business", "license", "tax" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Department_Department",
-                  "value" : "Department of Finance and Administrative Services"
-                },
-                {
-                  "key" : "Common-Core_Publisher",
-                  "value" : "data.seattle.gov"
-                },
-                {
-                  "key" : "Common-Core_Contact-Email",
-                  "value" : "open.data@seattle.gov"
-                },
-                { "key" : "Refresh-Frequency_Frequency", "value" : "Daily" }
-              ]
-          },
-        "metadata" :
-          { "domain" : "cos-data.seattle.gov", "license" : "Public Domain" },
-        "permalink" : "https://cos-data.seattle.gov/d/wnbq-64tb",
-        "link" : "https://cos-data.seattle.gov/City-Administration/Active-Business-License-Tax-Certificate/wnbq-64tb",
-        "owner" :
-          {
-            "id" : "s9gf-pyfz",
-            "user_type" : "interactive",
-            "display_name" : "Jackie.Mitchell@seattle.gov"
-          },
-        "creator" :
-          {
-            "id" : "s9gf-pyfz",
-            "user_type" : "interactive",
-            "display_name" : "Jackie.Mitchell@seattle.gov"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Licensed Businesses within the City of Everett",
-            "id" : "qvfa-2v26",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Licenses issued from the City's business license system. The system is updated as new businesses are added.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T09:45:36.000Z",
-            "createdAt" : "2019-05-13T22:09:33.000Z",
-            "metadata_updated_at" : "2026-10-19T09:45:25.000Z",
-            "data_updated_at" : "2026-10-19T09:45:36.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 304,
-                "page_views_last_month" : 1397,
-                "page_views_total" : 36097,
-                "page_views_last_week_log" : 8.252665432450248,
-                "page_views_last_month_log" : 10.449148645375438,
-                "page_views_total_log" : 15.139631286744654
-              },
-            "columns_name" :
-              [
-                "Registration",
-                "LegalEntityName",
-                "PrimaryDBA",
-                "UBI",
-                "NAICS",
-                "Address",
-                "IssueDate",
-                "FirstActivityDate",
-                "New Georeferenced Column",
-                "City Limits Shading",
-                "Neighborhoods",
-                "City Council Districts"
-              ],
-            "columns_field_name" :
-              [
-                "registration",
-                "legalentityname",
-                "primarydba",
-                "ubi",
-                "naics",
-                "address",
-                "issuedate",
-                "firstactivitydate",
-                "geocoded_column",
-                ":@computed_region_psyp_nrnc",
-                ":@computed_region_cx6t_gkq3",
-                ":@computed_region_wamu_3gk7"
-              ],
-            "columns_datatype" :
-              [
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Calendar date",
-                "Calendar date",
-                "Point",
-                "Number",
-                "Number",
-                "Number"
-              ],
-            "columns_description" :
-              [ "", "", "", "", "", "", "", "", "", "", "", "" ],
-            "columns_format" :
-              [
-                { "precisionStyle" : "standard", "noCommas" : "true" },
-                {},
-                {},
-                {},
-                {},
-                {},
-                { "view" : "date" },
-                { "view" : "date" },
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 69252,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2021-12-28T22:37:11.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Economic and Cultural Vitality",
-            "domain_tags" : [ "business", "business license", "economy" ],
-            "domain_metadata" : []
-          },
-        "metadata" : { "domain" : "data.everettwa.gov" },
-        "permalink" : "https://data.everettwa.gov/d/qvfa-2v26",
-        "link" : "https://data.everettwa.gov/Economic-and-Cultural-Vitality/Licensed-Businesses-within-the-City-of-Everett/qvfa-2v26",
-        "owner" :
-          {
-            "id" : "sd8z-8g4t",
-            "user_type" : "interactive",
-            "display_name" : "Chris Fadden"
-          },
-        "creator" :
-          {
-            "id" : "sd8z-8g4t",
-            "user_type" : "interactive",
-            "display_name" : "Chris Fadden"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Businesses - County Data",
-            "id" : "6g49-bcrm",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Listing of All Active Business.  The data displayed is based on the  Principal Place of Business  residing in Oregon only.   The county was determined by a City-Zip combination.",
-            "attribution" : null,
-            "attribution_link" : null,
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-08-14T14:57:37.000Z",
-            "createdAt" : "2020-04-30T21:09:31.000Z",
-            "metadata_updated_at" : "2026-08-14T14:54:55.000Z",
-            "data_updated_at" : "2026-08-14T14:57:37.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 629,
-                "page_views_last_month" : 10352,
-                "page_views_total" : 27099,
-                "page_views_last_week_log" : 9.29920801838728,
-                "page_views_last_month_log" : 13.337761259156672,
-                "page_views_total_log" : 14.726005231128598
-              },
-            "columns_name" :
-              [
-                "Registry Date",
-                "PPB Zip",
-                "EntityType",
-                "Anniversary Date",
-                "Registry Number",
-                "PPB County",
-                "Business Name",
-                "PPB City",
-                "PPB State",
-                "PPB CityZip"
-              ],
-            "columns_field_name" :
-              [
-                "registry_date",
-                "zip",
-                "e_type",
-                "anniversary_date",
-                "registry_number",
-                "county",
-                "business_name",
-                "city",
-                "state",
-                "cityzip"
-              ],
-            "columns_datatype" :
-              [
-                "Calendar date",
-                "Number",
-                "Text",
-                "Calendar date",
-                "Number",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "",
-                "Zip code for Principal Place of Business",
-                "Entity Type",
-                "Date Renewal is Due",
-                "",
-                " Lookup Based on City Zip combination",
-                "",
-                "City of Principal Place of Business",
-                "Only Oregon PPB are included in this dataset",
-                ""
-              ],
-            "columns_format" :
-              [
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                { "view" : "date" },
-                { "noCommas" : "true" },
-                {},
-                {},
-                {},
-                {},
-                {}
-              ],
-            "download_count" : 66078,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2020-04-30T21:25:08.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "business",
-            "domain_tags" : [ "business", "active", "county" ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Dataset-Information_Agency-Name",
-                  "value" : "Oregon Secretary of State"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Change-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Record-Unit",
-                  "value" : "Corporation Division"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Dictionary",
-                  "value" : "No"
-                },
-                {
-                  "key" : "Dataset-Information_Data-Publishing-Frequency",
-                  "value" : "Monthly"
-                },
-                {
-                  "key" : "Dataset-Information_Agency-URL",
-                  "value" : "https://sos.oregon.gov/business/Pages/default.aspx"
-                }
-              ]
-          },
-        "metadata" : { "domain" : "data.oregon.gov" },
-        "permalink" : "https://data.oregon.gov/d/6g49-bcrm",
-        "link" : "https://data.oregon.gov/business/Active-Businesses-County-Data/6g49-bcrm",
-        "owner" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          },
-        "creator" :
-          {
-            "id" : "ngr9-eh9y",
-            "user_type" : "interactive",
-            "display_name" : "Judy Weems"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Active Business Licenses Denver",
-            "id" : "s9wt-dsfz",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Business licences in Denver including license type, status, end date, and entity details",
-            "attribution" : "City and county of Denver",
-            "attribution_link" : "https://opendata-geospatialdenver.hub.arcgis.com/",
-            "contact_email" : null,
-            "type" : "dataset",
-            "updatedAt" : "2026-10-19T11:00:22.000Z",
-            "createdAt" : "2019-02-07T15:41:49.000Z",
-            "metadata_updated_at" : "2026-10-19T11:00:22.000Z",
-            "data_updated_at" : "2026-08-01T11:40:27.000Z",
-            "page_views" :
-              {
-                "page_views_last_week" : 192,
-                "page_views_last_month" : 823,
-                "page_views_total" : 14363,
-                "page_views_last_week_log" : 7.592457037268081,
-                "page_views_last_month_log" : 9.686500527183219,
-                "page_views_total_log" : 13.810169937664659
-              },
-            "columns_name" :
-              [
-                "BFN",
-                "LICENSE_TYPE",
-                "LICENSE_SUB_TYPE",
-                "LICENSE_STATUS",
-                "ENTITY_NAME",
-                "Trade Name",
-                "b1_Access_By_ACA",
-                "Expiration_Date"
-              ],
-            "columns_field_name" :
-              [
-                "bfn",
-                "license_type",
-                "license_sub_type",
-                "license_status",
-                "entity_name",
-                "trade_name",
-                "b1_access_by_aca",
-                "expiration_date"
-              ],
-            "columns_datatype" :
-              [
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text",
-                "Text"
-              ],
-            "columns_description" :
-              [
-                "BFN",
-                "Type of license Issued",
-                "Sub-type of license issued",
-                "Status of license issued",
-                "Name of entity holding license",
-                "",
-                "",
-                ""
-              ],
-            "columns_format" : [ {}, {}, {}, {}, {}, {}, {}, {} ],
-            "download_count" : 45368,
-            "provenance" : "official",
-            "lens_view_type" : "tabular",
-            "lens_display_type" : "table",
-            "locked" : false,
-            "backend" : "nbe",
-            "blob_mime_type" : null,
-            "hide_from_data_json" : false,
-            "publication_date" : "2025-12-01T19:12:01.000Z"
-          },
-        "classification" :
-          {
-            "categories" : [],
-            "tags" : [],
-            "domain_category" : "Business",
-            "domain_tags" :
-              [
-                "bic",
-                "business",
-                "covid19",
-                "licenses",
-                "denver",
-                "active",
-                "business license",
-                "colorado"
-              ],
-            "domain_metadata" :
-              [
-                {
-                  "key" : "Contributing-Agency-Information_Data-Source",
-                  "value" : "https://opendata-geospatialdenver.hub.arcgis.com/"
-                },
-                {
-                  "key" : "Contributing-Agency-Information_Agency-Data-Series-Page",
-                  "value" : "https://opendata-geospatialdenver.hub.arcgis.com/datasets/5793f5349ad448b3b916a555b8f77ddf_31/explore"
-                },
-                {
-                  "key" : "Contributing-Agency-Information_Citation",
-                  "value" : "City and county of Denver - City and County of Denver"
-                },
-                {
-                  "key" : "Contributing-Agency-Information_Agency-Program-Page",
-                  "value" : "https://opendata-geospatialdenver.hub.arcgis.com/"
-                },
-                {
-                  "key" : "Point-of-Contact_Contact-Email",
-                  "value" : "bic-help@xentity.com"
-                },
-                {
-                  "key" : "Point-of-Contact_Contact-Name",
-                  "value" : "Business Intelligence Center of CO"
-                },
-                {
-                  "key" : "Dataset-Coverage_Geographic-Coverage",
-                  "value" : "City of Denver"
-                },
-                {
-                  "key" : "Dataset-Coverage_Unit-of-Analysis",
-                  "value" : "Tabular"
-                },
-                {
-                  "key" : "Geospatial_Horizontal-Coordinate-System",
-                  "value" : ""
-                },
-                {
-                  "key" : "Geospatial_Coordinate-System-Disclaimer",
-                  "value" : ""
-                },
-                { "key" : "Geospatial_Horizontal-Accuracy", "value" : "" },
-                {
-                  "key" : "Geospatial_Web-Display-Coordinate-System",
-                  "value" : ""
-                },
-                { "key" : "Geospatial_Collection-Method", "value" : "" },
-                { "key" : "Data-Updates_Update-Method", "value" : "" },
-                {
-                  "key" : "Data-Updates_Expected-Update-Frequency",
-                  "value" : "monthly"
-                },
-                {
-                  "key" : "Data-Updates_Total-Records-at-Initial-Publish",
-                  "value" : "12560"
-                },
-                { "key" : "Data-Updates_Update-Type", "value" : "Automated" },
-                {
-                  "key" : "Data-Updates_Source-Update-Schedule",
-                  "value" : "As Needed"
-                },
-                {
-                  "key" : "Data-Updates_Total-Records-At-Initial-Publish",
-                  "value" : "12560"
-                },
-                {
-                  "key" : "Data-Updates_Update-Schedule",
-                  "value" : "monthly"
-                },
-                {
-                  "key" : "Data-Description_Date-of-Initial-Dataset-Creation",
-                  "value" : ""
-                },
-                { "key" : "Data-Description_Collection-Mode", "value" : "" },
-                {
-                  "key" : "Data-Description_Row-Label",
-                  "value" : "BFN, license type, license status, license sub-type, expiration date of license, entity name and address"
-                },
-                {
-                  "key" : "Data-Description_Newest-Record-in-Dataset",
-                  "value" : "3/17/2070"
-                },
-                {
-                  "key" : "Data-Description_Long-Description",
-                  "value" : "Business licences in Denver including license type, status, end date, and entity details (name and address)."
-                },
-                {
-                  "key" : "Data-Description_Oldest-Record-in-Dataset",
-                  "value" : "3/28/2014"
-                },
-                {
-                  "key" : "Data-Description_Data-Collection-Instrument",
-                  "value" : ""
-                },
-                { "key" : "Data-Description_Collection-Method", "value" : "" },
-                {
-                  "key" : "Publisher_Publisher-Name",
-                  "value" : "Business Intelligence Center of CO"
-                },
-                {
-                  "key" : "Additional-Dataset-Documentation_Technical-Documentation",
-                  "value" : ""
-                },
-                {
-                  "key" : "Additional-Dataset-Documentation_Data-Dictionary",
-                  "value" : ""
-                },
-                {
-                  "key" : "Additional-Dataset-Documentation_Additional-Metadata",
-                  "value" : ""
-                },
-                {
-                  "key" : "Data-Quality_Expected-Update-Frequency",
-                  "value" : "Never"
-                }
-              ]
-          },
-        "metadata" :
-          { "domain" : "data.colorado.gov", "license" : "Public Domain" },
-        "permalink" : "https://data.colorado.gov/d/s9wt-dsfz",
-        "link" : "https://data.colorado.gov/Business/Active-Business-Licenses-Denver/s9wt-dsfz",
-        "owner" :
-          {
-            "id" : "azfj-qb4j",
-            "user_type" : "interactive",
-            "display_name" : "Business Intelligence Center of CO"
-          },
-        "creator" :
-          {
-            "id" : "azfj-qb4j",
-            "user_type" : "interactive",
-            "display_name" : "Business Intelligence Center of CO"
-          }
-      },
-      {
-        "resource" :
-          {
-            "name" : "Business Registration by Fiscal Year",
-            "id" : "6qbs-9m8d",
-            "resource_name" : null,
-            "parent_fxf" : [],
-            "description" : "Data provided by Office of Finance as of December 2021. This provide
-
-### https://data.iowa.gov/api/catalog/v1?q=business%20entities&limit=5
-ERROR https://data.iowa.gov/api/catalog/v1?q=business%20entities&limit=5 -> HTTP 404: <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/30hguuxlcpzu1.js"/><script src="/_next/static/chunks/1jn8jq6qk_dod.js" async=""></
+ "generated": "2026-10-19 13:32 UTC",
+ "regions": [
+  {
+   "id": "us-nyc",
+   "name": "New York",
+   "country": "US",
+   "center": [
+    -73.985,
+    40.742
+   ],
+   "bbox": [
+    -74.3,
+    40.45,
+    -73.65,
+    40.95
+   ],
+   "events": 90240,
+   "first": "2026-06-25",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "NYC DOB NOW: Build",
+    "NYC DOHMH inspections",
+    "NYC ACRIS",
+    "NYC PLUTO",
+    "NYC DCWP Licenses"
+   ]
+  },
+  {
+   "id": "us-sf",
+   "name": "San Francisco",
+   "country": "US",
+   "center": [
+    -122.4194,
+    37.7749
+   ],
+   "bbox": [
+    -122.55,
+    37.68,
+    -122.33,
+    37.84
+   ],
+   "events": 7226,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "SF Building Permits",
+    "SF Registered Business Locations"
+   ]
+  },
+  {
+   "id": "us-chicago",
+   "name": "Chicago",
+   "country": "US",
+   "center": [
+    -87.6298,
+    41.8781
+   ],
+   "bbox": [
+    -87.95,
+    41.64,
+    -87.52,
+    42.03
+   ],
+   "events": 13940,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Chicago Building Permits",
+    "Chicago Business Licenses",
+    "Chicago Food Inspections"
+   ]
+  },
+  {
+   "id": "us-seattle",
+   "name": "Seattle",
+   "country": "US",
+   "center": [
+    -122.3321,
+    47.6062
+   ],
+   "bbox": [
+    -122.46,
+    47.48,
+    -122.22,
+    47.74
+   ],
+   "events": 1608,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "Seattle Building Permits"
+   ]
+  },
+  {
+   "id": "us-austin",
+   "name": "Austin",
+   "country": "US",
+   "center": [
+    -97.7431,
+    30.2672
+   ],
+   "bbox": [
+    -98.05,
+    30.05,
+    -97.5,
+    30.55
+   ],
+   "events": 11989,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "Austin Issued Construction Permits"
+   ]
+  },
+  {
+   "id": "us-la",
+   "name": "Los Angeles",
+   "country": "US",
+   "center": [
+    -118.2437,
+    34.0522
+   ],
+   "bbox": [
+    -118.7,
+    33.7,
+    -118.15,
+    34.34
+   ],
+   "events": 16524,
+   "first": "2026-07-21",
+   "last": "2026-10-20",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "LA Active Businesses",
+    "LADBS Building Permits"
+   ]
+  },
+  {
+   "id": "us-nola",
+   "name": "New Orleans",
+   "country": "US",
+   "center": [
+    -90.0715,
+    29.9511
+   ],
+   "bbox": [
+    -90.14,
+    29.86,
+    -89.62,
+    30.2
+   ],
+   "events": 4193,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "New Orleans Building Permits"
+   ]
+  },
+  {
+   "id": "us-cincinnati",
+   "name": "Cincinnati",
+   "country": "US",
+   "center": [
+    -84.512,
+    39.1031
+   ],
+   "bbox": [
+    -84.72,
+    39.05,
+    -84.36,
+    39.23
+   ],
+   "events": 2754,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Cincinnati Building Permits"
+   ]
+  },
+  {
+   "id": "us-montgomery",
+   "name": "Montgomery County, MD",
+   "country": "US",
+   "center": [
+    -77.152,
+    39.084
+   ],
+   "bbox": [
+    -77.53,
+    38.93,
+    -76.88,
+    39.36
+   ],
+   "events": 133,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Montgomery County, MD Building Permits"
+   ]
+  },
+  {
+   "id": "us-baton-rouge",
+   "name": "Baton Rouge",
+   "country": "US",
+   "center": [
+    -91.1403,
+    30.4515
+   ],
+   "bbox": [
+    -91.3,
+    30.3,
+    -90.95,
+    30.6
+   ],
+   "events": 2122,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Baton Rouge Building Permits"
+   ]
+  },
+  {
+   "id": "us-norfolk",
+   "name": "Norfolk, VA",
+   "country": "US",
+   "center": [
+    -76.2859,
+    36.8508
+   ],
+   "bbox": [
+    -76.5859,
+    36.6308,
+    -75.9859,
+    37.0708
+   ],
+   "events": 2827,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Norfolk, VA Building Permits"
+   ]
+  },
+  {
+   "id": "ca-calgary",
+   "name": "Calgary",
+   "country": "CA",
+   "center": [
+    -114.0719,
+    51.0447
+   ],
+   "bbox": [
+    -114.3719,
+    50.8247,
+    -113.7719,
+    51.2647
+   ],
+   "events": 6520,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Calgary Building Permits",
+    "Calgary Business Licences"
+   ]
+  },
+  {
+   "id": "ca-edmonton",
+   "name": "Edmonton",
+   "country": "CA",
+   "center": [
+    -113.4938,
+    53.5461
+   ],
+   "bbox": [
+    -113.79379999999999,
+    53.326100000000004,
+    -113.1938,
+    53.7661
+   ],
+   "events": 2809,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Edmonton Building Permits"
+   ]
+  },
+  {
+   "id": "us-boston",
+   "name": "Boston",
+   "country": "US",
+   "center": [
+    -71.0589,
+    42.3601
+   ],
+   "bbox": [
+    -71.2,
+    42.22,
+    -70.98,
+    42.4
+   ],
+   "events": 693,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Boston Approved Building Permits"
+   ]
+  },
+  {
+   "id": "us-philly",
+   "name": "Philadelphia",
+   "country": "US",
+   "center": [
+    -75.1652,
+    39.9526
+   ],
+   "bbox": [
+    -75.29,
+    39.86,
+    -74.95,
+    40.14
+   ],
+   "events": 14630,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Philadelphia L&I Permits",
+    "Philadelphia Business Licenses"
+   ]
+  },
+  {
+   "id": "us-dc",
+   "name": "Washington, DC",
+   "country": "US",
+   "center": [
+    -77.0369,
+    38.9072
+   ],
+   "bbox": [
+    -77.8369,
+    38.3072,
+    -76.2369,
+    39.507200000000005
+   ],
+   "events": 4482,
+   "first": "2026-07-21",
+   "last": "2026-10-15",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Washington, DC open data (ArcGIS Hub)",
+    "DC Basic Business Licenses"
+   ]
+  },
+  {
+   "id": "us-detroit",
+   "name": "Detroit",
+   "country": "US",
+   "center": [
+    -83.0458,
+    42.3314
+   ],
+   "bbox": [
+    -83.8458,
+    41.7314,
+    -82.2458,
+    42.931400000000004
+   ],
+   "events": 501,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Detroit open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-baltimore",
+   "name": "Baltimore",
+   "country": "US",
+   "center": [
+    -76.6122,
+    39.2904
+   ],
+   "bbox": [
+    -77.4122,
+    38.6904,
+    -75.8122,
+    39.8904
+   ],
+   "events": 7721,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Baltimore open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-minneapolis",
+   "name": "Minneapolis",
+   "country": "US",
+   "center": [
+    -93.265,
+    44.9778
+   ],
+   "bbox": [
+    -94.065,
+    44.3778,
+    -92.465,
+    45.5778
+   ],
+   "events": 10767,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Minneapolis open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-raleigh",
+   "name": "Raleigh",
+   "country": "US",
+   "center": [
+    -78.6382,
+    35.7796
+   ],
+   "bbox": [
+    -79.4382,
+    35.1796,
+    -77.8382,
+    36.3796
+   ],
+   "events": 426,
+   "first": "2026-09-18",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Raleigh open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-columbus",
+   "name": "Columbus",
+   "country": "US",
+   "center": [
+    -82.9988,
+    39.9612
+   ],
+   "bbox": [
+    -83.7988,
+    39.3612,
+    -82.1988,
+    40.5612
+   ],
+   "events": 11960,
+   "first": "2026-07-21",
+   "last": "2026-10-17",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Columbus open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-tampa",
+   "name": "Tampa",
+   "country": "US",
+   "center": [
+    -82.4572,
+    27.9506
+   ],
+   "bbox": [
+    -83.2572,
+    27.3506,
+    -81.6572,
+    28.550600000000003
+   ],
+   "events": 30,
+   "first": "2026-07-21",
+   "last": "2026-09-17",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Tampa open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-denver",
+   "name": "Denver",
+   "country": "US",
+   "center": [
+    -104.9903,
+    39.7392
+   ],
+   "bbox": [
+    -105.7903,
+    39.139199999999995,
+    -104.19030000000001,
+    40.3392
+   ],
+   "events": 151,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Denver open data (ArcGIS Hub)"
+   ]
+  },
+  {
+   "id": "us-sanantonio",
+   "name": "San Antonio",
+   "country": "US",
+   "center": [
+    -98.4936,
+    29.4241
+   ],
+   "bbox": [
+    -99.2936,
+    28.824099999999998,
+    -97.6936,
+    30.0241
+   ],
+   "events": 11295,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "San Antonio open data (CKAN)"
+   ]
+  },
+  {
+   "id": "us-pittsburgh",
+   "name": "Pittsburgh",
+   "country": "US",
+   "center": [
+    -79.9959,
+    40.4406
+   ],
+   "bbox": [
+    -80.7959,
+    39.8406,
+    -79.19590000000001,
+    41.040600000000005
+   ],
+   "events": 2426,
+   "first": "2026-07-21",
+   "last": "2026-10-12",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Pittsburgh open data (CKAN)"
+   ]
+  },
+  {
+   "id": "us-tx",
+   "name": "Texas",
+   "country": "US",
+   "center": [
+    -99.0,
+    31.0
+   ],
+   "bbox": [
+    -106.7,
+    25.8,
+    -93.5,
+    36.6
+   ],
+   "events": 17436,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Texas Comptroller sales-tax permits",
+    "TABC"
+   ],
+   "focus": [
+    -95.3698,
+    29.7604
+   ]
+  },
+  {
+   "id": "us-ny",
+   "name": "New York State",
+   "country": "US",
+   "center": [
+    -75.5,
+    42.9
+   ],
+   "bbox": [
+    -79.8,
+    40.4,
+    -71.8,
+    45.1
+   ],
+   "events": 18065,
+   "first": "2026-09-19",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "NY Department of State"
+   ],
+   "focus": [
+    -73.7562,
+    42.6526
+   ]
+  },
+  {
+   "id": "us-co",
+   "name": "Colorado",
+   "country": "US",
+   "center": [
+    -105.5,
+    39.0
+   ],
+   "bbox": [
+    -109.1,
+    36.9,
+    -102.0,
+    41.1
+   ],
+   "events": 11374,
+   "first": "2026-09-19",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:10 UTC",
+   "sources": [
+    "Colorado Secretary of State"
+   ],
+   "focus": [
+    -104.9903,
+    39.7392
+   ]
+  },
+  {
+   "id": "fr",
+   "name": "France",
+   "country": "FR",
+   "center": [
+    2.35,
+    46.6
+   ],
+   "bbox": [
+    -5.3,
+    41.2,
+    9.7,
+    51.2
+   ],
+   "events": 72878,
+   "first": "2026-05-22",
+   "last": "2026-12-22",
+   "generated": "2026-10-19 13:18 UTC",
+   "sources": [
+    "BODACC",
+    "Alim'confiance",
+    "SIRENE",
+    "Sitadel (SDES)"
+   ],
+   "focus": [
+    2.3488,
+    48.8534
+   ],
+   "focus_name": "Paris"
+  },
+  {
+   "id": "gb-london",
+   "name": "London",
+   "country": "GB",
+   "center": [
+    -0.1276,
+    51.5072
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 9569,
+   "first": "2026-07-21",
+   "last": "2026-10-18",
+   "generated": "2026-10-19 13:11 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -0.1276,
+    51.5072
+   ]
+  },
+  {
+   "id": "gb-se",
+   "name": "South East England",
+   "country": "GB",
+   "center": [
+    -0.1372,
+    50.8225
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 6995,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:11 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -0.1372,
+    50.8225
+   ],
+   "focus_name": "Brighton"
+  },
+  {
+   "id": "gb-east",
+   "name": "East of England",
+   "country": "GB",
+   "center": [
+    0.1218,
+    52.2053
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 4926,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:11 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    0.1218,
+    52.2053
+   ],
+   "focus_name": "Cambridge"
+  },
+  {
+   "id": "gb-em",
+   "name": "East Midlands",
+   "country": "GB",
+   "center": [
+    -1.1581,
+    52.9548
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 3314,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:11 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -1.1581,
+    52.9548
+   ],
+   "focus_name": "Nottingham"
+  },
+  {
+   "id": "gb-wm",
+   "name": "West Midlands",
+   "country": "GB",
+   "center": [
+    -1.8904,
+    52.4862
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 5764,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -1.8904,
+    52.4862
+   ],
+   "focus_name": "Birmingham"
+  },
+  {
+   "id": "gb-nw",
+   "name": "North West England",
+   "country": "GB",
+   "center": [
+    -2.2426,
+    53.4808
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 7757,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -2.2426,
+    53.4808
+   ],
+   "focus_name": "Manchester"
+  },
+  {
+   "id": "gb-ne",
+   "name": "North East England",
+   "country": "GB",
+   "center": [
+    -1.6178,
+    54.9783
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 2309,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:11 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -1.6178,
+    54.9783
+   ],
+   "focus_name": "Newcastle"
+  },
+  {
+   "id": "gb-yh",
+   "name": "Yorkshire",
+   "country": "GB",
+   "center": [
+    -1.5491,
+    53.8008
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 4836,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -1.5491,
+    53.8008
+   ],
+   "focus_name": "Leeds"
+  },
+  {
+   "id": "gb-sw",
+   "name": "South West England",
+   "country": "GB",
+   "center": [
+    -2.5879,
+    51.4545
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 4316,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -2.5879,
+    51.4545
+   ],
+   "focus_name": "Bristol"
+  },
+  {
+   "id": "gb-wales",
+   "name": "Wales",
+   "country": "GB",
+   "center": [
+    -3.1791,
+    51.4816
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 3058,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -3.1791,
+    51.4816
+   ],
+   "focus_name": "Cardiff"
+  },
+  {
+   "id": "gb-scotland",
+   "name": "Scotland",
+   "country": "GB",
+   "center": [
+    -3.1883,
+    55.9533
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 9503,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -3.1883,
+    55.9533
+   ],
+   "focus_name": "Edinburgh"
+  },
+  {
+   "id": "gb-ni",
+   "name": "Northern Ireland",
+   "country": "GB",
+   "center": [
+    -5.9301,
+    54.5973
+   ],
+   "bbox": [
+    -8.7,
+    49.8,
+    1.8,
+    60.9
+   ],
+   "events": 1230,
+   "first": "2026-07-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "UK FSA Food Hygiene Ratings"
+   ],
+   "focus": [
+    -5.9301,
+    54.5973
+   ],
+   "focus_name": "Belfast"
+  },
+  {
+   "id": "no",
+   "name": "Norway",
+   "country": "NO",
+   "center": [
+    10.0,
+    62.0
+   ],
+   "bbox": [
+    4.0,
+    57.8,
+    31.5,
+    71.5
+   ],
+   "events": 3970,
+   "first": "2026-09-19",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:32 UTC",
+   "sources": [
+    "Br\u00f8nn\u00f8ysund Enhetsregisteret",
+    "Kartverket addresses"
+   ],
+   "focus": [
+    10.7522,
+    59.9139
+   ],
+   "focus_name": "Oslo"
+  },
+  {
+   "id": "dk",
+   "name": "Denmark",
+   "country": "DK",
+   "center": [
+    10.4,
+    56.0
+   ],
+   "bbox": [
+    7.8,
+    54.5,
+    15.3,
+    57.8
+   ],
+   "events": 8925,
+   "first": "2026-07-21",
+   "last": "2026-10-15",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "F\u00f8devarestyrelsen smiley",
+    "GeoNames postal codes"
+   ],
+   "focus": [
+    12.5683,
+    55.6761
+   ],
+   "focus_name": "Copenhagen"
+  },
+  {
+   "id": "fi",
+   "name": "Finland",
+   "country": "FI",
+   "center": [
+    25.7,
+    62.5
+   ],
+   "bbox": [
+    19.0,
+    59.5,
+    31.7,
+    70.2
+   ],
+   "events": 2370,
+   "first": "2026-09-19",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "PRH Trade Register",
+    "Statistics Finland postcode areas"
+   ],
+   "focus": [
+    24.9384,
+    60.1699
+   ],
+   "focus_name": "Helsinki"
+  },
+  {
+   "id": "ee",
+   "name": "Estonia",
+   "country": "EE",
+   "center": [
+    25.0,
+    58.7
+   ],
+   "bbox": [
+    21.5,
+    57.4,
+    28.3,
+    59.9
+   ],
+   "events": 1857,
+   "first": "2026-09-21",
+   "last": "2026-10-17",
+   "generated": "2026-10-19 13:14 UTC",
+   "sources": [
+    "Estonian e-Business Register",
+    "In-ADS gazetteer"
+   ],
+   "focus": [
+    24.7536,
+    59.437
+   ],
+   "focus_name": "Tallinn"
+  },
+  {
+   "id": "ca-vancouver",
+   "name": "Vancouver",
+   "country": "CA",
+   "center": [
+    -123.12,
+    49.25
+   ],
+   "bbox": [
+    -123.3,
+    49.15,
+    -122.95,
+    49.35
+   ],
+   "events": 999,
+   "first": "2026-07-21",
+   "last": "2026-10-16",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "Vancouver Building Permits"
+   ]
+  },
+  {
+   "id": "ca-winnipeg",
+   "name": "Winnipeg",
+   "country": "CA",
+   "center": [
+    -97.14,
+    49.89
+   ],
+   "bbox": [
+    -97.4,
+    49.75,
+    -96.95,
+    50.0
+   ],
+   "events": 2155,
+   "first": "2026-07-21",
+   "last": "2026-09-29",
+   "generated": "2026-10-19 13:12 UTC",
+   "sources": [
+    "Winnipeg Building Permits"
+   ]
+  },
+  {
+   "id": "sg",
+   "name": "Singapore",
+   "country": "SG",
+   "center": [
+    103.82,
+    1.35
+   ],
+   "bbox": [
+    103.58,
+    1.15,
+    104.1,
+    1.48
+   ],
+   "events": 1824,
+   "first": "2026-09-19",
+   "last": "2026-10-11",
+   "generated": "2026-10-19 13:21 UTC",
+   "sources": [
+    "ACRA (data.gov.sg)",
+    "OneMap"
+   ]
+  },
+  {
+   "id": "ch",
+   "name": "Switzerland",
+   "country": "CH",
+   "center": [
+    8.23,
+    46.8
+   ],
+   "bbox": [
+    5.9,
+    45.8,
+    10.5,
+    47.85
+   ],
+   "events": 6828,
+   "first": "2026-09-21",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:20 UTC",
+   "sources": [
+    "SHAB / Swiss commercial register",
+    "geo.admin.ch"
+   ],
+   "focus": [
+    8.5417,
+    47.3769
+   ],
+   "focus_name": "Zurich"
+  },
+  {
+   "id": "ie",
+   "name": "Ireland",
+   "country": "IE",
+   "center": [
+    -8.0,
+    53.4
+   ],
+   "bbox": [
+    -10.7,
+    51.3,
+    -5.9,
+    55.5
+   ],
+   "events": 7435,
+   "first": "2026-07-21",
+   "last": "2026-10-13",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "Irish planning applications"
+   ],
+   "focus": [
+    -6.2603,
+    53.3498
+   ],
+   "focus_name": "Dublin"
+  },
+  {
+   "id": "ca-montreal",
+   "name": "Montr\u00e9al",
+   "country": "CA",
+   "center": [
+    -73.65,
+    45.53
+   ],
+   "bbox": [
+    -74.05,
+    45.38,
+    -73.45,
+    45.75
+   ],
+   "events": 5493,
+   "first": "2026-07-21",
+   "last": "2026-10-12",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "Montr\u00e9al building permits"
+   ]
+  },
+  {
+   "id": "es-madrid",
+   "name": "Madrid",
+   "country": "ES",
+   "center": [
+    -3.7038,
+    40.4168
+   ],
+   "bbox": [
+    -3.9,
+    40.3,
+    -3.5,
+    40.65
+   ],
+   "events": 1581,
+   "first": "2026-04-22",
+   "last": "2026-09-30",
+   "generated": "2026-10-19 13:13 UTC",
+   "sources": [
+    "Madrid licencias urban\u00edsticas"
+   ]
+  },
+  {
+   "id": "nl",
+   "name": "Netherlands",
+   "country": "NL",
+   "center": [
+    5.3,
+    52.2
+   ],
+   "bbox": [
+    3.2,
+    50.7,
+    7.3,
+    53.6
+   ],
+   "events": 48088,
+   "first": "2026-10-19",
+   "last": "2026-10-19",
+   "generated": "2026-10-19 13:20 UTC",
+   "sources": [
+    "BAG (Kadaster)"
+   ],
+   "focus": [
+    4.9041,
+    52.3676
+   ],
+   "focus_name": "Amsterdam"
+  }
+ ]
+}

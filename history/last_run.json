@@ -1,5 +1,5 @@
 {
- "started": "2026-10-19 13:33 UTC",
+ "started": "2026-10-19 13:35 UTC",
  "regions": {
   "us-seattle": {
    "name": "Seattle",
@@ -7,57 +7,29 @@
    "parts": {
     "Seattle Building Permits (permit)": {
      "events": 1608,
-     "seconds": 4
+     "seconds": 2
     },
     "seattle_new_licences": {
      "events": 0,
-     "seconds": 7
-    }
-   }
-  },
-  "us-la": {
-   "name": "Los Angeles",
-   "events": 17354,
-   "parts": {
-    "LADBS Building Permits (permit)": {
-     "events": 15536,
-     "seconds": 14
-    },
-    "LA Active Businesses (business)": {
-     "events": 988,
-     "seconds": 2
-    },
-    "la_new_locations": {
-     "events": 830,
-     "seconds": 2
+     "seconds": 1
     }
    }
   }
  },
- "minutes": 0.3,
+ "minutes": 0.1,
  "log_tail": [
   "######## start us-seattle · Seattle",
-  "######## start us-la · Los Angeles",
   "   Seattle Seattle Building Permits (permit): 1608",
   "   1 rows without coordinates: geocoding addresses",
   "   geocode cache: 1 of 1 addresses already known",
   "   -> 1608 located events of 1608 rows",
   "\n== Seattle new business licence certificates",
   "   licences: 1342",
-  "   census geocoded 900 of 915 new addresses",
+  "   geocode cache: 915 of 915 addresses already known",
   "   located 0 of 915",
+  "   debug: geo sample [('0', (47.657819506792, -122.365117990518)), ('1', (47.664981790906, -122.352604822204))]; row sample {'business_legal_name': 'BAROMETER COFFEE LLC', 'trade_name': 'BAROMETER COFFEE CO.', 'ownership_type': 'LLC - Single Member', 'naics_code': '311920', 'naics_description': 'Coffee and Tea Manufacturing', 'license_start_date': '20261019', 'street_address': '700 NW 42ND ST', 'city': 'SEATTLE', 'state': 'WA', 'zip': '98107-4505', 'business_phone': '2069990467', 'city_account_number': '0008960950814002'}",
   "   history: 0 records seen for the first time today (1639 remembered)",
   "######## done us-seattle: 1608 events",
-  "   Los Angeles LADBS Building Permits (permit): 15567",
-  "   -> 15536 located events of 15567 rows",
-  "   Los Angeles LA Active Businesses (business): 4803",
-  "   645 rows without coordinates: geocoding addresses",
-  "   geocode cache: 645 of 645 addresses already known",
-  "   -> 988 located events of 4803 rows",
-  "\n== Los Angeles new business locations",
-  "   locations: 4792",
-  "   history: 830 records seen for the first time today (17593 remembered)",
-  "######## done us-la: 17354 events",
   "   US geocode cache: 64726 addresses saved"
  ]
 }

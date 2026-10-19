@@ -560,6 +560,8 @@ def seattle_new_licences():
                          r.get("naics_description"), "Seattle business licence certificates", r.get("city_account_number"),
                          str(r.get("street_address")).upper(), title_case(r.get("street_address")), None, [-122.5, 47.45, -122.2, 47.75]))
     log(f"   located {len([x for x in out if x])} of {len(rows)}")
+    if rows and not any(out):
+        log(f"   debug: geo sample {list(geo.items())[:2]}; row sample {dict(list(rows[0].items())[:12])}")
     return out
 
 

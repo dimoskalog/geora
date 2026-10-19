@@ -1,1 +1,3 @@
-https://datos.madrid.es/api/3/action/package_show?id=213605-0-callejero-oficial-madrid
+https://api.us.socrata.com/api/catalog/v1?q=new%20business%20registrations&limit=20&only=datasets
+https://api.us.socrata.com/api/catalog/v1?q=business%20entities%20registry&limit=20&only=datasets
+https://api.us.socrata.com/api/catalog/v1?q=active%20businesses&limit=20&only=datasets

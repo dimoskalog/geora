@@ -1,1 +1,6 @@
-https://dimoskalog.github.io/geora/data/regions.json
+https://data.ct.gov/resource/n7gp-d28j.json?$limit=1&$order=date_registration%20DESC
+https://data.gov.lv/dati/api/3/action/package_search?q=uznemumu%20registrs&rows=5
+https://data.gov.lv/dati/api/3/action/package_search?q=adresu%20registrs%20koordinatas&rows=5
+https://www.registrucentras.lt/aduomenys/?byla=JAR_IREGISTRUOTI.csv
+https://data.gov.lt/public/datasets?q=juridini%C5%B3%20asmen%C5%B3
+https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/development-activity-monitor/records?limit=1&where=status%3D%22APPROVED%22

@@ -36,6 +36,39 @@ def _dk_rows(body):
             yield {c.tag.split("}")[-1].lower(): (c.text or "").strip() for c in kids}
 
 
+def _iso(d):
+    d = str(d or "").strip()
+    m = re.match(r"(\d{4})-(\d\d)-(\d\d)", d)
+    if m:
+        return m.group(0)
+    m = re.match(r"(\d\d)[.\-/](\d\d)[.\-/](\d{4})", d)
+    return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else ""
+
+
+DAWA = "https://api.dataforsyningen.dk"
+
+
+def dk_address(q, deadline):
+    if time.time() > deadline:
+        return None, None
+    try:
+        r = http(f"{DAWA}/adresser", {"q": q, "struktur": "mini", "per_side": 1}, tries=1, timeout=10)
+        if r:
+            return num(r[0].get("y")), num(r[0].get("x"))
+    except RuntimeError:
+        pass
+    return None, None
+
+
+def dk_postcode(nr):
+    try:
+        r = http(f"{DAWA}/postnumre/{nr}", tries=2, timeout=15)
+        c = r.get("visueltcenter") or []
+        return (num(c[1]), num(c[0])) if len(c) == 2 else (None, None)
+    except RuntimeError:
+        return None, None
+
+
 def dk_smiley():
     log("\n== Denmark smiley food controls")
     body = None
@@ -48,28 +81,38 @@ def dk_smiley():
             log(f"   {u}: {str(e)[:160]}")
     if not body:
         return []
-    out, n, first = [], 0, True
+    recs, n, sample = [], 0, None
     for r in _dk_rows(body):
         n += 1
-        if first:
-            log("   fields: " + ", ".join(list(r)[:40]))
-            first = False
-        lat, lon = num(r.get("geo_lat")), num(r.get("geo_lng"))
-        name = title_case(r.get("navn1") or "")
-        addr = f"{r.get('adresse1') or ''}, {r.get('postnr') or ''} {r.get('by') or ''}"
-        loc = f"DK {r.get('navnelbnr') or r.get('pnr') or addr}"
-        for k in ("seneste_kontrol", "naestseneste_kontrol", "tredjeseneste_kontrol", "fjerdeseneste_kontrol"):
-            d = str(r.get(k + "_dato") or "")[:10]
-            if "-" not in d and re.match(r"\d\d\.\d\d\.\d{4}", d):
-                d = f"{d[6:10]}-{d[3:5]}-{d[0:2]}"
-            if d < since(DAYS):
-                continue
-            s = str(r.get(k) or "").strip()
-            bad = s in ("3", "4")
-            out.append(event("distress" if bad else "restaurant", "Food control", d, lat, lon,
-                             f"{name}: food control - {SMILEY.get(s, 'smiley ' + s)}", r.get("branche"),
-                             "Fødevarestyrelsen smiley", f"{r.get('navnelbnr')}-{d}", loc, addr, None, DK_BBOX))
-    log(f"   {n} businesses, {len([x for x in out if x])} controls in the last {DAYS} days")
+        sample = sample or r.get("seneste_kontrol_dato")
+        for k in ("seneste", "næstseneste", "tredjeseneste", "fjerdeseneste"):
+            d = _iso(r.get(f"{k}_kontrol_dato"))
+            if d and d >= since(DAYS):
+                recs.append((r, d, str(r.get(f"{k}_kontrol_resultat") or r.get(f"{k}_kontrol") or "").strip()))
+    log(f"   {n} businesses, {len(recs)} controls in the last {DAYS} days (date sample: {sample!r})")
+    if not recs:
+        return []
+    key = lambda r: (r.get("adresse") or "", r.get("postnummer") or "")
+    addrs = sorted({key(r) for r, _, _ in recs if r.get("adresse")})
+    deadline = time.time() + 8 * 60              # exact addresses for up to 8 minutes, then postcode centres
+    with ThreadPoolExecutor(16) as ex:
+        exact = dict(zip(addrs, ex.map(lambda a: dk_address(f"{a[0]}, {a[1]}", deadline), addrs)))
+    pcs = sorted({r.get("postnummer") for r, _, _ in recs if r.get("postnummer")})
+    with ThreadPoolExecutor(8) as ex:
+        cent = dict(zip(pcs, ex.map(dk_postcode, pcs)))
+    log(f"   exact addresses {sum(1 for v in exact.values() if v[0])} of {len(addrs)}; postcodes {sum(1 for v in cent.values() if v[0])} of {len(pcs)}")
+    out = []
+    for r, d, s in recs:
+        lat, lon = exact.get(key(r), (None, None))
+        if lat is None:
+            lat, lon = cent.get(r.get("postnummer"), (None, None))
+        name = title_case(r.get("virksomhed") or r.get("navn1") or "")
+        addr = f"{r.get('adresse') or ''}, {r.get('postnummer') or ''} {r.get('by') or ''}"
+        out.append(event("distress" if s in ("3", "4") else "restaurant", "Food control", d, lat, lon,
+                         f"{name}: food control - {SMILEY.get(s, 'smiley ' + s)}", r.get("fvst_branche") or r.get("branche"),
+                         "Fødevarestyrelsen smiley", f"{r.get('id_nummer') or r.get('navnelbnr')}-{d}",
+                         f"DK {r.get('p_nummer') or r.get('id_nummer')}", addr, None, DK_BBOX))
+    log(f"   located {len([x for x in out if x])}")
     return out
 
 

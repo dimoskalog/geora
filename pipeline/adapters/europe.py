@@ -35,11 +35,32 @@ _AUTHS = []
 _LOCK = threading.Lock()
 
 
+_FSA_SLOTS = threading.Semaphore(4)              # the FSA API blocks bursts: at most 4 requests at once overall
+
+
+def fsa_get(params):
+    for i in range(5):
+        try:
+            with _FSA_SLOTS:
+                return http(f"{FSA}/Establishments", params, headers=FSA_H, timeout=300)
+        except RuntimeError as e:
+            if i == 4:
+                raise
+            time.sleep(30 * (i + 1) if "HTTP 403" in str(e) else 5)
+
+
 def fsa_authority(a):
+    try:
+        return _fsa_authority(a)
+    except RuntimeError as e:
+        log(f"   FSA authority {a.get('Name')} skipped: {str(e)[:120]}")
+        return [], 0
+
+
+def _fsa_authority(a):
     out, new, page = [], 0, 1
     while True:
-        res = http(f"{FSA}/Establishments", {"localAuthorityId": a["LocalAuthorityId"], "pageSize": 5000, "pageNumber": page},
-                   headers=FSA_H, timeout=300)
+        res = fsa_get({"localAuthorityId": a["LocalAuthorityId"], "pageSize": 5000, "pageNumber": page})
         ests = res.get("establishments", [])
         for e in ests:
             g = e.get("geocode") or {}

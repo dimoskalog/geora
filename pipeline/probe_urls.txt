@@ -1,2 +1,2 @@
-https://datos.madrid.es/dataset/640505-0-licencias-urbanisticas-otorgadas/resource/640505-1-licencias-urbanisticas-otorgadas/download/licencias.csv
-https://data.milwaukee.gov/api/3/action/datastore_search?resource_id=828e9630-d7cb-42e4-960e-964eae916397&limit=2&sort=Date%20Issued%20desc
+https://datos.madrid.es/api/3/action/package_search?q=callejero%20direcciones%20vigentes&rows=5
+https://datos.madrid.es/api/3/action/package_show?id=200078-0-callejero

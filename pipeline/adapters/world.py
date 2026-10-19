@@ -420,6 +420,101 @@ def dc_new_licences():
     return out
 
 
+# ----------------------------------------------------------------- Madrid ----
+MAD = "https://datos.madrid.es"
+MAD_BBOX = [-3.9, 40.3, -3.5, 40.65]
+MESES = {m: i + 1 for i, m in enumerate(["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+                                          "septiembre", "octubre", "noviembre", "diciembre"])}
+
+
+def utm_to_wgs84(e, n, zone=30):
+    """ETRS89 / UTM (northern hemisphere) to latitude, longitude."""
+    import math
+    a, f, k0 = 6378137.0, 1 / 298.257222101, 0.9996
+    e2 = f * (2 - f)
+    ep2 = e2 / (1 - e2)
+    x, y = e - 500000.0, n
+    m = y / k0
+    mu = m / (a * (1 - e2 / 4 - 3 * e2 ** 2 / 64 - 5 * e2 ** 3 / 256))
+    e1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))
+    p1 = mu + (3 * e1 / 2 - 27 * e1 ** 3 / 32) * math.sin(2 * mu) + (21 * e1 ** 2 / 16 - 55 * e1 ** 4 / 32) * math.sin(4 * mu) \
+        + (151 * e1 ** 3 / 96) * math.sin(6 * mu)
+    n1 = a / math.sqrt(1 - e2 * math.sin(p1) ** 2)
+    t1, c1 = math.tan(p1) ** 2, ep2 * math.cos(p1) ** 2
+    r1 = a * (1 - e2) / (1 - e2 * math.sin(p1) ** 2) ** 1.5
+    d = x / (n1 * k0)
+    lat = p1 - (n1 * math.tan(p1) / r1) * (d ** 2 / 2 - (5 + 3 * t1 + 10 * c1 - 4 * c1 ** 2 - 9 * ep2) * d ** 4 / 24
+                                          + (61 + 90 * t1 + 298 * c1 + 45 * t1 ** 2 - 252 * ep2 - 3 * c1 ** 2) * d ** 6 / 720)
+    lon = (d - (1 + 2 * t1 + c1) * d ** 3 / 6 + (5 - 2 * c1 + 28 * t1 - 3 * c1 ** 2 + 8 * ep2 + 24 * t1 ** 2) * d ** 5 / 120) / math.cos(p1)
+    return math.degrees(lat), (zone - 1) * 6 - 180 + 3 + math.degrees(lon)
+
+
+def _mad_resource(pkg, needle):
+    res = http(f"{MAD}/api/3/action/package_show", {"id": pkg}, timeout=120)["result"]["resources"]
+    return next(r["url"] for r in res if needle in r["url"].lower())
+
+
+def _csv(url):
+    import csv, io
+    body = http(url, raw=True, timeout=600, headers={"Accept": "*/*"})
+    for enc in ("utf-8-sig", "latin-1"):
+        try:
+            text = body.decode(enc)
+            break
+        except UnicodeDecodeError:
+            continue
+    return list(csv.DictReader(io.StringIO(text), delimiter=";"))
+
+
+def madrid_ndp():
+    rows = _csv(_mad_resource("213605-0-callejero-oficial-madrid", "direccionesvigentes"))
+    cols = list(rows[0]) if rows else []
+    log(f"   address points: {len(rows)}; columns: {cols}")
+    c_ndp = next((c for c in cols if "NDP" in c.upper()), None)
+    c_x = next((c for c in cols if "UTMX" in c.upper() or c.upper().startswith("COORDENADA_X")), None)
+    c_y = next((c for c in cols if "UTMY" in c.upper() or c.upper().startswith("COORDENADA_Y")), None)
+    out = {}
+    for r in rows:
+        x, y = num(str(r.get(c_x) or "").replace(",", ".")), num(str(r.get(c_y) or "").replace(",", "."))
+        if c_ndp and x and y:
+            if x > 1e7:                      # some files store centimetres
+                x, y = x / 100, y / 100
+            out[str(r[c_ndp]).strip()] = utm_to_wgs84(x, y)
+    return out
+
+
+def madrid_licences():
+    log("\n== Madrid urban planning licences granted")
+    lic = _csv(_mad_resource("640505-0-licencias-urbanisticas-otorgadas", ".csv"))
+    ndp = madrid_ndp()
+    out, latest = [], ""
+    for r in lic:
+        if (r.get("RESOLUCION") or "").strip().lower() != "conceder":
+            continue
+        try:
+            y, m, d = int(r.get("FECHA_FIRMA_RESOLUCION - Año")), MESES[str(r.get("FECHA_FIRMA_RESOLUCION - Mes")).strip().lower()], \
+                int(r.get("FECHA_FIRMA_RESOLUCION - Día"))
+        except (TypeError, ValueError, KeyError):
+            continue
+        when = f"{y:04d}-{m:02d}-{d:02d}"
+        latest = max(latest, when)
+        if when < since(180):
+            continue
+        lat, lon = ndp.get(str(r.get("NDP") or "").strip(), (None, None))
+        typ = r.get("TIPO") or ""
+        if "actividad" in typ.lower():
+            kind, sub, title = "fitout", "Activity licence", "Licence granted for a business premises"
+        elif "residencial" in typ.lower():
+            kind, sub, title = "construction", "Residential licence", "Residential building licence granted"
+        else:
+            kind, sub, title = "construction", "Building licence", "Building licence granted"
+        addr = f"{r.get('VIA') or ''} {title_case(r.get('DIRECCION'))} {r.get('Nº') or ''}".strip()
+        out.append(event(kind, sub, when, lat, lon, title, f"{typ} · {title_case(r.get('ORGANO_COMPETENTE'))} · zone {r.get('NORMA_ZONAL') or ''}",
+                         "Madrid licencias urbanísticas", r.get("Nº_EXPEDIENTE"), f"NDP {r.get('NDP')}", addr, None, MAD_BBOX))
+    log(f"   licences in the last 180 days: {len(out)}, located {len([x for x in out if x])} (latest {latest})")
+    return out
+
+
 def regions():
     return [
         ("ca-vancouver", {"name": "Vancouver", "country": "CA", "center": [-123.12, 49.25], "bbox": VAN_BBOX,
@@ -437,6 +532,8 @@ def regions():
                 "bbox": IE_BBOX, "sources": ["Irish planning applications"]}, [ireland_planning]),
         ("ca-montreal", {"name": "Montréal", "country": "CA", "center": [-73.65, 45.53], "bbox": [-74.05, 45.38, -73.45, 45.75],
                          "sources": ["Montréal building permits"]}, [montreal_permits]),
+        ("es-madrid", {"name": "Madrid", "country": "ES", "center": [-3.7038, 40.4168], "bbox": MAD_BBOX,
+                       "sources": ["Madrid licencias urbanísticas"]}, [madrid_licences]),
         ("nl", {"name": "Netherlands", "country": "NL", "center": [5.3, 52.2], "focus": [4.9041, 52.3676], "focus_name": "Amsterdam",
                 "bbox": NL_BBOX, "sources": ["BAG (Kadaster)"]}, [dutch_construction]),
     ]

@@ -12,6 +12,27 @@ from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, 
 ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics]
 
 
+KEYS = ("id", "name", "country", "center", "bbox", "events", "first", "last", "generated", "sources", "focus", "focus_name")
+SITE = "https://dimoskalog.github.io/geora/data"
+
+
+def reuse_published(rid):
+    """A source can be down for a day: copy the region's files from the live site instead of dropping it."""
+    try:
+        m = core.http(f"{SITE}/{rid}/manifest.json", tries=2, timeout=60)
+        os.makedirs(os.path.join(core.DATA, rid), exist_ok=True)
+        for f in m.get("files", []):
+            body = core.http(f"{SITE}/{rid}/{f['file']}", raw=True, tries=2, timeout=300)
+            with open(os.path.join(core.DATA, rid, f["file"]), "wb") as fh:
+                fh.write(body)
+        with open(os.path.join(core.DATA, rid, "manifest.json"), "w", encoding="utf-8") as fh:
+            json.dump(m, fh, indent=1)
+        return m
+    except Exception as e:
+        core.log(f"   [{rid}] could not reuse published data: {str(e)[:120]}")
+        return None
+
+
 def main():
     only = None
     if "--only" in sys.argv:
@@ -41,14 +62,18 @@ def main():
                 core.log(f"   [{rid}] FAILED {name}: {e}")
         status["regions"][rid] = {"name": meta["name"], "events": len(feats), "parts": parts}
         if not feats:
+            prev = reuse_published(rid)
+            if prev:
+                core.log(f"   [{rid}] no events today; keeping the last published data ({prev['events']} events, {prev.get('generated')})")
+                status["regions"][rid]["reused"] = prev.get("generated")
+                return {k: prev[k] for k in KEYS if k in prev}
             core.log(f"   [{rid}] no events; keeping it off the map")
             return None
         try:
             core.apply_history(rid, feats)
             m = core.write_region(rid, meta, feats)
             core.log(f"######## done {rid}: {len(feats)} events")
-            return {k: m[k] for k in ("id", "name", "country", "center", "bbox", "events", "first", "last",
-                                      "generated", "sources", "focus", "focus_name") if k in m}
+            return {k: m[k] for k in KEYS if k in m}
         except Exception:
             core.log(f"   [{rid}] WRITE FAILED:\n" + traceback.format_exc())
             status["regions"][rid]["write_error"] = traceback.format_exc()[-800:]
@@ -57,6 +82,7 @@ def main():
     # regions are independent and mostly waiting on the network: run several at once
     with ThreadPoolExecutor(8) as ex:
         results = list(ex.map(run_region, jobs))
+    core.save_geocache()
     order = {j[0]: i for i, j in enumerate(jobs)}
     regions_out = sorted([r for r in results if r], key=lambda r: order[r["id"]])
     os.makedirs(core.DATA, exist_ok=True)

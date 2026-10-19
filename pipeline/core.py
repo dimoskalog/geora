@@ -10,7 +10,7 @@ An event always carries:
   loc       stable location key inside its region (tax lot, permit location, address...)
   source / rid   which public dataset and which record, so every dot has evidence
 """
-import csv, hashlib, io, json, os, re, ssl, time, urllib.parse, urllib.request, uuid
+import csv, hashlib, io, json, os, re, ssl, threading, time, urllib.parse, urllib.request, uuid
 from datetime import date, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -225,24 +225,86 @@ def multipart(fields, files):
     return body, f"multipart/form-data; boundary={b}"
 
 
+_GEO_LOCK = threading.Lock()
+_CENSUS_SLOT = threading.Semaphore(2)        # the Census service blocks bursts: two batches at a time
+_GEOCACHE = None
+GEOCACHE_PATH = os.path.join(HISTORY, "geocache_us.json")
+
+
+def _geocache():
+    global _GEOCACHE
+    with _GEO_LOCK:
+        if _GEOCACHE is None:
+            try:
+                with open(GEOCACHE_PATH, encoding="utf-8") as f:
+                    _GEOCACHE = json.load(f)
+            except (OSError, ValueError):
+                _GEOCACHE = {}
+        return _GEOCACHE
+
+
+def save_geocache():
+    """Keep addresses used in the last 120 days (misses are retried after 14 days)."""
+    if _GEOCACHE is None:
+        return
+    keep_hit, keep_miss = since(120), since(14)
+    with _GEO_LOCK:
+        kept = {k: v for k, v in _GEOCACHE.items() if v[2] >= (keep_hit if v[0] is not None else keep_miss)}
+    os.makedirs(HISTORY, exist_ok=True)
+    with open(GEOCACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(kept, f, separators=(",", ":"))
+    log(f"   US geocode cache: {len(kept)} addresses saved")
+
+
 def geocode_us(rows):
-    """rows: [(id, street, city, state, zip)] -> {id: (lat, lon)} using the free US Census batch geocoder."""
-    out = {}
-    for i in range(0, len(rows), 9000):
+    """rows: [(id, street, city, state, zip)] -> {id: (lat, lon)} using a cache, then the free US Census batch geocoder."""
+    cache, today = _geocache(), TODAY.isoformat()
+    key = lambda r: re.sub(r"\s+", " ", "|".join(str(x or "") for x in r[1:])).upper().strip()
+    out, todo = {}, []
+    with _GEO_LOCK:
+        for r in rows:
+            c = cache.get(key(r))
+            if c:
+                c[2] = today
+                if c[0] is not None:
+                    out[r[0]] = (c[0], c[1])
+            else:
+                todo.append(r)
+    if len(rows) > len(todo):
+        log(f"   geocode cache: {len(rows) - len(todo)} of {len(rows)} addresses already known")
+    for i in range(0, len(todo), 9000):
+        part = todo[i:i + 9000]
         buf = io.StringIO()
-        csv.writer(buf).writerows(rows[i:i + 9000])
+        csv.writer(buf).writerows(part)
         body, ctype = multipart([("benchmark", "Public_AR_Current")], {"addressFile": ("a.csv", buf.getvalue().encode())})
-        try:
-            res = http("https://geocoding.geo.census.gov/geocoder/locations/addressbatch", data=body,
-                       headers={"Content-Type": ctype, "Accept": "text/csv"}, raw=True, tries=2, timeout=900)
-        except RuntimeError as e:
-            log(f"   census geocoder failed: {str(e)[:160]}")
+        res = None
+        for attempt in range(3):
+            try:
+                with _CENSUS_SLOT:
+                    res = http("https://geocoding.geo.census.gov/geocoder/locations/addressbatch", data=body,
+                               headers={"Content-Type": ctype, "Accept": "text/csv"}, raw=True, tries=2, timeout=900)
+            except RuntimeError as e:
+                log(f"   census geocoder failed: {str(e)[:160]}")
+                res = None
+            if res and b"Request Rejected" not in res[:300]:
+                break
+            if res:
+                log("   census geocoder rejected the request; waiting before retrying")
+            res = None
+            time.sleep(60 * (attempt + 1))
+        if not res:
             continue
+        got = {}
         for r in csv.reader(io.StringIO(res.decode("utf-8", "replace"))):
             if len(r) >= 6 and r[2] == "Match" and "," in r[5]:
                 lon, lat = r[5].split(",")[:2]
-                out[r[0]] = (num(lat), num(lon))
-        log(f"   census geocoded {len(out)} of {min(i + 9000, len(rows))}")
-        if not out:
+                got[r[0]] = (num(lat), num(lon))
+        with _GEO_LOCK:
+            for r in part:
+                g = got.get(r[0])
+                cache[key(r)] = [g[0], g[1], today] if g else [None, None, today]
+        out.update(got)
+        log(f"   census geocoded {len(got)} of {len(part)} new addresses")
+        if not got:
             log("   census response sample: " + res[:300].decode("utf-8", "replace").replace("\n", " | "))
     return out

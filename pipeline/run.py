@@ -7,9 +7,9 @@ Run every adapter, write data/<region>/*.json, data/regions.json and history/las
 import json, os, sys, time, traceback
 from concurrent.futures import ThreadPoolExecutor
 from pipeline import core
-from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe
+from pipeline.adapters import nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics
 
-ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe]
+ADAPTERS = [nyc, us_cities, us_other, us_hubs, us_states, fr, europe, nordics]
 
 
 def main():

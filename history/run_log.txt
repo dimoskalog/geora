@@ -1,20 +1,14 @@
 ######## start us-dc · Washington, DC
 
 == Washington, DC (ArcGIS Hub opendata.dc.gov)
-######## start es-madrid · Madrid
-
-== Madrid urban planning licences granted
-   address points: 214677; columns: ['COD_VIA', 'VIA_CLASE', 'VIA_PAR', 'VIA_NOMBRE', 'VIA_NOMBRE_ACENTOS', 'CLASE_APP', 'NUMERO', 'CALIFICADOR', 'TIPO_NDP', 'COD_NDP', 'DISTRITO', 'BARRIO', 'COD_POSTAL', 'UTMX_ED', 'UTMY_ED', 'UTMX_ETRS', 'UTMY_ETRS', 'LATITUD', 'LONGITUD', 'ANGULO_ROTULACION']
-   sample address point: ['31076880', '448983,15', '4476500,95', "40°26'15.32'' N", "3°36'5.49'' W"]
-   licences in the last 180 days: 1625, located 1581 (latest 2026-09-30)
-   history: 1581 records seen for the first time today (1581 remembered)
-######## done es-madrid: 1581 events
    using 'Building Permits in Last 30 Days' (3282 records since 2026-07-21) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4
 
 == DC new basic business licences
-   sample: {'type': 'Feature', 'geometry': None, 'properties': {'INITIALISSUEDATE': 1786939200000, 'BUSINESSACTIVITY': 'One Family Rental', 'PREMISEADDRESS': '1400 Church St NW, Apt 203, Washington, DC, 20005, USA', 'ENTITYNAME': None, 'ENTITYTRADENAME': None, 'CUSTOMERNUMBER': '500526030339', 'CATEGORYSERVICETYPE': 'Housing and Lodging Services', 'LICENSESTATUS': 'Active'}}
-   2000 licences, 0 located
-   history: 0 records seen for the first time today (27 remembered)
-######## done us-dc: 3282 events
+   3611 licences; 1922 after leaving out home rentals
+   census geocoded 1784 of 1922 new addresses
+   located 1200
+   history: 1061 records seen for the first time today (1088 remembered)
+######## done us-dc: 4482 events
+   US geocode cache: 63842 addresses saved
 
-Done in 0.2 min: us-dc 3282, es-madrid 1581
+Done in 0.5 min: us-dc 4482

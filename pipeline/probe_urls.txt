@@ -1,6 +1,4 @@
-https://data.gov.ie/api/3/action/package_show?id=national-planning-applications
-https://donnees.montreal.ca/api/3/action/package_show?id=permis-construction
-https://www.datos.gov.co/resource/c82u-588k.json?$limit=1&$order=fecha_matricula%20DESC
-https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=GetFeature&typeName=bag:pand&resultType=hits&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Estatus%3C/PropertyName%3E%3CLiteral%3EBouwvergunning%20verleend%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E
-https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=GetFeature&typeName=bag:pand&resultType=hits&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Estatus%3C/PropertyName%3E%3CLiteral%3EBouw%20gestart%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E
-https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=2.0.0&request=DescribeFeatureType&typeName=bag:verblijfsobject
+https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0/query?where=1%3D1&outFields=*&resultRecordCount=1&orderByFields=ReceivedDate%20DESC&f=json&outSR=4326
+https://services.arcgis.com/NzlPQPKn5QF9v2US/arcgis/rest/services/IrishPlanningApplications/FeatureServer/0?f=json
+https://donnees.montreal.ca/api/3/action/datastore_search?resource_id=5232a72d-235a-48eb-ae20-bb9d501300ad&limit=1
+https://donnees.montreal.ca/api/3/action/resource_search?query=name:permis&limit=3

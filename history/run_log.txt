@@ -91,8 +91,17 @@
    Edmonton: using dataset 24uj-dj8v 'General Building Permits'
 
 == Philadelphia new business licenses (Carto)
+   Chicago Chicago Building Permits (permit): 8959
+   110 rows without coordinates: geocoding addresses
+   geocode cache: 110 of 110 addresses already known
+   -> 8945 located events of 8959 rows
    rows: 3692
    history: 0 records seen for the first time today (14835 remembered)
+   Los Angeles LA Active Businesses (business): 4803
+   645 rows without coordinates: geocoding addresses
+   geocode cache: 645 of 645 addresses already known
+   -> 988 located events of 4803 rows
+   history: 0 records seen for the first time today (16763 remembered)
 ######## done us-philly: 14630 events
 ######## start us-baltimore · Baltimore
 

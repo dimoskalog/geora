@@ -1,17 +1,17 @@
 {
- "started": "2026-10-19 13:35 UTC",
+ "started": "2026-10-19 13:37 UTC",
  "regions": {
   "us-seattle": {
    "name": "Seattle",
-   "events": 1608,
+   "events": 2515,
    "parts": {
     "Seattle Building Permits (permit)": {
      "events": 1608,
-     "seconds": 2
+     "seconds": 3
     },
     "seattle_new_licences": {
-     "events": 0,
-     "seconds": 1
+     "events": 907,
+     "seconds": 4
     }
    }
   }
@@ -24,12 +24,12 @@
   "   geocode cache: 1 of 1 addresses already known",
   "   -> 1608 located events of 1608 rows",
   "\n== Seattle new business licence certificates",
-  "   licences: 1342",
-  "   geocode cache: 915 of 915 addresses already known",
-  "   located 0 of 915",
-  "   debug: geo sample [('0', (47.657819506792, -122.365117990518)), ('1', (47.664981790906, -122.352604822204))]; row sample {'business_legal_name': 'BAROMETER COFFEE LLC', 'trade_name': 'BAROMETER COFFEE CO.', 'ownership_type': 'LLC - Single Member', 'naics_code': '311920', 'naics_description': 'Coffee and Tea Manufacturing', 'license_start_date': '20261019', 'street_address': '700 NW 42ND ST', 'city': 'SEATTLE', 'state': 'WA', 'zip': '98107-4505', 'business_phone': '2069990467', 'city_account_number': '0008960950814002'}",
-  "   history: 0 records seen for the first time today (1639 remembered)",
-  "######## done us-seattle: 1608 events",
-  "   US geocode cache: 64726 addresses saved"
+  "   licences: 1353",
+  "   geocode cache: 915 of 922 addresses already known",
+  "   census geocoded 7 of 7 new addresses",
+  "   located 907 of 922",
+  "   history: 907 records seen for the first time today (2546 remembered)",
+  "######## done us-seattle: 2515 events",
+  "   US geocode cache: 64733 addresses saved"
  ]
 }

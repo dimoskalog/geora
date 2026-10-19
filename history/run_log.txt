@@ -1,307 +1,74 @@
 ######## start us-nyc · New York
-######## start us-sf · San Francisco
 
 == NYC DOB NOW permits
-######## start us-chicago · Chicago
-######## start us-seattle · Seattle
-######## start us-austin · Austin
-######## start us-la · Los Angeles
-######## start us-nola · New Orleans
-######## start us-cincinnati · Cincinnati
-   Cincinnati: using dataset uhjb-xac9 'Cincinnati Building Permits'
-   New Orleans: using dataset rcm3-fn58 'Permits'
-   San Francisco SF Building Permits (permit): 4333
-   1 rows without coordinates: geocoding addresses
-   geocode cache: 1 of 1 addresses already known
-   -> 4333 located events of 4333 rows
-   Cincinnati Cincinnati Building Permits (permit): 2801
-   629 rows without coordinates: geocoding addresses
-   geocode cache: 629 of 629 addresses already known
-   -> 2754 located events of 2801 rows
-   history: 0 records seen for the first time today (2664 remembered)
-######## done us-cincinnati: 2754 events
-######## start us-montgomery · Montgomery County, MD
-   New Orleans New Orleans Building Permits (permit): 4193
-   -> 4193 located events of 4193 rows
-   history: 1 records seen for the first time today (4248 remembered)
-######## done us-nola: 4193 events
-######## start us-baton-rouge · Baton Rouge
-   Seattle Seattle Building Permits (permit): 1608
-   1 rows without coordinates: geocoding addresses
-   geocode cache: 1 of 1 addresses already known
-   -> 1608 located events of 1608 rows
-   history: 0 records seen for the first time today (1639 remembered)
-######## done us-seattle: 1608 events
-######## start us-norfolk · Norfolk, VA
-   San Francisco SF Registered Business Locations (business): 2992
-   Montgomery County, MD: using dataset 7ate-xrxm 'Construction Activities of Commercial Permits'
-   74 rows without coordinates: geocoding addresses
-   geocode cache: 73 of 74 addresses already known
-   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'
-   census geocoded 1 of 1 new addresses
-   -> 2181 located events of 2992 rows
-   Norfolk, VA: using dataset fahm-yuh4 'Permits'
-   Montgomery County, MD Montgomery County, MD Building Permits (permit): 151
-   -> 133 located events of 151 rows
-   Austin Austin Issued Construction Permits (permit): 14680
-   history: 0 records seen for the first time today (307 remembered)
-######## done us-montgomery: 133 events
 ######## start ca-calgary · Calgary
-   5848 rows without coordinates: geocoding addresses
-   geocode cache: 5848 of 5848 addresses already known
-   -> 11973 located events of 14680 rows
-   history: 0 records seen for the first time today (12120 remembered)
-   Baton Rouge Baton Rouge Building Permits (permit): 2207
-   5 rows without coordinates: geocoding addresses
-   geocode cache: 5 of 5 addresses already known
-   -> 2122 located events of 2207 rows
-   history: 0 records seen for the first time today (2145 remembered)
-######## done us-austin: 11973 events
-######## start ca-edmonton · Edmonton
-######## done us-baton-rouge: 2122 events
-######## start us-boston · Boston
+######## start ca-vancouver · Vancouver
 
-== Boston approved building permits (CKAN)
-   Norfolk, VA Norfolk, VA Building Permits (permit): 2852
-   175 rows without coordinates: geocoding addresses
-   geocode cache: 175 of 175 addresses already known
-   -> 2827 located events of 2852 rows
-   history: 3 records seen for the first time today (2879 remembered)
-######## done us-norfolk: 2827 events
-######## start us-philly · Philadelphia
+== Vancouver issued building permits
+######## start ca-winnipeg · Winnipeg
 
-== Philadelphia building permits (Carto)
+== Winnipeg building permits######## start sg · Singapore
+
+
+== Singapore newly registered entities (ACRA)
+######## start ch · Switzerland
+
+== Switzerland SHAB commercial register: new entries and deletions
+######## start ie · Ireland
+
+== Ireland national planning applications
+######## start ca-montreal · Montréal
+
+== Montreal building permits
+   fields: OBJECTID, PlanningAuthority, ApplicationNumber, DevelopmentDescription, DevelopmentAddress, DevelopmentPostcode, ITMEasting, ITMNorthing, ApplicationStatus, ApplicationType, ApplicantForename, ApplicantSurname, ApplicantAddress, Decision, LandUseCode, AreaofSite, NumResidentialUnits, OneOffHouse, FloorArea, ReceivedDate, WithdrawnDate, DecisionDate, DecisionDueDate, GrantDate, ExpiryDate, AppealRefNumber, AppealStatus, AppealDecision, AppealDecisionDate, AppealSubmittedDate, FIRequestDate, FIRecDate, LinkAppDetails, OneOffKPI, ETL_DATE, SiteId, ORIG_FID
    Calgary: using dataset c2es-76ed 'Building Permits'
-   San Francisco SF Registered Business Locations (closure): 827
-   26 rows without coordinates: geocoding addresses
-   geocode cache: 26 of 26 addresses already known
-   -> 712 located events of 827 rows
-   history: 10 records seen for the first time today (6926 remembered)
-   rows: 713
-   history: 0 records seen for the first time today (702 remembered)
-######## done us-boston: 693 events
-######## start us-dc · Washington, DC
+   permits: 2157
+   history: 2155 records seen for the first time today (2155 remembered)
+######## done ca-winnipeg: 2155 events
+######## start nl · Netherlands
 
-== Washington, DC (ArcGIS Hub opendata.dc.gov)
-######## done us-sf: 7226 events
-######## start us-detroit · Detroit
-
-== Detroit (ArcGIS Hub data.detroitmi.gov)
-   rows: 11207
-   Edmonton: using dataset 24uj-dj8v 'General Building Permits'
-
-== Philadelphia new business licenses (Carto)
-   Chicago Chicago Building Permits (permit): 8959
-   110 rows without coordinates: geocoding addresses
-   geocode cache: 110 of 110 addresses already known
-   -> 8945 located events of 8959 rows
-   rows: 3692
-   history: 0 records seen for the first time today (14835 remembered)
-   Los Angeles LA Active Businesses (business): 4803
-   645 rows without coordinates: geocoding addresses
-   geocode cache: 645 of 645 addresses already known
-   -> 988 located events of 4803 rows
-   history: 0 records seen for the first time today (16763 remembered)
-######## done us-philly: 14630 events
-######## start us-baltimore · Baltimore
-
-== Baltimore (ArcGIS Hub data.baltimorecity.gov)
-   Edmonton Edmonton Building Permits (permit): 4138
-   -> 2809 located events of 4138 rows
-   history: 0 records seen for the first time today (2841 remembered)
-######## done ca-edmonton: 2809 events
-######## start us-minneapolis · Minneapolis
-
-== Minneapolis (ArcGIS Hub opendata.minneapolismn.gov)
-   using 'Building Permits' (1718 records since 2026-07-21) https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0
-   history: 0 records seen for the first time today (1731 remembered)
-######## done us-detroit: 1718 events
-######## start us-raleigh · Raleigh
-
-== Raleigh (ArcGIS Hub data-ral.opendata.arcgis.com)
-   using 'CCS Permits' (10772 records since 2026-07-21) https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer/0
+== Netherlands: buildings under construction (BAG)
    Calgary Calgary Building Permits (permit): 5712
-   using 'Housing and Building Permits 2019-Present' (7721 records since 2026-07-21) https://baltegis.baltimorecity.gov/mapping/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3
    -> 5712 located events of 5712 rows
-   history: 0 records seen for the first time today (5759 remembered)
-######## done ca-calgary: 5712 events
-######## start us-charlotte · Charlotte
 
-== Charlotte (ArcGIS Hub data.charlottenc.gov)
-   [us-charlotte] FAILED permits: no usable permit layer; tried Special Use Permits: no recent records
-   using 'Building Permits Issued Past 180 Days' (1379 records since 2026-07-21) https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits_Issued_Past_180_Days/FeatureServer/0
-   [us-charlotte] could not reuse published data: https://dimoskalog.github.io/geora/data/us-charlotte/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <met
-   [us-charlotte] no events; keeping it off the map
-######## start us-columbus · Columbus
-
-== Columbus (ArcGIS Hub opendata.columbus.gov)
-   history: 0 records seen for the first time today (3201 remembered)
-######## done us-raleigh: 1378 events
-######## start us-miami · Miami-Dade
-
-== Miami-Dade (ArcGIS Hub gis-mdc.opendata.arcgis.com)
-   using 'Building Permits' (11960 records since 2026-07-21) https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0
-   history: 0 records seen for the first time today (9305 remembered)
-   history: 27 records seen for the first time today (7461 remembered)
-   using 'Building Permits in Last 30 Days' (3282 records since 2026-07-21) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4
-######## done us-minneapolis: 10767 events
-######## start us-houston · Houston
-
-== Houston (ArcGIS Hub cohgis-mycity.opendata.arcgis.com)
-######## done us-baltimore: 7721 events
-######## start us-atlanta · Atlanta
-
-== Atlanta (ArcGIS Hub dpcd-coaplangis.opendata.arcgis.com)
-   [us-houston] FAILED permits: https://cohgis-mycity.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> HTTP 404: {"error":"GWM_0003: You do not have permissions to access this resource or perform this operation."}
-   [us-houston] could not reuse published data: https://dimoskalog.github.io/geora/data/us-houston/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta 
-   [us-houston] no events; keeping it off the map
-######## start us-vegas · Las Vegas
-
-== Las Vegas (ArcGIS Hub opendataportal-lasvegas.opendata.arcgis.com)
-   [us-atlanta] FAILED permits: no usable permit layer; tried 
-   [us-atlanta] could not reuse published data: https://dimoskalog.github.io/geora/data/us-atlanta/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta 
-   [us-atlanta] no events; keeping it off the map
-######## start us-tampa · Tampa
-
-== Tampa (ArcGIS Hub city-tampa.opendata.arcgis.com)
-   using 'Building Permits ' (17 records since 2026-07-21) https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0
-   0 events from 17 rows. roles={'type': 'WORKTYPE', 'desc': None, 'cost': None, 'addr': None, 'rid': None} date=2026-10-02 coords=None,None sample={'APNO': 'R26-12813', 'APBLDGKEY': 1584234, 'APTYPE': 'Res', 'WORKTYPE': 'OTC', 'APPLICANT': 'Monkey Wrench Plumbing', 'APL_ADDRESS': '5916 KELITABB CT LAS VEGAS', 'BLDGAPPLSTATUS': 'Issued', 'ISSDTTM': 1790899200000, 'DECLVLTN': 500, 'CALCVLTN': 0, 'STNO': 6553, 'PREDIR': None, 'STNAME': 'BEACON', 'SUFFIX': 'RD', 'POSTDIR': None, 'STSUB': None, 'SUBDIVCODEADR': 30070, 'PRCLID': 13811110170, 'SUBD
-   [us-vegas] could not reuse published data: https://dimoskalog.github.io/geora/data/us-vegas/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta ht
-   [us-vegas] no events; keeping it off the map
-######## start us-denver · Denver
-
-== Denver (ArcGIS Hub opendata-geospatialdenver.hub.arcgis.com)
-   using 'Single Family Permits' (30 records since 2026-07-21) https://arcgis.tampagov.net/arcgis/rest/services/OpenData/Planning/MapServer/32
-   history: 0 records seen for the first time today (27 remembered)
-######## done us-dc: 3282 events
-######## start us-sanantonio · San Antonio
-
-== San Antonio (CKAN data.sanantonio.gov)
-   history: 0 records seen for the first time today (31 remembered)
-######## done us-tampa: 30 events
-######## start us-pittsburgh · Pittsburgh
-
-== Pittsburgh (CKAN data.wprdc.org)
-   using 'PLI Permits / PLI Permits' (2426 records)
-   history: 0 records seen for the first time today (2412 remembered)
-######## done us-pittsburgh: 2426 events
-######## start us-phoenix · Phoenix
-
-== Phoenix (CKAN www.phoenixopendata.com)
-   using 'Demolition Permits' (151 records since 2026-07-21) https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_DEMOLITIONPERMIT_P/FeatureServer/318
-   history: 138 records seen for the first time today (653 remembered)
-######## done us-denver: 151 events
-######## start us-sanjose · San Jose
-
-== San Jose (CKAN data.sanjoseca.gov)
-   [us-phoenix] FAILED permits: no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field
-   [us-phoenix] could not reuse published data: https://dimoskalog.github.io/geora/data/us-phoenix/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta 
-   [us-phoenix] no events; keeping it off the map
-######## start us-tx · Texas
-
-== Texas new sales-tax permits (new outlets, statewide)
-   using 'Last 30 days building permits / Last 30 days Building Permits' (1245 records)
-   0 events from 1245 rows. roles={'type': None, 'desc': 'WORKDESCRIPTION', 'cost': None, 'addr': None, 'rid': None} date=2026-09-30 coords=None,None sample={'_id': 1097, '_full_text': "'-140470':35 '-2116':9 '0':69,70 '00':65,66 '1':37,68 '100':43 '12':64 '2':38 '2026':34 '2208991':71 '2779':2 '30':1 '58927080':10 '9/30/2026':63 '95132':8 'additions/alterations':50 'am':67 'and':22 'b':52 'b-complete':51 'bepm':42 'building':12,28 'ca':7 'ching':25 'chou':17,33 'cl':4 'complete':53,56,59,62 'construction':13,29 'detached':40 'dwellings':41 'e':55 'e-
-   [us-sanjose] could not reuse published data: https://dimoskalog.github.io/geora/data/us-sanjose/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta 
-   [us-sanjose] no events; keeping it off the map
-######## start us-ny · New York State
-
-== New York State new corporations and LLCs (statewide)
-   Los Angeles LADBS Building Permits (permit): 15567
-   -> 15536 located events of 15567 rows
+== Calgary new business licences
+   7435 applications
+   history: 7433 records seen for the first time today (7433 remembered)
+######## done ie: 7435 events
+   licences: 808
+   history: 808 records seen for the first time today (6567 remembered)
+######## done ca-calgary: 6520 events
+   1002 permits
+   history: 999 records seen for the first time today (999 remembered)
+######## done ca-vancouver: 999 events
+   new: 4833; after leaving out shared corporate-secretary addresses: 3002
+   sql not available (https://donnees.montreal.ca/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%225232a72d-235a-4); paging newest first
+   5500 permits
+   history: 5473 records seen for the first time today (5473 remembered)
+######## done ca-montreal: 5493 events
+   publications: 4389 new, 2602 deletions
    permits: 45652
 
 == NYC restaurant inspections
-   using 'Building Permits / APPLICATIONS SUBMITTED' (18817 records)
-   17513 rows without coordinates: geocoding
-   geocode cache: 17513 of 17513 addresses already known
-   history: 0 records seen for the first time today (10631 remembered)
-   permits: 16556
-   Los Angeles LA Active Businesses (business): 4803
-   645 rows without coordinates: geocoding addresses
-   geocode cache: 645 of 645 addresses already known
-   -> 988 located events of 4803 rows
-   geocode cache: 16556 of 16556 addresses already known
-   sales-tax permits: 14837 located of 16556
-
-== Texas liquor licences (TABC): pending applications and new licences
-   history: 0 records seen for the first time today (16763 remembered)
-   new entities: 19883
-   sample: {'dos_process_address_1': '53 STANTON STREET APT 1A', 'dos_process_city': 'NEW YORK', 'dos_process_state': 'NY'}
-   geocode cache: 19281 of 19281 addresses already known
-   history: 1 records seen for the first time today (90 remembered)
-   pending: 894
-   new entities: 18067 located of 19281
-   history: 0 records seen for the first time today (18167 remembered)
-######## done us-sanantonio: 11295 events
-######## start us-co · Colorado
-
-== Colorado new business registrations (statewide)
-######## done us-columbus: 11960 events
-######## start fr · France
-
-== France BODACC (sales of businesses, insolvencies, creations, removals)
-######## done us-la: 16524 events
-######## start gb-london · London
-
-== UK FSA food hygiene: London
-######## done us-ny: 18065 events
-######## start gb-se · South East England
-
-== UK FSA food hygiene: South East
-   issued: 2430
-   geocode cache: 894 of 894 addresses already known
-   pending: 731 located of 894
-   geocode cache: 2430 of 2430 addresses already known
-   issued: 1963 located of 2430
-   history: 0 records seen for the first time today (18212 remembered)
-######## done us-tx: 17425 events
-######## start gb-east · East of England
-
-== UK FSA food hygiene: East Counties
-   Ventes et cessions: 3601 notices
-   entities: 13782
-   geocode cache: 12268 of 12452 addresses already known
-   census geocoded 162 of 184 new addresses
-   registrations: 11382 located of 12452
-   history: 212 records seen for the first time today (11788 remembered)
-######## done us-co: 11374 events
-######## start gb-em · East Midlands
-
-== UK FSA food hygiene: East Midlands
    inspection rows: 27662
-   Procédures collectives: 15000 notices
    new restaurant rows: 3908
-   [us-miami] FAILED permits: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError("Expecting ',' delimiter: line 61555 column 1 (char 3118396)")
 
 == NYC ACRIS deeds and mortgages (published with a 2-3 month delay)
-   [us-miami] could not reuse published data: https://dimoskalog.github.io/geora/data/us-miami/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <meta ht
-   [us-miami] no events; keeping it off the map
-######## start gb-wm · West Midlands
-
-== UK FSA food hygiene: West Midlands
    documents: 30000
-   Créations: 25000 notices
-   Radiations: 10000 notices
-   geocoded 4840 of 5000
+   documents 30000, lots 24057, located 16617 + condo blocks 1966
+
+== NYC new premises licences (DCWP)
+   licences: 542
+   history: 495 records seen for the first time today (82313 remembered)
+######## done us-nyc: 90240 events
+   48088 buildings under construction
+   history: 48088 records seen for the first time today (48088 remembered)
+######## done nl: 48088 events
+   located 1843
+   history: 1843 records seen for the first time today (1843 remembered)
+######## done sg: 1843 events
+   located 6825 of 6991
+   history: 6751 records seen for the first time today (6751 remembered)
+######## done ch: 6825 events
+
+Done in 10.8 min: us-nyc 90240, ca-calgary 6520, ca-vancouver 999, ca-winnipeg 2155, sg 1843, ch 6825, ie 7435, ca-montreal 5493, nl 48088

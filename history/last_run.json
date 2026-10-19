@@ -1,13 +1,13 @@
 {
- "started": "2026-10-19 02:07 UTC",
+ "started": "2026-10-19 02:33 UTC",
  "regions": {
-  "us-nola": {
-   "name": "New Orleans",
-   "events": 4192,
+  "us-seattle": {
+   "name": "Seattle",
+   "events": 1608,
    "parts": {
-    "New Orleans Building Permits (permit)": {
-     "events": 4192,
-     "seconds": 5
+    "Seattle Building Permits (permit)": {
+     "events": 1608,
+     "seconds": 1
     }
    }
   },
@@ -21,13 +21,13 @@
     }
    }
   },
-  "us-cincinnati": {
-   "name": "Cincinnati",
-   "events": 2754,
+  "us-baton-rouge": {
+   "name": "Baton Rouge",
+   "events": 2122,
    "parts": {
-    "Cincinnati Building Permits (permit)": {
-     "events": 2754,
-     "seconds": 8
+    "Baton Rouge Building Permits (permit)": {
+     "events": 2122,
+     "seconds": 2
     }
    }
   },
@@ -37,49 +37,15 @@
    "parts": {
     "SF Building Permits (permit)": {
      "events": 4333,
-     "seconds": 4
+     "seconds": 3
     },
     "SF Registered Business Locations (business)": {
      "events": 2172,
-     "seconds": 2
+     "seconds": 1
     },
     "SF Registered Business Locations (closure)": {
      "events": 711,
-     "seconds": 2
-    }
-   }
-  },
-  "us-baton-rouge": {
-   "name": "Baton Rouge",
-   "events": 2122,
-   "parts": {
-    "Baton Rouge Building Permits (permit)": {
-     "events": 2122,
-     "seconds": 3
-    }
-   }
-  },
-  "us-la": {
-   "name": "Los Angeles",
-   "events": 16524,
-   "parts": {
-    "LADBS Building Permits (permit)": {
-     "events": 15536,
-     "seconds": 2
-    },
-    "LA Active Businesses (business)": {
-     "events": 988,
-     "seconds": 7
-    }
-   }
-  },
-  "us-boston": {
-   "name": "Boston",
-   "events": 693,
-   "parts": {
-    "boston": {
-     "events": 693,
-     "seconds": 0
+     "seconds": 1
     }
    }
   },
@@ -89,21 +55,17 @@
    "parts": {
     "Norfolk, VA Building Permits (permit)": {
      "events": 2824,
-     "seconds": 4
+     "seconds": 2
     }
    }
   },
-  "us-philly": {
-   "name": "Philadelphia",
-   "events": 14630,
+  "ca-calgary": {
+   "name": "Calgary",
+   "events": 5712,
    "parts": {
-    "philly_permits": {
-     "events": 11163,
-     "seconds": 1
-    },
-    "philly_licenses": {
-     "events": 3467,
-     "seconds": 0
+    "Calgary Building Permits (permit)": {
+     "events": 5712,
+     "seconds": 3
     }
    }
   },
@@ -117,33 +79,59 @@
     }
    }
   },
-  "ca-calgary": {
-   "name": "Calgary",
-   "events": 5712,
+  "us-boston": {
+   "name": "Boston",
+   "events": 693,
    "parts": {
-    "Calgary Building Permits (permit)": {
-     "events": 5712,
-     "seconds": 5
+    "boston": {
+     "events": 693,
+     "seconds": 1
     }
    }
   },
-  "us-detroit": {
-   "name": "Detroit",
-   "events": 1718,
+  "us-philly": {
+   "name": "Philadelphia",
+   "events": 14630,
    "parts": {
-    "permits": {
-     "events": 1718,
+    "philly_permits": {
+     "events": 11163,
+     "seconds": 3
+    },
+    "philly_licenses": {
+     "events": 3467,
+     "seconds": 0
+    }
+   }
+  },
+  "us-la": {
+   "name": "Los Angeles",
+   "events": 16524,
+   "parts": {
+    "LADBS Building Permits (permit)": {
+     "events": 15536,
+     "seconds": 8
+    },
+    "LA Active Businesses (business)": {
+     "events": 988,
+     "seconds": 6
+    }
+   }
+  },
+  "us-chicago": {
+   "name": "Chicago",
+   "events": 13933,
+   "parts": {
+    "Chicago Building Permits (permit)": {
+     "events": 8945,
+     "seconds": 10
+    },
+    "Chicago Business Licenses (business)": {
+     "events": 1677,
      "seconds": 4
-    }
-   }
-  },
-  "us-baltimore": {
-   "name": "Baltimore",
-   "events": 7694,
-   "parts": {
-    "permits": {
-     "events": 7694,
-     "seconds": 5
+    },
+    "Chicago Food Inspections (inspection)": {
+     "events": 3311,
+     "seconds": 2
     }
    }
   },
@@ -153,7 +141,27 @@
    "parts": {
     "permits": {
      "events": 3418,
-     "seconds": 7
+     "seconds": 8
+    }
+   }
+  },
+  "us-detroit": {
+   "name": "Detroit",
+   "events": 1718,
+   "parts": {
+    "permits": {
+     "events": 1718,
+     "seconds": 5
+    }
+   }
+  },
+  "us-baltimore": {
+   "name": "Baltimore",
+   "events": 7694,
+   "parts": {
+    "permits": {
+     "events": 7694,
+     "seconds": 4
     }
    }
   },
@@ -168,11 +176,11 @@
   },
   "us-raleigh": {
    "name": "Raleigh",
-   "events": 1374,
+   "events": 1378,
    "parts": {
     "permits": {
-     "events": 1374,
-     "seconds": 3
+     "events": 1378,
+     "seconds": 2
     }
    }
   },
@@ -214,13 +222,13 @@
     }
    }
   },
-  "us-columbus": {
-   "name": "Columbus",
-   "events": 11950,
+  "us-austin": {
+   "name": "Austin",
+   "events": 11973,
    "parts": {
-    "permits": {
-     "events": 11950,
-     "seconds": 6
+    "Austin Issued Construction Permits (permit)": {
+     "events": 11973,
+     "seconds": 25
     }
    }
   },
@@ -230,17 +238,17 @@
    "parts": {
     "permits": {
      "events": 521,
-     "seconds": 4
+     "seconds": 2
     }
    }
   },
-  "us-minneapolis": {
-   "name": "Minneapolis",
-   "events": 10767,
+  "us-columbus": {
+   "name": "Columbus",
+   "events": 11950,
    "parts": {
     "permits": {
-     "events": 10767,
-     "seconds": 18
+     "events": 11950,
+     "seconds": 7
     }
    }
   },
@@ -250,6 +258,16 @@
    "parts": {
     "permits": {
      "error": "no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field"
+    }
+   }
+  },
+  "us-pittsburgh": {
+   "name": "Pittsburgh",
+   "events": 2426,
+   "parts": {
+    "permits": {
+     "events": 2426,
+     "seconds": 2
     }
    }
   },
@@ -263,39 +281,22 @@
     }
    }
   },
+  "us-minneapolis": {
+   "name": "Minneapolis",
+   "events": 10767,
+   "parts": {
+    "permits": {
+     "events": 10767,
+     "seconds": 17
+    }
+   }
+  },
   "us-miami": {
    "name": "Miami-Dade",
    "events": 0,
    "parts": {
     "permits": {
-     "error": "https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError(\"Expecting ',' delimiter: line 60882 column 1 (char 3090621)\")"
-    }
-   }
-  },
-  "us-pittsburgh": {
-   "name": "Pittsburgh",
-   "events": 0,
-   "parts": {
-    "permits": {
-     "error": "https://data.wprdc.org/api/3/action/package_search?q=building+permits&rows=25 -> HTTP 502: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.28.3 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n"
-    }
-   }
-  },
-  "us-nyc": {
-   "name": "New York",
-   "events": 89745,
-   "parts": {
-    "permits": {
-     "events": 45393,
-     "seconds": 16
-    },
-    "restaurants": {
-     "events": 11216,
-     "seconds": 10
-    },
-    "property_records": {
-     "events": 33136,
-     "seconds": 83
+     "error": "https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError(\"Expecting ',' delimiter: line 60952 column 1 (char 3093377)\")"
     }
    }
   },
@@ -315,41 +316,35 @@
    "parts": {
     "fsa": {
      "events": 9579,
-     "seconds": 14
+     "seconds": 13
     }
    }
   },
-  "us-tx": {
-   "name": "Texas",
-   "events": 17425,
+  "us-ny": {
+   "name": "New York State",
+   "events": 18065,
    "parts": {
-    "tx_sales_tax": {
-     "events": 14837,
-     "seconds": 89
-    },
-    "tx_tabc": {
-     "events": 2588,
-     "seconds": 17
+    "ny_corporations": {
+     "events": 18065,
+     "seconds": 92
     }
    }
   },
-  "us-sanantonio": {
-   "name": "San Antonio",
-   "events": 11295,
+  "us-nyc": {
+   "name": "New York",
+   "events": 89745,
    "parts": {
     "permits": {
-     "events": 11295,
-     "seconds": 119
-    }
-   }
-  },
-  "gb-se": {
-   "name": "South East England",
-   "events": 7016,
-   "parts": {
-    "fsa": {
-     "events": 7016,
-     "seconds": 17
+     "events": 45393,
+     "seconds": 11
+    },
+    "restaurants": {
+     "events": 11216,
+     "seconds": 15
+    },
+    "property_records": {
+     "events": 33136,
+     "seconds": 98
     }
    }
   },
@@ -359,7 +354,7 @@
    "parts": {
     "fsa": {
      "events": 4937,
-     "seconds": 18
+     "seconds": 19
     }
    }
   },
@@ -369,17 +364,45 @@
    "parts": {
     "fsa": {
      "events": 3597,
-     "seconds": 14
+     "seconds": 12
     }
    }
   },
-  "gb-wm": {
-   "name": "West Midlands",
-   "events": 5769,
+  "us-sanantonio": {
+   "name": "San Antonio",
+   "events": 11295,
+   "parts": {
+    "permits": {
+     "events": 11295,
+     "seconds": 115
+    }
+   }
+  },
+  "fr": {
+   "name": "France",
+   "events": 59677,
+   "parts": {
+    "bodacc": {
+     "events": 50756,
+     "seconds": 100
+    },
+    "alimconfiance": {
+     "events": 8921,
+     "seconds": 5
+    },
+    "sirene_paris": {
+     "events": 0,
+     "seconds": 0
+    }
+   }
+  },
+  "gb-se": {
+   "name": "South East England",
+   "events": 7016,
    "parts": {
     "fsa": {
-     "events": 5769,
-     "seconds": 13
+     "events": 7016,
+     "seconds": 33
     }
    }
   },
@@ -389,27 +412,25 @@
    "parts": {
     "fsa": {
      "events": 2309,
-     "seconds": 5
-    }
-   }
-  },
-  "gb-sw": {
-   "name": "South West England",
-   "events": 4355,
-   "parts": {
-    "fsa": {
-     "events": 4355,
-     "seconds": 14
+     "seconds": 17
     }
    }
   },
   "gb-yh": {
    "name": "Yorkshire",
-   "events": 4850,
+   "events": 0,
    "parts": {
     "fsa": {
-     "events": 4850,
-     "seconds": 20
+     "error": "https://api.ratings.food.gov.uk/Establishments?localAuthorityId=402&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ"
+    }
+   }
+  },
+  "gb-wm": {
+   "name": "West Midlands",
+   "events": 0,
+   "parts": {
+    "fsa": {
+     "error": "https://api.ratings.food.gov.uk/Establishments?localAuthorityId=359&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ"
     }
    }
   },
@@ -423,23 +444,12 @@
     }
    }
   },
-  "gb-ni": {
-   "name": "Northern Ireland",
-   "events": 1230,
+  "gb-wales": {
+   "name": "Wales",
+   "events": 0,
    "parts": {
     "fsa": {
-     "events": 1230,
-     "seconds": 4
-    }
-   }
-  },
-  "us-seattle": {
-   "name": "Seattle",
-   "events": 1608,
-   "parts": {
-    "Seattle Building Permits (permit)": {
-     "events": 1608,
-     "seconds": 185
+     "error": "https://api.ratings.food.gov.uk/Establishments?localAuthorityId=340&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ"
     }
    }
   },
@@ -449,17 +459,27 @@
    "parts": {
     "dk_smiley": {
      "events": 0,
-     "seconds": 3
+     "seconds": 8
     }
    }
   },
-  "gb-wales": {
-   "name": "Wales",
-   "events": 3063,
+  "gb-sw": {
+   "name": "South West England",
+   "events": 4355,
    "parts": {
     "fsa": {
-     "events": 3063,
-     "seconds": 10
+     "events": 4355,
+     "seconds": 21
+    }
+   }
+  },
+  "gb-ni": {
+   "name": "Northern Ireland",
+   "events": 1230,
+   "parts": {
+    "fsa": {
+     "events": 1230,
+     "seconds": 12
     }
    }
   },
@@ -469,62 +489,37 @@
    "parts": {
     "fsa": {
      "events": 9533,
-     "seconds": 14
+     "seconds": 17
     }
    }
   },
-  "us-chicago": {
-   "name": "Chicago",
-   "events": 13933,
+  "us-nola": {
+   "name": "New Orleans",
+   "events": 4192,
    "parts": {
-    "Chicago Building Permits (permit)": {
-     "events": 8945,
-     "seconds": 191
-    },
-    "Chicago Business Licenses (business)": {
-     "events": 1677,
-     "seconds": 5
-    },
-    "Chicago Food Inspections (inspection)": {
-     "events": 3311,
-     "seconds": 3
+    "New Orleans Building Permits (permit)": {
+     "events": 4192,
+     "seconds": 185
     }
    }
   },
-  "fr": {
-   "name": "France",
-   "events": 59675,
+  "us-cincinnati": {
+   "name": "Cincinnati",
+   "events": 2754,
    "parts": {
-    "bodacc": {
-     "events": 50754,
-     "seconds": 103
-    },
-    "alimconfiance": {
-     "events": 8921,
-     "seconds": 6
-    },
-    "sirene_paris": {
-     "events": 0,
-     "seconds": 0
-    }
-   }
-  },
-  "us-austin": {
-   "name": "Austin",
-   "events": 11973,
-   "parts": {
-    "Austin Issued Construction Permits (permit)": {
-     "events": 11973,
-     "seconds": 224
+    "Cincinnati Building Permits (permit)": {
+     "events": 2754,
+     "seconds": 186
     }
    }
   },
   "fi": {
    "name": "Finland",
-   "events": 0,
+   "events": 2370,
    "parts": {
     "fi_new_companies": {
-     "error": "https://geo.stat.fi/geoserver/postialue/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=postialue%3Apno_2026&outputFormat=application%2Fjson&srsName=EPSG%3A4326&propertyName=postinumeroalue% -> HTTP 400: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>400 Unknown Reason</title>\n</head><body>\n<h1>Unknown Reason</h1>\n<p>Your browser sent a request that this server could not understand.<br />\n</p>\n</body></html>\n"
+     "events": 2370,
+     "seconds": 46
     }
    }
   },
@@ -534,152 +529,156 @@
    "parts": {
     "ee_new_companies": {
      "events": 1866,
-     "seconds": 116
+     "seconds": 90
     }
    }
   },
-  "us-ny": {
-   "name": "New York State",
-   "events": 18065,
+  "us-tx": {
+   "name": "Texas",
+   "events": 17425,
    "parts": {
-    "ny_corporations": {
-     "events": 18065,
-     "seconds": 279
+    "tx_sales_tax": {
+     "events": 14837,
+     "seconds": 780
+    },
+    "tx_tabc": {
+     "events": 2588,
+     "seconds": 30
     }
    }
   },
   "no": {
    "name": "Norway",
-   "events": 3682,
+   "events": 3974,
    "parts": {
     "brreg_new_units": {
-     "events": 3682,
-     "seconds": 1238
+     "events": 3974,
+     "seconds": 1177
     }
    }
   }
  },
- "minutes": 23.7,
+ "minutes": 22.3,
  "log_tail": [
-  "######## done gb-se: 7016 events",
-  "######## start gb-wm · West Midlands",
-  "\n== UK FSA food hygiene: West Midlands",
-  "   geocoded 14449 of 15000",
+  "   history: 0 records seen for the first time today (18167 remembered)",
+  "######## done us-ny: 18065 events",
+  "######## start gb-east · East of England",
+  "\n== UK FSA food hygiene: East Counties",
+  "   geocoded 39082 of 40000",
+  "   documents 30000, lots 24057, located 16617 + condo blocks 1966",
+  "   history: 0 records seen for the first time today (81818 remembered)",
+  "######## done us-nyc: 89745 events",
+  "######## start gb-em · East Midlands",
+  "\n== UK FSA food hygiene: East Midlands",
+  "   geocoded 44007 of 45000",
+  "   geocoded 48859 of 50000",
   "   East Counties: 45 authorities, 4937 events (1615 new businesses awaiting inspection)",
   "   history: 0 records seen for the first time today (4937 remembered)",
   "######## done gb-east: 4937 events",
+  "######## start gb-wm · West Midlands",
+  "\n== UK FSA food hygiene: West Midlands",
+  "   East Midlands: 35 authorities, 3597 events (1565 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (3597 remembered)",
+  "######## done gb-em: 3597 events",
   "######## start gb-nw · North West England",
   "\n== UK FSA food hygiene: North West",
-  "   East Midlands: 35 authorities, 3597 events (1565 new businesses awaiting inspection)",
-  "   West Midlands: 30 authorities, 5769 events (2917 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (3597 remembered)",
-  "   history: 0 records seen for the first time today (5769 remembered)",
-  "######## done gb-em: 3597 events",
+  "   census geocoded 11295 of 17513",
+  "   history: 0 records seen for the first time today (10631 remembered)",
+  "######## done us-sanantonio: 11295 events",
   "######## start gb-ne · North East England",
   "\n== UK FSA food hygiene: North East",
-  "######## done gb-wm: 5769 events",
-  "######## start gb-yh · Yorkshire",
-  "\n== UK FSA food hygiene: Yorkshire and Humberside",
-  "   geocoded 19290 of 20000",
-  "   North East: 13 authorities, 2309 events (748 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (2309 remembered)",
-  "######## done gb-ne: 2309 events",
-  "######## start gb-sw · South West England",
-  "\n== UK FSA food hygiene: South West",
-  "   geocoded 24239 of 25000",
-  "   geocoded 29181 of 30000",
-  "   South West: 27 authorities, 4355 events (1445 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (4355 remembered)",
-  "######## done gb-sw: 4355 events",
-  "######## start gb-wales · Wales",
-  "\n== UK FSA food hygiene: Wales",
-  "   Yorkshire and Humberside: 16 authorities, 4850 events (2444 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (4850 remembered)",
-  "######## done gb-yh: 4850 events",
-  "######## start gb-scotland · Scotland",
-  "\n== UK FSA food hygiene: Scotland",
-  "   North West: 35 authorities, 7779 events (3643 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (7779 remembered)",
-  "######## done gb-nw: 7779 events",
-  "######## start gb-ni · Northern Ireland",
-  "\n== UK FSA food hygiene: Northern Ireland",
-  "   geocoded 34129 of 35000",
-  "   Northern Ireland: 11 authorities, 1230 events (242 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (1230 remembered)",
-  "######## done gb-ni: 1230 events",
-  "######## start no · Norway",
-  "\n== Norway: new business locations (Enhetsregisteret sub-units)",
-  "   Seattle Seattle Building Permits (permit): 1608",
-  "   1 rows without coordinates: geocoding addresses",
-  "   census geocoded 1 of 1",
-  "   -> 1608 located events of 1608 rows",
-  "   history: 4 records seen for the first time today (1639 remembered)",
-  "######## done us-seattle: 1608 events",
-  "######## start dk · Denmark",
-  "\n== Denmark smiley food controls",
-  "   https://www.findsmiley.dk/xml/allekontrolresultater.xml: https://www.findsmiley.dk/xml/allekontrolresultater.xml -> HTTP 404: <!DOCTYPE html>\n<html lang=\"da\"><head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\"",
-  "   https://www.foedevarestyrelsen.dk/_layouts/15/sdata/smiley_xml.zip: https://www.foedevarestyrelsen.dk/_layouts/15/sdata/smiley_xml.zip -> HTTP 404: \r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head id=\"Head1\"><title>\r\nVi kan desværre i",
-  "   https://www.findsmiley.dk/xml/allekontrolresultater.zip: https://www.findsmiley.dk/xml/allekontrolresultater.zip -> HTTP 404: <!DOCTYPE html>\n<html lang=\"da\"><head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\"",
-  "   [dk] no events; keeping it off the map",
-  "######## start fi · Finland",
-  "\n== Finland: companies registered in the last 30 days (PRH)",
-  "   Wales: 22 authorities, 3063 events (1350 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (3063 remembered)",
-  "######## done gb-wales: 3063 events",
-  "######## start ee · Estonia",
-  "\n== Estonia: companies first entered in the last 30 days (e-Business Register)",
-  "   Austin Austin Issued Construction Permits (permit): 14680",
-  "   5848 rows without coordinates: geocoding addresses",
-  "   Chicago Chicago Building Permits (permit): 8959",
-  "   totalResults: 2430, page size 100",
-  "   110 rows without coordinates: geocoding addresses",
-  "   geocoded 39081 of 40000",
-  "   census geocoded 101 of 110",
-  "   -> 8945 located events of 8959 rows",
-  "   rows: 379999; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']",
-  "   Chicago Chicago Business Licenses (business): 1915",
-  "   251 rows without coordinates: geocoding addresses",
-  "   new: 2429; after leaving out shared virtual-office addresses: 1868",
-  "   Scotland: 32 authorities, 9533 events (6652 new businesses awaiting inspection)",
-  "   history: 0 records seen for the first time today (9533 remembered)",
-  "######## done gb-scotland: 9533 events",
-  "   census geocoded 19 of 251",
-  "   -> 1677 located events of 1915 rows",
-  "   new sub-units: 7543",
-  "   geocoded 44006 of 45000",
-  "   Chicago Chicago Food Inspections (inspection): 3328",
-  "   20 rows without coordinates: geocoding addresses",
-  "   census geocoded 3 of 20",
-  "   -> 3311 located events of 3328 rows",
-  "   history: 0 records seen for the first time today (14122 remembered)",
-  "######## done us-chicago: 13933 events",
-  "   geocoded 48858 of 50000",
-  "   geocoded 51982 of 53221",
+  "   geocoded 51983 of 53221",
   "\n== France Alim'confiance (food safety inspections)",
   "   inspections: 9264",
   "\n== SIRENE skipped (no INSEE_KEY secret)",
   "   history: 0 records seen for the first time today (59529 remembered)",
-  "######## done fr: 59675 events",
-  "   census geocoded 3142 of 5848",
-  "   -> 11973 located events of 14680 rows",
-  "   history: 0 records seen for the first time today (12120 remembered)",
-  "######## done us-austin: 11973 events",
-  "   new entities: 19883",
-  "   sample: {'dos_process_address_1': '53 STANTON STREET APT 1A', 'dos_process_city': 'NEW YORK', 'dos_process_state': 'NY'}",
-  "   [fi] FAILED fi_new_companies: https://geo.stat.fi/geoserver/postialue/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=postialue%3Apno_2026&outputFormat=application%2Fjson&srsName=EPSG%3A4326&propertyName=postinumeroalue% -> HTTP 400: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>400 Unknown Reason</title>\n</head><body>\n<h1>Unknown Reason</h1>\n<p>Your browser sent a request that this server could not understand.<br />\n</p>\n</body></html>\n",
-  "   [fi] no events; keeping it off the map",
-  "   census geocoded 8469 of 9000",
+  "   South East: 64 authorities, 7016 events (2169 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (7016 remembered)",
+  "######## done gb-se: 7016 events",
+  "######## start gb-yh · Yorkshire",
+  "\n== UK FSA food hygiene: Yorkshire and Humberside",
+  "######## done fr: 59677 events",
+  "######## start gb-sw · South West England",
+  "\n== UK FSA food hygiene: South West",
+  "   North East: 13 authorities, 2309 events (748 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (2309 remembered)",
+  "######## done gb-ne: 2309 events",
+  "######## start gb-wales · Wales",
+  "\n== UK FSA food hygiene: Wales",
+  "   [gb-yh] FAILED fsa: https://api.ratings.food.gov.uk/Establishments?localAuthorityId=402&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ",
+  "   [gb-yh] no events; keeping it off the map",
+  "######## start gb-scotland · Scotland",
+  "\n== UK FSA food hygiene: Scotland",
+  "   [gb-wm] FAILED fsa: https://api.ratings.food.gov.uk/Establishments?localAuthorityId=359&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ",
+  "   [gb-wm] no events; keeping it off the map",
+  "######## start gb-ni · Northern Ireland",
+  "\n== UK FSA food hygiene: Northern Ireland",
+  "   North West: 35 authorities, 7779 events (3643 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (7779 remembered)",
+  "######## done gb-nw: 7779 events",
+  "######## start no · Norway",
+  "\n== Norway: new business locations (Enhetsregisteret sub-units)",
+  "   [gb-wales] FAILED fsa: https://api.ratings.food.gov.uk/Establishments?localAuthorityId=340&pageSize=5000&pageNumber=1 -> HTTP 403: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>403 - Forbidden: Access is denied.</title>\r\n<style typ",
+  "   [gb-wales] no events; keeping it off the map",
+  "######## start dk · Denmark",
+  "\n== Denmark smiley food controls",
+  "   https://pub.fvst.dk/publikationer/Smileydata.xml: 59892094 bytes",
+  "   fields: id_nummer, cvr_nummer, p_nummer, smileybranche, fvst_branchenummer, fvst_branche, virksomhedstype, virksomhed, adresse, postnummer, by, seneste_kontrol_resultat, seneste_kontrol_dato, næstseneste_kontrol_resultat, næstseneste_kontrol_dato, tredjeseneste_kontrol_resultat, tredjeseneste_kontrol_dato, fjerdeseneste_kontrol_resultat, fjerdeseneste_kontrol_dato, url, reklamebeskyttelse",
+  "   58858 businesses, 0 controls in the last 90 days",
+  "   [dk] no events; keeping it off the map",
+  "######## start fi · Finland",
+  "\n== Finland: companies registered in the last 30 days (PRH)",
+  "   South West: 27 authorities, 4355 events (1445 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (4355 remembered)",
+  "######## done gb-sw: 4355 events",
+  "######## start ee · Estonia",
+  "\n== Estonia: companies first entered in the last 30 days (e-Business Register)",
+  "   Northern Ireland: 11 authorities, 1230 events (242 new businesses awaiting inspection)",
+  "   history: 0 records seen for the first time today (1230 remembered)",
+  "   totalResults: 2430, page size 100",
+  "######## done gb-ni: 1230 events",
+  "   rows: 379999; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']",
+  "   Scotland: 32 authorities, 9533 events (6652 new businesses awaiting inspection)",
+  "   new: 2429; after leaving out shared virtual-office addresses: 1868",
+  "   history: 0 records seen for the first time today (9533 remembered)",
+  "######## done gb-scotland: 9533 events",
+  "   new sub-units: 7543",
+  "   Cincinnati: using dataset uhjb-xac9 'Cincinnati Building Permits'",
+  "   New Orleans: using dataset rcm3-fn58 'Permits'",
+  "   Cincinnati Cincinnati Building Permits (permit): 2801",
+  "   629 rows without coordinates: geocoding addresses",
+  "   New Orleans New Orleans Building Permits (permit): 4192",
+  "   -> 4192 located events of 4192 rows",
+  "   history: 0 records seen for the first time today (4247 remembered)",
+  "######## done us-nola: 4192 events",
+  "   census geocoded 582 of 629",
+  "   -> 2754 located events of 2801 rows",
+  "   history: 0 records seen for the first time today (2664 remembered)",
+  "######## done us-cincinnati: 2754 events",
+  "   postcode layer postialue:pno_2026: 3018 areas",
+  "   postcode properties: id, objectid, posti_alue, vuosi, nimi, namn, kunta, kuntanro, pinta_ala",
+  "   companies: 2430; postcode areas: 3018",
+  "   located 2370",
+  "   history: 2370 records seen for the first time today (2370 remembered)",
+  "######## done fi: 2370 events",
   "   located 1866",
-  "   history: 1866 records seen for the first time today (1866 remembered)",
+  "   history: 0 records seen for the first time today (1866 remembered)",
   "######## done ee: 1866 events",
-  "   census geocoded 16864 of 18000",
-  "   census geocoded 18067 of 19281",
-  "   new entities: 18067 located of 19281",
-  "   history: 0 records seen for the first time today (18167 remembered)",
-  "######## done us-ny: 18065 events",
-  "   exact addresses: 2707; postcode fallback for 1869 postcodes",
-  "   located 3682 of 7094",
-  "   history: 130 records seen for the first time today (6756 remembered)",
-  "######## done no: 3682 events"
+  "   exact addresses: 2300; postcode fallback for 1937 postcodes",
+  "   census geocoded 8051 of 9000",
+  "   census geocoded 14837 of 16556",
+  "   sales-tax permits: 14837 located of 16556",
+  "\n== Texas liquor licences (TABC): pending applications and new licences",
+  "   pending: 894",
+  "   issued: 2430",
+  "   census geocoded 731 of 894",
+  "   pending: 731 located of 894",
+  "   census geocoded 1963 of 2430",
+  "   issued: 1963 located of 2430",
+  "   history: 0 records seen for the first time today (18212 remembered)",
+  "######## done us-tx: 17425 events",
+  "   located 3974 of 7094",
+  "   history: 177 records seen for the first time today (6933 remembered)",
+  "######## done no: 3974 events"
  ]
 }

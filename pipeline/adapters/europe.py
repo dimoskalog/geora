@@ -112,6 +112,107 @@ def fsa_region(region_name, meta):
     return out
 
 
+# --------------------------------------------------------- Companies House ----
+CH_API = "https://api.company-information.service.gov.uk"
+_CH_DONE = {}
+_CH_LOCK = threading.Lock()
+
+
+def _postcodes(codes):
+    """{postcode: (lat, lon, region)} via postcodes.io (free, Open Government Licence)."""
+    import json as _json
+    out, codes = {}, list(codes)
+    for i in range(0, len(codes), 100):
+        try:
+            res = http("https://api.postcodes.io/postcodes", data=_json.dumps({"postcodes": codes[i:i + 100]}).encode(),
+                       headers={"Content-Type": "application/json"}, timeout=60)
+        except RuntimeError:
+            continue
+        for r in res.get("result") or []:
+            q = r.get("result")
+            if q and q.get("latitude"):
+                out[r["query"]] = (q["latitude"], q["longitude"], q.get("region") or q.get("country"))
+    return out
+
+
+def companies_house_all():
+    """Every company incorporated in the last 30 days, located by registered-office postcode. Fetched once per run
+    and shared by the 12 UK regions."""
+    import base64, os
+    with _CH_LOCK:
+        if "events" in _CH_DONE:
+            return _CH_DONE["events"]
+        key = os.environ.get("COMPANIES_HOUSE_KEY", "").strip()
+        if not key:
+            log("\n== Companies House skipped (no COMPANIES_HOUSE_KEY secret)")
+            _CH_DONE["events"] = {}
+            return {}
+        log("\n== Companies House: companies incorporated in the last 30 days")
+        auth = {"Authorization": "Basic " + base64.b64encode(f"{key}:".encode()).decode()}
+        comps, day = [], 0
+        while day < 30:                                  # one day at a time keeps each query under the 5,000 cap
+            d = since(day)
+            start = 0
+            while start < 20000:
+                try:
+                    res = http(f"{CH_API}/advanced-search/companies", {"incorporated_from": d, "incorporated_to": d,
+                                                                       "size": 5000, "start_index": start}, headers=auth, timeout=120)
+                except RuntimeError as e:
+                    log(f"   {d}: {str(e)[:160]}")
+                    if "429" in str(e):
+                        time.sleep(60)
+                        continue
+                    break
+                items = res.get("items") or []
+                comps += items
+                start += len(items)
+                if len(items) < 5000:
+                    break
+                time.sleep(0.6)
+            day += 1
+        log(f"   incorporated: {len(comps)}")
+        live = [c for c in comps if (c.get("registered_office_address") or {}).get("postal_code")]
+        shared = {}
+        for c in live:
+            a = c["registered_office_address"]
+            k = (str(a.get("address_line_1") or "").upper(), a["postal_code"].upper())
+            shared[k] = shared.get(k, 0) + 1
+        live = [c for c in live if shared[(str(c["registered_office_address"].get("address_line_1") or "").upper(),
+                                           c["registered_office_address"]["postal_code"].upper())] < 3]
+        log(f"   with a postcode, after leaving out shared formation-agent addresses: {len(live)}")
+        pc = _postcodes({c["registered_office_address"]["postal_code"].upper().strip() for c in live})
+        by_region = {}
+        for c in live:
+            a = c["registered_office_address"]
+            g = pc.get(a["postal_code"].upper().strip())
+            if not g:
+                continue
+            sic = ", ".join(c.get("sic_codes") or [])
+            addr = ", ".join(x for x in [a.get("address_line_1"), a.get("locality"), a.get("postal_code")] if x)
+            e = event("business", "Company incorporated", c.get("date_of_creation"), g[0], g[1],
+                      f"{title_case(c.get('company_name'))}: new {str(c.get('company_type') or 'company').replace('-', ' ')}",
+                      (f"SIC {sic}. " if sic else "") + "Located at its registered-office postcode.",
+                      "Companies House", c.get("company_number"), f"{str(a.get('address_line_1') or '').upper()}|{a['postal_code'].upper()}",
+                      addr, None, UK_BBOX)
+            if e:
+                by_region.setdefault(g[2], []).append(e)
+        log("   by region: " + ", ".join(f"{k} {len(v)}" for k, v in sorted(by_region.items(), key=lambda x: str(x[0]))))
+        _CH_DONE["events"] = by_region
+        return by_region
+
+
+# postcodes.io region / country name -> FSA region name used for GEORA's UK regions
+PC_REGION = {"London": "London", "South East": "South East", "East of England": "East Counties",
+             "East Midlands": "East Midlands", "West Midlands": "West Midlands", "North West": "North West",
+             "North East": "North East", "Yorkshire and The Humber": "Yorkshire and Humberside", "South West": "South West",
+             "Wales": "Wales", "Scotland": "Scotland", "Northern Ireland": "Northern Ireland"}
+
+
+def companies_house_region(fsa_name):
+    groups = companies_house_all()
+    return [e for k, v in groups.items() if PC_REGION.get(k) == fsa_name for e in v]
+
+
 # ------------------------------------------------------------------ Norway ----
 BRREG = "https://data.brreg.no/enhetsregisteret/api/underenheter"
 NO_BBOX = [4.0, 57.8, 31.5, 71.5]
@@ -188,7 +289,10 @@ def regions():
             meta["focus_name"] = city
         fn = (lambda n=fsa_name, m=meta: fsa_region(n, m))
         fn.__name__ = "fsa"
-        uk.append((rid, meta, [fn]))
+        ch = (lambda n=fsa_name: companies_house_region(n))
+        ch.__name__ = "companies_house"
+        meta["sources"] = ["UK FSA Food Hygiene Ratings", "Companies House", "postcodes.io"]
+        uk.append((rid, meta, [fn, ch]))
     return uk + [
         ("no", {"name": "Norway", "country": "NO", "center": [10.0, 62.0], "focus": [10.7522, 59.9139], "focus_name": "Oslo", "bbox": NO_BBOX,
                 "sources": ["Brønnøysund Enhetsregisteret", "Kartverket addresses"]}, [brreg_new_units]),

@@ -1,167 +1,165 @@
-######## start us-nyc · New York
+######## start us-nyc · New York######## start us-sf · San Francisco
+
 
 == NYC DOB NOW permits
-######## start us-sf · San Francisco
 ######## start us-chicago · Chicago
-######## start us-seattle · Seattle
 ######## start us-austin · Austin
+######## start us-seattle · Seattle
 ######## start us-la · Los Angeles
 ######## start us-nola · New Orleans
 ######## start us-cincinnati · Cincinnati
-   Cincinnati: using dataset uhjb-xac9 'Cincinnati Building Permits'
-   Cincinnati Cincinnati Building Permits (permit): 2662
-   923 rows without coordinates: geocoding addresses
-   geocode cache: 923 of 923 addresses already known
-   -> 2578 located events of 2662 rows
-   history: 0 records seen for the first time today (3026 remembered)
-######## done us-cincinnati: 2578 events
-######## start us-montgomery · Montgomery County, MD
-   Montgomery County, MD: using dataset 7ate-xrxm 'Construction Activities of Commercial Permits'
-   Montgomery County, MD Montgomery County, MD Building Permits (permit): 123
-   -> 105 located events of 123 rows
-   history: 0 records seen for the first time today (322 remembered)
-######## done us-montgomery: 105 events
-######## start us-baton-rouge · Baton Rouge
-   Los Angeles LADBS Building Permits (permit): 17123
-   San Francisco SF Building Permits (permit): 4204
-   -> 17083 located events of 17123 rows
-   Chicago Chicago Building Permits (permit): 8759
-   1 rows without coordinates: geocoding addresses
-   geocode cache: 1 of 1 addresses already known
-   -> 4204 located events of 4204 rows
-   115 rows without coordinates: geocoding addresses
-   geocode cache: 112 of 115 addresses already known
-   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'
-   census geocoded 3 of 3 new addresses
-   -> 8749 located events of 8759 rows
-   Baton Rouge Baton Rouge Building Permits (permit): 2204
-   6 rows without coordinates: geocoding addresses
-   geocode cache: 6 of 6 addresses already known
-   -> 2116 located events of 2204 rows
-   history: 37 records seen for the first time today (2520 remembered)
-######## done us-baton-rouge: 2116 events
-######## start us-norfolk · Norfolk, VA
+   Austin Austin Issued Construction Permits (permit): 14813
+   5893 rows without coordinates: geocoding addresses
+   geocode cache: 5855 of 5893 addresses already known
    Seattle Seattle Building Permits (permit): 1558
    1 rows without coordinates: geocoding addresses
    geocode cache: 1 of 1 addresses already known
    -> 1558 located events of 1558 rows
 
 == Seattle new business licence certificates
-   Los Angeles LA Active Businesses (business): 3838
-   496 rows without coordinates: geocoding addresses
-   geocode cache: 496 of 496 addresses already known
-   -> 761 located events of 3838 rows
-
-== Los Angeles new business locations
-   Chicago Chicago Business Licenses (business): 1814
-   Norfolk, VA: using dataset fahm-yuh4 'Permits'
-   246 rows without coordinates: geocoding addresses
-   geocode cache: 246 of 246 addresses already known
-   -> 1582 located events of 1814 rows
-   San Francisco SF Registered Business Locations (business): 2833
-   66 rows without coordinates: geocoding addresses
-   geocode cache: 66 of 66 addresses already known
-   -> 2068 located events of 2833 rows
-   locations: 3838
-   history: 0 records seen for the first time today (21831 remembered)
-######## done us-la: 18480 events
+   census geocoded 23 of 38 new addresses
+   -> 12056 located events of 14813 rows
+   history: 165 records seen for the first time today (14616 remembered)
+######## done us-austin: 12056 events
+######## start us-montgomery · Montgomery County, MD
+   New Orleans: using dataset rcm3-fn58 'Permits'
+   San Francisco SF Building Permits (permit): 4186
+   1 rows without coordinates: geocoding addresses
+   geocode cache: 1 of 1 addresses already known
+   -> 4186 located events of 4186 rows
+   New Orleans New Orleans Building Permits (permit): 4098
+   -> 4098 located events of 4098 rows
+   history: 43 records seen for the first time today (6627 remembered)
+   Montgomery County, MD: using dataset 7ate-xrxm 'Construction Activities of Commercial Permits'
+######## done us-nola: 4098 events
+######## start us-baton-rouge · Baton Rouge
+   licences: 1335
+   geocode cache: 923 of 928 addresses already known
+   Montgomery County, MD Montgomery County, MD Building Permits (permit): 122
+   -> 104 located events of 122 rows
+   history: 0 records seen for the first time today (322 remembered)
+######## done us-montgomery: 104 events
+######## start us-norfolk · Norfolk, VA
+   Cincinnati: using dataset uhjb-xac9 'Cincinnati Building Permits'
+   Baton Rouge: using dataset 7fq7-8j7r 'EBR Building Permits'
+   San Francisco SF Registered Business Locations (business): 2878
+   70 rows without coordinates: geocoding addresses
+   geocode cache: 65 of 70 addresses already known
+   Cincinnati Cincinnati Building Permits (permit): 2631
+   936 rows without coordinates: geocoding addresses
+   geocode cache: 925 of 936 addresses already known
+   Baton Rouge Baton Rouge Building Permits (permit): 2217
+   10 rows without coordinates: geocoding addresses
+   geocode cache: 4 of 10 addresses already known
+   census geocoded 1 of 5 new addresses
+   -> 2104 located events of 2878 rows
+   census geocoded 9 of 11 new addresses
+   -> 2544 located events of 2631 rows
+   history: 17 records seen for the first time today (3043 remembered)
+######## done us-cincinnati: 2544 events
 ######## start ca-calgary · Calgary
-   Norfolk, VA Norfolk, VA Building Permits (permit): 2913
-   182 rows without coordinates: geocoding addresses
-   geocode cache: 181 of 182 addresses already known
-   census geocoded 1 of 1 new addresses
-   -> 2888 located events of 2913 rows
-   history: 46 records seen for the first time today (3459 remembered)
-######## done us-norfolk: 2888 events
+   census geocoded 6 of 6 new addresses
+   -> 2126 located events of 2217 rows
+   history: 47 records seen for the first time today (2567 remembered)
+######## done us-baton-rouge: 2126 events
 ######## start ca-edmonton · Edmonton
-   licences: 1340
-   geocode cache: 921 of 933 addresses already known
-   census geocoded 12 of 12 new addresses
-   located 920 of 933
-   history: 9 records seen for the first time today (3005 remembered)
-######## done us-seattle: 2478 events
+   Norfolk, VA: using dataset fahm-yuh4 'Permits'
+   San Francisco SF Registered Business Locations (closure): 777
+   22 rows without coordinates: geocoding addresses
+   geocode cache: 21 of 22 addresses already known
+   Norfolk, VA Norfolk, VA Building Permits (permit): 2904
+   182 rows without coordinates: geocoding addresses
+   geocode cache: 182 of 182 addresses already known
+   -> 2879 located events of 2904 rows
+   history: 22 records seen for the first time today (3481 remembered)
+######## done us-norfolk: 2879 events
 ######## start us-boston · Boston
 
 == Boston approved building permits (CKAN)
-   rows: 465
-   history: 12 records seen for the first time today (10839 remembered)
-######## done us-boston: 454 events
+   census geocoded 1 of 1 new addresses
+   -> 656 located events of 777 rows
+   history: 124 records seen for the first time today (8172 remembered)
+######## done us-sf: 6946 events
 ######## start us-philly · Philadelphia
 
 == Philadelphia building permits (Carto)
-   rows: 11317
-
-== Philadelphia new business licenses (Carto)
-   rows: 3876
-   history: 232 records seen for the first time today (17732 remembered)
-######## done us-philly: 14920 events
+   Edmonton: using dataset 24uj-dj8v 'General Building Permits'
+   rows: 9342
+   history: 213 records seen for the first time today (11052 remembered)
+######## done us-boston: 9188 events
 ######## start us-dc · Washington, DC
 
 == Washington, DC (ArcGIS Hub opendata.dc.gov)
-   Austin Austin Issued Construction Permits (permit): 14865
-   5890 rows without coordinates: geocoding addresses
-   geocode cache: 5838 of 5890 addresses already known
-   census geocoded 34 of 52 new addresses
-   -> 12117 located events of 14865 rows
-   history: 172 records seen for the first time today (14451 remembered)
-######## done us-austin: 12117 events
+   Calgary: using dataset c2es-76ed 'Building Permits'
+   rows: 11327
+
+== Philadelphia new business licenses (Carto)
+   Calgary Calgary Building Permits (permit): 5639
+   -> 5639 located events of 5639 rows
+
+== Calgary new business licences
+   rows: 3902
+   Edmonton Edmonton Building Permits (permit): 4192
+   -> 2787 located events of 4192 rows
+   history: 38 records seen for the first time today (3313 remembered)
+   history: 293 records seen for the first time today (18025 remembered)
+######## done ca-edmonton: 2787 events
 ######## start us-detroit · Detroit
 
 == Detroit (ArcGIS Hub data.detroitmi.gov)
-   San Francisco SF Registered Business Locations (closure): 762
-   21 rows without coordinates: geocoding addresses
-   geocode cache: 21 of 21 addresses already known
-   -> 644 located events of 762 rows
-   history: 54 records seen for the first time today (8048 remembered)
-######## done us-sf: 6916 events
+######## done us-philly: 14953 events
 ######## start us-baltimore · Baltimore
 
 == Baltimore (ArcGIS Hub data.baltimorecity.gov)
-   Edmonton: using dataset 24uj-dj8v 'General Building Permits'
-   Edmonton Edmonton Building Permits (permit): 4198
-   -> 2802 located events of 4198 rows
-   history: 39 records seen for the first time today (3275 remembered)
-######## done ca-edmonton: 2802 events
+   licences: 798
+   history: 93 records seen for the first time today (7845 remembered)
+######## done ca-calgary: 6437 events
 ######## start us-minneapolis · Minneapolis
 
 == Minneapolis (ArcGIS Hub opendata.minneapolismn.gov)
-   using 'Building Permits' (1699 records since 2026-08-05) https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0
-   Calgary: using dataset c2es-76ed 'Building Permits'
-   using 'Housing and Building Permits 2019-Present' (7644 records since 2026-08-05) https://baltegis.baltimorecity.gov/mapping/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3
-   using 'CCS Permits' (10284 records since 2026-08-05) https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer/0
-   history: 120 records seen for the first time today (8773 remembered)
-######## done us-baltimore: 7644 events
+   using 'Housing and Building Permits 2019-Present' (7578 records since 2026-08-06) https://baltegis.baltimorecity.gov/mapping/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3
+   using 'Building Permits in Last 30 Days' (3863 records since 2026-08-06) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4
+   using 'Building Permits' (1708 records since 2026-08-06) https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0
+   history: 25 records seen for the first time today (2664 remembered)
+######## done us-detroit: 1708 events
 ######## start us-raleigh · Raleigh
 
 == Raleigh (ArcGIS Hub data-ral.opendata.arcgis.com)
-   history: 52 records seen for the first time today (2639 remembered)
-######## done us-detroit: 1699 events
+   Los Angeles LADBS Building Permits (permit): 16846
+   using 'CCS Permits' (10218 records since 2026-08-06) https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer/0
+   -> 16806 located events of 16846 rows
+   using 'Building Permits Issued Past 180 Days' (1438 records since 2026-08-06) https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits_Issued_Past_180_Days/FeatureServer/0
+
+== DC new basic business licences
+   Los Angeles LA Active Businesses (business): 3771
+   487 rows without coordinates: geocoding addresses
+   geocode cache: 487 of 487 addresses already known
+   -> 754 located events of 3771 rows
+
+== Los Angeles new business locations
+   3794 licences; 2066 after leaving out home rentals
+   geocode cache: 2031 of 2066 addresses already known
+   history: 48 records seen for the first time today (8821 remembered)
+######## done us-baltimore: 7578 events
 ######## start us-charlotte · Charlotte
 
 == Charlotte (ArcGIS Hub data.charlottenc.gov)
-   Calgary Calgary Building Permits (permit): 5674
-   -> 5674 located events of 5674 rows
-
-== Calgary new business licences
-   using 'Building Permits Issued Past 180 Days' (1423 records since 2026-08-05) https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits_Issued_Past_180_Days/FeatureServer/0
-   [us-charlotte] FAILED permits: no usable permit layer; tried Special Use Permits: no recent records
-   [us-charlotte] could not reuse published data: https://dimoskalog.github.io/geora/data/us-charlotte/manifest.json -> HTTP 404: <!DOCTYPE html>
-<html>
-  <head>
-    <met
-   [us-charlotte] no events; keeping it off the map
+   census geocoded 32 of 35 new addresses
+   located 1243
+   history: 22 records seen for the first time today (1359 remembered)
+######## done us-dc: 5106 events
 ######## start us-columbus · Columbus
 
 == Columbus (ArcGIS Hub opendata.columbus.gov)
-   history: 222 records seen for the first time today (11411 remembered)
-######## done us-raleigh: 1422 events
+   locations: 3769
+   history: 1 records seen for the first time today (21832 remembered)
+######## done us-la: 18189 events
 ######## start us-miami · Miami-Dade
 
 == Miami-Dade (ArcGIS Hub gis-mdc.opendata.arcgis.com)
-   using 'Building Permits' (11636 records since 2026-08-05) https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0
-   licences: 806
-   history: 0 records seen for the first time today (7752 remembered)
-######## done ca-calgary: 6480 events
+   using 'Building Permits' (11676 records since 2026-08-06) https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0
+   history: 45 records seen for the first time today (11456 remembered)
+######## done us-raleigh: 1437 events
 ######## start us-houston · Houston
 
 == Houston (ArcGIS Hub cohgis-mycity.opendata.arcgis.com)
@@ -174,8 +172,10 @@
 ######## start us-atlanta · Atlanta
 
 == Atlanta (ArcGIS Hub dpcd-coaplangis.opendata.arcgis.com)
-   permits: 44608
+   Chicago Chicago Building Permits (permit): 8722
    [us-atlanta] FAILED permits: no usable permit layer; tried 
+   114 rows without coordinates: geocoding addresses
+   geocode cache: 113 of 114 addresses already known
    [us-atlanta] could not reuse published data: https://dimoskalog.github.io/geora/data/us-atlanta/manifest.json -> HTTP 404: <!DOCTYPE html>
 <html>
   <head>
@@ -184,10 +184,10 @@
 ######## start us-vegas · Las Vegas
 
 == Las Vegas (ArcGIS Hub opendataportal-lasvegas.opendata.arcgis.com)
-
-== NYC restaurant inspections
-   using 'Building Permits ' (11 records since 2026-08-05) https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0
-   0 events from 11 rows. roles={'type': 'WORKTYPE', 'desc': None, 'cost': None, 'addr': None, 'rid': None} date=2026-10-02 coords=None,None sample={'APNO': 'R26-12813', 'APBLDGKEY': 1584234, 'APTYPE': 'Res', 'WORKTYPE': 'OTC', 'APPLICANT': 'Monkey Wrench Plumbing', 'APL_ADDRESS': '5916 KELITABB CT LAS VEGAS', 'BLDGAPPLSTATUS': 'Issued', 'ISSDTTM': 1790899200000, 'DECLVLTN': 500, 'CALCVLTN': 0, 'STNO': 6553, 'PREDIR': None, 'STNAME': 'BEACON', 'SUFFIX': 'RD', 'POSTDIR': None, 'STSUB': None, 'SUBDIVCODEADR': 30070, 'PRCLID': 13811110170, 'SUBD
+   census geocoded 1 of 1 new addresses
+   -> 8712 located events of 8722 rows
+   using 'Building Permits ' (10 records since 2026-08-06) https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0
+   0 events from 10 rows. roles={'type': 'WORKTYPE', 'desc': None, 'cost': None, 'addr': None, 'rid': None} date=2026-10-02 coords=None,None sample={'APNO': 'R26-12813', 'APBLDGKEY': 1584234, 'APTYPE': 'Res', 'WORKTYPE': 'OTC', 'APPLICANT': 'Monkey Wrench Plumbing', 'APL_ADDRESS': '5916 KELITABB CT LAS VEGAS', 'BLDGAPPLSTATUS': 'Issued', 'ISSDTTM': 1790899200000, 'DECLVLTN': 500, 'CALCVLTN': 0, 'STNO': 6553, 'PREDIR': None, 'STNAME': 'BEACON', 'SUFFIX': 'RD', 'POSTDIR': None, 'STSUB': None, 'SUBDIVCODEADR': 30070, 'PRCLID': 13811110170, 'SUBD
    [us-vegas] could not reuse published data: https://dimoskalog.github.io/geora/data/us-vegas/manifest.json -> HTTP 404: <!DOCTYPE html>
 <html>
   <head>
@@ -196,352 +196,359 @@
 ######## start us-tampa · Tampa
 
 == Tampa (ArcGIS Hub city-tampa.opendata.arcgis.com)
-   history: 1 records seen for the first time today (105 remembered)
-######## done us-columbus: 11636 events
+   Chicago Chicago Business Licenses (business): 1787
+   244 rows without coordinates: geocoding addresses
+   geocode cache: 244 of 244 addresses already known
+   -> 1557 located events of 1787 rows
+   using 'Single Family Permits' (36 records since 2026-08-06) https://arcgis.tampagov.net/arcgis/rest/services/OpenData/Planning/MapServer/32
+   history: 0 records seen for the first time today (53 remembered)
+######## done us-tampa: 36 events
 ######## start us-denver · Denver
 
 == Denver (ArcGIS Hub opendata-geospatialdenver.hub.arcgis.com)
-   using 'Single Family Permits' (37 records since 2026-08-05) https://arcgis.tampagov.net/arcgis/rest/services/OpenData/Planning/MapServer/32
-   history: 0 records seen for the first time today (53 remembered)
-######## done us-tampa: 37 events
+   history: 1 records seen for the first time today (106 remembered)
+######## done us-columbus: 11676 events
 ######## start us-sanantonio · San Antonio
 
 == San Antonio (CKAN data.sanantonio.gov)
-   using 'Commercial Construction Permits' (546 records since 2026-08-05) https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer/317
-   using 'Building Permits / APPLICATIONS SUBMITTED' (18273 records)
-   17091 rows without coordinates: geocoding
-   history: 7 records seen for the first time today (784 remembered)   geocode cache: 17091 of 17091 addresses already known
-
-######## done us-denver: 546 events
+   using 'Demolition Permits' (149 records since 2026-08-06) https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_DEMOLITIONPERMIT_P/FeatureServer/318
+   history: 4 records seen for the first time today (788 remembered)
+######## done us-denver: 149 events
 ######## start us-pittsburgh · Pittsburgh
 
 == Pittsburgh (CKAN data.wprdc.org)
+   Chicago Chicago Food Inspections (inspection): 3245
+   19 rows without coordinates: geocoding addresses
+   geocode cache: 19 of 19 addresses already known
+   -> 3229 located events of 3245 rows
+   history: 136 records seen for the first time today (16518 remembered)
+   using 'Building Permits / APPLICATIONS SUBMITTED' (18002 records)
+   16849 rows without coordinates: geocoding
+   geocode cache: 16849 of 16849 addresses already known
    history: 0 records seen for the first time today (12186 remembered)
-######## done us-sanantonio: 10988 events
+   using 'PLI Permits / PLI Permits' (2548 records)
+   history: 71 records seen for the first time today (3012 remembered)
+   history: 129 records seen for the first time today (11076 remembered)
+######## done us-pittsburgh: 2548 events
 ######## start us-phoenix · Phoenix
 
 == Phoenix (CKAN www.phoenixopendata.com)
+######## done us-chicago: 13498 events
+######## start us-sanjose · San Jose
+
+== San Jose (CKAN data.sanjoseca.gov)
+######## done us-sanantonio: 10826 events
+######## start us-tx · Texas
+
+== Texas new sales-tax permits (new outlets, statewide)
+######## done us-minneapolis: 10213 events
+######## start us-ny · New York State
+
+== New York State new corporations and LLCs (statewide)
    [us-phoenix] FAILED permits: no usable permit resource; tried Phoenix, AZ Building Permit Data / Building Permit Data: no date field
-   using 'PLI Permits / PLI Permits' (2516 records)
    [us-phoenix] could not reuse published data: https://dimoskalog.github.io/geora/data/us-phoenix/manifest.json -> HTTP 404: <!DOCTYPE html>
 <html>
   <head>
     <meta 
    [us-phoenix] no events; keeping it off the map
-######## start us-sanjose · San Jose
+######## start us-co · Colorado
 
-== San Jose (CKAN data.sanjoseca.gov)
-   history: 0 records seen for the first time today (2941 remembered)
-######## done us-pittsburgh: 2516 events
-######## start us-tx · Texas
-
-== Texas new sales-tax permits (new outlets, statewide)
-   using 'Active Building Permits / Active Building Permits' (11939 records)
-   0 events from 11939 rows. roles={'type': None, 'desc': 'WORKDESCRIPTION', 'cost': None, 'addr': None, 'rid': None} date=2026-09-09 coords=None,None sample={'_id': 1379, '_full_text': "'-119887':21 '-1511':10 '00':49,50 '1':23,52 '1191':2 '12':48 '2':24 '2026':20 '2188408':55 '45122037':11 '606698':53 '680':54 '9/9/2026':47 '95118':9 'active':1 'additions/alterations':34 'am':51 'andrew':12 'b':36 'b-complete':35 'bepm100':28 'ca':8 'california':18 'carrie':3 'complete':37,40,43,46 'demo/rebuild':30 'detached':26 'dwellings':27 'e':39 'e-complete':38
-   inspection rows: 26323
-   permits: 16198
+== Colorado new business registrations (statewide)
+   using 'Active Building Permits / Active Building Permits' (11876 records)
+   0 events from 11876 rows. roles={'type': None, 'desc': 'WORKDESCRIPTION', 'cost': None, 'addr': None, 'rid': None} date=2026-09-09 coords=None,None sample={'_id': 548, '_full_text': "'-136955':23 '-3812':10 '-4':36 '0':43,44,45 '00':40,41 '100':29 '1060':2 '12':39 '2026':22 '2205476':46 '60138077':11 '9/9/2026':38 '95127':9 'active':1 'am':42 'ca':8 'ci':24 'commercial/industrial':25 'complete':37 'cosmo':26 'david':14 'discount':12,20 'e':28,35 'ford':15 'illuminated':30 'improvement':34 'jose':7 'llc':19 'partners':18 'prof':27 'rd':5 'retail':32 
+   entities: 15850
+   geocode cache: 13700 of 14142 addresses already known
    [us-sanjose] could not reuse published data: https://dimoskalog.github.io/geora/data/us-sanjose/manifest.json -> HTTP 404: <!DOCTYPE html>
 <html>
   <head>
     <meta 
    [us-sanjose] no events; keeping it off the map
-######## start us-ny · New York State
+######## start fr · France
 
-== New York State new corporations and LLCs (statewide)
+== France BODACC (sales of businesses, insolvencies, creations, removals)
+   permits: 16198
    geocode cache: 16198 of 16198 addresses already known
    sales-tax permits: 14420 located of 16198
 
 == Texas liquor licences (TABC): pending applications and new licences
-   new restaurant rows: 3977
-
-== NYC ACRIS deeds and mortgages (published with a 2-3 month delay)
-   pending: 860
-   issued: 2520
-   geocode cache: 803 of 860 addresses already known
-   history: 8 records seen for the first time today (10947 remembered)
-######## done us-minneapolis: 10279 events
-######## start us-co · Colorado
-
-== Colorado new business registrations (statewide)
-   census geocoded 40 of 57 new addresses
-   pending: 709 located of 860
-   geocode cache: 2520 of 2520 addresses already known
-   issued: 2040 located of 2520
-   history: 76 records seen for the first time today (28910 remembered)
-######## done us-tx: 17067 events
-######## start fr · France
-
-== France BODACC (sales of businesses, insolvencies, creations, removals)
-   documents: 30000
+   Ventes et cessions: 4204 notices
    new entities: 20000
-   sample: {'dos_process_address_1': '42 Broadway, Fl. 12-200', 'dos_process_city': 'New York', 'dos_process_state': 'NY', 'registered_agent_address_1': '42 Broadway, Fl. 12-200', 'registered_agent_city': 'New York', 'registered_agent_state': 'NEW YORK'}
-   geocode cache: 18744 of 19408 addresses already known   Ventes et cessions: 4279 notices
-
-   entities: 15371
-   geocode cache: 13287 of 13756 addresses already known
-   Procédures collectives: 15000 notices
-   census geocoded 619 of 664 new addresses
-   census geocoded 420 of 469 new addresses
-   new entities: 18192 located of 19408
-   registrations: 12609 located of 13756
-   history: 535 records seen for the first time today (18648 remembered)
-   history: 897 records seen for the first time today (29084 remembered)
-######## done us-co: 12600 events
-######## start gb-london · London
-
-== UK FSA food hygiene: London
-######## done us-ny: 18187 events
-######## start gb-se · South East England
-
-== UK FSA food hygiene: South East
-   Créations: 25000 notices
-   [us-miami] FAILED permits: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError("Expecting ',' delimiter: line 60385 column 1 (char 3071817)")
+   sample: {'dos_process_address_1': '4877 BROADWAY', 'dos_process_city': 'NEW YORK', 'dos_process_state': 'NY'}
+   geocode cache: 18617 of 19419 addresses already known
+   pending: 851
+   [us-miami] FAILED permits: https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError("Expecting ',' delimiter: line 60542 column 1 (char 3081873)")
    [us-miami] could not reuse published data: https://dimoskalog.github.io/geora/data/us-miami/manifest.json -> HTTP 404: <!DOCTYPE html>
 <html>
   <head>
     <meta ht
    [us-miami] no events; keeping it off the map
+######## start gb-london · London
+
+== UK FSA food hygiene: London
+   Procédures collectives: 15000 notices
+   issued: 2544
+   geocode cache: 804 of 851 addresses already known
+   Créations: 25000 notices
+   Radiations: 10000 notices
+   London: 33 authorities, 9357 events (4011 new businesses awaiting inspection)
+
+== Companies House: companies incorporated in the last 30 days
+   census geocoded 5 of 5 new addresses
+   located 915 of 928
+   history: 33 records seen for the first time today (3038 remembered)
+######## done us-seattle: 2473 events
+######## start gb-se · South East England
+
+== UK FSA food hygiene: South East
+   South East: 64 authorities, 7155 events (2074 new businesses awaiting inspection)
+   geocoded 4780 of 5000
+   incorporated: 65937
+   with a postcode, after leaving out shared formation-agent addresses: 48236
+   geocoded 9595 of 10000
+   geocoded 14410 of 15000
+   geocoded 19229 of 20000
+   geocoded 24173 of 25000
+   [us-charlotte] FAILED permits: no usable permit layer; tried Special Use Permits: no recent records
+   [us-charlotte] could not reuse published data: https://dimoskalog.github.io/geora/data/us-charlotte/manifest.json -> HTTP 404: <!DOCTYPE html>
+<html>
+  <head>
+    <met
+   [us-charlotte] no events; keeping it off the map
 ######## start gb-east · East of England
 
 == UK FSA food hygiene: East Counties
-   Radiations: 10000 notices
-   geocoded 4784 of 5000
-   London: 33 authorities, 9414 events (4017 new businesses awaiting inspection)
-
-== Companies House: companies incorporated in the last 30 days
-   East Counties: 45 authorities, 4971 events (1569 new businesses awaiting inspection)
-   geocoded 9597 of 10000
-   South East: 64 authorities, 7178 events (2044 new businesses awaiting inspection)
-   geocoded 14411 of 15000
-   geocoded 19228 of 20000
-   incorporated: 66311
-   with a postcode, after leaving out shared formation-agent addresses: 48516
-   geocoded 24187 of 25000
-   geocoded 29135 of 30000
-   geocoded 34071 of 35000
-   geocoded 38997 of 40000
-   geocoded 43916 of 45000
-   using 'Building Permits in Last 30 Days' (3689 records since 2026-08-05) https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/4
-
-== DC new basic business licences
-   3778 licences; 2042 after leaving out home rentals
-   geocode cache: 2014 of 2042 addresses already known
-   census geocoded 27 of 28 new addresses
-   located 1229
-   history: 18 records seen for the first time today (1337 remembered)
-######## done us-dc: 4918 events
-######## start gb-em · East Midlands
-
-== UK FSA food hygiene: East Midlands
-   geocoded 48799 of 50000
-   East Midlands: 35 authorities, 3845 events (1598 new businesses awaiting inspection)
-   geocoded 52655 of 53951
+   geocoded 29131 of 30000
+   census geocoder failed: https://geocoding.geo.census.gov/geocoder/locations/addressbatch -> HTTP 502: <p> While attempting to geocode your batch input, the Census Geocoder while workin
+   geocoded 34064 of 35000
+   East Counties: 45 authorities, 4947 events (1556 new businesses awaiting inspection)
+   geocoded 38989 of 40000
+   geocoded 43929 of 45000
+   census geocoder failed: https://geocoding.geo.census.gov/geocoder/locations/addressbatch -> HTTP 502: <p> While attempting to geocode your batch input, the Census Geocoder while workin
+   geocoded 48801 of 50000
+   geocoded 52604 of 53888
 
 == France Alim'confiance (food safety inspections)
-   inspections: 10257
+   inspections: 10273
 
 == SIRENE skipped (no INSEE_KEY secret)
 
 == France Sitadel building permits (homes, commercial space, demolitions)
-   logements: 33508 rows (data up to 2026-09-30)
-   locaux: 21277 rows (data up to 2026-09-30)
-   demolir: 6372 rows (data up to 2026-09-30)
-   permits kept: 17698
+   logements: 33480 rows (data up to 2026-09-30)
+   permits: 43817
+
+== NYC restaurant inspections
+   locaux: 21234 rows (data up to 2026-09-30)
+   census geocoded 36 of 47 new addresses
+   pending: 702 located of 851
+   geocode cache: 2543 of 2544 addresses already known
+   demolir: 6365 rows (data up to 2026-09-30)
+   permits kept: 17684
+   inspection rows: 25844
+   new restaurant rows: 3977
+
+== NYC ACRIS deeds and mortgages (published with a 2-3 month delay)
    geocoded 4828 of 5000
-   by region: East Midlands 2897, East of England 4227, London 11833, North East 1503, North West 5818, Northern Ireland 714, Scotland 2707, South East 6112, South West 2879, Wales 1512, West Midlands 4742, Yorkshire and The Humber 3376
-   history: 168 records seen for the first time today (9013 remembered)
-   history: 251 records seen for the first time today (12228 remembered)
-   history: 390 records seen for the first time today (17595 remembered)
-   history: 683 records seen for the first time today (28575 remembered)
-######## done gb-em: 6742 events
+   documents: 30000
+   geocoded 9471 of 10000
+   geocoded 14320 of 15000
+   geocoded 16032 of 16748
+   located 16032
+   history: 2331 records seen for the first time today (141471 remembered)
+######## done fr: 76645 events
+######## start gb-em · East Midlands
+
+== UK FSA food hygiene: East Midlands
+   East Midlands: 35 authorities, 3874 events (1604 new businesses awaiting inspection)
+   census geocoded 1 of 1 new addresses
+   issued: 2061 located of 2544
+   history: 75 records seen for the first time today (28985 remembered)
+######## done us-tx: 17081 events
 ######## start gb-wm · West Midlands
 
 == UK FSA food hygiene: West Midlands
-######## done gb-east: 9198 events
+   census geocoded 403 of 442 new addresses
+   registrations: 12966 located of 14142
+   history: 540 records seen for the first time today (19188 remembered)
+######## done us-co: 12957 events
 ######## start gb-nw · North West England
 
 == UK FSA food hygiene: North West
-######## done gb-se: 13290 events
+   West Midlands: 30 authorities, 5961 events (2931 new businesses awaiting inspection)
+   North West: 35 authorities, 7526 events (3524 new businesses awaiting inspection)
+   census geocoder failed: https://geocoding.geo.census.gov/geocoder/locations/addressbatch -> HTTP 502: <p> While attempting to geocode your batch input, the Census Geocoder while workin
+   by region: East Midlands 2886, East of England 4187, London 11769, North East 1503, North West 5803, Northern Ireland 711, Scotland 2662, South East 6086, South West 2837, Wales 1502, West Midlands 4715, Yorkshire and The Humber 3375
+   history: 195 records seen for the first time today (9208 remembered)
+   history: 247 records seen for the first time today (12475 remembered)
+   history: 286 records seen for the first time today (14229 remembered)
+   history: 315 records seen for the first time today (17721 remembered)
+   history: 360 records seen for the first time today (17955 remembered)
+   history: 554 records seen for the first time today (29129 remembered)
+######## done gb-em: 6760 events
 ######## start gb-ne · North East England
 
 == UK FSA food hygiene: North East
-######## done gb-london: 21247 events
+######## done gb-east: 9134 events
 ######## start gb-yh · Yorkshire
 
 == UK FSA food hygiene: Yorkshire and Humberside
-   geocoded 9472 of 10000
-   Chicago Chicago Food Inspections (inspection): 3288
-   19 rows without coordinates: geocoding addresses
-   geocode cache: 19 of 19 addresses already known
-   -> 3272 located events of 3288 rows
-   history: 189 records seen for the first time today (16382 remembered)
-######## done us-chicago: 13603 events
+######## done gb-wm: 10676 events
 ######## start gb-sw · South West England
 
 == UK FSA food hygiene: South West
-   North East: 13 authorities, 2181 events (711 new businesses awaiting inspection)
-   history: 69 records seen for the first time today (4783 remembered)
-######## done gb-ne: 3684 events
+######## done gb-se: 13241 events
 ######## start gb-wales · Wales
 
 == UK FSA food hygiene: Wales
-   geocoded 14320 of 15000
-   geocoded 16046 of 16762
-   located 16046
-   history: 335 records seen for the first time today (139140 remembered)
-   Yorkshire and Humberside: 16 authorities, 4966 events (2504 new businesses awaiting inspection)
-   history: 206 records seen for the first time today (10684 remembered)
-######## done gb-yh: 8342 events
+######## done gb-nw: 13329 events
 ######## start gb-scotland · Scotland
 
 == UK FSA food hygiene: Scotland
-######## done fr: 76672 events
+######## done gb-london: 21126 events
 ######## start gb-ni · Northern Ireland
 
 == UK FSA food hygiene: Northern Ireland
-   West Midlands: 30 authorities, 5936 events (2921 new businesses awaiting inspection)
-   history: 217 records seen for the first time today (13943 remembered)
-######## done gb-wm: 10678 events
+   North East: 13 authorities, 2206 events (708 new businesses awaiting inspection)
+   history: 127 records seen for the first time today (4910 remembered)
+######## done gb-ne: 3709 events
 ######## start no · Norway
 
 == Norway: new business locations (Enhetsregisteret sub-units)
-   Northern Ireland: 11 authorities, 1243 events (225 new businesses awaiting inspection)
-   history: 107 records seen for the first time today (2585 remembered)
-######## done gb-ni: 1957 events
+   Northern Ireland: 11 authorities, 1304 events (235 new businesses awaiting inspection)
+   history: 100 records seen for the first time today (2685 remembered)
+######## done gb-ni: 2015 events
 ######## start dk · Denmark
 
 == Denmark smiley food controls
-   North West: 35 authorities, 7721 events (3619 new businesses awaiting inspection)
-   history: 244 records seen for the first time today (17406 remembered)
-######## done gb-nw: 13539 events
+   Yorkshire and Humberside: 16 authorities, 5013 events (2551 new businesses awaiting inspection)
+   history: 267 records seen for the first time today (10951 remembered)
+######## done gb-yh: 8388 events
 ######## start fi · Finland
 
 == Finland: companies registered in the last 30 days (PRH)
-   South West: 27 authorities, 4508 events (1398 new businesses awaiting inspection)
-   history: 221 records seen for the first time today (9519 remembered)
-######## done gb-sw: 7387 events
+   totalResults: 2230, page size 100
+   Wales: 22 authorities, 3077 events (1308 new businesses awaiting inspection)
+   history: 109 records seen for the first time today (5967 remembered)
+######## done gb-wales: 4579 events
 ######## start ee · Estonia
 
 == Estonia: companies first entered in the last 30 days (e-Business Register)
-   Wales: 22 authorities, 3079 events (1316 new businesses awaiting inspection)
-   history: 80 records seen for the first time today (5858 remembered)
-######## done gb-wales: 4591 events
+   https://pub.fvst.dk/publikationer/Smileydata.xml: 59941046 bytes
+   58914 businesses, 10337 controls in the last 90 days (date sample: '04/09/2024')
+   GeoNames postcode centres: 1159
+   located 10337
+   history: 185 records seen for the first time today (14733 remembered)
+   rows: 380932; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']
+   new: 2596; after leaving out shared virtual-office addresses: 2009
+######## done dk: 10337 events
 ######## start ca-vancouver · Vancouver
 
 == Vancouver issued building permits
-   totalResults: 2163, page size 100
-   new sub-units: 7798
-   998 permits
-   rows: 380859; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']   history: 0 records seen for the first time today (1144 remembered)
-
-######## done ca-vancouver: 991 events
+   new sub-units: 8123
+   South West: 27 authorities, 4482 events (1408 new businesses awaiting inspection)
+   history: 180 records seen for the first time today (9699 remembered)
+######## done gb-sw: 7319 events
 ######## start ca-winnipeg · Winnipeg
 
 == Winnipeg building permits
-   new: 2499; after leaving out shared virtual-office addresses: 1931
-   https://pub.fvst.dk/publikationer/Smileydata.xml: 59942734 bytes
-   Scotland: 32 authorities, 9718 events (6716 new businesses awaiting inspection)
-   history: 201 records seen for the first time today (14532 remembered)
-   58920 businesses, 10294 controls in the last 90 days (date sample: '05/09/2025')
-   permits: 2655
-   history: 0 records seen for the first time today (3138 remembered)
-######## done ca-winnipeg: 2650 events
+   permits: 2620
+   history: 0 records seen for the first time today (3138 remembered)   Scotland: 32 authorities, 9625 events (6687 new businesses awaiting inspection)
+
+   history: 143 records seen for the first time today (14675 remembered)
+######## done ca-winnipeg: 2615 events
 ######## start sg · Singapore
 
 == Singapore newly registered entities (ACRA)
-######## done gb-scotland: 12425 events
+######## done gb-scotland: 12287 events
 ######## start ch · Switzerland
 
 == Switzerland SHAB commercial register: new entries and deletions
-   GeoNames postcode centres: 1159
-   located 10294
-   history: 193 records seen for the first time today (14548 remembered)
-######## done dk: 10294 events
+   994 permits
+   history: 16 records seen for the first time today (1160 remembered)
+######## done ca-vancouver: 988 events
 ######## start ie · Ireland
 
 == Ireland national planning applications
    fields: OBJECTID, PlanningAuthority, ApplicationNumber, DevelopmentDescription, DevelopmentAddress, DevelopmentPostcode, ITMEasting, ITMNorthing, ApplicationStatus, ApplicationType, ApplicantForename, ApplicantSurname, ApplicantAddress, Decision, LandUseCode, AreaofSite, NumResidentialUnits, OneOffHouse, FloorArea, ReceivedDate, WithdrawnDate, DecisionDate, DecisionDueDate, GrantDate, ExpiryDate, AppealRefNumber, AppealStatus, AppealDecision, AppealDecisionDate, AppealSubmittedDate, FIRequestDate, FIRecDate, LinkAppDetails, OneOffKPI, ETL_DATE, SiteId, ORIG_FID
-   7619 applications
-   history: 597 records seen for the first time today (9145 remembered)
-######## done ie: 7619 events
+   new: 1373; after leaving out shared corporate-secretary addresses: 1050
+   7493 applications
+   history: 0 records seen for the first time today (9145 remembered)
+######## done ie: 7493 events
 ######## start ca-montreal · Montréal
 
 == Montreal building permits
-   new: 1472; after leaving out shared corporate-secretary addresses: 1124
    sql not available (https://donnees.montreal.ca/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%225232a72d-235a-4); paging newest first
-   postcode layer postialue:pno_2026: 3018 areas
-   postcode properties: id, objectid, posti_alue, vuosi, nimi, namn, kunta, kuntanro, pinta_ala
-   companies: 2163; postcode areas: 3018
-   located 2095
-   history: 94 records seen for the first time today (3353 remembered)
-######## done fi: 2095 events
+   census geocoded 742 of 802 new addresses
+   new entities: 18203 located of 19419
+   history: 955 records seen for the first time today (30039 remembered)
+######## done us-ny: 18197 events
 ######## start es-madrid · Madrid
 
 == Madrid urban planning licences granted
-   5508 permits
+   5427 permits
    history: 0 records seen for the first time today (6397 remembered)
-######## done ca-montreal: 5491 events
+######## done ca-montreal: 5410 events
 ######## start us-ct · Connecticut
 
 == Connecticut business registry: new registrations
-   publications: 4552 new, 2765 deletions
-   registrations: 3877
-   3527 with a street address (shared registered-agent addresses left out)
-   geocode cache: 3387 of 3527 addresses already known
-   census geocoded 139 of 140 new addresses
-   located 3407
-   history: 151 records seen for the first time today (5355 remembered)
-######## done us-ct: 3407 events
+   postcode layer postialue:pno_2026: 3018 areas
+   postcode properties: id, objectid, posti_alue, vuosi, nimi, namn, kunta, kuntanro, pinta_ala
+   companies: 2230; postcode areas: 3018
+   located 2160
+   history: 66 records seen for the first time today (3419 remembered)
+######## done fi: 2160 events
 ######## start lv · Latvia
 
 == Latvia Register of Enterprises: new registrations
    address points: 214291; columns: ['COD_VIA', 'VIA_CLASE', 'VIA_PAR', 'VIA_NOMBRE', 'VIA_NOMBRE_ACENTOS', 'CLASE_APP', 'NUMERO', 'CALIFICADOR', 'TIPO_NDP', 'COD_NDP', 'DISTRITO', 'BARRIO', 'COD_POSTAL', 'UTMX_ED', 'UTMY_ED', 'UTMX_ETRS', 'UTMY_ETRS', 'LATITUD', 'LONGITUD', 'ANGULO_ROTULACION']
    sample address point: ['31076880', '448983,15', '4476500,95', "40°26'15.32'' N", "3°36'5.49'' W"]
-   licences in the last 180 days: 1807, located 1757 (latest 2026-10-30)
-   history: 332 records seen for the first time today (1913 remembered)
-######## done es-madrid: 1757 events
+   registrations: 4015
+   3636 with a street address (shared registered-agent addresses left out)
+   geocode cache: 3470 of 3636 addresses already known
+   licences in the last 180 days: 1799, located 1749 (latest 2026-10-30)
+   history: 0 records seen for the first time today (1913 remembered)
+######## done es-madrid: 1749 events
 ######## start au-melbourne · Melbourne
 
 == Melbourne development activity monitor
-   323 projects
-   history: 0 records seen for the first time today (323 remembered)
-######## done au-melbourne: 323 events
+   census geocoded 159 of 166 new addresses
+   located 3511
+   history: 179 records seen for the first time today (5534 remembered)
+######## done us-ct: 3511 events
 ######## start nl · Netherlands
 
 == Netherlands: buildings under construction (BAG)
-   register rows: 490013; columns: ['regcode', 'sepa', 'name', 'name_before_quotes', 'name_in_quotes', 'name_after_quotes', 'without_quotes', 'regtype', 'regtype_text', 'type', 'type_text', 'registered', 'terminated', 'closed', 'address', 'index', 'addressid', 'region', 'city', 'atvk', 'reregistration_term']
-   new: 1027 (shared addresses left out)
-   building addresses: 611276; columns: ['KODS', 'TIPS_CD', 'STATUSS', 'APSTIPR', 'APST_PAK', 'VKUR_CD', 'VKUR_TIPS', 'NOSAUKUMS', 'SORT_NOS', 'ATRIB', 'PNOD_CD', 'DAT_SAK', 'DAT_MOD', 'DAT_BEIG', 'FOR_BUILD', 'PLAN_ADR', 'STD', 'KOORD_X', 'KOORD_Y', 'DD_N', 'DD_E']
-   located 420
-   history: 17 records seen for the first time today (653 remembered)
-######## done lv: 420 events
-   located 1931
-   history: 131 records seen for the first time today (2893 remembered)
-######## done ee: 1931 events
-   New Orleans: using dataset rcm3-fn58 'Permits'
-   New Orleans New Orleans Building Permits (permit): 4121
-   -> 4121 located events of 4121 rows
-   history: 82 records seen for the first time today (6584 remembered)
-######## done us-nola: 4121 events
-   documents 30000, lots 24057, located 16617 + condo blocks 1966
+   323 projects
+   history: 0 records seen for the first time today (323 remembered)
+######## done au-melbourne: 323 events
+   register rows: 490057; columns: ['regcode', 'sepa', 'name', 'name_before_quotes', 'name_in_quotes', 'name_after_quotes', 'without_quotes', 'regtype', 'regtype_text', 'type', 'type_text', 'registered', 'terminated', 'closed', 'address', 'index', 'addressid', 'region', 'city', 'atvk', 'reregistration_term']
+   new: 1068 (shared addresses left out)
+   publications: 4759 new, 2894 deletions
+   building addresses: 611285; columns: ['KODS', 'TIPS_CD', 'STATUSS', 'APSTIPR', 'APST_PAK', 'VKUR_CD', 'VKUR_TIPS', 'NOSAUKUMS', 'SORT_NOS', 'ATRIB', 'PNOD_CD', 'DAT_SAK', 'DAT_MOD', 'DAT_BEIG', 'FOR_BUILD', 'PLAN_ADR', 'STD', 'KOORD_X', 'KOORD_Y', 'DD_N', 'DD_E']
+   located 439
+   history: 21 records seen for the first time today (674 remembered)
+######## done lv: 439 events
+   located 2009
+   history: 82 records seen for the first time today (2975 remembered)
+######## done ee: 2009 events
+   located 953
+   history: 3 records seen for the first time today (3006 remembered)
+######## done sg: 953 events
+   48468 buildings under construction
+   history: 166 records seen for the first time today (50961 remembered)
+######## done nl: 48468 events
+   exact addresses: 1811; postcode fallback for 2113 postcodes
+   located 7547 of 7653
+   history: 332 records seen for the first time today (10715 remembered)
+######## done ch: 7547 events
+   [us-nyc] FAILED property_records: https://data.cityofnewyork.us/resource/64uk-42ks.json?%24where=bbl+in+%281010401211%2C1010401311%2C1010401321%2C1010401433%2C1010401441%2C1010401448%2C1010401455%2C1010401475%2C1010401551%2C1010401561 -> HTTP 503: {"message":"Service unavailable","errorCode":"service-unavailable","data":{}}
 
 == NYC new premises licences (DCWP)
-   licences: 256
-   history: 3 records seen for the first time today (90045 remembered)
-######## done us-nyc: 88758 events
-   located 1040
-   history: 5 records seen for the first time today (3003 remembered)
-######## done sg: 1040 events
-   48582 buildings under construction
-   history: 231 records seen for the first time today (50795 remembered)
-######## done nl: 48582 events
-   located 7215 of 7317
-   history: 346 records seen for the first time today (10383 remembered)
-######## done ch: 7215 events
-   exact addresses: 1728; postcode fallback for 2079 postcodes
-   located 4877 of 7359
-   history: 300 records seen for the first time today (11247 remembered)
-######## done no: 4877 events
-   US geocode cache: 100752 addresses saved
+   licences: 221
+   history: 0 records seen for the first time today (90045 remembered)
+######## done us-nyc: 54677 events
+   located 4204 of 7655
+   history: 281 records seen for the first time today (11528 remembered)
+######## done no: 4204 events
+   US geocode cache: 102129 addresses saved
 
-Done in 20.9 min: us-nyc 88758, us-sf 6916, us-chicago 13603, us-seattle 2478, us-austin 12117, us-la 18480, us-nola 4121, us-cincinnati 2578, us-montgomery 105, us-baton-rouge 2116, us-norfolk 2888, ca-calgary 6480, ca-edmonton 2802, us-boston 454, us-philly 14920, us-dc 4918, us-detroit 1699, us-baltimore 7644, us-minneapolis 10279, us-raleigh 1422, us-columbus 11636, us-tampa 37, us-denver 546, us-sanantonio 10988, us-pittsburgh 2516, us-tx 17067, us-ny 18187, us-co 12600, fr 76672, gb-london 21247, gb-se 13290, gb-east 9198, gb-em 6742, gb-wm 10678, gb-nw 13539, gb-ne 3684, gb-yh 8342, gb-sw 7387, gb-wales 4591, gb-scotland 12425, gb-ni 1957, no 4877, dk 10294, fi 2095, ee 1931, ca-vancouver 991, ca-winnipeg 2650, sg 1040, ch 7215, ie 7619, ca-montreal 5491, es-madrid 1757, us-ct 3407, lv 420, au-melbourne 323, nl 48582
+Done in 27.1 min: us-nyc 54677, us-sf 6946, us-chicago 13498, us-seattle 2473, us-austin 12056, us-la 18189, us-nola 4098, us-cincinnati 2544, us-montgomery 104, us-baton-rouge 2126, us-norfolk 2879, ca-calgary 6437, ca-edmonton 2787, us-boston 9188, us-philly 14953, us-dc 5106, us-detroit 1708, us-baltimore 7578, us-minneapolis 10213, us-raleigh 1437, us-columbus 11676, us-tampa 36, us-denver 149, us-sanantonio 10826, us-pittsburgh 2548, us-tx 17081, us-ny 18197, us-co 12957, fr 76645, gb-london 21126, gb-se 13241, gb-east 9134, gb-em 6760, gb-wm 10676, gb-nw 13329, gb-ne 3709, gb-yh 8388, gb-sw 7319, gb-wales 4579, gb-scotland 12287, gb-ni 2015, no 4204, dk 10337, fi 2160, ee 2009, ca-vancouver 988, ca-winnipeg 2615, sg 953, ch 7547, ie 7493, ca-montreal 5410, es-madrid 1749, us-ct 3511, lv 439, au-melbourne 323, nl 48468

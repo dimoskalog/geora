@@ -1,200 +1,177 @@
 {
- "started": "2026-11-17 19:53 UTC",
+ "started": "2026-11-18 19:25 UTC",
  "regions": {
   "us-austin": {
    "name": "Austin",
-   "events": 11992,
+   "events": 11787,
    "parts": {
     "Austin Issued Construction Permits (permit)": {
-     "events": 11992,
-     "seconds": 11
+     "events": 11787,
+     "seconds": 15
     }
    }
   },
   "us-seattle": {
    "name": "Seattle",
-   "events": 2470,
+   "events": 2469,
    "parts": {
     "Seattle Building Permits (permit)": {
-     "events": 1516,
-     "seconds": 12
+     "events": 1514,
+     "seconds": 10
     },
     "seattle_new_licences": {
-     "events": 954,
-     "seconds": 2
-    }
-   }
-  },
-  "us-cincinnati": {
-   "name": "Cincinnati",
-   "events": 2431,
-   "parts": {
-    "Cincinnati Building Permits (permit)": {
-     "events": 2431,
-     "seconds": 21
+     "events": 955,
+     "seconds": 9
     }
    }
   },
   "us-baton-rouge": {
    "name": "Baton Rouge",
-   "events": 1975,
+   "events": 1933,
    "parts": {
     "Baton Rouge Building Permits (permit)": {
-     "events": 1975,
-     "seconds": 12
+     "events": 1933,
+     "seconds": 15
     }
    }
   },
   "us-montgomery": {
    "name": "Montgomery County, MD",
-   "events": 88,
+   "events": 37,
    "parts": {
     "Montgomery County, MD Building Permits (permit)": {
-     "events": 88,
-     "seconds": 17
+     "events": 37,
+     "seconds": 20
     }
    }
   },
-  "us-la": {
-   "name": "Los Angeles",
-   "events": 19106,
+  "us-nola": {
+   "name": "New Orleans",
+   "events": 4384,
    "parts": {
-    "LADBS Building Permits (permit)": {
-     "events": 17013,
-     "seconds": 11
+    "New Orleans Building Permits (permit)": {
+     "events": 4384,
+     "seconds": 38
+    }
+   }
+  },
+  "us-chicago": {
+   "name": "Chicago",
+   "events": 13187,
+   "parts": {
+    "Chicago Building Permits (permit)": {
+     "events": 8482,
+     "seconds": 19
     },
-    "LA Active Businesses (business)": {
-     "events": 1105,
-     "seconds": 14
+    "Chicago Business Licenses (business)": {
+     "events": 1617,
+     "seconds": 12
     },
-    "la_new_locations": {
-     "events": 988,
-     "seconds": 5
+    "Chicago Food Inspections (inspection)": {
+     "events": 3088,
+     "seconds": 12
     }
    }
   },
   "us-boston": {
    "name": "Boston",
-   "events": 8397,
+   "events": 8238,
    "parts": {
     "boston": {
-     "events": 8397,
+     "events": 8238,
+     "seconds": 1
+    }
+   }
+  },
+  "us-philly": {
+   "name": "Philadelphia",
+   "events": 14926,
+   "parts": {
+    "philly_permits": {
+     "events": 11107,
+     "seconds": 4
+    },
+    "philly_licenses": {
+     "events": 3819,
      "seconds": 2
     }
    }
   },
   "us-norfolk": {
    "name": "Norfolk, VA",
-   "events": 2817,
+   "events": 2828,
    "parts": {
     "Norfolk, VA Building Permits (permit)": {
-     "events": 2817,
-     "seconds": 13
+     "events": 2828,
+     "seconds": 23
     }
    }
   },
-  "us-philly": {
-   "name": "Philadelphia",
-   "events": 14989,
-   "parts": {
-    "philly_permits": {
-     "events": 11179,
-     "seconds": 1
-    },
-    "philly_licenses": {
-     "events": 3810,
-     "seconds": 1
-    }
-   }
-  },
-  "us-chicago": {
-   "name": "Chicago",
-   "events": 13304,
-   "parts": {
-    "Chicago Building Permits (permit)": {
-     "events": 8570,
-     "seconds": 19
-    },
-    "Chicago Business Licenses (business)": {
-     "events": 1628,
-     "seconds": 11
-    },
-    "Chicago Food Inspections (inspection)": {
-     "events": 3106,
-     "seconds": 6
-    }
-   }
-  },
-  "us-detroit": {
-   "name": "Detroit",
-   "events": 388,
+  "us-dc": {
+   "name": "Washington, DC",
+   "events": 5414,
    "parts": {
     "permits": {
-     "events": 388,
-     "seconds": 2
-    }
-   }
-  },
-  "us-minneapolis": {
-   "name": "Minneapolis",
-   "events": 8750,
-   "parts": {
-    "permits": {
-     "events": 8750,
+     "events": 4158,
      "seconds": 5
+    },
+    "dc_new_licences": {
+     "events": 1256,
+     "seconds": 3
     }
    }
   },
   "ca-edmonton": {
    "name": "Edmonton",
-   "events": 2625,
+   "events": 2627,
    "parts": {
     "Edmonton Building Permits (permit)": {
-     "events": 2625,
-     "seconds": 15
+     "events": 2627,
+     "seconds": 19
     }
    }
   },
-  "ca-calgary": {
-   "name": "Calgary",
-   "events": 6305,
+  "us-detroit": {
+   "name": "Detroit",
+   "events": 816,
    "parts": {
-    "Calgary Building Permits (permit)": {
-     "events": 5514,
-     "seconds": 18
-    },
-    "calgary_new_businesses": {
-     "events": 791,
-     "seconds": 1
+    "permits": {
+     "events": 816,
+     "seconds": 4
     }
    }
   },
   "us-baltimore": {
    "name": "Baltimore",
-   "events": 7572,
+   "events": 7606,
    "parts": {
     "permits": {
-     "events": 7572,
-     "seconds": 9
+     "events": 7606,
+     "seconds": 7
     }
    }
   },
-  "us-raleigh": {
-   "name": "Raleigh",
-   "events": 1464,
+  "us-minneapolis": {
+   "name": "Minneapolis",
+   "events": 8612,
    "parts": {
     "permits": {
-     "events": 1464,
-     "seconds": 4
+     "events": 8612,
+     "seconds": 6
     }
    }
   },
-  "us-houston": {
-   "name": "Houston",
-   "events": 0,
+  "ca-calgary": {
+   "name": "Calgary",
+   "events": 6262,
    "parts": {
-    "permits": {
-     "error": "https://cohgis-mycity.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> HTTP 404: {\"error\":\"GWM_0003: You do not have permissions to access this resource or perform this operation.\"}"
+    "Calgary Building Permits (permit)": {
+     "events": 5473,
+     "seconds": 23
+    },
+    "calgary_new_businesses": {
+     "events": 789,
+     "seconds": 6
     }
    }
   },
@@ -207,17 +184,22 @@
     }
    }
   },
-  "us-dc": {
-   "name": "Washington, DC",
-   "events": 5201,
+  "us-raleigh": {
+   "name": "Raleigh",
+   "events": 1466,
    "parts": {
     "permits": {
-     "events": 3950,
-     "seconds": 10
-    },
-    "dc_new_licences": {
-     "events": 1251,
-     "seconds": 4
+     "events": 1466,
+     "seconds": 6
+    }
+   }
+  },
+  "us-houston": {
+   "name": "Houston",
+   "events": 0,
+   "parts": {
+    "permits": {
+     "error": "https://cohgis-mycity.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> HTTP 404: {\"error\":\"GWM_0003: You do not have permissions to access this resource or perform this operation.\"}"
     }
    }
   },
@@ -230,33 +212,43 @@
     }
    }
   },
-  "us-denver": {
-   "name": "Denver",
-   "events": 151,
+  "us-tampa": {
+   "name": "Tampa",
+   "events": 35,
    "parts": {
     "permits": {
-     "events": 151,
+     "events": 35,
      "seconds": 2
     }
    }
   },
-  "us-tampa": {
-   "name": "Tampa",
-   "events": 36,
+  "us-vegas": {
+   "name": "Las Vegas",
+   "events": 0,
    "parts": {
     "permits": {
-     "events": 36,
+     "events": 0,
+     "seconds": 6
+    }
+   }
+  },
+  "us-denver": {
+   "name": "Denver",
+   "events": 152,
+   "parts": {
+    "permits": {
+     "events": 152,
      "seconds": 3
     }
    }
   },
   "us-pittsburgh": {
    "name": "Pittsburgh",
-   "events": 2570,
+   "events": 2613,
    "parts": {
     "permits": {
-     "events": 2570,
-     "seconds": 2
+     "events": 2613,
+     "seconds": 1
     }
    }
   },
@@ -271,11 +263,11 @@
   },
   "us-sanantonio": {
    "name": "San Antonio",
-   "events": 10456,
+   "events": 10283,
    "parts": {
     "permits": {
-     "events": 10456,
-     "seconds": 4
+     "events": 10283,
+     "seconds": 3
     }
    }
   },
@@ -285,45 +277,40 @@
    "parts": {
     "permits": {
      "events": 0,
-     "seconds": 3
+     "seconds": 2
     }
    }
   },
   "us-columbus": {
    "name": "Columbus",
-   "events": 11800,
+   "events": 11806,
    "parts": {
     "permits": {
-     "events": 11800,
-     "seconds": 12
+     "events": 11806,
+     "seconds": 16
     }
    }
   },
-  "us-vegas": {
-   "name": "Las Vegas",
+  "us-miami": {
+   "name": "Miami-Dade",
    "events": 0,
    "parts": {
     "permits": {
-     "events": 0,
-     "seconds": 12
+     "error": "https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError(\"Expecting ',' delimiter: line 51679 column 1 (char 2658612)\")"
     }
    }
   },
-  "us-sf": {
-   "name": "San Francisco",
-   "events": 6946,
+  "us-tx": {
+   "name": "Texas",
+   "events": 16501,
    "parts": {
-    "SF Building Permits (permit)": {
-     "events": 4109,
-     "seconds": 25
+    "tx_sales_tax": {
+     "events": 13931,
+     "seconds": 6
     },
-    "SF Registered Business Locations (business)": {
-     "events": 2160,
-     "seconds": 12
-    },
-    "SF Registered Business Locations (closure)": {
-     "events": 677,
-     "seconds": 22
+    "tx_tabc": {
+     "events": 2570,
+     "seconds": 13
     }
    }
   },
@@ -333,310 +320,333 @@
    "parts": {
     "ny_corporations": {
      "events": 18139,
-     "seconds": 10
+     "seconds": 23
     }
    }
   },
-  "us-tx": {
-   "name": "Texas",
-   "events": 16497,
+  "us-cincinnati": {
+   "name": "Cincinnati",
+   "events": 2439,
    "parts": {
-    "tx_sales_tax": {
-     "events": 13931,
-     "seconds": 7
+    "Cincinnati Building Permits (permit)": {
+     "events": 2439,
+     "seconds": 212
+    }
+   }
+  },
+  "us-la": {
+   "name": "Los Angeles",
+   "events": 18807,
+   "parts": {
+    "LADBS Building Permits (permit)": {
+     "events": 16750,
+     "seconds": 197
     },
-    "tx_tabc": {
-     "events": 2566,
-     "seconds": 6
+    "LA Active Businesses (business)": {
+     "events": 1087,
+     "seconds": 14
+    },
+    "la_new_locations": {
+     "events": 970,
+     "seconds": 2
     }
    }
   },
-  "us-miami": {
-   "name": "Miami-Dade",
-   "events": 0,
+  "gb-london": {
+   "name": "London",
+   "events": 20688,
    "parts": {
-    "permits": {
-     "error": "https://gis-mdc.opendata.arcgis.com/api/feed/dcat-us/1.1.json -> JSONDecodeError(\"Expecting ',' delimiter: line 51563 column 1 (char 2653079)\")"
+    "fsa": {
+     "events": 9365,
+     "seconds": 23
+    },
+    "companies_house": {
+     "events": 11323,
+     "seconds": 137
+    }
+   }
+  },
+  "gb-se": {
+   "name": "South East England",
+   "events": 13051,
+   "parts": {
+    "fsa": {
+     "events": 7068,
+     "seconds": 25
+    },
+    "companies_house": {
+     "events": 5983,
+     "seconds": 129
+    }
+   }
+  },
+  "gb-em": {
+   "name": "East Midlands",
+   "events": 6757,
+   "parts": {
+    "fsa": {
+     "events": 3937,
+     "seconds": 17
+    },
+    "companies_house": {
+     "events": 2820,
+     "seconds": 22
+    }
+   }
+  },
+  "gb-east": {
+   "name": "East of England",
+   "events": 9296,
+   "parts": {
+    "fsa": {
+     "events": 5106,
+     "seconds": 23
+    },
+    "companies_house": {
+     "events": 4190,
+     "seconds": 18
+    }
+   }
+  },
+  "gb-ne": {
+   "name": "North East England",
+   "events": 3837,
+   "parts": {
+    "fsa": {
+     "events": 2340,
+     "seconds": 17
+    },
+    "companies_house": {
+     "events": 1497,
+     "seconds": 0
     }
    }
   },
   "us-co": {
    "name": "Colorado",
-   "events": 12515,
+   "events": 12701,
    "parts": {
     "co_entities": {
-     "events": 12515,
-     "seconds": 28
-    }
-   }
-  },
-  "us-nola": {
-   "name": "New Orleans",
-   "events": 4398,
-   "parts": {
-    "New Orleans Building Permits (permit)": {
-     "events": 4398,
-     "seconds": 203
+     "events": 12701,
+     "seconds": 191
     }
    }
   },
   "fr": {
    "name": "France",
-   "events": 74163,
+   "events": 74345,
    "parts": {
     "bodacc": {
-     "events": 51161,
-     "seconds": 155
+     "events": 51359,
+     "seconds": 118
     },
     "alimconfiance": {
-     "events": 9643,
-     "seconds": 3
+     "events": 9652,
+     "seconds": 5
     },
     "sirene_paris": {
      "events": 0,
      "seconds": 0
     },
     "sitadel": {
-     "events": 13359,
-     "seconds": 57
-    }
-   }
-  },
-  "gb-london": {
-   "name": "London",
-   "events": 20551,
-   "parts": {
-    "fsa": {
-     "events": 9167,
-     "seconds": 63
-    },
-    "companies_house": {
-     "events": 11384,
-     "seconds": 162
-    }
-   }
-  },
-  "gb-em": {
-   "name": "East Midlands",
-   "events": 6708,
-   "parts": {
-    "fsa": {
-     "events": 3885,
-     "seconds": 43
-    },
-    "companies_house": {
-     "events": 2823,
-     "seconds": 168
-    }
-   }
-  },
-  "gb-east": {
-   "name": "East of England",
-   "events": 9309,
-   "parts": {
-    "fsa": {
-     "events": 5105,
+     "events": 13334,
      "seconds": 60
-    },
-    "companies_house": {
-     "events": 4204,
-     "seconds": 157
     }
    }
   },
   "gb-wm": {
    "name": "West Midlands",
-   "events": 10620,
+   "events": 10597,
    "parts": {
     "fsa": {
-     "events": 6033,
-     "seconds": 43
+     "events": 6029,
+     "seconds": 47
     },
     "companies_house": {
-     "events": 4587,
-     "seconds": 156
-    }
-   }
-  },
-  "gb-se": {
-   "name": "South East England",
-   "events": 13061,
-   "parts": {
-    "fsa": {
-     "events": 7073,
-     "seconds": 70
-    },
-    "companies_house": {
-     "events": 5988,
-     "seconds": 148
-    }
-   }
-  },
-  "gb-nw": {
-   "name": "North West England",
-   "events": 13436,
-   "parts": {
-    "fsa": {
-     "events": 7681,
-     "seconds": 16
-    },
-    "companies_house": {
-     "events": 5755,
-     "seconds": 66
-    }
-   }
-  },
-  "gb-ne": {
-   "name": "North East England",
-   "events": 3856,
-   "parts": {
-    "fsa": {
-     "events": 2346,
-     "seconds": 6
-    },
-    "companies_house": {
-     "events": 1510,
-     "seconds": 3
-    }
-   }
-  },
-  "dk": {
-   "name": "Denmark",
-   "events": 10579,
-   "parts": {
-    "dk_smiley": {
-     "events": 10579,
-     "seconds": 13
-    }
-   }
-  },
-  "gb-ni": {
-   "name": "Northern Ireland",
-   "events": 2081,
-   "parts": {
-    "fsa": {
-     "events": 1340,
-     "seconds": 31
-    },
-    "companies_house": {
-     "events": 741,
+     "events": 4568,
      "seconds": 0
     }
    }
   },
   "gb-yh": {
    "name": "Yorkshire",
-   "events": 8388,
+   "events": 8471,
    "parts": {
     "fsa": {
-     "events": 5087,
-     "seconds": 39
+     "events": 5191,
+     "seconds": 55
     },
     "companies_house": {
-     "events": 3301,
+     "events": 3280,
+     "seconds": 0
+    }
+   }
+  },
+  "gb-nw": {
+   "name": "North West England",
+   "events": 13438,
+   "parts": {
+    "fsa": {
+     "events": 7713,
+     "seconds": 62
+    },
+    "companies_house": {
+     "events": 5725,
      "seconds": 0
     }
    }
   },
   "gb-wales": {
    "name": "Wales",
-   "events": 4592,
+   "events": 4493,
    "parts": {
     "fsa": {
-     "events": 3214,
-     "seconds": 39
+     "events": 3136,
+     "seconds": 48
     },
     "companies_house": {
-     "events": 1378,
+     "events": 1357,
+     "seconds": 0
+    }
+   }
+  },
+  "gb-scotland": {
+   "name": "Scotland",
+   "events": 12335,
+   "parts": {
+    "fsa": {
+     "events": 9653,
+     "seconds": 48
+    },
+    "companies_house": {
+     "events": 2682,
+     "seconds": 0
+    }
+   }
+  },
+  "gb-ni": {
+   "name": "Northern Ireland",
+   "events": 2051,
+   "parts": {
+    "fsa": {
+     "events": 1331,
+     "seconds": 21
+    },
+    "companies_house": {
+     "events": 720,
      "seconds": 0
     }
    }
   },
   "gb-sw": {
    "name": "South West England",
-   "events": 7372,
+   "events": 7329,
    "parts": {
     "fsa": {
-     "events": 4629,
-     "seconds": 45
+     "events": 4600,
+     "seconds": 51
     },
     "companies_house": {
-     "events": 2743,
+     "events": 2729,
      "seconds": 0
     }
    }
   },
   "ca-vancouver": {
    "name": "Vancouver",
-   "events": 961,
+   "events": 949,
    "parts": {
     "vancouver_permits": {
-     "events": 961,
+     "events": 949,
      "seconds": 6
     }
    }
   },
   "ca-winnipeg": {
    "name": "Winnipeg",
-   "events": 2253,
+   "events": 2201,
    "parts": {
     "winnipeg_permits": {
-     "events": 2253,
-     "seconds": 7
+     "events": 2201,
+     "seconds": 6
     }
    }
   },
-  "gb-scotland": {
-   "name": "Scotland",
-   "events": 12392,
+  "dk": {
+   "name": "Denmark",
+   "events": 10534,
    "parts": {
-    "fsa": {
-     "events": 9690,
-     "seconds": 47
-    },
-    "companies_house": {
-     "events": 2702,
-     "seconds": 0
+    "dk_smiley": {
+     "events": 10534,
+     "seconds": 14
     }
    }
   },
   "ie": {
    "name": "Ireland",
-   "events": 7651,
+   "events": 7526,
    "parts": {
     "ireland_planning": {
-     "events": 7651,
-     "seconds": 4
+     "events": 7526,
+     "seconds": 5
     }
    }
   },
-  "es-madrid": {
-   "name": "Madrid",
-   "events": 1645,
+  "ca-montreal": {
+   "name": "Montréal",
+   "events": 5425,
    "parts": {
-    "madrid_licences": {
-     "events": 1645,
-     "seconds": 6
+    "montreal_permits": {
+     "events": 5425,
+     "seconds": 26
     }
    }
   },
   "fi": {
    "name": "Finland",
-   "events": 1874,
+   "events": 1978,
    "parts": {
     "fi_new_companies": {
-     "events": 1874,
-     "seconds": 47
+     "events": 1978,
+     "seconds": 43
+    }
+   }
+  },
+  "es-madrid": {
+   "name": "Madrid",
+   "events": 1598,
+   "parts": {
+    "madrid_licences": {
+     "events": 1598,
+     "seconds": 5
+    }
+   }
+  },
+  "us-sf": {
+   "name": "San Francisco",
+   "events": 6954,
+   "parts": {
+    "SF Building Permits (permit)": {
+     "events": 4099,
+     "seconds": 22
+    },
+    "SF Registered Business Locations (business)": {
+     "events": 2173,
+     "seconds": 197
+    },
+    "SF Registered Business Locations (closure)": {
+     "events": 682,
+     "seconds": 152
     }
    }
   },
   "us-ct": {
    "name": "Connecticut",
-   "events": 3564,
+   "events": 3631,
    "parts": {
     "ct_new_businesses": {
-     "events": 3564,
-     "seconds": 9
+     "events": 3631,
+     "seconds": 11
     }
    }
   },
@@ -646,224 +656,214 @@
    "parts": {
     "melbourne_developments": {
      "events": 319,
-     "seconds": 3
-    }
-   }
-  },
-  "ca-montreal": {
-   "name": "Montréal",
-   "events": 5496,
-   "parts": {
-    "montreal_permits": {
-     "events": 5496,
-     "seconds": 27
+     "seconds": 4
     }
    }
   },
   "lv": {
    "name": "Latvia",
-   "events": 395,
+   "events": 416,
    "parts": {
     "latvia_new_companies": {
-     "events": 395,
-     "seconds": 28
+     "events": 416,
+     "seconds": 25
     }
    }
   },
   "ee": {
    "name": "Estonia",
-   "events": 1874,
+   "events": 1967,
    "parts": {
     "ee_new_companies": {
-     "events": 1874,
-     "seconds": 153
+     "events": 1967,
+     "seconds": 135
+    }
+   }
+  },
+  "nl": {
+   "name": "Netherlands",
+   "events": 49169,
+   "parts": {
+    "dutch_construction": {
+     "events": 49169,
+     "seconds": 438
     }
    }
   },
   "sg": {
    "name": "Singapore",
-   "events": 1819,
+   "events": 1810,
    "parts": {
     "singapore_new_companies": {
-     "events": 1819,
+     "events": 1810,
      "seconds": 500
     }
    }
   },
   "ch": {
    "name": "Switzerland",
-   "events": 7261,
+   "events": 7566,
    "parts": {
     "swiss_register": {
-     "events": 7261,
-     "seconds": 685
-    }
-   }
-  },
-  "nl": {
-   "name": "Netherlands",
-   "events": 49165,
-   "parts": {
-    "dutch_construction": {
-     "events": 49165,
-     "seconds": 841
-    }
-   }
-  },
-  "us-nyc": {
-   "name": "New York",
-   "events": 89646,
-   "parts": {
-    "permits": {
-     "events": 44053,
-     "seconds": 12
-    },
-    "restaurants": {
-     "events": 11015,
-     "seconds": 195
-    },
-    "property_records": {
-     "events": 33211,
-     "seconds": 1356
-    },
-    "nyc_new_licences": {
-     "events": 1367,
-     "seconds": 4
+     "events": 7566,
+     "seconds": 578
     }
    }
   },
   "no": {
    "name": "Norway",
-   "events": 2865,
+   "events": 3104,
    "parts": {
     "brreg_new_units": {
-     "events": 2865,
-     "seconds": 1386
+     "events": 3104,
+     "seconds": 1359
+    }
+   }
+  },
+  "us-nyc": {
+   "name": "New York",
+   "events": 89654,
+   "parts": {
+    "permits": {
+     "events": 44173,
+     "seconds": 26
+    },
+    "restaurants": {
+     "events": 10934,
+     "seconds": 11
+    },
+    "property_records": {
+     "events": 33211,
+     "seconds": 1764
+    },
+    "nyc_new_licences": {
+     "events": 1336,
+     "seconds": 5
     }
    }
   }
  },
- "minutes": 27.9,
+ "minutes": 30.1,
  "log_tail": [
-  "\n== Norway: new business locations (Enhetsregisteret sub-units)",
-  "######## done gb-london: 20551 events",
-  "######## start dk · Denmark",
-  "\n== Denmark smiley food controls",
-  "   https://pub.fvst.dk/publikationer/Smileydata.xml: 59949733 bytes",
-  "   58929 businesses, 10579 controls in the last 90 days (date sample: '12/14/2023')",
-  "   GeoNames postcode centres: 1159",
-  "   located 10579",
-  "   history: 288 records seen for the first time today (16184 remembered)",
-  "######## done dk: 10579 events",
+  "   history: 73 records seen for the first time today (7114 remembered)",
+  "######## done gb-wales: 4493 events",
   "######## start fi · Finland",
   "\n== Finland: companies registered in the last 30 days (PRH)",
-  "   totalResults: 1930, page size 100",
-  "   new sub-units: 7816",
-  "   Northern Ireland: 11 authorities, 1340 events (232 new businesses awaiting inspection)",
-  "   history: 39 records seen for the first time today (3253 remembered)",
-  "######## done gb-ni: 2081 events",
+  "   Scotland: 32 authorities, 9653 events (6709 new businesses awaiting inspection)",
+  "   history: 166 records seen for the first time today (16805 remembered)",
+  "######## done gb-scotland: 12335 events",
   "######## start ee · Estonia",
   "\n== Estonia: companies first entered in the last 30 days (e-Business Register)",
-  "   rows: 381556; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']",
-  "   new: 2338; after leaving out shared virtual-office addresses: 1874",
-  "   Yorkshire and Humberside: 16 authorities, 5087 events (2563 new businesses awaiting inspection)",
-  "   history: 223 records seen for the first time today (13065 remembered)",
-  "   Wales: 22 authorities, 3214 events (1354 new businesses awaiting inspection)",
-  "   history: 77 records seen for the first time today (7041 remembered)",
-  "######## done gb-yh: 8388 events",
+  "   Northern Ireland: 11 authorities, 1331 events (229 new businesses awaiting inspection)",
+  "   history: 45 records seen for the first time today (3298 remembered)",
+  "######## done gb-ni: 2051 events",
   "######## start ca-vancouver · Vancouver",
   "\n== Vancouver issued building permits",
-  "######## done gb-wales: 4592 events",
+  "   South West: 27 authorities, 4600 events (1426 new businesses awaiting inspection)",
+  "   history: 134 records seen for the first time today (11747 remembered)",
+  "######## done gb-sw: 7329 events",
   "######## start ca-winnipeg · Winnipeg",
   "\n== Winnipeg building permits",
-  "   South West: 27 authorities, 4629 events (1429 new businesses awaiting inspection)",
-  "   history: 266 records seen for the first time today (11613 remembered)",
-  "######## done gb-sw: 7372 events",
+  "   totalResults: 2034, page size 100",
+  "   rows: 381641; columns: ['nimi', 'ariregistri_kood', 'ettevotja_oiguslik_vorm', 'ettevotja_oigusliku_vormi_alaliik', 'kmkr_nr', 'ettevotja_staatus', 'ettevotja_staatus_tekstina', 'ettevotja_esmakande_kpv', 'ettevotja_aadress', 'asukoht_ettevotja_aadressis', 'asukoha_ehak_kood', 'asukoha_ehak_tekstina', 'indeks_ettevotja_aadressis', 'ads_adr_id', 'ads_ads_oid', 'ads_normaliseeritud_taisaadress', 'teabesysteemi_link']",
+  "   new: 2450; after leaving out shared virtual-office addresses: 1967",
+  "   https://pub.fvst.dk/publikationer/Smileydata.xml: 59931155 bytes",
+  "   new sub-units: 8169",
+  "   955 permits",
+  "   history: 0 records seen for the first time today (1276 remembered)",
+  "   permits: 2206",
+  "   58907 businesses, 10534 controls in the last 90 days (date sample: '07/08/2019')",
+  "   history: 0 records seen for the first time today (3138 remembered)",
+  "######## done ca-vancouver: 949 events",
   "######## start sg · Singapore",
   "\n== Singapore newly registered entities (ACRA)",
-  "   967 permits",
-  "   history: 1 records seen for the first time today (1276 remembered)",
-  "######## done ca-vancouver: 961 events",
+  "######## done ca-winnipeg: 2201 events",
   "######## start ch · Switzerland",
   "\n== Switzerland SHAB commercial register: new entries and deletions",
-  "   permits: 2258",
-  "   history: 0 records seen for the first time today (3138 remembered)",
-  "######## done ca-winnipeg: 2253 events",
+  "   GeoNames postcode centres: 1159",
+  "   located 10534",
+  "   history: 157 records seen for the first time today (16341 remembered)",
+  "######## done dk: 10534 events",
   "######## start ie · Ireland",
   "\n== Ireland national planning applications",
   "   fields: OBJECTID, PlanningAuthority, ApplicationNumber, DevelopmentDescription, DevelopmentAddress, DevelopmentPostcode, ITMEasting, ITMNorthing, ApplicationStatus, ApplicationType, ApplicantForename, ApplicantSurname, ApplicantAddress, Decision, LandUseCode, AreaofSite, NumResidentialUnits, OneOffHouse, FloorArea, ReceivedDate, WithdrawnDate, DecisionDate, DecisionDueDate, GrantDate, ExpiryDate, AppealRefNumber, AppealStatus, AppealDecision, AppealDecisionDate, AppealSubmittedDate, FIRequestDate, FIRecDate, LinkAppDetails, OneOffKPI, ETL_DATE, SiteId, ORIG_FID",
-  "   Scotland: 32 authorities, 9690 events (6738 new businesses awaiting inspection)",
-  "   history: 179 records seen for the first time today (16639 remembered)",
-  "######## done gb-scotland: 12392 events",
+  "   7526 applications",
+  "   history: 0 records seen for the first time today (10420 remembered)",
+  "######## done ie: 7526 events",
   "######## start ca-montreal · Montréal",
   "\n== Montreal building permits",
-  "   7651 applications",
-  "   history: 446 records seen for the first time today (10420 remembered)",
-  "######## done ie: 7651 events",
+  "   new: 5031; after leaving out shared corporate-secretary addresses: 2870",
+  "   sql not available (https://donnees.montreal.ca/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%225232a72d-235a-4); paging newest first",
+  "   5427 permits",
+  "   history: 0 records seen for the first time today (7230 remembered)",
+  "######## done ca-montreal: 5425 events",
   "######## start es-madrid · Madrid",
   "\n== Madrid urban planning licences granted",
-  "   address points: 214294; columns: ['COD_VIA', 'VIA_CLASE', 'VIA_PAR', 'VIA_NOMBRE', 'VIA_NOMBRE_ACENTOS', 'CLASE_APP', 'NUMERO', 'CALIFICADOR', 'TIPO_NDP', 'COD_NDP', 'DISTRITO', 'BARRIO', 'COD_POSTAL', 'UTMX_ED', 'UTMY_ED', 'UTMX_ETRS', 'UTMY_ETRS', 'LATITUD', 'LONGITUD', 'ANGULO_ROTULACION']",
-  "   sample address point: ['31076880', '448983,15', '4476500,95', \"40°26'15.32'' N\", \"3°36'5.49'' W\"]",
-  "   licences in the last 180 days: 1694, located 1645 (latest 2026-10-30)",
-  "   history: 0 records seen for the first time today (1913 remembered)",
-  "######## done es-madrid: 1645 events",
-  "######## start us-ct · Connecticut",
-  "\n== Connecticut business registry: new registrations",
   "   postcode layer postialue:pno_2026: 3018 areas",
   "   postcode properties: id, objectid, posti_alue, vuosi, nimi, namn, kunta, kuntanro, pinta_ala",
-  "   companies: 1930; postcode areas: 3018",
-  "   located 1874",
-  "   history: 102 records seen for the first time today (4251 remembered)",
-  "   new: 5128; after leaving out shared corporate-secretary addresses: 2935",
-  "######## done fi: 1874 events",
+  "   companies: 2034; postcode areas: 3018",
+  "   located 1978",
+  "   history: 105 records seen for the first time today (4356 remembered)",
+  "######## done fi: 1978 events",
+  "######## start us-ct · Connecticut",
+  "\n== Connecticut business registry: new registrations",
+  "   address points: 214294; columns: ['COD_VIA', 'VIA_CLASE', 'VIA_PAR', 'VIA_NOMBRE', 'VIA_NOMBRE_ACENTOS', 'CLASE_APP', 'NUMERO', 'CALIFICADOR', 'TIPO_NDP', 'COD_NDP', 'DISTRITO', 'BARRIO', 'COD_POSTAL', 'UTMX_ED', 'UTMY_ED', 'UTMX_ETRS', 'UTMY_ETRS', 'LATITUD', 'LONGITUD', 'ANGULO_ROTULACION']",
+  "   sample address point: ['31076880', '448983,15', '4476500,95', \"40°26'15.32'' N\", \"3°36'5.49'' W\"]",
+  "   licences in the last 180 days: 1647, located 1598 (latest 2026-10-30)",
+  "   history: 0 records seen for the first time today (1913 remembered)",
+  "######## done es-madrid: 1598 events",
   "######## start lv · Latvia",
   "\n== Latvia Register of Enterprises: new registrations",
-  "   registrations: 4065",
-  "   3688 with a street address (shared registered-agent addresses left out)",
-  "   geocode cache: 3485 of 3688 addresses already known",
-  "   census geocoded 199 of 203 new addresses",
-  "   located 3564",
-  "   history: 220 records seen for the first time today (7178 remembered)",
-  "######## done us-ct: 3564 events",
+  "   San Francisco SF Registered Business Locations (closure): 797",
+  "   21 rows without coordinates: geocoding addresses",
+  "   geocode cache: 20 of 21 addresses already known",
+  "   registrations: 4148",
+  "   3758 with a street address (shared registered-agent addresses left out)",
+  "   geocode cache: 3638 of 3758 addresses already known",
+  "   census geocoded 0 of 1 new addresses",
+  "   census response sample: \"1\",\"5900 Mosteller Dr Ste 1600, San Francisco, CA, \",\"No_Match\" | ",
+  "   -> 682 located events of 797 rows",
+  "   history: 107 records seen for the first time today (9244 remembered)",
+  "######## done us-sf: 6954 events",
   "######## start au-melbourne · Melbourne",
   "\n== Melbourne development activity monitor",
-  "   sql not available (https://donnees.montreal.ca/api/3/action/datastore_search_sql?sql=SELECT+%2A+FROM+%225232a72d-235a-4); paging newest first",
+  "   publications: 4815 new, 2841 deletions",
+  "   census geocoded 115 of 120 new addresses",
+  "   located 3631",
+  "   history: 127 records seen for the first time today (7305 remembered)",
   "   319 projects",
-  "   history: 10 records seen for the first time today (333 remembered)",
+  "   history: 0 records seen for the first time today (333 remembered)",
   "######## done au-melbourne: 319 events",
   "######## start nl · Netherlands",
   "\n== Netherlands: buildings under construction (BAG)",
-  "   register rows: 490445; columns: ['regcode', 'sepa', 'name', 'name_before_quotes', 'name_in_quotes', 'name_after_quotes', 'without_quotes', 'regtype', 'regtype_text', 'type', 'type_text', 'registered', 'terminated', 'closed', 'address', 'index', 'addressid', 'region', 'city', 'atvk', 'reregistration_term']",
-  "   new: 959 (shared addresses left out)",
-  "   5498 permits",
-  "   history: 0 records seen for the first time today (7230 remembered)",
-  "######## done ca-montreal: 5496 events",
-  "   building addresses: 611398; columns: ['KODS', 'TIPS_CD', 'STATUSS', 'APSTIPR', 'APST_PAK', 'VKUR_CD', 'VKUR_TIPS', 'NOSAUKUMS', 'SORT_NOS', 'ATRIB', 'PNOD_CD', 'DAT_SAK', 'DAT_MOD', 'DAT_BEIG', 'FOR_BUILD', 'PLAN_ADR', 'STD', 'KOORD_X', 'KOORD_Y', 'DD_N', 'DD_E']",
-  "   located 395",
-  "   history: 12 records seen for the first time today (839 remembered)",
-  "######## done lv: 395 events",
-  "   publications: 4616 new, 2727 deletions",
-  "   located 1874",
-  "   history: 115 records seen for the first time today (3801 remembered)",
-  "######## done ee: 1874 events",
-  "   exact addresses: 1231; postcode fallback for 2159 postcodes",
-  "   located 1819",
-  "   history: 251 records seen for the first time today (5103 remembered)",
-  "######## done sg: 1819 events",
-  "   located 7261 of 7343",
-  "   history: 637 records seen for the first time today (13744 remembered)",
-  "######## done ch: 7261 events",
-  "   49165 buildings under construction",
-  "   history: 386 records seen for the first time today (53338 remembered)",
-  "######## done nl: 49165 events",
+  "######## done us-ct: 3631 events",
+  "   register rows: 490495; columns: ['regcode', 'sepa', 'name', 'name_before_quotes', 'name_in_quotes', 'name_after_quotes', 'without_quotes', 'regtype', 'regtype_text', 'type', 'type_text', 'registered', 'terminated', 'closed', 'address', 'index', 'addressid', 'region', 'city', 'atvk', 'reregistration_term']",
+  "   new: 1009 (shared addresses left out)",
+  "   building addresses: 611424; columns: ['KODS', 'TIPS_CD', 'STATUSS', 'APSTIPR', 'APST_PAK', 'VKUR_CD', 'VKUR_TIPS', 'NOSAUKUMS', 'SORT_NOS', 'ATRIB', 'PNOD_CD', 'DAT_SAK', 'DAT_MOD', 'DAT_BEIG', 'FOR_BUILD', 'PLAN_ADR', 'STD', 'KOORD_X', 'KOORD_Y', 'DD_N', 'DD_E']",
+  "   located 416",
+  "   history: 21 records seen for the first time today (860 remembered)",
+  "######## done lv: 416 events",
+  "   located 1967",
+  "   history: 98 records seen for the first time today (3899 remembered)",
+  "######## done ee: 1967 events",
+  "   exact addresses: 1361; postcode fallback for 2175 postcodes",
+  "   49169 buildings under construction",
+  "   history: 355 records seen for the first time today (53693 remembered)",
+  "######## done nl: 49169 events",
+  "   located 1810",
+  "   history: 34 records seen for the first time today (5137 remembered)",
+  "######## done sg: 1810 events",
+  "   located 7566 of 7656",
+  "   history: 324 records seen for the first time today (14068 remembered)",
+  "######## done ch: 7566 events",
+  "   located 3104 of 7600",
+  "   history: 173 records seen for the first time today (14406 remembered)",
+  "######## done no: 3104 events",
   "   documents 30000, lots 24167, located 16581 + condo blocks 1983",
   "\n== NYC new premises licences (DCWP)",
-  "   licences: 1515",
-  "   history: 200 records seen for the first time today (107958 remembered)",
-  "######## done us-nyc: 89646 events",
-  "   located 2865 of 7283",
-  "   history: 133 records seen for the first time today (14233 remembered)",
-  "######## done no: 2865 events",
-  "   US geocode cache: 122081 addresses saved"
+  "   licences: 1482",
+  "   history: 701 records seen for the first time today (108659 remembered)",
+  "######## done us-nyc: 89654 events",
+  "   US geocode cache: 123251 addresses saved"
  ]
 }
